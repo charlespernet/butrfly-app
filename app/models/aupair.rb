@@ -1,0 +1,2 @@
+class Aupair < User
+end
