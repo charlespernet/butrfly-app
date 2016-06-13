@@ -8,6 +8,8 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
+gem 'devise'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -23,8 +25,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do
