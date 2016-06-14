@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      flash[:notice] = "#{@user.type} crée avec succès"
+      flash[:notice] = "Compte créé avec succès"
     else
       flash[:error] = "Un problème est survenu lors de la création de votre compte"
     end
@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   private
 
   def new_user_params
-    params.require(:user).permit(:email, :password, :type)
+    params.require(:user).permit(:email, :password)
   end
 end
