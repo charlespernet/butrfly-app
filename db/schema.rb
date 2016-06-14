@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160614151440) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "type"
     t.integer  "actable_id"
     t.string   "actable_type"
     t.string   "country_code"
