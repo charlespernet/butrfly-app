@@ -1,2 +1,0 @@
-class Aupair < User
-end
