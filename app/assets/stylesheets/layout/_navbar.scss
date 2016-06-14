@@ -39,7 +39,7 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: white;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -106,7 +106,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -127,3 +127,58 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+.navbar-wagon {
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    color: white;
+    box-shadow: none;
+    z-index: 999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+}
+
+.navbar-wagon .dropdown-menu {
+    border-radius: 0;
+    border: none;
+    border-top: 5px solid transparent;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 0;
+    color: white;
+}
+
+.navbar-wagon {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
+    -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
+    transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
+}
+
+.navbar-wagon.affix {
+    top: 0;
+    min-width: 100%;
+    background-color: white;
+    opacity: 0.9;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+    color: $bluegrey-dark;
+}
+
+.navbar-wagon-link.affix {
+  color: $bluegrey-light;
+  font-size: 14px;
+}
+.navbar-wagon-link:hover.affix {
+  color: $bluegrey-light;
+  text-decoration: none;
+}
+
+
