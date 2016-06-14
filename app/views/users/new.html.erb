@@ -1,0 +1,6 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.submit %>
+<% end %>
