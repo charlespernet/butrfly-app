@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner">
+  <div class="banner-content">
+    <h1>BUTRFLY</h1>
+    <p>Join the first Aupair community</p>
+  </div>
+</div>
+
+<div class="container text-center homeblock">
+
+  <div class="features">FEATURES</div>
+
+
+  <%= link_to "Creer un compte", new_user_path, class: "navbar-wagon-link2 btnpad" %>
+  <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-link2 btnpad" %>
+  <%= link_to "Me Connecter", new_user_session_path, class: "navbar-wagon-link2 btnpad" %>
+
+</div>
+
+

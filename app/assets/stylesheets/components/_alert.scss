@@ -6,7 +6,13 @@
   margin: 0;
   text-align: center;
   color: white;
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  border-style: none;
+  opacity: 0.9;
 }
+
 .alert-info {
   background: $green;
 }

@@ -1,0 +1,40 @@
+<div class="navbar-wagon navbar-fixed-top">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-company-text" do %>
+    <h4>BUTRFLY</h4>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs">
+
+
+
+    <!-- Different navigation if login or not -->
+    <% if user_signed_in? %>
+      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
+
+
+    <% else %>
+
+      <!-- Login text link -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".top_call_to_action", default: "Signup"), new_user_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <% end %>
+
+    <!-- Button (call-to-action) -->
+
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
