@@ -10,6 +10,8 @@ gem 'redis'
 
 gem 'devise'
 
+gem 'active_record-acts_as'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
