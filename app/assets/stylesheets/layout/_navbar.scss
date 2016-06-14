@@ -43,7 +43,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: white;
   text-decoration: none;
 }
 
@@ -159,26 +159,29 @@
     -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
     -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
     transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
 }
 
 .navbar-wagon.affix {
     top: 0;
     min-width: 100%;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.9;
     -webkit-transition: background .5s ease-in-out, opacity .5s ease;
     -moz-transition: background .5s ease-in-out, opacity .5s ease;
     transition: background .5s ease-in-out, opacity .5s ease;
     color: $bluegrey-dark;
 }
 
-.navbar-wagon-link.affix {
-  color: $bluegrey-light;
+.navbar-wagon-link.affix2 {
+  color: $bluegrey-dark;
   font-size: 14px;
+  transition: color .5s ease-in-out, opacity .5s ease;
 }
-.navbar-wagon-link:hover.affix {
-  color: $bluegrey-light;
+.navbar-wagon-link:hover.affix2 {
+  color: $bluegrey-dark;
   text-decoration: none;
+  transition: color .5s ease-in-out, opacity .5s ease;
 }
 
 .navbar-company-text {
