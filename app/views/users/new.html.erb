@@ -3,6 +3,7 @@
   <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first %>
   <%= f.input :email %>
   <%= f.input :password %>
+  <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
 </div>
