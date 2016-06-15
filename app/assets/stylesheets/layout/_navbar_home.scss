@@ -128,7 +128,6 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
 .navbar-wagon {
     background-color: rgba(0,0,0,0);
     border: 0;
@@ -166,7 +165,7 @@
     top: 0;
     min-width: 100%;
     background-color: white;
-    opacity: 0.9;
+    opacity: 1;
     -webkit-transition: background .5s ease-in-out, opacity .5s ease;
     -moz-transition: background .5s ease-in-out, opacity .5s ease;
     transition: background .5s ease-in-out, opacity .5s ease;
@@ -196,6 +195,3 @@
   text-decoration: none;
   color: $brand-color;
 }
-
-
-

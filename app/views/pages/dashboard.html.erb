@@ -1,7 +1,5 @@
-<%= render "shared/navbar2" %>
 <% if current_user.specific.is_a?(Aupair) %>
     <%= render 'shared/aupair_dashboard' %>
   <% elsif current_user.specific.is_a?(Family) %>
     <%= render 'shared/family_dashboard' %>
 <% end %>
-

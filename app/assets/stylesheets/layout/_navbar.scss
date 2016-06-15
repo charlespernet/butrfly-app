@@ -1,5 +1,5 @@
 /* Main class */
-.navbar-wagon {
+.navbar-wagon-main {
   background: white;
   transition: all 0.3s ease;
   display: flex;
@@ -38,12 +38,12 @@
 }
 
 /* Navbar standard link */
-.navbar-wagon-link {
-  color: white;
+.navbar-wagon-link-black {
+  color: black;
   font-size: 14px;
 }
-.navbar-wagon-link:hover {
-  color: white;
+.navbar-wagon-link-black:hover {
+  color: black;
   text-decoration: none;
 }
 
@@ -128,20 +128,6 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
-.navbar-wagon {
-    background-color: rgba(0,0,0,0);
-    border: 0;
-    color: white;
-    box-shadow: none;
-    z-index: 999;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
-    -moz-transition: background .5s ease-in-out, opacity .5s ease;
-    transition: background .5s ease-in-out, opacity .5s ease;
-}
-
 .navbar-wagon .dropdown-menu {
     border-radius: 0;
     border: none;
@@ -151,37 +137,6 @@
     box-shadow: none;
     padding-top: 0;
     color: white;
-}
-
-.navbar-wagon {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
-    -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
-    transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
-    transition: background .5s ease-in-out, opacity .5s ease;
-}
-
-.navbar-wagon.affix {
-    top: 0;
-    min-width: 100%;
-    background-color: white;
-    opacity: 1;
-    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
-    -moz-transition: background .5s ease-in-out, opacity .5s ease;
-    transition: background .5s ease-in-out, opacity .5s ease;
-    color: $bluegrey-dark;
-}
-
-.navbar-wagon-link.affix2 {
-  color: $bluegrey-dark;
-  font-size: 14px;
-  transition: color .5s ease-in-out, opacity .5s ease;
-}
-.navbar-wagon-link:hover.affix2 {
-  color: $bluegrey-dark;
-  text-decoration: none;
-  transition: color .5s ease-in-out, opacity .5s ease;
 }
 
 .navbar-company-text {
@@ -196,6 +151,3 @@
   text-decoration: none;
   color: $brand-color;
 }
-
-
-
