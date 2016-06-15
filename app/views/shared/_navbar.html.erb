@@ -12,6 +12,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+      <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
 
 
     <% else %>

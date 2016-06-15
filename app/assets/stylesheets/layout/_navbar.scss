@@ -39,7 +39,7 @@
 
 /* Navbar standard link */
 .navbar-wagon-link-black {
-  color: black;
+  color: $bluegrey-dark;
   font-size: 14px;
 }
 .navbar-wagon-link-black:hover {
@@ -149,5 +149,14 @@
 
 .navbar-company-text:hover {
   text-decoration: none;
+  color: $brand-color;
+}
+
+.navbar-wagon-link-grey {
+  color: $bluegrey-light;
+  font-size: 14px;
+}
+
+.navbar-wagon-link-grey:hover {
   color: $brand-color;
 }

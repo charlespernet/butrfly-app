@@ -120,3 +120,135 @@
 .icon-box p {
   line-height: 110%;
 }
+
+
+.banner2 {
+  color: white;
+  text-align: center;
+  height: 25vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(-225deg, rgba(80,101,80,0.4) 0%, rgba(130,80,101,0.6) 50%), url(hero.jpg);
+  background-position: center;
+}
+.banner2 h1 {
+  font-size: 30px;
+  font-family: "Lato";
+  letter-spacing: 6px;
+  font-weight: 200;
+}
+.banner2 p {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+.tabs {
+  background: white;
+  display: flex;
+  padding: 10px 10px 0 10px
+}
+.tabs a {
+  color: $bluegrey-dark;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.tabs p {
+  margin-bottom: 0;
+}
+.tab {
+  background: white;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+}
+.tab:first-child {
+  border-radius: 0px;
+}
+.tab:last-child {
+  border-radius: 0px;
+}
+.tab.active {
+  background: white;
+  color: $brand-color;
+  font-family: "Circular-Medium";
+  text-decoration: none;
+}
+
+.tabs p:active {
+  text-decoration: none;
+}
+
+.nav-tabs {
+  display: flex;
+  padding: 5px;
+  border-style: none;
+}
+
+.nav-tabs li {
+  flex: 0 0 25%;
+  text-align: center;
+  text-decoration: none;
+  border-style: none;
+}
+
+.nav-tabs li.active a {
+  color: $brand-color;
+  font-family: "Circular-Medium";
+  text-decoration: none;
+  font-size: 13px;
+  border-style: none;
+}
+
+.nav-tabs li.active a:hover {
+  color: $brand-color;
+  font-family: "Circular-Medium";
+  text-decoration: none;
+  font-size: 13px;
+  background-color: white;
+  border-style: none;
+}
+
+.nav-tabs li.active a:focus {
+  color: $brand-color;
+  font-family: "Circular-Medium";
+  text-decoration: none;
+  font-size: 13px;
+  border-style: none;
+}
+
+.nav-tabs li a {
+  color: $bluegrey-light;
+  font-family: "Circular-Book";
+  text-decoration: none;
+  font-size: 13px;
+  background-color: white;
+  border-style: none;
+  padding: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-tabs li a:hover {
+  background-color: white;
+  border-style: none;
+}
+
+.navbox {
+  padding-left: 15%;
+  padding-right: 15%;
+  border-bottom: 1px solid lightgrey;
+}
