@@ -1,14 +1,15 @@
-<h1>Aupairs#edit</h1>
-<p>Find me in app/views/aupairs/edit.html.erb</p>
-
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :birth_date %>
-  <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
-  <%= f.input :description %>
-  <%= f.input :driving_license %>
-  <%= f.input :smoker %>
-  <%= f.input :musician %>
-  <%= f.submit %>
-<% end %>
+<div class="container loginview">
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, selected: Date.today.year - 25 %>
+    <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
+    <%= f.input :description %>
+    <%= f.input :driving_license %>
+    <%= f.input :smoker %>
+    <%= f.input :musician %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Mettre à jour", class: "btn-primary btn btn-md" %>
+    </div>
+  <% end %>
+</div>
