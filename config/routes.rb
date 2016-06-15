@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, skip: :registrations
   root to: 'pages#home'
 
-
   resources :users, only: [:new, :show, :create, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
