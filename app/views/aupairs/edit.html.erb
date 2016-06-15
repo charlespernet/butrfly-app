@@ -1,2 +1,14 @@
 <h1>Aupairs#edit</h1>
 <p>Find me in app/views/aupairs/edit.html.erb</p>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :birth_date %>
+  <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
+  <%= f.input :description %>
+  <%= f.input :driving_license %>
+  <%= f.input :smoker %>
+  <%= f.input :musician %>
+  <%= f.submit %>
+<% end %>
