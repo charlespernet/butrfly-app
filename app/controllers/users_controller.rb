@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = params[:user][:type].constantize.new(new_user_params)
 
     if @user.save
-      sign_in(@user)
+      sign_in(:user, @user)
       flash[:notice] = "Compte créé avec succès"
     else
       flash[:error] = "Un problème est survenu lors de la création de votre compte"
