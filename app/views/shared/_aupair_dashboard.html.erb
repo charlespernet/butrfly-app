@@ -1,15 +1,11 @@
 <div class="banner2">
   <div class="banner-content">
-    <h1><%= current_user.specific.first_name %><%= current_user.specific.last_name %></h1>
-    <h1><%= current_user.email %></h1>
+    <h1><%= @user.first_name %><%= @user.last_name %></h1>
+    <h1><%= @user.email %></h1>
   </div>
 </div>
 
-
-
-
 <div class="navbox">
-
 
 <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -19,29 +15,24 @@
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
   </ul>
 
-
   <!-- Tab panes -->
 
-
 </div>
+
 <div class="tab-content">
 
     <div role="tabpanel" class="tab-pane active" id="home">
       <div class="container text-center navpill-one">
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
-        <div class="navbar-wagon-link-grey">Email : <%= current_user.email %></div>
-        <div class="navbar-wagon-link-grey">Nom : <%= current_user.specific.last_name %></div>
-        <div class="navbar-wagon-link-grey">Pays : <%= current_user.country_code %></div>
-        <% if current_user.specific.smoker = true %>
+        <div class="navbar-wagon-link-grey">Email : <%= @user.email %></div>
+        <div class="navbar-wagon-link-grey">Nom : <%= @user.last_name %></div>
+        <div class="navbar-wagon-link-grey">Pays : <%= @user.country_code %></div>
+        <% if @user.smoker %>
           <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
           <p>fumeur</p>
-          <% else %>
         <% end %>
-
-
       </div>
-
     </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
@@ -68,13 +59,6 @@
   </div>
 
 
-
-
-
 <div class="container text-center">
-
-  <%= link_to "Modifier", edit_family_path(current_user.specific), class: "btn btn-primary" %>
-
+  <%= link_to "Modifier", edit_aupair_path(@user), class: "btn btn-primary" %>
 </div>
-
-
