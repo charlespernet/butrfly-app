@@ -252,3 +252,29 @@
   padding-right: 15%;
   border-bottom: 1px solid lightgrey;
 }
+
+.usertype {
+  font-family: "Circular-Medium";
+  color: $brand-color;
+}
+
+.titleanimate {
+  animation-duration: 8s;
+  delay: 2s;
+  iteration-count: infinite;
+}
+
+.navpill-one {
+  margin-top: 25px;
+}
+
+.navpill-title {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  color: $bluegrey-light;
+}
+
+.fa {
+  color: $bluegrey-dark;
+  font-size: 20px;
+}
