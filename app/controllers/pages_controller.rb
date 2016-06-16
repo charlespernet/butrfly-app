@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user.specific
   end
 end

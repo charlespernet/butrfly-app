@@ -11,22 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615140000) do
+ActiveRecord::Schema.define(version: 20160616130659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "aupairs", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "birth_date"
-    t.text     "description"
-    t.boolean  "driving_license"
-    t.boolean  "musician"
-    t.boolean  "smoker"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "gender",          default: 1
+    t.string  "first_name"
+    t.string  "last_name"
+    t.date    "birth_date"
+    t.text    "description"
+    t.boolean "driving_license"
+    t.boolean "musician"
+    t.boolean "smoker"
+    t.integer "gender",          default: 1
   end
 
   create_table "children", force: :cascade do |t|
@@ -43,11 +41,9 @@ ActiveRecord::Schema.define(version: 20160615140000) do
   add_index "children", ["family_id"], name: "index_children_on_family_id", using: :btree
 
   create_table "families", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "name"
-    t.boolean  "smoker"
-    t.boolean  "domestic_animal"
+    t.string  "name"
+    t.boolean "smoker"
+    t.boolean "domestic_animal"
   end
 
   create_table "users", force: :cascade do |t|

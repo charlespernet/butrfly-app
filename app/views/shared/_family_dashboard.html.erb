@@ -1,14 +1,11 @@
 <div class="banner2">
   <div class="banner-content">
-    <h1>Family one</h1>
+    <h1>Famille <%= @user.name %></h1>
   </div>
 </div>
 
 
-
-
 <div class="navbox">
-
 
 <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -18,9 +15,7 @@
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
   </ul>
 
-
   <!-- Tab panes -->
-
 
 </div>
 <div class="tab-content">
@@ -29,8 +24,22 @@
       <div class="container text-center navpill-one">
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
-        <div class="navbar-wagon-link-grey">Email : <%= current_user.email %></div>
-        <div class="navbar-wagon-link-grey">Type : <%= current_user.actable_type %></div>
+        <div class="navbar-wagon-link-grey">Email : <%= @user.email %></div>
+        <div class="navbar-wagon-link-grey">Nom : <%= @user.name %></div>
+        <div class="navbar-wagon-link-grey">Pays : <%= @user.country_code %></div>
+        <% if @user.smoker %>
+          <div class="cardcondition">
+            <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
+            <p>fumeur</p>
+          </div>
+        <% end %>
+
+        <% if @user.domestic_animal %>
+          <div class="cardcondition">
+            <h3 class="fa fa-paw" aria-hidden="true"></h3>
+            <p>Animal domestique</p>
+          </div>
+        <% end %>
       </div>
 
     </div>
@@ -59,13 +68,6 @@
   </div>
 
 
-
-
-
 <div class="container text-center">
-
-  <%= link_to "Mettre à jour mon profil", edit_family_path(current_user.specific) %>
-
+  <%= link_to "Modifier", edit_family_path(@user), class: "btn btn-primary" %>
 </div>
-
-
