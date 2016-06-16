@@ -7,22 +7,20 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs">
 
-
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-    <div class="navbar-wagon-item navbar-wagon-link-grey">Famille</div>
-      <div class="usertype"><%= current_user.specific.name %></div>
+      <div class="navbar-wagon-item navbar-wagon-link-grey">
+        <%= "Famille" if current_user.specific.is_a?(Family) %>
+      </div>
+      <div class="usertype">
+        <%= current_user.specific.try(:name) || current_user.specific.try(:first_name) %>
+      </div>
+
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
-
-
-
     <% else %>
-
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
       <%= link_to t(".top_call_to_action", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
-
     <% end %>
 
     <!-- Button (call-to-action) -->
