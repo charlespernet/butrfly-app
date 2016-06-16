@@ -13,7 +13,6 @@
     <% if user_signed_in? %>
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
 
-
     <% else %>
 
       <!-- Login text link -->
@@ -29,11 +28,25 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <i class="fa fa-angle-double-down dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+
+        <% if user_signed_in? %>
+      <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
+      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+
+
+
+    <% else %>
+
+      <!-- Login text link -->
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
+      <%= link_to t(".top_call_to_action", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
+
+    <% end %>
+
+
+
       </ul>
     </div>
   </div>

@@ -39,7 +39,7 @@
 
 /* Navbar standard link */
 .navbar-wagon-link-black {
-  color: black;
+  color: $bluegrey-dark;
   font-size: 14px;
 }
 .navbar-wagon-link-black:hover {
@@ -128,16 +128,7 @@
   border-top: 1px solid #E6E6E6;
 }
 
-.navbar-wagon .dropdown-menu {
-    border-radius: 0;
-    border: none;
-    border-top: 5px solid transparent;
-    background-color: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    padding-top: 0;
-    color: white;
-}
+
 
 .navbar-company-text {
   letter-spacing: 4px;
@@ -151,3 +142,16 @@
   text-decoration: none;
   color: $brand-color;
 }
+
+.navbar-wagon-link-grey {
+  color: $bluegrey-light;
+  font-size: 14px;
+}
+
+.navbar-wagon-link-grey:hover {
+  color: $brand-color;
+}
+
+
+
+
