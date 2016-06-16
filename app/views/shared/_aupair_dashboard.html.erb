@@ -1,3 +1,80 @@
-<h4>Aupair dashboard</h4>
+<div class="banner2">
+  <div class="banner-content">
+    <h1><%= current_user.specific.first_name %><%= current_user.specific.last_name %></h1>
+    <h1><%= current_user.email %></h1>
+  </div>
+</div>
 
-<%= link_to "Mettre à jour mon profile", edit_aupair_path(current_user.specific) %>
+
+
+
+<div class="navbox">
+
+
+<!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
+  </ul>
+
+
+  <!-- Tab panes -->
+
+
+</div>
+<div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="container text-center navpill-one">
+        <i class="fa fa-database" aria-hidden="true"></i>
+        <h4 class="navpill-title">Infos</h4>
+        <div class="navbar-wagon-link-grey">Email : <%= current_user.email %></div>
+        <div class="navbar-wagon-link-grey">Nom : <%= current_user.specific.last_name %></div>
+        <div class="navbar-wagon-link-grey">Pays : <%= current_user.country_code %></div>
+        <% if current_user.specific.smoker = true %>
+          <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
+          <p>fumeur</p>
+          <% else %>
+        <% end %>
+
+
+      </div>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="container text-center navpill-one">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        <h4 class="navpill-title">Profil</h4>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <div class="container text-center navpill-one">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <h4 class="navpill-title">Messages</h4>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="settings">
+      <div class="container text-center navpill-one">
+        <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
+        <h4 class="navpill-title">Réglages</h4>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+<div class="container text-center">
+
+  <%= link_to "Modifier", edit_family_path(current_user.specific), class: "btn btn-primary" %>
+
+</div>
+
+
