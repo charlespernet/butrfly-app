@@ -17,8 +17,8 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".top_call_to_action", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), '#login', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".top_call_to_action", default: "Créer un compte"), '#signup', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
 
     <% end %>
 
