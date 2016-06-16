@@ -25,15 +25,35 @@
       <div class="container text-center navpill-one">
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
-          <div class="cardinfos">
-            <div class="navbar-wagon-link-grey">Email : <%= @user.email %></div>
+
+
+          <div class="row">
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="card-titre">EMAIL</div>
+            <div class="cardinfos">
+              <div class="navbar-wagon-link-grey"><%= @user.email %></div>
+            </div>
           </div>
-          <div class="cardinfos">
-            <div class="navbar-wagon-link-grey">Nom : <%= @user.last_name %></div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div class="card-titre">NOM DE FAMILLE</div>
+            <div class="cardinfos">
+              <div class="navbar-wagon-link-grey"><%= @user.last_name %></div>
+            </div>
           </div>
-          <div class="cardinfos">
-            <div class="navbar-wagon-link-grey">Pays : <%= @user.country_code %></div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div class="card-titre">PAYS</div>
+            <div class="cardinfos">
+              <div class="navbar-wagon-link-grey"><%= @user.country_code %></div>
+            </div>
           </div>
+
+
+        </div>
+
+
         <% if @user.smoker %>
           <div class="cardcondition">
             <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
