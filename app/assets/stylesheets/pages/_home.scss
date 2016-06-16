@@ -131,14 +131,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(-225deg, rgba(80,101,80,0.4) 0%, rgba(130,80,101,0.6) 50%), url(hero.jpg);
+  background-image: linear-gradient(-270deg, rgba(255,191,20,0.3) 0%, rgba(255,180,20,0.4) 50%), url(family-image.jpg);
   background-position: center;
 }
 .banner2 h1 {
-  font-size: 30px;
+  font-size: 24px;
   font-family: "Lato";
-  letter-spacing: 6px;
+  letter-spacing: 2px;
   font-weight: 200;
+}
+
+.banner2 h4 {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  letter-spacing: 1px;
 }
 .banner2 p {
   font-family: "Circular-Book";
@@ -286,14 +292,27 @@
 }
 
 .cardcondition {
-  width: 160px;
+  width: 200px;
   border: 1px solid lightgrey;
   border-radius: 4px;
-  padding-top: -8px;
-  padding-bottom: 2px;
   padding-left: 12px;
   padding-right: 12px;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-family {
+  width: 60px;
+}
+
+.cardinfos {
+  width: 200px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }

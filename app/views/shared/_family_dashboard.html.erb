@@ -1,6 +1,7 @@
 <div class="banner2">
   <div class="banner-content">
     <h1>Famille <%= @user.name %></h1>
+    <h4><%= @user.email %></h4>
   </div>
 </div>
 
@@ -24,9 +25,15 @@
       <div class="container text-center navpill-one">
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
-        <div class="navbar-wagon-link-grey">Email : <%= @user.email %></div>
-        <div class="navbar-wagon-link-grey">Nom : <%= @user.name %></div>
-        <div class="navbar-wagon-link-grey">Pays : <%= @user.country_code %></div>
+          <div class="cardinfos">
+            <div class="navbar-wagon-link-grey">Email : <%= @user.email %></div>
+          </div>
+          <div class="cardinfos">
+            <div class="navbar-wagon-link-grey">Nom : <%= @user.name %></div>
+          </div>
+          <div class="cardinfos">
+            <div class="navbar-wagon-link-grey">Pays : <%= @user.country_code %></div>
+          </div>
         <% if @user.smoker %>
           <div class="cardcondition">
             <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
