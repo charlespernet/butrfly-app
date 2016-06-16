@@ -1,6 +1,6 @@
 <div class="banner2">
   <div class="banner-content">
-    <h1>Family one</h1>
+    <h1>Famille <%= current_user.specific.name %></h1>
   </div>
 </div>
 
@@ -30,7 +30,19 @@
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
         <div class="navbar-wagon-link-grey">Email : <%= current_user.email %></div>
-        <div class="navbar-wagon-link-grey">Type : <%= current_user.actable_type %></div>
+        <div class="navbar-wagon-link-grey">Nom : <%= current_user.specific.name %></div>
+        <div class="navbar-wagon-link-grey">Pays : <%= current_user.country_code %></div>
+        <% if current_user.specific.smoker = true %>
+          <h3 class="fa fa-skyatlas" aria-hidden="true"></h3>
+          <p>fumeur</p>
+          <% else %>
+        <% end %>
+
+        <% if current_user.specific.domestic_animal = true %>
+          <h3 class="fa fa-paw" aria-hidden="true"></h3>
+          <p>Animal domestique</p>
+          <% else %>
+        <% end %>
       </div>
 
     </div>
@@ -64,7 +76,7 @@
 
 <div class="container text-center">
 
-  <%= link_to "Mettre à jour mon profil", edit_family_path(current_user.specific) %>
+  <%= link_to "Modifier", edit_family_path(current_user.specific), class: "btn btn-primary" %>
 
 </div>
 
