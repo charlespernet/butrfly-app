@@ -11,8 +11,8 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-    <div class="usertype"><%= current_user.actable_type.upcase %></div>
-      <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
+    <div class="navbar-wagon-item navbar-wagon-link-grey">Famille</div>
+      <div class="usertype"><%= current_user.specific.name %></div>
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
 
 
@@ -36,7 +36,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
         <% if user_signed_in? %>
-        <div class="navbar-wagon-item usertype">- <%= current_user.actable_type.capitalize %> -</div>
+        <div class="navbar-wagon-item usertype2">- <%= current_user.actable_type.capitalize %> -</div>
       <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
 
