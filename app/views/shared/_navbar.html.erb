@@ -17,7 +17,7 @@
         <%= current_user.specific.try(:name) || current_user.specific.try(:last_name) %>
       </div>
 
-      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
     <% else %>
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Se connecter"), '.login-sm', class: 'navbar-wagon-link2 navbar-wagon-item', 'data-toggle' => 'modal' %>
@@ -37,7 +37,7 @@
         <% if user_signed_in? %>
         <div class="navbar-wagon-item usertype2">- <%= current_user.actable_type.capitalize %> -</div>
       <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
-      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
 
 
 

@@ -13,7 +13,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
       <%= link_to t(".sign_out", default: "Mon compte"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
 
     <% else %>
 
@@ -35,7 +35,7 @@
 
         <% if user_signed_in? %>
       <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
-      <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
 
 
 
