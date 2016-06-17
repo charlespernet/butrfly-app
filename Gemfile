@@ -13,6 +13,8 @@ gem 'country_select'
 
 gem 'active_record-acts_as'
 
+gem "pundit"
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
