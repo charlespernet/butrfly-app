@@ -334,4 +334,24 @@
   color: $bluegrey-dark;
 }
 
+.icon-box p {
+  font-family: "Circular-Book";
+  color: $bluegrey-dark;
+  font-size: 14px;
+  opacity: 0.8;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+}
+
+.modal-content {
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 25px;
+}
+
+.title-modal {
+  margin-bottom: 40px;
+}
+
 

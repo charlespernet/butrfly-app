@@ -193,6 +193,22 @@
   transition: color .5s ease-in-out, opacity .5s ease;
 }
 
+a .navbar-wagon-item.navbar-wagon-link:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a .navbar-wagon-item.navbar-wagon-link:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
 
 
 
