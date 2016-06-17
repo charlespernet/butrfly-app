@@ -12,6 +12,7 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
+      <%= link_to t(".sign_out", default: "Mon compte"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
 
     <% else %>
