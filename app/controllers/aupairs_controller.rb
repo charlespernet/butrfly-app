@@ -14,6 +14,7 @@ class AupairsController < ApplicationController
 
   def set_aupair
     @user = Aupair.find(params[:id])
+    authorize @user
   end
 
   def aupair_params
