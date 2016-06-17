@@ -84,7 +84,7 @@
 }
 
 .features-text {
-  justify: center;
+  text-align: center;
   color: $bluegrey-dark;
   padding-left: 15%;
   padding-right: 15%;
@@ -328,6 +328,10 @@
   color: $brand-color;
 }
 
+.fa-globe {
+  color: $brand-color;
+}
+
 .icon-box h4 {
   font-family: "Circular-Bold";
   font-size: 16px;
@@ -352,6 +356,15 @@
 
 .title-modal {
   margin-bottom: 40px;
+}
+
+.icon-box p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.fa-universal-access {
+  color: $brand-color;
 }
 
 
