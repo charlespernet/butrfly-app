@@ -1,19 +1,34 @@
-<div class="loginview text-center">
+<div class="container">
 
-  <h2 class="text-center">Sign up</h2>
-  <%= simple_form_for(:user, url: user_registration_path) do |f| %>
-    <%= f.error_notification %>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
 
-    <div class="form-inputs">
-      <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first %>
-      <%= f.input :email, required: true, autofocus: true %>
-      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    </div>
+        <div class="text-center title-modal2">Inscription</div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
 
-  <%= render "devise/shared/links" %>
+
+        <%= simple_form_for(:user, url: user_registration_path) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first, label: false %>
+            <%= f.input :email, required: true, autofocus: true, placeholder: 'Email', label: false %>
+            <%= f.input :password, required: true, placeholder: 'Password', hint: ("6 characters minimum"), label: false %>
+          </div>
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Inscription", class: "btn-modal" %>
+          </div>
+        <% end %>
+
+        <div class="loginmargins modal-links">
+          <%- if controller_name != 'sessions' %>
+            <div class="link-item">Déjà inscrit?</div>
+            <%= link_to "Connexion", new_session_path(resource_name), class:"link-item2" %><br />
+          <% end -%>
+
+        </div>
+
+  </div>
+</div>
 </div>

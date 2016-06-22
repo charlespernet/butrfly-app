@@ -5,7 +5,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 65vh;
+  height: 50vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -21,8 +21,9 @@
   font-weight: 200;
 }
 .banner p {
-  font-family: "Circular-Book";
+  font-family: "Lato";
   font-size: 15px;
+  font-weight: 300;
   color: white;
   margin-bottom: 20px;
 }
@@ -51,13 +52,14 @@
 }
 
 .features {
-  font-family: "Lato";
-  font-weight: 300;
-  letter-spacing: 3px;
+  font-family: "Circular-Black";
+  font-weight: 400;
+  letter-spacing: 0.5;
   color: $bluegrey-dark;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 35px;
   margin-bottom: 30px;
+  opacity: 0.8;
 }
 
 .homeblock {
@@ -72,25 +74,21 @@
   text-decoration: none;
 }
 
-.modal-content {
-  padding: 15px;
-  background-color: white;
-  box-shadow: none;
-  border-style: none;
-}
 
 .modalog {
   color: $bluegrey-dark;
 }
 
 .features-text {
-  text-align: center;
+  text-justify: left;
   color: $bluegrey-dark;
-  padding-left: 15%;
-  padding-right: 15%;
-  font-size: 14px;
-  opacity: 0.7;
-  margin-bottom: 65px;
+  width: 350px;
+  padding-left: auto;
+  padding-right: auto;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 60px;
+  line-height: 1.5;
 }
 
 #features2 {
@@ -144,7 +142,7 @@
 .banner2 h4 {
   font-size: 14px;
   font-family: "Circular-Book";
-  letter-spacing: 1px;
+  letter-spacing: 0.6;
 }
 .banner2 p {
   font-family: "Circular-Book";
@@ -213,7 +211,7 @@
 
 .nav-tabs li.active a {
   color: $brand-color;
-  font-family: "Circular-Medium";
+  font-family: "Circular-Book";
   text-decoration: none;
   font-size: 13px;
   border-style: none;
@@ -221,7 +219,7 @@
 
 .nav-tabs li.active a:hover {
   color: $brand-color;
-  font-family: "Circular-Medium";
+  font-family: "Circular-Book";
   text-decoration: none;
   font-size: 13px;
   background-color: white;
@@ -230,7 +228,7 @@
 
 .nav-tabs li.active a:focus {
   color: $brand-color;
-  font-family: "Circular-Medium";
+  font-family: "Circular-Book";
   text-decoration: none;
   font-size: 13px;
   border-style: none;
@@ -251,6 +249,7 @@
 .nav-tabs li a:hover {
   background-color: white;
   border-style: none;
+  color: $brand-color;
 }
 
 .navbox {
@@ -282,14 +281,10 @@
 
 .navpill-title {
   font-family: "Circular-Book";
-  font-size: 14px;
+  font-size: 13px;
   color: $bluegrey-light;
 }
 
-.fa {
-  color: $bluegrey-dark;
-  font-size: 20px;
-}
 
 .cardcondition {
   width: 200px;
@@ -347,16 +342,6 @@
   line-height: 20px;
 }
 
-.modal-content {
-  padding-top: 15px;
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-bottom: 25px;
-}
-
-.title-modal {
-  margin-bottom: 40px;
-}
 
 .icon-box p {
   padding-left: 20px;
@@ -366,5 +351,12 @@
 .fa-universal-access {
   color: $brand-color;
 }
+
+.loginview2 {
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-top: 20px;
+}
+
 
 

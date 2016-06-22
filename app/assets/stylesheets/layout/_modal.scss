@@ -1,0 +1,217 @@
+.modal-content {
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 25px;
+  background-color: rgba(255,255,255,1);
+  border-radius: 6px;
+  box-shadow: none;
+  border-style: none;
+}
+
+.title-modal {
+  margin-bottom: 35px;
+  font-family: "Circular-Medium";
+  font-size: 16px;
+  margin-top: 25px;
+  color: $bluegrey-dark;
+  letter-spacing: -1px;
+  opacity: 0.8;
+}
+
+.modal-backdrop {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-backdrop {
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+
+.form-inputs input {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 18px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: $brand-color;
+}
+
+.form-inputs input:focus {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  color: $brand-color;
+}
+
+.form-inputs input::placeholder {
+  color: $bluegrey-light;
+  font-family: "Circular-Book";
+  font-size: 13px;
+}
+
+
+label.boolean.optional {
+  color: $bluegrey-light;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+input#user_remember_me.boolean.optional {
+  border-radius: 50%;
+}
+
+.checkbox {
+  padding-left: 9px;
+  margin-top: 30px;
+}
+
+.btn-modal {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  padding-left: 70px !important;
+  padding-right: 70px !important;
+  font-family: 'Circular-Book' !important;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: $bluegrey-dark;
+  color: $bluegrey-light;
+  border-style: none;
+  margin-top: 25px;
+}
+
+.btn-modal:hover {
+  color: #D3D7EA;
+  background-color: $bluegrey-dark;
+  text-decoration: none;
+}
+
+.btn-modal:focus {
+  outline: none;
+  border-style: none;
+  text-decoration: none;
+}
+
+.btn-modal.active:focus {
+  outline: none;
+  border-style: none;
+  text-decoration: none;
+}
+
+.help-block {
+  padding-left: 12px;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 25px;
+  color: #A6A8B3;
+  font-family: 'Circular-Book' !important;
+  opacity: 0.8;
+}
+
+.form-group.radio_buttons.required.user_type {
+  color: $bluegrey-light;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.modal-links {
+  margin-bottom: 16px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-item {
+  margin-right: 12px;
+  color: #A6A8B3;
+  opacity: 1;
+}
+
+.link-item2 {
+  margin-left: 5px;
+}
+
+.navbar-wagon-brand2 img {
+  width: 60px;
+}
+
+.title-modal2 {
+  margin-bottom: 35px;
+  font-family: "Circular-Bold";
+  font-size: 20px;
+  margin-top: 25px;
+  color: $bluegrey-dark;
+  letter-spacing: -1px;
+  opacity: 0.8;
+}
+
+
+.btn-modal-alt {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  font-family: 'Circular-Book' !important;
+  font-size: 12px !important;
+  border-radius: 3px;
+  background-color: white;
+  color: $bluegrey-dark;
+  border-style: none;
+  margin-top: 25px;
+  border: 1px solid $bluegrey-light;
+  transition: .5s ease;
+  opacity: 0.9;
+}
+
+.btn-modal-alt:hover {
+  background-color: $bluegrey-dark;
+  color: white;
+  text-decoration: none;
+  border: 1px solid $bluegrey-dark;
+  opacity: 1;
+}
+
+.btn-modal-alt:focus {
+  outline: none;
+  border-style: none;
+  text-decoration: none;
+}
+
+.btn-modal-alt.active:focus {
+  outline: none;
+  border-style: none;
+  text-decoration: none;
+}
+
+
+.radio input[type="radio"] {
+
+}
+
+
+
+.radio,
+.checkbox {
+  display: inline-block;
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: relative;
+  margin-left: -8px;
+  margin-right: 10px;
+}

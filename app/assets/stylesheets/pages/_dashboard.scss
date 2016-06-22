@@ -1,0 +1,53 @@
+.dashpage {
+  display: flex;
+}
+
+.leftblock {
+  border-right: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  min-width: 20%;
+  max-width: 20%;
+  background-color: white;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.rightblock {
+  height: 100vh;
+  min-width: 80%;
+  max-width: 80%;
+}
+
+.leftblock h5 {
+  font-family: "Circular-Book";
+  font-size: 1em;
+  color: $bluegrey-light;
+}
+
+.family-name {
+  font-family: "Circular-Black" !important;
+  color: $bluegrey-dark !important;
+  font-size: 16px !important;
+  opacity: 0.9 !important;
+  margin-bottom: 25px;
+}
+
+.hard-family {
+  margin-bottom: -5px !important;
+}
+
+.child-number {
+  font-family: "Circular-Medium" !important;
+  color: $brand-color !important;
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+  margin-bottom: 25px;
+}
+
+.search {
+  font-family: "Circular-Medium" !important;
+  color: $brand-color !important;
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+  margin-bottom: 25px;
+}

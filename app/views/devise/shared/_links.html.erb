@@ -1,11 +1,11 @@
 
-<div class="text-center loginmargins">
+<div class="loginmargins modal-links">
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "Connexion", new_session_path(resource_name), class:"link-item" %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-item2" %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
