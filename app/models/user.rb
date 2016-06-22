@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  TYPES = ["Aupair", "Family"]
+  GENDERS = ["Not Telling", "Male", "Female"]
 
   def country_name
     country = ISO3166::Country[country_code]
