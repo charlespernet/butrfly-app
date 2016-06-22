@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160622100004) do
     t.boolean "educational_experience"
     t.boolean "accepted_domestic_animal"
     t.boolean "sports"
-    t.integer "mother_tongue",            default: [], array: true
+    t.integer "mother_tongue"
     t.integer "languages_spoken",         default: [], array: true
     t.integer "prefered_countries",       default: [], array: true
   end
