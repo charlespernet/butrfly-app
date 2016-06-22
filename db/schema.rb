@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160622100004) do
     t.boolean "sports"
     t.integer "mother_tongue"
     t.integer "languages_spoken",         default: [], array: true
-    t.integer "prefered_countries",       default: [], array: true
+    t.string  "prefered_countries",       default: [], array: true
   end
 
   create_table "families", force: :cascade do |t|

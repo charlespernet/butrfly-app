@@ -7,6 +7,6 @@ class AddAttributesToAupairs < ActiveRecord::Migration
     add_column :aupairs, :sports, :boolean
     add_column :aupairs, :mother_tongue, :integer
     add_column :aupairs, :languages_spoken, :integer, array:true, default:[]
-    add_column :aupairs, :prefered_countries, :integer, array:true, default:[]
+    add_column :aupairs, :prefered_countries, :string, array:true, default:[]
   end
 end
