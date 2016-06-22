@@ -18,8 +18,8 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Se connecter"), '#login', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
-      <%= link_to t(".top_call_to_action", default: "Créer un compte"), '#signup', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".sign_in", default: "Connexion"), '#login', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".top_call_to_action", default: "Inscription"), '#signup', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
 
     <% end %>
 
@@ -30,7 +30,7 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
     <div class="dropdown">
-      <i class="fa fa-angle-double-down dropdown-toggle" data-toggle="dropdown"></i>
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
         <% if user_signed_in? %>
