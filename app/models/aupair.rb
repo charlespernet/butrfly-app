@@ -3,6 +3,6 @@ class Aupair < ActiveRecord::Base
 
   # Returns User's gender as text
   def gender_txt
-    ["Not Telling", "Male", "Female"][self.gender - 1]
+    User::GENDERS[self.gender - 1]
   end
 end
