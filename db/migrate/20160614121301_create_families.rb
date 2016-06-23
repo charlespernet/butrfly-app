@@ -4,7 +4,6 @@ class CreateFamilies < ActiveRecord::Migration
 
       t.timestamps null: false
       t.string :name
-      t.boolean :smoker
       t.boolean :domestic_animal
     end
   end

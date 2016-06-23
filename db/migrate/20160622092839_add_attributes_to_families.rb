@@ -11,6 +11,5 @@ class AddAttributesToFamilies < ActiveRecord::Migration
     add_column :families, :family_type, :integer, default: 0
     add_column :families, :housework, :boolean
     add_column :families, :driving_license_required, :boolean
-    remove_column :families, :smoker
   end
 end
