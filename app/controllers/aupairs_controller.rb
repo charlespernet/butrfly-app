@@ -1,5 +1,12 @@
 class AupairsController < ApplicationController
-  before_action :set_aupair, only: [:edit, :update]
+  before_action :set_aupair, only: [:show, :edit, :update]
+
+  def index
+    @aupairs = Aupair.all
+  end
+
+  def show
+  end
 
   def edit
   end

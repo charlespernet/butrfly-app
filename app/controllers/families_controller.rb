@@ -1,5 +1,12 @@
 class FamiliesController < ApplicationController
-  before_action :set_family, only: [:edit, :update]
+  before_action :set_family, only: [:show, :edit, :update]
+
+  def index
+    @families = Family.all
+  end
+
+  def show
+  end
 
   def edit
   end
