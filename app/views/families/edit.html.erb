@@ -2,7 +2,6 @@
   <%= simple_form_for @user do |f| %>
     <%= f.input :name %>
     <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
-    <%= f.input :smoker %>
     <%= f.input :domestic_animal %>
     <div class="form-actions text-center">
       <%= f.button :submit, "Mettre à jour", class: "btn-primary btn btn-md" %>
