@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622100004) do
+ActiveRecord::Schema.define(version: 20160623121645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160622100004) do
     t.text    "description"
     t.boolean "driving_license"
     t.boolean "musician"
-    t.integer "gender",                   default: 1
+    t.integer "gender",                   default: 0
     t.boolean "experience_aupair"
     t.boolean "educational_experience"
     t.boolean "accepted_domestic_animal"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160622100004) do
     t.integer "mother_tongue"
     t.integer "languages_spoken",         default: [], array: true
     t.string  "prefered_countries",       default: [], array: true
+    t.date    "dispo_from"
+    t.integer "dispo_length"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "families", force: :cascade do |t|
@@ -48,6 +57,33 @@ ActiveRecord::Schema.define(version: 20160622100004) do
     t.boolean "housework"
     t.boolean "driving_license_required"
   end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefered_countries", force: :cascade do |t|
+    t.integer  "aupair_id"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "prefered_countries", ["aupair_id"], name: "index_prefered_countries_on_aupair_id", using: :btree
+  add_index "prefered_countries", ["country_id"], name: "index_prefered_countries_on_country_id", using: :btree
+
+  create_table "spoken_languages", force: :cascade do |t|
+    t.integer  "aupair_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "spoken_languages", ["aupair_id"], name: "index_spoken_languages_on_aupair_id", using: :btree
+  add_index "spoken_languages", ["language_id"], name: "index_spoken_languages_on_language_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -70,4 +106,8 @@ ActiveRecord::Schema.define(version: 20160622100004) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "prefered_countries", "aupairs"
+  add_foreign_key "prefered_countries", "countries"
+  add_foreign_key "spoken_languages", "aupairs"
+  add_foreign_key "spoken_languages", "languages"
 end
