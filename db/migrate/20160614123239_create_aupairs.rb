@@ -7,7 +7,6 @@ class CreateAupairs < ActiveRecord::Migration
       t.text :description
       t.boolean :driving_license
       t.boolean :musician
-      t.boolean :smoker
 
       t.timestamps null: false
     end
