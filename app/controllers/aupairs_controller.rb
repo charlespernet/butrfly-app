@@ -25,6 +25,22 @@ class AupairsController < ApplicationController
   end
 
   def aupair_params
-    params.require(:aupair).permit(:first_name,:last_name, :birth_date, :country_code, :description, :driving_license, :musician, language_ids: [])
+    params.require(:aupair).permit(
+      :first_name,
+      :last_name,
+      :birth_date,
+      :country_code,
+      :gender,
+      :description,
+      :driving_license,
+      :musician,
+      :dispo_length,
+      :dispo_from,
+      :experience_aupair,
+      :educational_experience,
+      :accepted_domestic_animal, 
+      :sports,
+      language_ids: []
+    )
   end
 end

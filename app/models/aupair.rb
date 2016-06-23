@@ -5,7 +5,7 @@ class Aupair < ActiveRecord::Base
 
   # Returns User's gender as text
   def gender_txt
-    User::GENDERS[self.gender - 1]
+    User.genders.key(self.gender)
   end
 
   # Returns User's prefered countries as text

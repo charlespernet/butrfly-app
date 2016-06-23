@@ -6,8 +6,15 @@
     <%= f.input :last_name %>
     <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, selected: Date.today.year - 25 %>
     <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
+    <%= f.input :gender, collection: User.genders.map { |k, v| [k, v] }, selected: 0 %>
     <%= f.input :description %>
     <%= f.association :languages, as: :check_boxes %>
+    <%= f.input :experience_aupair %>
+    <%= f.input :educational_experience %>
+    <%= f.input :accepted_domestic_animal %>
+    <%= f.input :sports %>
+    <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4 %>
+    <%= f.input :dispo_length, collection: User.dispo_lengths.map { |k, v| [k, v] }, selected: 0 %>
     <%= f.input :driving_license %>
     <%= f.input :musician %>
     <div class="form-actions text-center">

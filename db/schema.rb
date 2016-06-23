@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623101002) do
+ActiveRecord::Schema.define(version: 20160623113138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160623101002) do
     t.integer "mother_tongue"
     t.integer "languages_spoken",         default: [], array: true
     t.string  "prefered_countries",       default: [], array: true
+    t.date    "dispo_from"
+    t.integer "dispo_length"
   end
 
   create_table "families", force: :cascade do |t|
