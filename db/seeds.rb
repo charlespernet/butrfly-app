@@ -1,5 +1,5 @@
 puts "destroying users"
-[Language, Aupair, Family].each do |model|
+[SpokenLanguage, PreferedCountry, Country, Language, Aupair, Family].each do |model|
   model.destroy_all
 end
 puts "users detroyed"
@@ -14,6 +14,20 @@ Language.create([
   {name: "Italian", code: "it"},
   {name: "Portuguese", code: "pt"},
   {name: "Spanish", code: "es"}
+])
+
+# Countries
+puts "creating Countries"
+Country.create([
+  {name: "France", code: "fr"},
+  {name: "United Kingdom", code: "uk"},
+  {name: "Italy", code: "it"},
+  {name: "Espagne", code: "es"},
+  {name: "Germany", code: "de"},
+  {name: "Belgium", code: "be"},
+  {name: "Switzerland", code: "sw"},
+  {name: "Ireland", code: "ir"},
+  {name: "Luxembourg", code: "lu"}
 ])
 
 # 1 famille non fumeur sans animaux

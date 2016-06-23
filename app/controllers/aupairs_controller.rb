@@ -38,9 +38,10 @@ class AupairsController < ApplicationController
       :dispo_from,
       :experience_aupair,
       :educational_experience,
-      :accepted_domestic_animal, 
+      :accepted_domestic_animal,
       :sports,
-      language_ids: []
+      language_ids: [],
+      country_ids: []
     )
   end
 end

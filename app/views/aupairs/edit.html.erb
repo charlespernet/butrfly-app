@@ -15,6 +15,7 @@
     <%= f.input :sports %>
     <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4 %>
     <%= f.input :dispo_length, collection: User.dispo_lengths.map { |k, v| [k, v] }, selected: 0 %>
+    <%= f.association :countries, as: :check_boxes %>
     <%= f.input :driving_license %>
     <%= f.input :musician %>
     <div class="form-actions text-center">
