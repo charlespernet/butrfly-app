@@ -25,6 +25,22 @@ class FamiliesController < ApplicationController
   end
 
   def family_params
-    params.require(:family).permit(:name, :country_code, :smoker, :domestic_animal)
+    params.require(:family).permit(
+      :name,
+      :country_code,
+      :domestic_animal,
+      :description,
+      :family_type,
+      :prefered_gender_aupair,
+      :starting_date,
+      :length_of_stay,
+      :experience_with_aupair,
+      :children_age_from,
+      :children_age_to,
+      :children_number,
+      :housework,
+      :driving_license_required
+    )
   end
+
 end
