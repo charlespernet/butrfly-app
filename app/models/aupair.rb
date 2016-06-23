@@ -1,17 +1,7 @@
 class Aupair < ActiveRecord::Base
   acts_as :user
   has_many :spoken_languages
-
-  LANGUAGES =
-  [
-    "France",
-    "Italie",
-    "Espagne",
-    "Allemagne",
-    "Royaume-uni",
-    "Belgique",
-  ]
-
+  has_many :languages, through: :spoken_languages
 
   # Returns User's gender as text
   def gender_txt
