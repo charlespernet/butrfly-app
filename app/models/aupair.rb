@@ -1,5 +1,6 @@
 class Aupair < ActiveRecord::Base
   acts_as :user
+  has_many :spoken_languages
 
   LANGUAGES =
   [
