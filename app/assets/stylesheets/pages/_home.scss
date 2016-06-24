@@ -403,9 +403,8 @@
 
 .btn-banner-home2 {
   color: white;
-  font-size: 13px;
-  font-weight: 300;
-  font-family: "Lato" !important;
+  font-size: 12px;
+  font-family: "Circular-Book" !important;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 20px;
@@ -415,14 +414,13 @@
   margin-left: 9px;
   margin-right: 9px;
   border-radius: 3px;
-  opacity: 1;
+  letter-spacing: -0.2px;
   transition: 0.5s ease;
 }
 
 .btn-banner-home2:hover {
   text-decoration: none;
   color: white;
-  opacity: 1;
   transition: 0.5s ease;
   background-color: $brand-color;
 }
