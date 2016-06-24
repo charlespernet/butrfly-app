@@ -41,10 +41,14 @@
 .navbar-wagon-link {
   color: white;
   font-size: 14px;
+  letter-spacing: -0.5px;
+  transition: 0.5s ease;
 }
 .navbar-wagon-link:hover {
   color: white;
   text-decoration: none;
+  font-family: "Circular-Bold";
+  transition: 0.5s ease;
 }
 
 /* Navbar right button */

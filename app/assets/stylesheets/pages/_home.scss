@@ -5,14 +5,16 @@
 .banner {
   color: white;
   text-align: center;
-  height: 50vh;
+  height: 65vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
   background-image: linear-gradient(-225deg, rgba(80,101,80,0.4) 0%, rgba(130,80,101,0.6) 50%), url(hero.jpg);
   background-position: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 .banner h1 {
   font-size: 30px;
@@ -358,5 +360,88 @@
   margin-top: 20px;
 }
 
+.call-to-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 17px;
+  padding-top: 17px;
+  background-color: rgba(255,255,255,0.3);
+  position: absolute;
+  bottom: 0px;
+}
+
+.btn-banner-home {
+  color: white;
+  font-size: 13px;
+  font-family: "Circular-Book" !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $bluegrey-light;
+  text-align: center;
+  margin-left: 9px;
+  margin-right: 9px;
+  border-radius: 3px;
+  opacity: 0.9;
+  transition: 0.5s ease;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-home {
+  font-family: "Circular-Book" !important;
+  font-size: 14px;
+  color: $bluegrey-dark;
+  letter-spacing: -0.5px;
+}
+
+.btn-banner-home2 {
+  color: white;
+  font-size: 13px;
+  font-weight: 300;
+  font-family: "Lato" !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $bluegrey-dark;
+  text-align: center;
+  margin-left: 9px;
+  margin-right: 9px;
+  border-radius: 3px;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.btn-banner-home2:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+  transition: 0.5s ease;
+  background-color: $brand-color;
+}
+
+.btn-banner-home2:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-banner-home:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.btn-banner-home:visited {
+  text-decoration: none;
+  color: white;
+}
 
 
