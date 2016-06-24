@@ -1,15 +1,13 @@
-<div class="col-xs-12 col-md-6">
-  <div class="mansory-container">
-    <div class="mansory-picture">
+<div class="mansory-container item <%= aupair.languages.pluck(:code).join(" ") %>">
+  <div class="mansory-picture">
 
+  </div>
+  <div class="mansory-text">
+    <div>
+      <%= aupair.first_name %> <%= aupair.last_name %>
     </div>
-    <div class="mansory-text">
-      <div>
-        <%= aupair.first_name %> <%= aupair.last_name %>
-      </div>
-      <div>
-        <%= link_to "Voir", aupair, class: "btn-modal-alt" %>
-      </div>
+    <div>
+      <%= link_to "Voir", aupair, class: "btn-modal-alt" %>
     </div>
   </div>
 </div>
