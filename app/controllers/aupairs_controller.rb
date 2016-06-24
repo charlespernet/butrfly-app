@@ -34,7 +34,7 @@ class AupairsController < ApplicationController
       :description,
       :driving_license,
       :musician,
-      :dispo_length,
+      :stay_duration,
       :dispo_from,
       :experience_aupair,
       :educational_experience,

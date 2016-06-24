@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623121645) do
+ActiveRecord::Schema.define(version: 20160624085253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 20160623121645) do
     t.text    "description"
     t.boolean "driving_license"
     t.boolean "musician"
-    t.integer "gender",                   default: 0
+    t.integer "gender_cd",                default: 0
     t.boolean "experience_aupair"
     t.boolean "educational_experience"
     t.boolean "accepted_domestic_animal"
     t.boolean "sports"
     t.date    "dispo_from"
-    t.integer "dispo_length"
+    t.integer "stay_duration_cd"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 20160623121645) do
     t.integer "children_age_to"
     t.integer "children_number"
     t.text    "description"
-    t.integer "prefered_gender_aupair",   default: 0
+    t.integer "prefered_gender_cd",       default: 0
     t.date    "starting_date"
-    t.integer "length_of_stay",           default: 0
+    t.integer "prefered_duration_cd",     default: 0
     t.boolean "experience_with_aupair"
-    t.integer "family_type",              default: 0
+    t.integer "family_type_cd",           default: 0
     t.boolean "housework"
     t.boolean "driving_license_required"
   end

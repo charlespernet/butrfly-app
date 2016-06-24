@@ -11,6 +11,8 @@ gem 'redis'
 gem 'devise'
 gem 'country_select'
 
+gem 'simple_enum'
+
 gem 'active_record-acts_as'
 
 gem "pundit"

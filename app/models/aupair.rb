@@ -6,8 +6,11 @@ class Aupair < ActiveRecord::Base
   has_many :prefered_countries
   has_many :countries, through: :prefered_countries
 
-  # Returns User's gender as text
-  def gender_txt
-    User.genders.key(self.gender)
-  end
+  as_enum :gender, undefined: 0, male: 1, female: 2
+
+  # very_short = "< de 3 mois"
+  # short = "de 3 à 6 mois"
+  # long = "de 6 à 12 mois"
+  # very_long = "> 12 mois"
+  as_enum :stay_duration, very_short: 0, short: 1, long: 2, very_long: 3
 end
