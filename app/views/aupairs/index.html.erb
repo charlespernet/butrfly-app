@@ -12,6 +12,14 @@
     </p>
   </div>
 
+  <div class="">
+    <%= simple_form_for :search, method: :get do |f| %>
+      <%= f.input :date, as: :date %>
+      <%= f.submit %>
+    <% end %>
+    <%= link_to "clean search", aupairs_path %>
+  </div>
+
   <div class="grid">
     <%= render @aupairs %>
   </div>
