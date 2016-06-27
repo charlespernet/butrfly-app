@@ -1,8 +1,9 @@
 class AupairsController < ApplicationController
   before_action :set_aupair, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @aupairs = Aupair.all
+    @aupairs = Aupair.all.includes(:languages)
   end
 
   def show
