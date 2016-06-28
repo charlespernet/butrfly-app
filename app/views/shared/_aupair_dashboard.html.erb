@@ -1,90 +1,99 @@
-<div class="banner2">
-  <div class="banner-content">
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <h4><%= @user.email %></h4>
+<div class="fullpage">
+
+  <div class="filter-block">
+
+    <div class="identity-dashboard">
+
+      <span><%= @user.first_name %> <span class="family-name2"><%= @user.last_name %> </span></span>
+
+    </div>
+
+    <div class="item-dashboard">
+
+      <div>Age<div class="family-name2"><%= (Date.today - @user.birth_date).to_i / 365.25.floor %>  ans </div></div>
+
+    </div>
+
+    <div class="item-dashboard">
+
+      <div>Genre<div class="family-name2"><%= @user.gender.capitalize %></div></div>
+
+    </div>
+
+
+    <div class="item-dashboard">
+      <div>Permis de conduire<div class="family-name2"><%= @user.driving_license ? "oui" : "non" %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <div>Sportif<div class="family-name2"><%= @user.sports ? "oui" : "non" %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <div>Musicien<div class="family-name2"><%= @user.musician ? "oui" : "non" %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <div>Expèrience Au-pair<div class="family-name2"><%= @user.experience_aupair ? "oui" : "non" %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <div>Expèrience Jeunesse<div class="family-name2"><%= @user.educational_experience ? "oui" : "non" %></div></div>
+    </div>
+
   </div>
-</div>
 
-<div class="navbox">
 
-<!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
-  </ul>
 
-  <!-- Tab panes -->
+  <div class="content-block">
 
-</div>
+    <div class="banner2">
+      <div class="banner-content">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h4><%= @user.email %></h4>
+      </div>
+    </div>
 
-<div class="tab-content">
+    <div class="navbox">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
+      </ul>
+
+    </div>
+
+    <div class="tab-content">
 
     <div role="tabpanel" class="tab-pane active" id="home">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-database" aria-hidden="true"></i>
         <h4 class="navpill-title">Infos</h4>
-
-
-          <div class="row">
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div class="card-titre">EMAIL</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.email %></div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="card-titre">NOM DE FAMILLE</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.last_name %></div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="card-titre">PAYS</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.country_code %></div>
-            </div>
-          </div>
-
-
+        <div class="text-center">
+          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-modal-alt" %>
         </div>
-
-
-
-        </br>
-
-        <div>
-          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-modal" %>
-        </div>
-
-        </br>
-        </br>
-        </br>
-
-
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-eye" aria-hidden="true"></i>
         <h4 class="navpill-title">Profil</h4>
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="messages">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-comments" aria-hidden="true"></i>
         <h4 class="navpill-title">Messages</h4>
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="settings">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
         <h4 class="navpill-title">Réglages</h4>
       </div>
@@ -92,4 +101,6 @@
 
   </div>
 
+  </div>
 
+</div>
