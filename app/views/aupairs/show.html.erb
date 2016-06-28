@@ -1,1 +1,51 @@
-Le profil de <%= @user.first_name %>
+<div class="fullpage">
+
+  <div class="content-block">
+
+    <div class="banner2">
+      <div class="banner-content">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h4><%= @user.email %></h4>
+      </div>
+    </div>
+
+
+    <div class="aupair-infos">
+
+      <div class="identity-dashboard2">
+
+        <span><%= @user.first_name %> <span class="family-name3"><%= @user.last_name %> </span></span>
+
+      </div>
+
+
+      <div class="item-dashboard2">
+
+        <div>Age<div class="family-name2"><%= (Date.today - @user.birth_date).to_i / 365.25.floor %>  ans </div></div>
+
+      </div>
+
+      <div class="item-dashboard2">
+
+        <div>Genre<div class="family-name2"><%= @user.gender.capitalize %></div></div>
+
+      </div>
+    </div>
+
+
+    <div class="aupair-description">
+      <div class="aupair-dsc-text">Description</div>
+      <div class="dsc-text">Salut c'est moi je suis un gros ..... Salut c'est moi je suis </div>
+    </div>
+
+    <div class="aupair-description2">
+      <div class="aupair-dsc-text">Détails</div>
+      <div class="dsc-text">Salut c'est moi je suis un gros ..... Salut c'est moi je suis </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
