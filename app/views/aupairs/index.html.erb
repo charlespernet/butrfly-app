@@ -1,23 +1,28 @@
 <div class="container">
-  <h2>Langues parlées</h2>
-  <div id="form-ui">
-    <p>
-      <label><input type="checkbox" value=".fr" /> Français</label>
-      <label><input type="checkbox" value=".en" /> Anglais</label>
-      <label><input type="checkbox" value=".de" /> Allemand</label>
-      <label><input type="checkbox" value=".it" /> Italien</label>
-      <label><input type="checkbox" value=".es" /> Espagnol</label>
-      <label><input type="checkbox" value=".pt" /> Portuguais</label>
-      <label><input type="checkbox" value=".ar" /> Arabe</label>
-    </p>
-  </div>
-
-  <div class="">
-    <%= simple_form_for :search, method: :get do |f| %>
-      <%= f.input :date, as: :date %>
-      <%= f.submit %>
-    <% end %>
-    <%= link_to "clean search", aupairs_path %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <p>Langues parlées</p>
+      <div id="form-ui">
+        <p>
+          <label><input type="checkbox" value=".fr" /> Français</label>
+          <label><input type="checkbox" value=".en" /> Anglais</label>
+          <label><input type="checkbox" value=".de" /> Allemand</label>
+          <label><input type="checkbox" value=".it" /> Italien</label>
+          <label><input type="checkbox" value=".es" /> Espagnol</label>
+          <label><input type="checkbox" value=".pt" /> Portuguais</label>
+          <label><input type="checkbox" value=".ar" /> Arabe</label>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <p>Disponibilités</p>
+      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+        <%= f.input :country, collection: Country.all, selected: @country.try(:id) %>
+        <%= f.submit "Rechercher", class: "btn-banner-home2" %>
+        <%= link_to "Effacer", aupairs_path, class: "btn-banner-home2" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="grid">
