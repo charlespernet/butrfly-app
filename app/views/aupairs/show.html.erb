@@ -21,13 +21,14 @@
 
       <div class="item-dashboard2">
 
-        <div>Age<div class="family-name2"><%= (Date.today - @user.birth_date).to_i / 365.25.floor %>  ans </div></div>
+
+        <span>Age: <span class="family-name2"><%= (Date.today - @user.birth_date).to_i / 365.25.floor %> ans</span></span>
 
       </div>
 
       <div class="item-dashboard2">
 
-        <div>Genre<div class="family-name2"><%= @user.gender.capitalize %></div></div>
+        <span>Genre: <span class="family-name2"><%= @user.gender.capitalize %></span></span>
 
       </div>
     </div>
