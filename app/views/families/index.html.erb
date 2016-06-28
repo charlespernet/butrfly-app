@@ -1,10 +1,10 @@
 <div class="container">
-  <h2>Cherche</h2>
-  <div id="form-ui">
-    <p>
-      <label><input type="checkbox" value=".male" /> Un Aupair masculin</label>
-      <label><input type="checkbox" value=".female" /> Un Aupair féminin</label>
-    </p>
+  <div id="form-ui" class="checkbox">
+    Cherche :
+    <input id="male" type="checkbox" value=".male" />
+    <label for="male">Un Aupair masculin</label>
+    <input id="female" type="checkbox" value=".female" />
+    <label for="female">Un Aupair féminin</label>
   </div>
   <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
     <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
