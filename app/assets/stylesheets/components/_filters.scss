@@ -1,0 +1,21 @@
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    &:checked + label {
+      color: red;
+      opacity: 1;
+    }
+  }
+  label {
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Circular-Black';
+    opacity: 0.5;
+  }
+}
