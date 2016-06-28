@@ -8,7 +8,7 @@ class AupairsController < ApplicationController
       @country = Country.find(search["country"])
       country_code = @country.code
       @date = Date.new search["date(1i)"].to_i, search["date(2i)"].to_i, search["date(3i)"].to_i
-      @aupairs = Aupair.dispo_at_date(@date).want_to_come_to(country_code)
+      @aupairs = Aupair.includes(:languages).dispo_at_date(@date).want_to_come_to(country_code)
     else
       @aupairs = Aupair.all.includes(:languages)
     end
