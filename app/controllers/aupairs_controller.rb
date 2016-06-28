@@ -3,7 +3,15 @@ class AupairsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @aupairs = Aupair.all.includes(:languages)
+    search = params[:search]
+    if search
+      @country = Country.find(search["country"])
+      country_code = @country.code
+      @date = Date.new search["date(1i)"].to_i, search["date(2i)"].to_i, search["date(3i)"].to_i
+      @aupairs = Aupair.includes(:languages).dispo_at_date(@date).want_to_come_to(country_code)
+    else
+      @aupairs = Aupair.all.includes(:languages)
+    end
   end
 
   def show

@@ -6,6 +6,12 @@
       <label><input type="checkbox" value=".female" /> Un Aupair féminin</label>
     </p>
   </div>
+  <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+    <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+    <%= country_select("search", "country", only: ["FR", "ES", "IT", "UK", "DE", "BE", "SW", "IR", "LU"], selected: @country_code) %>
+    <%= f.submit "Rechercher", class: "btn-banner-home2" %>
+    <%= link_to "Effacer", families_path, class: "btn-banner-home2" %>
+  <% end %>
 
   <div class="grid">
     <%= render @families %>
