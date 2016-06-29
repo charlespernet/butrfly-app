@@ -1,110 +1,159 @@
+<div class="fullpage">
 
+  <div class="filter-block">
 
+    <div class="identity-dashboard">
 
-<div class="dashpage">
-
-
-
-
-<div class="leftblock">
-
-  <div class="text-center"><h5 class="hard-family">Famille</h5><h5 class="family-name">Ping-Pong</h5></div>
-  <div class="text-center"><div class="child-number">3 enfants</div></div>
-
-  <div class="text-center"><h5 class="hard-family">Recherche</h5><h5 class="search">Fille Au-pair</h5></div>
-
-  <div class="text-center"><h5 class="hard-family">Date</h5><h5 class="search">Du 16.03.16 au 25.03.16</h5></div>
-
-
-</div>
-
-
-
-
-<div class="rightblock">
-
-
-<div class="banner2">
-  <div class="banner-content">
-    <h1>Famille <%= @user.name %></h1>
-    <h4><%= @user.email %></h4>
-  </div>
-</div>
-
-
-<div class="navbox">
-
-<!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-
-</div>
-<div class="tab-content">
-
-    <div role="tabpanel" class="tab-pane active" id="home">
-      <div class="container text-center navpill-one">
-        <i class="fa fa-database" aria-hidden="true"></i>
-        <h4 class="navpill-title">Infos</h4>
-
-        <div class="row">
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="card-titre">EMAIL</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.email %></div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="card-titre">NOM</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.name %></div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="card-titre">PAYS</div>
-            <div class="cardinfos">
-              <div class="navbar-wagon-link-grey"><%= @user.country_code %></div>
-            </div>
-          </div>
-
-
-        </div>
-
-
-        <% if @user.domestic_animal %>
-          <div class="cardcondition">
-            <h3 class="fa fa-paw" aria-hidden="true"></h3>
-            <p>Animal domestique</p>
-          </div>
-        <% end %>
+      <div>
+        <div class="dsb-name-title">Famille <%= @user.name %></div>
+        <div class="dsb-email"><%= @user.email %> </div>
       </div>
 
     </div>
 
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Cherche à partir du <div class="family-name4"><%= @user.starting_date %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Type de famille<div class="family-name4"><%= @user.family_type %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Ages des enfants<div class="family-name4">De <%= @user.children_age_from %> à <%= @user.children_age_to %> ans</div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Permis de conduire requis<div class="family-name4"><%= @user.driving_license_required ? "oui" : "non" %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Tâches ménagères<div class="family-name4"><%= @user.housework ? "oui" : "non" %></div></div>
+    </div>
+
+
+  </div>
+
+
+
+  <div class="content-block">
+
+    <div class="banner2">
+      <div class="banner-content">
+        <h1>Famille <%= @user.name %></h1>
+        <h4><%= @user.email %></h4>
+      </div>
+    </div>
+
+
+    <div class="your-search" >
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Duréé du contrat<div class="family-name4"><%= @user.prefered_duration %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Nationalité<div class="family-name4"><%= @user.country_code %></div></div>
+      </div>
+
+    </div>
+
+
+    <div class="ys-aupair-description">
+
+      <div class="ds-title-link">
+        <div class="ys-aupair-dsc-text">Description | </div>
+        <i class="fa fa-pencil your-search-left-icon2" aria-hidden="true"></i>
+      </div>
+
+      <div class="dsc-text">Salut c'est moi je suis un gros ..... Salut c'est moi je suis jjeugef hfgejhgf hgfegjhef hgfegjhgfejhgf hgergjhgjf hgfehgjhgef hgfehgjhgf jheuiut </div>
+
+    </div>
+
+
+    <div class="dsb-buttons-group" >
+
+
+      <%= link_to "Modifier", edit_family_path(@user), class: "dsb-profil-btn" %>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="navbox">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
+      </ul>
+
+    </div>
+
+    <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="text-center navpill-one">
+
+
+
+
+
+
+
+
+        <h4 class="navpill-title">Infos</h4>
+
+        <div class="text-center">
+          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-generic" %>
+        </div>
+
+
+
+      </div>
+    </div>
+
     <div role="tabpanel" class="tab-pane" id="profile">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-eye" aria-hidden="true"></i>
         <h4 class="navpill-title">Profil</h4>
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="messages">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-comments" aria-hidden="true"></i>
         <h4 class="navpill-title">Messages</h4>
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="settings">
-      <div class="container text-center navpill-one">
+      <div class="text-center navpill-one">
         <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
         <h4 class="navpill-title">Réglages</h4>
       </div>
@@ -112,12 +161,6 @@
 
   </div>
 
-
-<div class="container text-center">
-  <%= link_to "Modifier", edit_family_path(@user), class: "btn-modal-alt" %>
-</div>
-
-
-</div>
+  </div>
 
 </div>

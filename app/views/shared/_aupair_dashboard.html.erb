@@ -4,40 +4,50 @@
 
     <div class="identity-dashboard">
 
-      <span><%= @user.first_name %> <span class="family-name2"><%= @user.last_name %> </span></span>
+      <div>
+        <div class="dsb-name-title"><%= @user.first_name + " " %><%= @user.last_name %></div>
+        <div class="dsb-email"><%= @user.email %> </div>
+      </div>
 
     </div>
 
     <div class="item-dashboard">
 
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Age<div class="family-name4"><%= (Date.today - @user.birth_date).to_i / 365.25.floor %>  ans </div></div>
 
     </div>
 
     <div class="item-dashboard">
 
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Genre<div class="family-name4"><%= @user.gender.capitalize %></div></div>
 
     </div>
 
 
     <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Permis de conduire<div class="family-name4"><%= @user.driving_license ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Sportif<div class="family-name4"><%= @user.sports ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Musicien<div class="family-name4"><%= @user.musician ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Expèrience Au-pair<div class="family-name4"><%= @user.experience_aupair ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
       <div>Expèrience Jeunesse<div class="family-name4"><%= @user.educational_experience ? "oui" : "non" %></div></div>
     </div>
 
@@ -53,6 +63,54 @@
         <h4><%= @user.email %></h4>
       </div>
     </div>
+
+
+    <div class="your-search" >
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Disponibilitées<div class="family-name4">Du 12.03.16 au 20.05.16</div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Votre recherche<div class="family-name4">France</div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <div>Langues parlées<div class="family-name4">Anglais - Français</div></div>
+      </div>
+
+    </div>
+
+
+    <div class="ys-aupair-description">
+
+      <div class="ds-title-link">
+        <div class="ys-aupair-dsc-text">Description | </div>
+        <i class="fa fa-pencil your-search-left-icon2" aria-hidden="true"></i>
+      </div>
+
+      <div class="dsc-text">Salut c'est moi je suis un gros ..... Salut c'est moi je suis jjeugef hfgejhgf hgfegjhef hgfegjhgfejhgf hgergjhgjf hgfehgjhgef hgfehgjhgf jheuiut </div>
+
+    </div>
+
+
+    <div class="dsb-buttons-group" >
+
+      <div class="dsb-profil-btn">
+        <div>Mettre à jour</div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
 
     <div class="navbox">
 
@@ -70,11 +128,22 @@
 
     <div role="tabpanel" class="tab-pane active" id="home">
       <div class="text-center navpill-one">
-        <i class="fa fa-database" aria-hidden="true"></i>
+
+
+
+
+
+
+
+
         <h4 class="navpill-title">Infos</h4>
+
         <div class="text-center">
-          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-modal-alt" %>
+          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-generic" %>
         </div>
+
+
+
       </div>
     </div>
 
