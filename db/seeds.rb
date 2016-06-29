@@ -1,9 +1,3 @@
-puts "destroying users"
-[SpokenLanguage, PreferedCountry, Country, Language, Aupair, Family].each do |model|
-  model.destroy_all
-end
-puts "users detroyed"
-
 # Languages
 puts "creating Languages"
 Language.create([
@@ -37,7 +31,7 @@ family = Family.create(email: "dupont@gmail.com", password: "plopplop", name: "D
 # 2 aupair homme et femme
 puts "creating 2 aupairs"
 Aupair.create([
-  {email: "elouis@gmail.com", password: "plopplop", first_name: "Emile", last_name: "Louis", birth_date: Date.today-30.years, country_code: "FR", driving_license: true, musician: false, gender: 2},
+  {email: "michellouis@gmail.com", password: "plopplop", first_name: "Michel", last_name: "Louis", birth_date: Date.today-30.years, country_code: "FR", driving_license: true, musician: false, gender: 2},
   {email: "jladouce@gmail.com", password: "plopplop", first_name: "Jeanne", last_name: "Ladouce", birth_date: Date.today-20.years, country_code: "FR", driving_license: false, musician: true, gender: 3}
 ])
 
