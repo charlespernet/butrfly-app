@@ -233,3 +233,26 @@
   color: white;
 }
 
+.dashboard-top-container {
+  display: flex;
+}
+
+.aupair-photo {
+  height: 17vh;
+  flex: 4;
+  max-width: 180px;
+  background-color: darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner2 {
+  flex: 8;
+}
+
+.site-info {
+  font-size: 11px;
+  color: white;
+  font-family: "Circular-Book";
+}

@@ -57,11 +57,20 @@
 
   <div class="content-block">
 
-    <div class="banner2">
-      <div class="banner-content">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <h4><%= @user.email %></h4>
+    <div class="dashboard-top-container">
+
+      <div class="aupair-photo">
+        <div class="site-info">"Au-pair photo"</div>
       </div>
+
+
+      <div class="banner2">
+        <div class="banner-content">
+          <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+          <h4><%= @user.email %></h4>
+        </div>
+      </div>
+
     </div>
 
 
@@ -69,17 +78,17 @@
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Disponibilitées<div class="family-name4">Du 12.03.16 au 20.05.16</div></div>
+        <div>Disponible à partir du <div class="family-name4"><%= @user.dispo_from %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Votre recherche<div class="family-name4">France</div></div>
+        <div>Votre recherche<div class="family-name4"><%= @user.prefered_countries.name %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Langues parlées<div class="family-name4">Anglais - Français</div></div>
+        <div>Langues parlées<div class="family-name4"><%= @user.spoken_languages.name %></div></div>
       </div>
 
     </div>
@@ -99,10 +108,7 @@
 
     <div class="dsb-buttons-group" >
 
-      <div class="dsb-profil-btn">
-        <div>Mettre à jour</div>
-      </div>
-
+      <%= link_to "Modifier", edit_aupair_path(@user), class: "dsb-profil-btn" %>
 
     </div>
 
