@@ -125,7 +125,7 @@
 .banner2 {
   color: white;
   text-align: center;
-  height: 25vh;
+  height: 17vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -447,3 +447,37 @@
   text-decoration: none;
   color: white;
 }
+
+.home-searchbox {
+  display: flex;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.home-searchbox input {
+  border: none;
+  outline: none;
+  height: 100%;
+  max-width: 150px;
+  font-size: 12px;
+  font-family: "Circular-Book" !important;
+  border-left: 1px solid lightgrey;
+  padding-left: 15px;
+}
+
+.home-searchbox input[type="submit"] {
+  background-color: $bluegrey-dark;
+  color: white;
+  font-size: 13px;
+  max-width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Circular-Book" !important;
+}
+
+
+

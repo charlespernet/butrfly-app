@@ -58,24 +58,201 @@
   color: $bluegrey-dark;
   opacity: 0.9;
   border-bottom: 1px solid rgba(25,25,25,0.1);
-  padding-bottom: 25px;
-  padding-top: 25px;
-  background-color: yellow;
+  padding-bottom: 20px;
+  padding-top: 20px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .family-name2 {
   font-family: "Circular-Black" !important;
   font-size: 14px !important;
+  line-height: 50px;
 }
 
 .item-dashboard {
   font-family: "Circular-Book";
-  font-size: 12px;
-  color: $bluegrey-dark;
-  opacity: 0.8;
+  font-size: 11px;
+  color: $bluegrey-light;
+  opacity: 0.9;
   text-align: left;
-  padding-left: 35px;
+  padding-left: 20px;
   padding-bottom: 8px;
   padding-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+
+.family-name4 {
+  font-family: "Circular-Book" !important;
+  font-size: 14px !important;
+  color: $bluegrey-dark;
+}
+
+.family-name4:hover {
+  color: $brand-color;
+  cursor: default;
+}
+
+.dsb-name-title {
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dsb-email {
+  font-size: 12px;
+  color: $brand-color;
+}
+
+.dsb-left-icon {
+  font-size: 10px;
+  margin-right: 20px;
+}
+
+.btn-generic {
+  padding-left: 18px;
+  margin-top: 35px !important;
+  padding-right: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white !important;
+  font-size: 12px !important;
+  font-family: "Circular-Book" !important;
+  background-color: $bluegrey-light !important;
+  border-radius: 2px;
+}
+
+.btn-generic:hover {
+  background-color: $bluegrey-dark !important;
+  text-decoration: none !important;
+}
+
+@media all and (min-width: 680px) {
+  .navbox {
+    display: none;
+  }
+}
+
+@media all and (min-width: 680px) {
+  .tab-content {
+    display: none;
+  }
+}
+
+.your-search {
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.your-search-item {
+  font-family: "Circular-Book";
+  flex: 4;
+  font-size: 11px;
+  color: $bluegrey-light;
+  opacity: 0.9;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid lightgrey;
+}
+
+.your-search-left-icon {
+  font-size: 18px;
+  margin-right: 24px;
+  color: $brand-color;
+}
+
+
+.ys-aupair-description {
+  padding-left: 58px;
+  padding-right: 60px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.ds-title-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ys-aupair-dsc-text {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  color: $bluegrey-light;
+  opacity: 0.8;
+}
+
+.your-search-left-icon2 {
+  font-size: 12px;
+  margin-left: 8px;
+  color: $brand-color;
+}
+
+
+.dsb-profil-btn {
+  font-family: "Lato";
+  flex: 6;
+  font-size: 11px;
+  color: $bluegrey-light;
+  opacity: 0.9;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  font-family: "Lato" !important;
+  font-size: 12px !important;
+  color: white;
+  background-color: #252A34;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+
+
+.dsb-buttons-group {
+  padding-left: 58px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dsb-profil-btn:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.dashboard-top-container {
+  display: flex;
+}
+
+.aupair-photo {
+  height: 17vh;
+  flex: 4;
+  max-width: 180px;
+  background-color: darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner2 {
+  flex: 8;
+}
+
+.site-info {
+  font-size: 11px;
+  color: white;
+  font-family: "Circular-Book";
 }
