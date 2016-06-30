@@ -1,30 +1,87 @@
-<div class="container">
-  <div id="form-ui" class="checkbox">
-    Langues parlées :
-    <input id="fr" type="checkbox" value=".fr" />
-    <label for="fr">Français</label>
-    <input id="en" type="checkbox" value=".en" />
-    <label for="en">Anglais</label>
-    <input id="de" type="checkbox" value=".de" />
-    <label for="de">Allemand</label>
-    <input id="it" type="checkbox" value=".it" />
-    <label for="it">Italien</label>
-    <input id="es" type="checkbox" value=".es" />
-    <label for="es">Espagnol</label>
-    <input id="pt" type="checkbox" value=".pt" />
-    <label for="pt">Portuguais</label>
-    <input id="ar" type="checkbox" value=".ar" />
-    <label for="ar">Arabe</label>
+<div class="fullpage">
+
+  <div class="filter-block">
+
+    <div class="filter-index-title">
+
+      <div>
+        <div class="dsb-name-title">Filtres</div>
+      </div>
+
+    </div>
+
+
+  <div class="filter-category">
+
+    <div id="form-ui" class="checkbox">
+
+
+      <div class="filter-title">Langues parlées</div>
+
+
+
+      <div class="cb-inline">
+        <input id="fr" type="checkbox" value=".fr" />
+        <label for="fr">Français</label>
+      </div>
+      <div class="cb-inline">
+        <input id="en" type="checkbox" value=".en" />
+        <label for="en">Anglais</label>
+      </div>
+      <div class="cb-inline">
+        <input id="de" type="checkbox" value=".de" />
+        <label for="de">Allemand</label>
+      </div>
+      <div class="cb-inline">
+        <input id="it" type="checkbox" value=".it" />
+        <label for="it">Italien</label>
+      </div>
+      <div class="cb-inline">
+        <input id="es" type="checkbox" value=".es" />
+        <label for="es">Espagnol</label>
+      </div>
+      <div class="cb-inline">
+        <input id="pt" type="checkbox" value=".pt" />
+        <label for="pt">Portuguais</label>
+      </div>
+      <div class="cb-inline">
+        <input id="ar" type="checkbox" value=".ar" />
+        <label for="ar">Arabe</label>
+      </div>
+
+    </div>
+    </div>
 
   </div>
-  <p>Disponibilités</p>
-  <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-    <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-    <%= f.input :country, collection: Country.all, selected: @country.try(:id) %>
-    <%= f.submit "Rechercher", class: "btn-banner-home2" %>
-    <%= link_to "Effacer", aupairs_path, class: "btn-banner-home2" %>
-  <% end %>
+
+
+
+<div class="content-block">
+
+
+  <div class="index-search-bar">
+
+    <div class="dispo-index-title">
+      <div>
+        <div class="dsb-name-title">Votre recherche</div>
+      </div>
+    </div>
+
+    <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+      <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays" %>
+      <%= f.submit "Rechercher", class: "search-index-btn" %>
+      <%= link_to "Effacer", aupairs_path, class: "search-index-btn" %>
+    <% end %>
+
+
+  </div>
+
   <div class="grid">
     <%= render @aupairs %>
   </div>
+
+
+</div>
+
 </div>
