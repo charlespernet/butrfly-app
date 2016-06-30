@@ -72,7 +72,12 @@
 
           <div class="your-search-item">
             <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-            <div>Pays recherchés<div class="family-name4"><%= @user.prefered_countries.name %></div></div>
+            <div>
+              Pays recherchés
+              <% @user.countries.each do |country| %>
+                <div class="family-name4"><%= country.name %></div>
+              <% end %>
+            </div>
           </div>
 
       </div>
@@ -90,7 +95,9 @@
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Langues parlées<div class="family-name4"><%= @user.spoken_languages.name %></div></div>
+        <% @user.languages.each do |language| %>
+          <div>Langues parlées<div class="family-name4"><%= language.name %></div></div>
+        <% end %>
       </div>
 
     </div>
@@ -103,20 +110,11 @@
         <i class="fa fa-pencil your-search-left-icon2" aria-hidden="true"></i>
       </div>
 
-      <div class="dsc-text">Salut c'est moi je suis un gros ..... Salut c'est moi je suis jjeugef hfgejhgf hgfegjhef hgfegjhgfejhgf hgergjhgjf hgfehgjhgef hgfehgjhgf jheuiut </div>
+      <div class="dsc-text">
+        <%= @user.try(:description) %>
+      </div>
 
     </div>
-
-
-    <div class="dsb-buttons-group" >
-
-      <%= link_to "Modifier", edit_aupair_path(@user), class: "dsb-profil-btn" %>
-
-    </div>
-
-
-
-
 
 
 
