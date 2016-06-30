@@ -95,9 +95,12 @@
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <% @user.languages.each do |language| %>
-          <div>Langues parlées<div class="family-name4"><%= language.name %></div></div>
-        <% end %>
+        <div>
+          Langues parlées
+          <% @user.languages.each do |language| %>
+            <div class="family-name4"><%= language.name %></div>
+          <% end %>
+        </div>  
       </div>
 
     </div>
