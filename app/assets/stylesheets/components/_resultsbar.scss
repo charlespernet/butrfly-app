@@ -1,0 +1,21 @@
+.search-results-container {
+  display: flex;
+  height: 62px;
+  border-bottom: 1px solid lightgrey;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-count {
+  font-size: 12px;
+  color: #FF004D;
+  margin-left: auto;
+  padding-right: 50px;
+  opacity: 0.7;
+}
+
+.results-text {
+  margin-left: auto;
+  opacity: 0.8;
+  padding-left: 90px;
+}

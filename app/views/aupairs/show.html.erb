@@ -19,24 +19,24 @@
 
     <div class="item-dashboard">
 
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-venus-mars dsb-left-icon" aria-hidden="true"></i>
       <div>Genre<div class="family-name4"><%= @user.gender.capitalize %></div></div>
 
     </div>
 
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
       <div>Permis de conduire<div class="family-name4"><%= @user.driving_license ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-futbol-o dsb-left-icon" aria-hidden="true"></i>
       <div>Sportif<div class="family-name4"><%= @user.sports ? "oui" : "non" %></div></div>
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-music dsb-left-icon" aria-hidden="true"></i>
       <div>Musicien<div class="family-name4"><%= @user.musician ? "oui" : "non" %></div></div>
     </div>
 
@@ -66,17 +66,19 @@
       <div class="aupair-show-info">
 
           <div class="your-search-item">
-            <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+            <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
             <div>Disponible à partir du <div class="family-name4"><%= @user.dispo_from %></div></div>
           </div>
 
           <div class="your-search-item">
-            <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-            <div>
+            <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
+            <div class="show-spokens">
               Pays recherchés
-              <% @user.countries.each do |country| %>
-                <div class="family-name4"><%= country.name %></div>
-              <% end %>
+                <div class="sl-flex-inline">
+                  <% @user.countries.each do |country| %>
+                    <div class="family-name4"><%= country.name %>&nbsp; &nbsp;</div>
+                  <% end %>
+                </div>
             </div>
           </div>
 
@@ -88,19 +90,21 @@
     <div class="your-search" >
 
       <div class="your-search-item">
-        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
+        <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
         <div>Disponible à partir du <div class="family-name4"><%= @user.dispo_from %></div></div>
       </div>
 
 
       <div class="your-search-item">
-        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>
+        <i class="fa fa-sign-language your-search-left-icon" aria-hidden="true"></i>
+        <div class="show-spokens">
           Langues parlées
-          <% @user.languages.each do |language| %>
-            <div class="family-name4"><%= language.name %></div>
-          <% end %>
-        </div>  
+            <div class="sl-flex-inline">
+              <% @user.languages.each do |language| %>
+                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
+              <% end %>
+            </div>
+        </div>
       </div>
 
     </div>

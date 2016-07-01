@@ -1,0 +1,74 @@
+.home-searchbar-types {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgrey;
+  font-size: 13px;
+  color: $bluegrey-dark;
+}
+
+.home-searchbar-item {
+  width: 150px;
+  height: 100%;
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $bluegrey-dark;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+
+.home-searchbar-middle-item {
+  width: 135px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.home-searchbar-middle-item:hover {
+  opacity: 1;
+  color: $bluegrey-light;
+  background-color: #E5E7EA;
+  text-decoration: none;
+}
+
+.home-searchbar-last-item {
+  width: 135px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+}
+
+.home-searchbar-last-item:hover {
+  opacity: 1;
+  color: $bluegrey-light;
+  background-color: #E5E7EA;
+  text-decoration: none;
+}
+
+.home-searchbar-btn {
+  text-decoration: none;
+  color: $bluegrey-dark;
+  font-size: 13px;
+  font-family: "Circular-Book";
+  transition: 0.5s ease;
+  letter-spacing: -0.3px;
+}
+
+.fa-arrow-right {
+  margin-left: 10px;
+}
+
+.search-button-text {
+  font-size: 13px;
+}

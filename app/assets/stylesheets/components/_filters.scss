@@ -62,15 +62,6 @@
   padding-right: 26px;
 }
 
-.index-search-bar {
-  height: 62px;
-  border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 
 .dispo-index-title {
   font-family: "Circular-Book";
@@ -88,76 +79,3 @@
   border-right: 1px solid lightgrey;
 }
 
-input[type="submit"] {
-  border: none;
-  height: 100%;
-  color: $bluegrey-light;
-  background-color: transparent;
-  border-right: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
-}
-
-input[type="submit"]:hover {
-  color: $bluegrey-dark;
-}
-
-.search-index-btn {
-  padding-top: 21px;
-  padding-bottom: 21px;
-  padding-left: 25px;
-  padding-right: 25px;
-  border-right: 1px solid lightgrey;
-  opacity: 0.8;
-}
-
-.search-index-btn:hover {
-  text-decoration: none;
-  outline: none;
-  color: $brand-color;
-  opacity: 1;
-}
-
-.index-search-bar select {
-  border: none;
-  box-shadow: none;
-  padding-right: 12px !important;
-  padding-left: 12px !important;
-  margin-right: 10px;
-  outline: none;
-  text-decoration: none;
-  margin: none;
-  opacity: 0.8;
-}
-
-.index-search-bar select:hover {
-  border: none;
-  box-shadow: none;
-  padding-right: 12px;
-  padding-left: 12px;
-  outline: none;
-  text-decoration: none;
-}
-
-.index-search-bar select:focus {
-  border: none;
-  box-shadow: none;
-  padding-right: 12px;
-  padding-left: 12px;
-  outline: none;
-  text-decoration: none;
-}
-
-@media all and (max-width: 965px) {
-  .index-search-bar {
-    display: none;
-  }
-}
-
-.mansory-container.item {
-  border: none;
-  border: 1px solid lightgrey;
-  width: 260px;
-  margin-left: 30px;
-  margin-top: 30px;
-  border-radius: 3px;
-}
