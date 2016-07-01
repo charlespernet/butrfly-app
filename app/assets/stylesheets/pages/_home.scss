@@ -2,33 +2,7 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-.banner {
-  color: white;
-  text-align: center;
-  height: 45vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  background-image: linear-gradient(-225deg, rgba(80,101,80,0.4) 0%, rgba(130,80,101,0.6) 50%), url(hero.jpg);
-  background-position: center;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.banner h1 {
-  font-size: 30px;
-  font-family: "Lato";
-  letter-spacing: 6px;
-  font-weight: 200;
-}
-.banner p {
-  font-family: "Lato";
-  font-size: 15px;
-  font-weight: 300;
-  color: white;
-  margin-bottom: 20px;
-}
+
 
 .btnpad {
   margin: 16px;
@@ -133,6 +107,8 @@
   justify-content: center;
   background-image: linear-gradient(-270deg, rgba(255,191,20,0.3) 0%, rgba(255,180,20,0.4) 50%), url(family-image.jpg);
   background-position: center;
+  background: linear-gradient(to left, #EB3349 , #F45C43);
+  opacity: 0.9;
 }
 .banner2 h1 {
   font-size: 24px;
