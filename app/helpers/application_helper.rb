@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def boolean_display(boolean)
+    boolean ? "oui" : "non"
+  end
 end

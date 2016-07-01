@@ -15,6 +15,7 @@ class AupairsController < ApplicationController
   end
 
   def show
+    @user = Aupair.first.decorate
   end
 
   def edit
@@ -29,7 +30,7 @@ class AupairsController < ApplicationController
   private
 
   def set_aupair
-    @user = Aupair.find(params[:id])
+    @user = Aupair.find(params[:id]).decorate
     authorize @user
   end
 

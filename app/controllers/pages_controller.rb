@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user.specific
+    @user = current_user.specific.decorate
   end
 end

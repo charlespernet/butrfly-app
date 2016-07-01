@@ -16,6 +16,7 @@ gem 'simple_enum'
 gem 'active_record-acts_as'
 
 gem "pundit"
+gem 'draper', '~> 1.3'
 
 gem 'sass-rails'
 gem 'jquery-rails'
