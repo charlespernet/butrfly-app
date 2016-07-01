@@ -5,7 +5,7 @@
     <div class="identity-dashboard">
 
       <div>
-        <div class="dsb-name-title"><%= @user.first_name + " " %><%= @user.last_name %></div>
+        <div class="dsb-name-title"><%= @user.full_name %></div>
         <div class="dsb-email"><%= @user.email %> </div>
       </div>
 
@@ -14,41 +14,41 @@
     <div class="item-dashboard">
 
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Age<div class="family-name4"><%= @user.age %>  ans </div></div>
+      <div>Age<div class="family-name4"><%= @user.age_display %></div></div>
 
     </div>
 
     <div class="item-dashboard">
 
       <i class="fa fa-venus-mars dsb-left-icon" aria-hidden="true"></i>
-      <div>Genre<div class="family-name4"><%= @user.gender.capitalize %></div></div>
+      <div>Genre<div class="family-name4"><%= @user.gender_display %></div></div>
 
     </div>
 
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Permis de conduire<div class="family-name4"><%= @user.driving_license ? "oui" : "non" %></div></div>
+      <div>Permis de conduire<div class="family-name4"><%= boolean_display(@user.driving_license) %></div></div>
     </div>
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Sportif<div class="family-name4"><%= @user.sports ? "oui" : "non" %></div></div>
+      <div>Sportif<div class="family-name4"><%= boolean_display(@user.sports) %></div></div>
     </div>
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Musicien<div class="family-name4"><%= @user.musician ? "oui" : "non" %></div></div>
+      <div>Musicien<div class="family-name4"><%= boolean_display(@user.musician) %></div></div>
     </div>
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Expèrience Au-pair<div class="family-name4"><%= @user.experience_aupair ? "oui" : "non" %></div></div>
+      <div>Expèrience Au-pair<div class="family-name4"><%= boolean_display(@user.experience_aupair) %></div></div>
     </div>
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Expèrience Jeunesse<div class="family-name4"><%= @user.educational_experience ? "oui" : "non" %></div></div>
+      <div>Expèrience Jeunesse<div class="family-name4"><%= boolean_display(@user.educational_experience) %></div></div>
     </div>
 
   </div>
@@ -66,7 +66,7 @@
 
       <div class="banner2">
         <div class="banner-content">
-          <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+          <h1><%= @user.full_name %></h1>
           <h4><%= @user.email %></h4>
         </div>
       </div>
@@ -83,12 +83,26 @@
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Votre recherche<div class="family-name4"><%= @user.prefered_countries.name %></div></div>
+        <div class="show-spokens">
+          Votre recherche
+            <div class="sl-flex-inline">
+              <% @user.countries.each do |country| %>
+                <div class="family-name4"><%= country.name %>&nbsp; &nbsp;</div>
+              <% end %>
+            </div>
+        </div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Langues parlées<div class="family-name4"><%= @user.spoken_languages.name %></div></div>
+        <div class="show-spokens">
+          Langues parlées
+            <div class="sl-flex-inline">
+              <% @user.languages.each do |language| %>
+                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
+              <% end %>
+            </div>
+        </div>
       </div>
 
     </div>
