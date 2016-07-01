@@ -17,4 +17,8 @@ class Aupair < ActiveRecord::Base
   # Aupair dispo une semaine avant et un mois apres la date de recherche
   scope :dispo_at_date, -> (date = Date.today) { where(dispo_from: date-1.weeks..date+1.months) }
   scope :want_to_come_to, -> (country_code) { joins(:countries).where({ countries: { code: country_code } }) }
+
+  def age
+    (Date.today - birth_date).to_i / 365.25.floor
+  end
 end
