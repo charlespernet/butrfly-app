@@ -13,9 +13,6 @@ class AupairDecorator < Draper::Decorator
     "#{first_name} #{last_name}"
   end
 
-  def mabite
-    "toto"
-  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
