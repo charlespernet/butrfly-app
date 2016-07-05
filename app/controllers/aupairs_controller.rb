@@ -15,7 +15,6 @@ class AupairsController < ApplicationController
   end
 
   def show
-    @user = Aupair.first.decorate
   end
 
   def edit
