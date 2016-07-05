@@ -2,6 +2,7 @@ class AupairDecorator < Draper::Decorator
   delegate_all
 
   def age_display
+    return "non connuniqué" unless age
     "#{age} ans"
   end
 
