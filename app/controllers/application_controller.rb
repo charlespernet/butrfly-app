@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  http_basic_authenticate_with name: "butrfly", password: "butrfly" if Rails.env.staging?
   include Pundit
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
