@@ -4,9 +4,7 @@
 
     <div class="filter-index-title">
 
-      <div>
-        <div class="dsb-name-title">Filtres</div>
-      </div>
+        <div class="filter-top-title">Filtres</div>
 
     </div>
 
@@ -81,8 +79,31 @@
 
   <div class="search-results-container">
 
-    <div class="results-text">Résultats pour " <%= @country.try(:name) %> "</div>
-    <div class="results-count"><%= @aupairs.count %> Résultats</div>
+    <% if @aupairs.count == 0 %>
+
+      <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+      <div class="search-result-icon-2"><i class="fa fa-low-vision" aria-hidden="true"></i></div>
+      <div class="results-text">Désolé , pas de résultats</div>
+      <div class="results-count"><%= @aupairs.count %> Résultats</div>
+
+    <% else %>
+
+      <% if @country.try(:name) == nil %>
+
+        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+        <div class="search-result-icon-2"><i class="fa fa-warning" aria-hidden="true"></i></div>
+        <div class="results-text">Aucune recherche en cours</div>
+        <div class="results-count"><%= @aupairs.count %> Résultats</div>
+
+      <% else %>
+
+        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+        <div class="results-text-center">Résultats pour " <%= @country.try(:name) %> "</div>
+        <div class="results-count"><%= @aupairs.count %> Résultats</div>
+
+      <% end %>
+
+    <% end %>
 
   </div>
 
@@ -91,9 +112,10 @@
 
 
 
-  <div class="grid">
-    <%= render @aupairs %>
-  </div>
+    <div class="grid">
+      <%= render @aupairs %>
+    </div>
+
 
 
 </div>

@@ -1,7 +1,7 @@
 .index-search-bar {
-  height: 62px;
-  border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
+  height: 50px;
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -12,8 +12,8 @@ input[type="submit"] {
   height: 100%;
   color: $bluegrey-light;
   background-color: transparent;
-  border-right: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
+  border-right: 1px solid $border;
+  border-left: 1px solid $border;
 }
 
 input[type="submit"]:hover {
@@ -21,11 +21,11 @@ input[type="submit"]:hover {
 }
 
 .search-index-btn {
-  padding-top: 21px;
-  padding-bottom: 21px;
+  padding-top: 16px;
+  padding-bottom: 15px;
   padding-left: 25px;
   padding-right: 25px;
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid $border;
   opacity: 0.8;
 }
 
@@ -81,13 +81,30 @@ input[type="submit"]:hover {
   font-size: 14px;
   color: $bluegrey-dark;
   opacity: 0.9;
-  padding-bottom: 20px;
-  padding-top: 21px;
+  padding-bottom: 16px;
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-left: 26px;
   padding-right: 26px;
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid $border;
 }
+
+.index-search-bar form.form-inline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.index-search-bar a:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.index-search-bar a {
+  opacity: 0.6;
+}
+

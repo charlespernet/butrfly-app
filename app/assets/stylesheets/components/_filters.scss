@@ -7,15 +7,15 @@
   input {
     left: 0;
     &:checked + label {
-      color: red;
-      opacity: 1;
+      color: $bluegrey-dark;
+      opacity: 0.9;
     }
   }
   label {
     padding: 0;
     font-size: 13px;
-    font-family: 'Circular-Medium';
-    opacity: 0.8;
+    font-family: 'Circular-Book';
+    opacity: 0.5;
   }
 }
 
@@ -30,6 +30,11 @@
 .filter-title {
   padding-left: 12px;
   margin-bottom: 18px;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  letter-spacing: -0.3px;
+  color: $bluegrey-dark;
+  opacity: 0.8;
 }
 
 #form-ui.checkbox {
@@ -42,24 +47,16 @@
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid $border;
 }
 
 .filter-index-title {
-  font-family: "Circular-Book";
-  font-size: 13px;
-  color: $bluegrey-dark;
-  opacity: 0.9;
-  border-bottom: 1px solid rgba(25,25,25,0.1);
-  padding-bottom: 16px;
-  padding-top: 16px;
-  margin-bottom: 2px;
+  border-bottom: 1px solid $border;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-left: 26px;
-  padding-right: 26px;
+  height: 49px;
 }
 
 
@@ -76,6 +73,34 @@
   justify-content: center;
   padding-left: 32px;
   padding-right: 32px;
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid $border;
 }
+
+.filter-top-title {
+  font-size: 13px;
+  font-family: "Circular-Book";
+  color: $bluegrey-dark;
+  opacity: 0.8;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+
+.checkbox input[type="checkbox"]:not(:checked) + label:before {
+  content: url(cb-oval-unchecked.png);
+  padding-right: 12px;
+  transition: 0.4s;
+}
+
+.checkbox input[type="checkbox"]:checked + label:before {
+  content: url(cb-oval-checked.png);
+  padding-right: 20px;
+  transition:  0.4s;
+}
+
+
+
+
 
