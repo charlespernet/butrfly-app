@@ -2,6 +2,7 @@ class AupairDecorator < Draper::Decorator
   delegate_all
 
   def age_display
+    return "non connuniqué" unless age
     "#{age} ans"
   end
 
@@ -12,6 +13,7 @@ class AupairDecorator < Draper::Decorator
   def full_name
     "#{first_name} #{last_name}"
   end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
