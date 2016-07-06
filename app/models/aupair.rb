@@ -1,4 +1,12 @@
 class Aupair < ActiveRecord::Base
+  COMPLETION_ATTRIBUTES =  %w(first_name
+    last_name
+    birth_date
+    description
+    driving_license
+    dispo_from
+    stay_duration_cd)
+
   acts_as :user
   has_many :spoken_languages
   has_many :languages, through: :spoken_languages
@@ -21,5 +29,13 @@ class Aupair < ActiveRecord::Base
   def age
     return nil unless birth_date
     (Date.today - birth_date).to_i / 365.25.floor
+  end
+
+  def profile_completion
+    count = 0
+    COMPLETION_ATTRIBUTES.each do |a|
+      count += 1 if attribute_present?(a)
+    end
+    count * 100 / COMPLETION_ATTRIBUTES.count
   end
 end
