@@ -1,0 +1,328 @@
+.edit-top-container {
+  display: flex;
+  height: 60px;
+  background-color: #5A6569;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-container-title {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  color: white;
+  opacity: 0.9;
+}
+
+
+.edit-flex-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.left-edit-block {
+  min-width: 170px;
+  max-width: 170px;
+  background-color: white;
+  border-right: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.right-edit-block {
+  flex: 12;
+  height: 100vh;
+}
+
+.right-block-title {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #EFEFEF;
+}
+
+.title-text {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  letter-spacing: -0.4px;
+  color: $bluegrey-dark;
+  opacity: 0.7;
+  padding: 8px;
+}
+
+.title-text-bold {
+  font-size: 14px;
+  font-family: "Circular-Bold";
+  letter-spacing: -0.4px;
+  color: $bluegrey-dark;
+  opacity: 0.9;
+  padding: 8px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.form-right-block {
+  opacity: 0.8;
+}
+
+.right-block-title-borders {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  opacity: 0.8;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+}
+
+.form-group {
+  min-width: 150px;
+  max-width: 250px;
+}
+
+
+.form-group input {
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  color: $bluegrey-dark;
+  padding-left: 5px;
+  font-size: 13px;
+  font-family: "Circular-Medium";
+}
+
+.form-group label {
+  font-size: 12px;
+  font-family: "Circular-Book";
+  color: $bluegrey-dark;
+  opacity: 0.7;
+  margin-right: 25px;
+  width: 300px;
+  margin-bottom: 0px;
+  padding-left: 5px;
+}
+
+.form-group input:focus {
+  box-shadow: none;
+  border: none;
+  color: $brand-color;
+}
+
+.form-group select {
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  color: $bluegrey-dark;
+  padding-left: 0px;
+  margin-right: 2px;
+}
+
+.two-inline-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-form-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.form-group textarea {
+  font-size: 12px;
+  font-family: "Circular-Book";
+  color: $bluegrey-dark;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+.navbox-2 {
+  padding-left: 0px;
+  padding-right: 15%;
+  background-color: $bluegrey-dark;
+}
+
+.nav-tabs-2 {
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 3px;
+  border-style: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+
+.nav-tabs-2 li {
+  text-align: center;
+  text-decoration: none;
+  border-style: none;
+  margin-left: 16px;
+  margin-right: 20px;
+  background-color: $bluegrey-dark;
+}
+
+.nav-tabs-2 li.active a {
+  color: white;
+  font-family: "Circular-Book";
+  text-decoration: none;
+  font-size: 13px;
+  border-style: none;
+  background-color: $bluegrey-dark;
+}
+
+.nav-tabs-2 li.active a:hover {
+  color: white;
+  font-family: "Circular-Book";
+  text-decoration: none;
+  font-size: 13px;
+  background-color: $bluegrey-dark;
+  border-style: none;
+}
+
+.nav-tabs-2 li.active a:focus {
+  color: white;
+  font-family: "Circular-Book";
+  text-decoration: none;
+  font-size: 13px;
+  border-style: none;
+}
+
+.nav-tabs-2 li a {
+  color: $bluegrey-light;
+  font-family: "Circular-Book";
+  text-decoration: none;
+  font-size: 13px;
+  background-color: $bluegrey-dark;
+  border-style: none;
+  padding: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-tabs-2 li a:hover {
+  background-color: $bluegrey-dark;
+  border-style: none;
+  color: white;
+}
+
+
+.tabs {
+  background: white;
+  display: flex;
+  padding: 10px 10px 0 10px
+}
+.tabs a {
+  color: $bluegrey-dark;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.tabs p {
+  margin-bottom: 0;
+}
+.tab {
+  background: white;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+}
+.tab:first-child {
+  border-radius: 0px;
+}
+.tab:last-child {
+  border-radius: 0px;
+}
+.tab.active {
+  background: white;
+  color: $brand-color;
+  font-family: "Circular-Medium";
+  text-decoration: none;
+}
+
+.tabs p:active {
+  text-decoration: none;
+}
+
+@media all and (max-width: 680px) {
+  .left-edit-block {
+    display: none;
+  }
+}
+
+.left-title {
+  color: $bluegrey-dark;
+  padding-top: 25px;
+  font-size: 14px;
+  opacity: 0.8;
+  letter-spacing: -0.4px;
+}
+
+.left-percent {
+  font-size: 32px;
+  font-family: "Lato";
+  font-weight: 200;
+  color: $brand-color;
+  margin-top: 10px;
+}
+
+.left-update-btn {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.left-edit-block input[type="submit"] {
+  border: none;
+  height: 60px;
+  color: $bluegrey-light;
+  background-color: transparent;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 25px;
+  transition: 0.5s ease;
+  border-radius: 0px;
+}
+
+.left-edit-block input[type="submit"]:hover {
+  background-color: #EFEFEF;
+  transition: 0.5s ease;
+  border-radius: 0px;
+}
