@@ -1,0 +1,16 @@
+en:
+  male: "male"
+  female: "female"
+  undefined: "undefined"
+
+  #stay_durations
+  very_short: "very short"
+  short: "short"
+  long: "long"
+  very_long: "very long"
+
+  #family_types
+  nuclear: "nuclear"
+  single: "single"
+  homo: "homo"
+  blended: "blended"
