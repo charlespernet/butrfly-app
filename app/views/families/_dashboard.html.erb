@@ -19,7 +19,7 @@
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Type de famille<div class="family-name4"><%= @user.family_type %></div></div>
+      <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
     </div>
 
     <div class="item-dashboard">
@@ -61,17 +61,17 @@
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Duréé du contrat<div class="family-name4"><%= @user.prefered_duration %></div></div>
+        <div>Duréé du contrat<div class="family-name4"><%= t(@user.prefered_duration) %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender %></div></div>
+        <div>Genre préferé<div class="family-name4"><%= t(@user.prefered_gender) %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Nationalité<div class="family-name4"><%= @user.country_code %></div></div>
+        <div>Nationalité<div class="family-name4"><%= t(@user.country_name) %></div></div>
       </div>
 
     </div>
