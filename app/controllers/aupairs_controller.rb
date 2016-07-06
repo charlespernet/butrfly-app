@@ -41,6 +41,7 @@ class AupairsController < ApplicationController
       :birth_date,
       :country_code,
       :gender,
+      :email,
       :description,
       :driving_license,
       :musician,

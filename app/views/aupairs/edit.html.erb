@@ -1,30 +1,158 @@
-<div class="container text-center title-modal2">Complétez votre profil</div>
 
-<div class="container loginview">
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12%>
-    <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
-    <%= f.input :gender, collection: Aupair.genders.keys, default: 0 %>
-    <%= f.input :description %>
-    <%= f.association :languages, as: :check_boxes %>
-    <%= f.input :experience_aupair %>
-    <%= f.input :educational_experience %>
-    <%= f.input :accepted_domestic_animal %>
-    <%= f.input :sports %>
-    <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4 %>
-    <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0 %>
-    <%= f.association :countries, as: :check_boxes %>
-    <%= f.input :driving_license %>
-    <%= f.input :musician %>
-    <div class="form-actions text-center">
-      <%= f.button :submit, "Mettre à jour", class: "btn-modal" %>
+<%= simple_form_for @user do |f| %>
+
+<div class="edit-flex-container">
+
+  <div class="left-edit-block">
+    <div class="left-title">Mon profil</div>
+    <div class="left-percent">35%</div>
+    <%= f.button :submit, "Mettre à jour", class: "left-update-btn" %>
+  </div>
+
+  <div class="right-edit-block">
+
+
+      <div class="navbox-2">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs-2" role="tablist" id="myTab">
+        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Step 1</a></li>
+        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Step 2</a></li>
+        <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">Step 3</a></li>
+        <li role="presentation"><a href="#step4" aria-controls="step4" role="tab" data-toggle="tab">Step 4</a></li>
+      </ul>
+
     </div>
-  <% end %>
+
+
+
+    <div class="tab-content">
+      <!-- Step 1 start -->
+      <div role="tabpanel" class="tab-pane active" id="step1">
+        <div class="navpill-two">
+
+          <div class="right-block-title">
+            <div class="title-text-bold">Step 1</div>
+            <div class="title-text">Quelques questions pour commencer</div>
+          </div>
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+              <%= f.input :first_name, label:"Ton petit nom" %>
+              <%= f.input :last_name, label:"Ton nom de famille" %>
+              <%= f.input :email, label:"Ton email" %>
+              <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
+              <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité", prompt: "Select your country" %>
+              <%= f.input :gender, collection: Aupair.genders.keys, default: 0, label:"Genre" %>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 1 end -->
+
+
+
+      <!-- Step 2 start -->
+      <div role="tabpanel" class="tab-pane" id="step2">
+        <div class="navpill-two">
+
+          <div class="right-block-title">
+            <div class="title-text-bold">Step 2</div>
+            <div class="title-text">Tes disponibiltés</div>
+          </div>
+
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+              <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label:"Disponible à partir du" %>
+              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label:"Pour une durée de" %>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 2 end -->
+
+
+
+      <!-- Step 3 start -->
+      <div role="tabpanel" class="tab-pane" id="step3">
+        <div class="navpill-three">
+
+          <div class="right-block-title">
+            <div class="title-text-bold">Step 3</div>
+            <div class="title-text">Tes super pouvoirs</div>
+          </div>
+
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+              <%= f.input :description, label:"Décrivez-vous en quelques lignes" %>
+              <%= f.association :languages, as: :check_boxes %>
+              <%= f.association :countries, as: :check_boxes %>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 3 end -->
+
+
+
+      <!-- Step 4 start -->
+      <div role="tabpanel" class="tab-pane" id="step4">
+        <div class="navpill-four">
+
+          <div class="right-block-title">
+            <div class="title-text-bold">Step 4</div>
+            <div class="title-text">Infos diverses</div>
+          </div>
+
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+              <%= f.input :experience_aupair %>
+              <%= f.input :educational_experience %>
+              <%= f.input :accepted_domestic_animal %>
+              <%= f.input :sports %>
+              <%= f.input :driving_license %>
+              <%= f.input :musician %>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 4 end -->
+
+
+
+
+    </div>
+
+
+  </div>
+
+
 </div>
 
-</br>
-</br>
-</br>
-</br>
+<% end %>
+
+
+
+
+
+
+
+
