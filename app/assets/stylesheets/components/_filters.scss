@@ -83,7 +83,7 @@
   opacity: 0.8;
 }
 
-.checkbox input[type="checkbox"] {
+.filter-index input[type="checkbox"] {
   display: none;
 }
 
@@ -98,6 +98,11 @@
   content: url(cb-oval-checked.png);
   padding-right: 20px;
   transition:  0.4s;
+}
+
+.filter-index.checkbox {
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 

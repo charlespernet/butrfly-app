@@ -1,19 +1,97 @@
-<div class="container">
-  <div id="form-ui" class="checkbox">
-    Cherche :
-    <input id="male" type="checkbox" value=".male" />
-    <label for="male">Un Aupair masculin</label>
-    <input id="female" type="checkbox" value=".female" />
-    <label for="female">Un Aupair féminin</label>
-  </div>
-  <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-    <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-    <%= country_select("search", "country", only: ["FR", "ES", "IT", "UK", "DE", "BE", "SW", "IR", "LU"], selected: @country_code) %>
-    <%= f.submit "Rechercher", class: "btn-banner-home2" %>
-    <%= link_to "Effacer", families_path, class: "btn-banner-home2" %>
-  <% end %>
 
-  <div class="grid">
-    <%= render @families %>
+<div class="fullpage">
+
+  <div class="filter-block">
+
+    <div class="filter-index-title">
+
+        <div class="filter-top-title">Filtres</div>
+
+    </div>
+
+
+  <div class="filter-category filter-index">
+
+    <div id="form-ui" class="checkbox">
+
+
+      <div class="filter-title">Genre recherché</div>
+
+        <div class="cb-inline">
+          <input id="male" type="checkbox" value=".male" />
+          <label for="male">Homme</label>
+        </div>
+
+        <div class="cb-inline">
+          <input id="female" type="checkbox" value=".female" />
+          <label for="female">Femme</label>
+        </div>
+
+
+    </div>
+    </div>
+
   </div>
+
+
+
+<div class="content-block">
+
+
+  <div class="index-search-bar">
+
+    <div class="icon-search-bar">
+      <div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+      <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+      <%= country_select("search", "country", only: ["FR", "ES", "IT", "UK", "DE", "BE", "SW", "IR", "LU"], selected: @country_code) %>
+      <%= f.submit "Rechercher", class: "search-index-btn" %>
+      <%= link_to "Effacer", families_path, class: "search-index-btn" %>
+    <% end %>
+
+
+  </div>
+
+
+
+  <div class="search-results-container">
+
+    <% if @families.count == 0 %>
+
+      <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+      <div class="search-result-icon-2"><i class="fa fa-low-vision" aria-hidden="true"></i></div>
+      <div class="results-text">Désolé , pas de résultats</div>
+      <div class="results-count"><%= @families.count %> Résultats</div>
+
+    <% else %>
+
+
+
+        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+        <div class="results-text-center">Résultats pour " <%= @country_code %> "</div>
+        <div class="results-count"><%= @families.count %> Résultats</div>
+
+
+    <% end %>
+
+  </div>
+
+
+
+
+
+
+    <div class="grid">
+      <%= render @families %>
+    </div>
+
+
+
 </div>
+
+</div>
+

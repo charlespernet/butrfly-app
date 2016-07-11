@@ -1,6 +1,13 @@
 class FamilyDecorator < Draper::Decorator
   delegate_all
 
+  def prefered_gender_display
+    I18n.t(prefered_gender).capitalize
+  end
+
+  def family_name
+    "Famille #{name}"
+  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #

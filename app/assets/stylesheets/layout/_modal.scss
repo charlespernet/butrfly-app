@@ -196,11 +196,6 @@ input#user_remember_me.boolean.optional {
 }
 
 
-.radio input[type="radio"] {
-
-}
-
-
 
 .radio,
 .checkbox {
@@ -215,3 +210,72 @@ input#user_remember_me.boolean.optional {
   margin-left: -8px;
   margin-right: 10px;
 }
+
+#modal-button-signup input[type="submit"] {
+  border: 1px solid $border;
+  color: $bluegrey-dark;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 3px;
+  font-family: "Circular-Book" !important;
+  transition: 0.5s ease;
+  font-size: 13px;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+#modal-button-signup input[type="submit"]:hover {
+  color: white;
+  background-color: $bluegrey-dark;
+  transition: 0.5s ease;
+}
+
+
+#modal-button-signin input[type="submit"] {
+  border: 1px solid $border;
+  color: $bluegrey-dark;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 3px;
+  font-family: "Circular-Book" !important;
+  transition: 0.5s ease;
+  font-size: 13px;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+#modal-button-signin input[type="submit"]:hover {
+  color: white;
+  background-color: $bluegrey-dark;
+  transition: 0.5s ease;
+}
+
+
+
+#modal-radio-choice input[type="radio"] {
+  padding: 8px;
+  margin: 8px;
+}
+
+#modal-radio-choice input[type="radio"] label {
+  padding: 8px;
+  margin: 8px;
+  width: 80px;
+}
+
+#modal-radio-choice.form-group.radio_buttons {
+  margin-bottom: 20px;
+}
+
+.new-session-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
