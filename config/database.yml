@@ -83,3 +83,9 @@ production:
   database: butrfly-app_production
   username: butrfly-app
   password: <%= ENV['BUTRFLY-APP_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: butrfly-app_staging
+  username: butrfly-app
+  password: <%= ENV['BUTRFLY-APP_DATABASE_PASSWORD'] %>
