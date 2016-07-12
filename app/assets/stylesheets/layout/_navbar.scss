@@ -35,6 +35,7 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+  text-decoration: none;
 }
 
 /* Navbar standard link */
@@ -146,11 +147,12 @@
 
 .navbar-wagon-link-grey {
   color: $bluegrey-light;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .navbar-wagon-link-grey:hover {
   color: $brand-color;
+  text-decoration: none;
 }
 
 .menu-icon {
@@ -173,6 +175,10 @@
 
 .menu-icon-brix {
   width: 28px;
+}
+
+.usertype:hover {
+  text-decoration: none;
 }
 
 

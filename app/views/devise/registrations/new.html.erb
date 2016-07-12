@@ -1,7 +1,4 @@
-<div class="container">
-
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
+<div class="new-session-view">
 
         <div class="text-center title-modal2">Inscription</div>
 
@@ -16,7 +13,7 @@
             <%= f.input :password, required: true, placeholder: 'Password', hint: ("6 characters minimum"), label: false %>
           </div>
 
-          <div class="form-actions text-center">
+          <div class="form-actions text-center" id="modal-button-signin">
             <%= f.button :submit, "Inscription", class: "btn-modal" %>
           </div>
         <% end %>
@@ -29,6 +26,4 @@
 
         </div>
 
-  </div>
-</div>
 </div>

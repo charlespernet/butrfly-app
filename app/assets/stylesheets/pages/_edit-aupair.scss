@@ -91,35 +91,31 @@
 .form-group input {
   box-shadow: none;
   text-decoration: none;
-  border-radius: 0px;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
+  border-radius: 2px;
   color: $bluegrey-dark;
   padding-left: 5px;
   font-size: 13px;
   font-family: "Circular-Medium";
+  margin-bottom: 20px;
 }
 
 .form-group label {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Circular-Book";
   color: $bluegrey-dark;
   opacity: 0.7;
   margin-right: 25px;
-  width: 300px;
   margin-bottom: 0px;
-  padding-left: 5px;
 }
 
 .form-group input:focus {
   box-shadow: none;
-  border: none;
   color: $brand-color;
+  border: none;
+  outline: none;
 }
 
-.form-group select {
+.edit-flex-container.form-group select {
   box-shadow: none;
   text-decoration: none;
   border-radius: 0px;
