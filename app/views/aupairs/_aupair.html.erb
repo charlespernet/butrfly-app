@@ -1,7 +1,8 @@
-<div class="mansory-container item <%= aupair.languages.pluck(:code).join(" ") %>">
-  <div class="mansory-picture">
 
-  </div>
+<div class="mansory-container item <%= aupair.languages.pluck(:code).join(" ") %>">
+
+  <div class="mansory-picture"></div>
+
   <div class="mansory-text">
     <div class="m-real-text">
       <%= aupair.first_name %> <%= aupair.last_name %>
@@ -10,4 +11,5 @@
       <%= link_to "Voir", aupair, class: "mansory-button" %>
     </div>
   </div>
+
 </div>

@@ -1,0 +1,16 @@
+fr:
+  male: "homme"
+  female: "femme"
+  undefined: "non-défini"
+
+  #stay_duration
+  very_short: "très court"
+  short: "court"
+  long: "long"
+  very_long: "très long"
+
+  #family_types
+  nuclear: "nucléaire"
+  single: "mono-parentale"
+  homo: "homo-parentale"
+  blended: "recomposée"

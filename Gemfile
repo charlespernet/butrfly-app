@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
+gem 'rails-i18n'
+
 gem 'rails', '4.2.6'
 gem 'puma'
 gem 'pg'
@@ -35,6 +37,6 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor'
 end

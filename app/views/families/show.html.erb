@@ -1,7 +1,47 @@
 <div class="fullpage">
 
   <div class="filter-block">
-    <span class="identity-dashboard">Famille <span class="family-name2"><%= @user.name.capitalize %></span></span>
+
+    <div class="identity-dashboard">
+
+      <div>
+        <div class="dsb-name-title">Famille <%= @user.name %></div>
+      </div>
+
+    </div>
+
+
+    <div class="item-dashboard">
+      <i class="fa fa-calendar dsb-left-icon" aria-hidden="true"></i>
+      <div>Cherche à partir du <div class="family-name4"><%= @user.starting_date %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-home dsb-left-icon" aria-hidden="true"></i>
+      <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Ages des enfants<div class="family-name4">De <%= @user.children_age_from %> à <%= @user.children_age_to %> ans</div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
+      <div>Permis de conduire requis<div class="family-name4"><%= boolean_display(@user.driving_license_required) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
+    </div>
+
+
   </div>
 
 
@@ -11,14 +51,46 @@
     <div class="banner2">
       <div class="banner-content">
         <h1>Famille <%= @user.name %></h1>
-        <h4><%= @user.email %></h4>
       </div>
     </div>
 
+
+    <div class="your-search" >
+
+      <div class="your-search-item">
+        <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
+        <div>Duréé du contrat<div class="family-name4"><%= t(@user.prefered_duration) %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-male your-search-left-icon" aria-hidden="true"></i>
+        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
+        <div>Nationalité<div class="family-name4"><%= t(@user.country_name) %></div></div>
+      </div>
+
+    </div>
+
+
+    <div class="ys-aupair-description">
+
+      <div class="ds-title-link">
+        <div class="ys-aupair-dsc-text">Description</div>
+      </div>
+
+      <div class="dsc-text">
+        <%= @user.try(:description) %>
+      </div>
+
+    </div>
+
+
   </div>
 
-
-
 </div>
+
 
 

@@ -13,13 +13,13 @@
 
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-calendar dsb-left-icon" aria-hidden="true"></i>
       <div>Cherche à partir du <div class="family-name4"><%= @user.starting_date %></div></div>
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Type de famille<div class="family-name4"><%= @user.family_type %></div></div>
+      <i class="fa fa-home dsb-left-icon" aria-hidden="true"></i>
+      <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
     </div>
 
     <div class="item-dashboard">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
       <div>Permis de conduire requis<div class="family-name4"><%= @user.driving_license_required ? "oui" : "non" %></div></div>
     </div>
 
@@ -60,18 +60,18 @@
     <div class="your-search" >
 
       <div class="your-search-item">
-        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Duréé du contrat<div class="family-name4"><%= @user.prefered_duration %></div></div>
+        <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
+        <div>Duréé du contrat<div class="family-name4"><%= t(@user.prefered_duration) %></div></div>
       </div>
 
       <div class="your-search-item">
-        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender %></div></div>
+        <i class="fa fa-male your-search-left-icon" aria-hidden="true"></i>
+        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender_display %></div></div>
       </div>
 
       <div class="your-search-item">
-        <i class="fa fa-genderless your-search-left-icon" aria-hidden="true"></i>
-        <div>Nationalité<div class="family-name4"><%= @user.country_code %></div></div>
+        <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
+        <div>Nationalité<div class="family-name4"><%= t(@user.country_name) %></div></div>
       </div>
 
     </div>
@@ -93,10 +93,8 @@
 
     <div class="dsb-buttons-group" >
 
-
       <%= link_to "Modifier", edit_family_path(@user), class: "dsb-profil-btn" %>
 
-
     </div>
 
 
@@ -105,19 +103,20 @@
 
 
 
-    <div class="navbox">
+
+    <!-- <div class="navbox"> -->
 
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li>
-      </ul>
+      <!-- <ul class="nav nav-tabs" role="tablist"> -->
+        <!-- <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Infos</a></li> -->
+        <!-- <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profil</a></li> -->
+        <!-- <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li> -->
+        <!-- <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Réglages</a></li> -->
+      <!-- </ul> -->
 
-    </div>
+    <!-- </div> -->
 
-    <div class="tab-content">
+    <!-- <div class="tab-content">
 
     <div role="tabpanel" class="tab-pane active" id="home">
       <div class="text-center navpill-one">
@@ -132,7 +131,7 @@
         <h4 class="navpill-title">Infos</h4>
 
         <div class="text-center">
-          <%= link_to "Modifier", edit_aupair_path(@user), class: "btn-generic" %>
+          #<%= link_to "Modifier", edit_aupair_path(@user), class: "btn-generic" %>
         </div>
 
 
@@ -162,7 +161,7 @@
     </div>
 
   </div>
-
+ -->
   </div>
 
 </div>

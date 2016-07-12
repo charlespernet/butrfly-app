@@ -7,7 +7,7 @@ class AupairDecorator < Draper::Decorator
   end
 
   def gender_display
-    gender.capitalize
+    I18n.t(gender).capitalize
   end
 
   def full_name
