@@ -116,5 +116,41 @@
   display: flex;
 }
 
+.boo-true {
+  color: green;
+  opacity: 0.8;
+}
+
+.boo-false {
+  color: red;
+  opacity: 0.8;
+}
+
+.boo-true-text {
+  color: green;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.boo-false-text {
+  color: red;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.no-comm {
+  color: $bluegrey-dark;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.warning-item {
+  margin-left: auto;
+}
+
+.spo-lan {
+  font-family: "Circular-Book" !important;
+}
+
 
 

@@ -80,10 +80,25 @@
   opacity: 0.9;
   text-align: left;
   padding-left: 20px;
+  padding-right: 15px;
   padding-bottom: 8px;
   padding-top: 8px;
   display: flex;
   align-items: center;
+}
+
+.i-d-warning {
+  font-family: "Circular-Book";
+  font-size: 11px;
+  color: $bluegrey-light;
+  opacity: 0.9;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -255,4 +270,8 @@
   font-size: 11px;
   color: white;
   font-family: "Circular-Book";
+}
+
+.p-right {
+  align-self: flex-end;
 }

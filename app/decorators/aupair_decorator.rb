@@ -20,12 +20,12 @@ class AupairDecorator < Draper::Decorator
   end
 
   def sport_display
-    if gender == :male
+    if gender == :male and sports == true
       return "Sportif"
-    elsif gender == :female
+    elsif gender == :female and sports == true
       return "Sportive"
     else
-      return "Sportif"
+      return "non communiqué"
     end
   end
 
