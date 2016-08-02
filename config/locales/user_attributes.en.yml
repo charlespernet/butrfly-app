@@ -5,8 +5,8 @@ en:
   undefined: "undefined"
 
   #Aupairs
-  male_prefered: "Au pair boy"
-  female_prefered: "Au pair girl"
+  male_prefered: "au pair boy"
+  female_prefered: "au pair girl"
 
   #stay_durations
   very_short: "very short"
