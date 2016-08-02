@@ -38,6 +38,10 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'i18n-debug'
+end
+
 group :production, :staging do
   gem 'rails_12factor'
 end
