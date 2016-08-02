@@ -18,7 +18,7 @@ fr:
   very_long: "> de 12 mois"
 
   #family_types
-  nuclear: "nucléaire"
-  single: "mono-parentale"
-  homo: "homo-parentale"
-  blended: "recomposée"
+  nuclear: "Un papa, une maman et les enfants qu'ils ont eu ensemble"
+  single: "Un papa ou une maman et des enfants"
+  homo: "Deux papas ou deux mamans et les enfants"
+  blended: "Un papa une maman et des enfants de chaque côté"
