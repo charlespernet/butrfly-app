@@ -80,10 +80,25 @@
   opacity: 0.9;
   text-align: left;
   padding-left: 20px;
+  padding-right: 15px;
   padding-bottom: 8px;
   padding-top: 8px;
   display: flex;
   align-items: center;
+}
+
+.i-d-warning {
+  font-family: "Circular-Book";
+  font-size: 11px;
+  color: $bluegrey-light;
+  opacity: 0.9;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -111,7 +126,7 @@
 }
 
 .dsb-left-icon {
-  font-size: 10px;
+  font-size: 15px;
   margin-right: 20px;
 }
 
@@ -141,7 +156,7 @@
 
 
 .your-search {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid $border;
   display: flex;
   justify-content: space-between;
 }
@@ -154,11 +169,11 @@
   opacity: 0.9;
   text-align: left;
   padding-left: 20px;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding-bottom: 14px;
+  padding-top: 14px;
   display: flex;
   align-items: center;
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid $border;
 }
 
 .your-search-left-icon {
@@ -230,16 +245,21 @@
 
 .dashboard-top-container {
   display: flex;
+  height: 26vh;
 }
 
 .aupair-photo {
-  height: 17vh;
+  height: 100%;
   flex: 4;
-  max-width: 180px;
+  max-width: 200px;
+  min-width: 200px;
   background-color: darkgrey;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(http://www.bordeaux-tourisme.com/var/ezwebin_site/storage/images/media/images/regards-bordelais/jean-poutge/profil-jean/12599-2-fre-FR/Profil-Jean_format_360x360.jpg);
+  background-size: cover;
+  background-position: center center;
 }
 
 .banner2 {
@@ -250,4 +270,8 @@
   font-size: 11px;
   color: white;
   font-family: "Circular-Book";
+}
+
+.p-right {
+  align-self: flex-end;
 }
