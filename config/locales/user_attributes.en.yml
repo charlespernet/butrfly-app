@@ -3,10 +3,13 @@ en:
   male: "male"
   female: "female"
   undefined: "undefined"
+  aupair: "au pair"
+  family: "family"
 
   #Aupairs
   male_prefered: "au pair boy"
   female_prefered: "au pair girl"
+  undefined_prefered: "not documented"
 
   #stay_durations
   very_short: "very short"

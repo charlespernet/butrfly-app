@@ -9,9 +9,9 @@
 
         <%= simple_form_for(:user, url: user_registration_path) do |f| %>
           <%= f.error_notification %>
-
           <div class="form-inputs" id="modal-radio-choice">
-            <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first, label: false %>
+            <p>Je crée un compte en tant que :</p>
+            <%= f.input :type, as: :radio_buttons, collection: User::DEVISE_TYPES, checked: "Aupair", label: false %>
             <%= f.input :email, required: true, autofocus: true, placeholder: 'Email', label: false %>
             <%= f.input :password, required: true, placeholder: 'Password', hint: ("6 characters minimum"), label: false %>
           </div>

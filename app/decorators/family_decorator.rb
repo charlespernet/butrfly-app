@@ -12,6 +12,15 @@ class FamilyDecorator < Draper::Decorator
   def children_ages
     "De #{children_age_from} à #{children_age_to} ans"
   end
+
+  def starting_date_display
+    return "Non-renseigné" unless starting_date
+    starting_date.strftime("%B %Y")
+  end
+
+  def prefered_duration_display
+    I18n.t(prefered_duration).capitalize
+  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
