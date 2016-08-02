@@ -1,7 +1,15 @@
 fr:
+  #Global
   male: "homme"
   female: "femme"
   undefined: "non-défini"
+  aupair: "au pair"
+  family: "famille"
+
+  #Aupairs
+  male_prefered: "garçon au pair"
+  female_prefered: "fille au pair"
+  undefined_prefered: "non-renseigné"
 
   #stay_duration
   very_short: "< de 3 mois"

@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'country_select'
 
 gem 'simple_enum'
@@ -35,6 +36,10 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+end
+
+group :development do
+  gem 'i18n-debug'
 end
 
 group :production, :staging do

@@ -2,7 +2,7 @@ class FamilyDecorator < Draper::Decorator
   delegate_all
 
   def prefered_gender_display
-    I18n.t(prefered_gender).capitalize
+    I18n.t("#{prefered_gender}_prefered").capitalize
   end
 
   def family_name
@@ -12,6 +12,15 @@ class FamilyDecorator < Draper::Decorator
   def children_ages
     return "non communiqué" unless children_age_from and children_age_to
     "De #{children_age_from} à #{children_age_to} ans"
+  end
+
+  def starting_date_display
+    return "Non-renseigné" unless starting_date
+    starting_date.strftime("%B %Y")
+  end
+
+  def prefered_duration_display
+    I18n.t(prefered_duration).capitalize
   end
 
   def children_number_display
