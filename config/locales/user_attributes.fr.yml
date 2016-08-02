@@ -4,10 +4,10 @@ fr:
   undefined: "non-défini"
 
   #stay_duration
-  very_short: "très court"
-  short: "court"
-  long: "long"
-  very_long: "très long"
+  very_short: "< de 3 mois"
+  short: "de 3 à 6 mois"
+  long: "de 6 à 12 mois"
+  very_long: "> de 12 mois"
 
   #family_types
   nuclear: "nucléaire"

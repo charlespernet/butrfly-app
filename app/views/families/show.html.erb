@@ -22,13 +22,13 @@
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number %></div></div>
+      <i class="fa fa-list dsb-left-icon" aria-hidden="true"></i>
+      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number_display %></div></div>
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Ages des enfants<div class="family-name4">De <%= @user.children_age_from %> à <%= @user.children_age_to %> ans</div></div>
+      <i class="fa fa-line-chart dsb-left-icon" aria-hidden="true"></i>
+      <div>Ages des enfants<div class="family-name4"><%= @user.children_ages %></div></div>
     </div>
 
     <div class="item-dashboard">
@@ -37,7 +37,7 @@
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <i class="fa fa-plug dsb-left-icon" aria-hidden="true"></i>
       <div>Tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
     </div>
 
@@ -48,10 +48,14 @@
 
   <div class="content-block">
 
-    <div class="banner2">
-      <div class="banner-content">
-        <h1>Famille <%= @user.name %></h1>
+    <div class="dashboard-top-container">
+
+      <div class="banner2">
+        <div class="banner-content">
+          <h1>Famille <%= @user.name %></h1>
+        </div>
       </div>
+
     </div>
 
 
