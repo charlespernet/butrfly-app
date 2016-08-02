@@ -1,7 +1,12 @@
 fr:
+  #Global
   male: "homme"
   female: "femme"
   undefined: "non-défini"
+
+  #Aupairs
+  male_prefered: "Garçon au pair"
+  female_prefered: "Fille au pair"
 
   #stay_duration
   very_short: "très court"

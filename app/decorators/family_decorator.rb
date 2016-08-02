@@ -2,7 +2,7 @@ class FamilyDecorator < Draper::Decorator
   delegate_all
 
   def prefered_gender_display
-    I18n.t(prefered_gender).capitalize
+    I18n.t("#{prefered_gender}_prefered")
   end
 
   def family_name
