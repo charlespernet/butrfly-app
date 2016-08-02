@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Probably to remove, just need to check before       
   TYPES = ["Aupair", "Family"]
   DEVISE_TYPES = [[I18n.t(:aupair).capitalize, 'Aupair'] ,[I18n.t(:family).capitalize, 'Family']]
 
