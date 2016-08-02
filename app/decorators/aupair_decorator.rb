@@ -16,7 +16,7 @@ class AupairDecorator < Draper::Decorator
 
   def dispo_from_display
     return "non communiqué" unless dispo_from
-    dispo_from.strftime("%B %Y")
+    l(dispo_from, :format => '%B %Y')
   end
 
   def sport_display
