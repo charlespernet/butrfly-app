@@ -44,7 +44,7 @@
               </div>
               <%= f.input :children_number, label: "Combien d'enfants seront confiés à l'au-pair", collection: 1..10 %>
               <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
-              <%= f.input :family_type, collection: t(Family.family_types.keys), default: 0, label: "Votre famille c'est d'abord :" %>
+              <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :" %>
               <%= f.input :experience_with_aupair, label: "Avez-vous deja accueilli une/un au-pair ?" %>
               <%= f.input :domestic_animal, label: "Avez-vous un animal domestique ?" %>
 
@@ -72,9 +72,9 @@
 
             <div class="form-right-block">
 
-              <%= f.input :prefered_gender, collection: t(Aupair.genders.keys), default: 0, label: "Vous recherchez plutot : une fille au-pair / un garçon au-pair ?" %>
+              <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0, label: "Vous recherchez plutot : une fille au-pair / un garçon au-pair ?" %>
               <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 4, discard_day: true, label: "Début du séjour :" %>
-              <%= f.input :prefered_duration, collection: t(Aupair.stay_durations.keys), default: 0, label: "Duréé du séjour souhaitée" %>
+              <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Duréé du séjour souhaitée" %>
               <%= f.input :housework, label: "l'aupair devra-t'il donner un coup de main pour les taches menageres ?" %>
               <%= f.input :driving_license_required, label: "l'aupair doit-il disposer du permis de conduire ?" %>
 
