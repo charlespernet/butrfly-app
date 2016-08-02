@@ -8,6 +8,10 @@ class FamilyDecorator < Draper::Decorator
   def family_name
     "Famille #{name}"
   end
+
+  def children_ages
+    "De #{children_age_from} à #{children_age_to} ans"
+  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
