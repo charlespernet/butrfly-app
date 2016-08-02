@@ -454,5 +454,23 @@
   font-family: "Circular-Book" !important;
 }
 
+.testimonials-container {
+  display: flex;
+  height: 400px;
+  background-color: $bluegrey-dark;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-item {
+  width: 300px;
+  background-color: $bluegrey-light;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 3px;
+}
+
 
 
