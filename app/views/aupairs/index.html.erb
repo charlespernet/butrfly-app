@@ -14,7 +14,7 @@
     <div id="form-ui" class="checkbox">
 
 
-      <div class="filter-title">Langues parlées</div>
+      <div class="filter-title">Votre au pair doit parler...</div>
 
 
 
@@ -66,12 +66,13 @@
     </div>
 
     <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+      Vous vivez en...
+      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
+      Le séjour commencera en...
       <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays" %>
       <%= f.submit "Rechercher", class: "search-index-btn" %>
       <%= link_to "Effacer", aupairs_path, class: "search-index-btn" %>
     <% end %>
-
 
   </div>
 
