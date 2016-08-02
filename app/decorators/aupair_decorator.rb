@@ -2,7 +2,7 @@ class AupairDecorator < Draper::Decorator
   delegate_all
 
   def age_display
-    return "non connuniqué" unless age
+    return "non communiqué" unless age
     "#{age} ans"
   end
 
@@ -12,6 +12,31 @@ class AupairDecorator < Draper::Decorator
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def dispo_from_display
+    return "non communiqué" unless dispo_from
+    dispo_from.strftime("%B %Y")
+  end
+
+  def sport_display
+    if gender == :male
+      return "Sportif"
+    elsif gender == :female
+      return "Sportive"
+    else
+      return "Sportif"
+    end
+  end
+
+  def musician_display
+    if gender == :male
+      return "Musicien"
+    elsif gender == :female
+      return "Musicienne"
+    else
+      return "Musicien"
+    end
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

@@ -98,13 +98,13 @@
 
 .aupair-show-info {
   flex: 8;
-  height: 17vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
 }
 
 .show-spokens {
