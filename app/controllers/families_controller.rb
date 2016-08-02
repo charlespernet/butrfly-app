@@ -30,7 +30,7 @@ class FamiliesController < ApplicationController
   private
 
   def set_family
-    @user = Family.find(params[:id])
+    @user = Family.find(params[:id]).decorate
     authorize @user
   end
 

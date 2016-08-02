@@ -79,7 +79,7 @@
 
   <div class="search-results-container">
 
-    <% if @aupairs.count == 0 %>
+    <% if @aupairs.count.zero? %>
 
       <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
       <div class="search-result-icon-2"><i class="fa fa-low-vision" aria-hidden="true"></i></div>
@@ -88,17 +88,17 @@
 
     <% else %>
 
-      <% if @country.try(:name) == nil %>
+      <% if @country.try(:name) %>
 
         <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-        <div class="search-result-icon-2"><i class="fa fa-warning" aria-hidden="true"></i></div>
-        <div class="results-text">Aucune recherche en cours</div>
+        <div class="results-text-center">Résultats pour " <%= @country.try(:name) %> "</div>
         <div class="results-count"><%= @aupairs.count %> Résultats</div>
 
       <% else %>
 
         <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-        <div class="results-text-center">Résultats pour " <%= @country.try(:name) %> "</div>
+        <div class="search-result-icon-2"><i class="fa fa-warning" aria-hidden="true"></i></div>
+        <div class="results-text">Aucune recherche en cours</div>
         <div class="results-count"><%= @aupairs.count %> Résultats</div>
 
       <% end %>

@@ -5,7 +5,7 @@
     <div class="identity-dashboard">
 
       <div>
-        <div class="dsb-name-title">Famille <%= @user.name %></div>
+        <div class="dsb-name-title"><%= @user.family_name %></div>
         <div class="dsb-email"><%= @user.email %> </div>
       </div>
 
@@ -29,7 +29,7 @@
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Ages des enfants<div class="family-name4">De <%= @user.children_age_from %> à <%= @user.children_age_to %> ans</div></div>
+      <div>Ages des enfants<div class="family-name4"><%= @user.children_ages %></div></div>
     </div>
 
     <div class="item-dashboard">
@@ -51,7 +51,7 @@
 
     <div class="banner2">
       <div class="banner-content">
-        <h1>Famille <%= @user.name %></h1>
+        <h1><%= @user.family_name %></h1>
         <h4><%= @user.email %></h4>
       </div>
     </div>

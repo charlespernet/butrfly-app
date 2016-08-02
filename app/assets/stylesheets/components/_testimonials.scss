@@ -72,7 +72,9 @@
 
 .top-about-title {
   padding-bottom: 14px;
-  color: #415F77;
+  color: $bluegrey-dark;
+  font-size: 17px;
+  opacity: 0.9;
 }
 
 .about-us-icon {
@@ -104,25 +106,25 @@
 }
 
 .about-full-text-2 {
-  font-size: 12px;
-  text-align: justify;
+  font-size: 14px;
+  text-align: left;
   text-align-last: left;
   text-justify: right;
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 300px;
+  width: 500px;
 }
 
 .about-full-text-3 {
-  font-size: 12px;
-  text-align: justify;
+  font-size: 14px;
+  text-align: right;
   text-align-last: right;
   text-justify: right;
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 300px;
+  width: 500px;
 }
 
 
@@ -181,14 +183,13 @@
 }
 
 .about-full-text-4 {
-  font-size: 12px;
-  text-align: justify;
+  font-size: 14px;
+  text-align: left;
   text-align-last: left;
-  text-justify: right;
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 400px;
+  width: 500px;
 }
 
 
