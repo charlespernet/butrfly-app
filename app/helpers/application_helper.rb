@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def boolean_display(boolean)
-    boolean ? "oui" : "non"
+    boolean ? "<i class='fa fa-check' aria-hidden='true'></i>".html_safe : "<i class='fa fa-times' aria-hidden='true'></i>".html_safe
   end
 end

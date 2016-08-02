@@ -1,21 +1,102 @@
-<div class="container loginview">
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :name %>
-    <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Select your country" %>
-    <%= f.input :children_age_from %>
-    <%= f.input :children_age_to %>
-    <%= f.input :children_number %>
-    <%= f.input :family_type, collection: Family.family_types.keys, default: 0 %>
-    <%= f.input :domestic_animal %>
-    <%= f.input :description %>
-    <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0 %>
-    <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 4 %>
-    <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0 %>
-    <%= f.input :experience_with_aupair %>
-    <%= f.input :housework %>
-    <%= f.input :driving_license_required %>
-    <div class="form-actions text-center">
-      <%= f.button :submit, "Mettre à jour", class: "btn-primary btn btn-md" %>
+<%= simple_form_for @user do |f| %>
+
+<div class="edit-flex-container">
+
+  <div class="left-edit-block">
+    <div class="left-title">Mon profil</div>
+    <div class="left-percent"><%= @user.profile_completion %> %</div>
+    <%= f.button :submit, "Mettre à jour", class: "left-update-btn" %>
+  </div>
+
+  <div class="right-edit-block">
+
+
+      <div class="navbox-2">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs-2" role="tablist" id="myTab">
+        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Votre famille</a></li>
+        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Votre au-pair</a></li>
+      </ul>
+
     </div>
-  <% end %>
+
+
+
+    <div class="tab-content">
+      <!-- Step 1 start -->
+      <div role="tabpanel" class="tab-pane active" id="step1">
+        <div class="navpill-two">
+
+          <div class="right-block-title">
+            <div class="title-text">Quelques renseignements pour commencer</div>
+          </div>
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+
+              <%= f.input :name, label: "Votre nom de famille" %>
+              <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Votre pays" %>
+              <div class="input-inline-items">
+                <%= f.input :children_age_from, label: "Les enfants sont âgés entre ", collection: 0..10 %>
+                <%= f.input :children_age_to, label: "et", collection: 0..20 %>
+              </div>
+              <%= f.input :children_number, label: "Combien d'enfants seront confiés à l'au-pair", collection: 1..10 %>
+              <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
+              <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :" %>
+              <%= f.input :experience_with_aupair, label: "Avez-vous deja accueilli une/un au-pair ?" %>
+              <%= f.input :domestic_animal, label: "Avez-vous un animal domestique ?" %>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 1 end -->
+
+
+
+      <!-- Step 2 start -->
+      <div role="tabpanel" class="tab-pane" id="step2">
+        <div class="navpill-two">
+
+          <div class="right-block-title">
+            <div class="title-text">Vous recherchez...</div>
+          </div>
+
+
+          <div class="flex-form-right">
+
+            <div class="form-right-block">
+
+              <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0, label: "Vous recherchez plutot : une fille au-pair / un garçon au-pair ?" %>
+              <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 4, discard_day: true, label: "Début du séjour :" %>
+              <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Duréé du séjour souhaitée" %>
+              <%= f.input :housework, label: "l'aupair devra-t'il donner un coup de main pour les taches menageres ?" %>
+              <%= f.input :driving_license_required, label: "l'aupair doit-il disposer du permis de conduire ?" %>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Step 2 end -->
+
+
+    </div>
+
+
+  </div>
+
+
 </div>
+
+<% end %>
+
+
+

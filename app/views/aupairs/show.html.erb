@@ -10,44 +10,115 @@
 
     </div>
 
+
     <div class="item-dashboard">
 
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Age<div class="family-name4"><%= @user.age_display %> </div></div>
+      <i class="fa fa-language dsb-left-icon" aria-hidden="true"></i>
+      <div>
+          <h6 class="spo-lan">Langues parlées</h6>
+              <% @user.languages.each do |language| %>
+                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
+            <% end %>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="item-dashboard">
+
+      <i class="fa fa-wheelchair dsb-left-icon" aria-hidden="true"></i>
+      <div>Son âge<div class="family-name4"><%= @user.age_display %> </div></div>
 
     </div>
 
     <div class="item-dashboard">
 
       <i class="fa fa-venus-mars dsb-left-icon" aria-hidden="true"></i>
-      <div>Genre<div class="family-name4"><%= @user.gender_display %></div></div>
+      <div>Sexe<div class="family-name4"><%= @user.gender_display %></div></div>
 
     </div>
 
 
     <div class="item-dashboard">
-      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
-      <div>Permis de conduire<div class="family-name4"><%= boolean_display(@user.driving_license) %></div></div>
+      <% if @user.driving_license == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">Possède le permis de conduire</div>
+      <% elsif @user.driving_license == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">Ne possède pas le permis de conduire</div>
+      <% else %>
+        <div class="no-comm">Permis de conduire - Non communiqué</div>
+        <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
+      <% end %>
+    </div>
+
+
+    <div class="item-dashboard">
+      <% if @user.experience_aupair == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">A déjà eu une expérience au pair</div>
+      <% elsif @user.experience_aupair == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">N'a jamais eu une expérience au pair</div>
+      <% else %>
+        <div class="no-comm">Experience au-aupair - Non communiqué</div>
+        <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
+      <% end %>
+    </div>
+
+
+    <div class="item-dashboard">
+      <% if @user.educational_experience == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">A une expérience dans la garde d'enfants</div>
+      <% elsif @user.educational_experience == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">N'a pas d'expérience dans la garde d'enfants</div>
+      <% else %>
+        <div class="no-comm">Garde d'enfants - Non communiqué</div>
+        <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
+      <% end %>
+    </div>
+
+
+    <div class="item-dashboard">
+      <% if @user.gender == :male and @user.sports == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">Sportif</div>
+      <% elsif @user.gender == :female and @user.sports == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">Sportive</div>
+      <% elsif @user.gender == :male and @user.sports == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">Non sportif</div>
+      <% elsif @user.gender == :female and @user.sports == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">Non sportive</div>
+      <% else %>
+        <div class="no-comm">Sportif - Non communiqué</div>
+        <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
+      <% end %>
     </div>
 
     <div class="item-dashboard">
-      <i class="fa fa-futbol-o dsb-left-icon" aria-hidden="true"></i>
-      <div>Sportif<div class="family-name4"><%= boolean_display(@user.sports) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-music dsb-left-icon" aria-hidden="true"></i>
-      <div>Musicien<div class="family-name4"><%= boolean_display(@user.musician) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Expèrience Au-pair<div class="family-name4"><%= boolean_display(@user.experience_aupair) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Expèrience Jeunesse<div class="family-name4"><%= boolean_display(@user.educational_experience) %></div></div>
+      <% if @user.gender == :male and @user.musician == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">Musicien</div>
+      <% elsif @user.gender == :female and @user.musician == true %>
+        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true-text">Musicienne</div>
+      <% elsif @user.gender == :male and @user.musician == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">Non musicien</div>
+      <% elsif @user.gender == :female and @user.musician == false %>
+        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false-text">Non musicienne</div>
+      <% else %>
+        <div class="no-comm">Musicien - Non communiqué</div>
+        <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
+      <% end %>
     </div>
 
   </div>
@@ -67,7 +138,7 @@
 
           <div class="your-search-item">
             <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
-            <div>Disponible à partir du <div class="family-name4"><%= @user.dispo_from %></div></div>
+            <div>Son âge <div class="family-name4"><%= @user.age_display %></div></div>
           </div>
 
           <div class="your-search-item">
@@ -91,20 +162,13 @@
 
       <div class="your-search-item">
         <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
-        <div>Disponible à partir du <div class="family-name4"><%= @user.dispo_from %></div></div>
+        <div>Disponible à partir de <div class="family-name4"><%= @user.dispo_from_display %></div></div>
       </div>
 
 
       <div class="your-search-item">
-        <i class="fa fa-sign-language your-search-left-icon" aria-hidden="true"></i>
-        <div class="show-spokens">
-          Langues parlées
-            <div class="sl-flex-inline">
-              <% @user.languages.each do |language| %>
-                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
-              <% end %>
-            </div>
-        </div>
+        <i class="fa fa-clock-o your-search-left-icon" aria-hidden="true"></i>
+        <div>Pour quelle durée <div class="family-name4"><%= t(@user.stay_duration) %></div></div>
       </div>
 
     </div>
@@ -113,8 +177,7 @@
     <div class="ys-aupair-description">
 
       <div class="ds-title-link">
-        <div class="ys-aupair-dsc-text">Description | </div>
-        <i class="fa fa-pencil your-search-left-icon2" aria-hidden="true"></i>
+        <div class="ys-aupair-dsc-text">Description</div>
       </div>
 
       <div class="dsc-text">

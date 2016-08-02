@@ -12,23 +12,23 @@
 
 
     <div class="item-dashboard">
-      <i class="fa fa-calendar dsb-left-icon" aria-hidden="true"></i>
-      <div>Cherche à partir du <div class="family-name4"><%= @user.starting_date %></div></div>
+      <i class="fa fa-globe dsb-left-icon" aria-hidden="true"></i>
+      <div>Nationalité<div class="family-name4"><%= @user.country_name %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-list dsb-left-icon" aria-hidden="true"></i>
+      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number_display %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-line-chart dsb-left-icon" aria-hidden="true"></i>
+      <div>Ages des enfants<div class="family-name4"><%= @user.children_ages %></div></div>
     </div>
 
     <div class="item-dashboard">
       <i class="fa fa-home dsb-left-icon" aria-hidden="true"></i>
       <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Ages des enfants<div class="family-name4">De <%= @user.children_age_from %> à <%= @user.children_age_to %> ans</div></div>
     </div>
 
     <div class="item-dashboard">
@@ -38,7 +38,12 @@
 
     <div class="item-dashboard">
       <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
+      <div>Participation aux tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-paw dsb-left-icon" aria-hidden="true"></i>
+      <div>Animal domestique<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
     </div>
 
 
@@ -48,10 +53,14 @@
 
   <div class="content-block">
 
-    <div class="banner2">
-      <div class="banner-content">
-        <h1>Famille <%= @user.name %></h1>
+    <div class="dashboard-top-container">
+
+      <div class="banner2">
+        <div class="banner-content">
+          <h1>Famille <%= @user.name %></h1>
+        </div>
       </div>
+
     </div>
 
 
@@ -59,17 +68,17 @@
 
       <div class="your-search-item">
         <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
-        <div>Duréé du contrat<div class="family-name4"><%= t(@user.prefered_duration) %></div></div>
+        <div>Début du séjour<div class="family-name4"><%= @user.starting_date_display %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-male your-search-left-icon" aria-hidden="true"></i>
-        <div>Genre préferé<div class="family-name4"><%= @user.prefered_gender %></div></div>
+        <div>Durée du séjour<div class="family-name4"><%= @user.prefered_duration_display %></div></div>
       </div>
 
       <div class="your-search-item">
         <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
-        <div>Nationalité<div class="family-name4"><%= t(@user.country_name) %></div></div>
+        <div>Aupair recherché<div class="family-name4"><%= @user.prefered_gender_display %></div></div>
       </div>
 
     </div>
@@ -91,6 +100,3 @@
   </div>
 
 </div>
-
-
-

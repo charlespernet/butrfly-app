@@ -149,6 +149,8 @@
   color: $bluegrey-dark;
   opacity: 0.9;
   margin-top: 10px;
+  height: 200px;
+  width: 400px;
 }
 
 .navbox-2 {
@@ -321,4 +323,16 @@
   background-color: #EFEFEF;
   transition: 0.5s ease;
   border-radius: 0px;
+}
+
+.test-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-inline-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

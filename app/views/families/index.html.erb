@@ -15,16 +15,16 @@
     <div id="form-ui" class="checkbox">
 
 
-      <div class="filter-title">Genre recherché</div>
+      <div class="filter-title">La famille recherche...</div>
 
         <div class="cb-inline">
           <input id="male" type="checkbox" value=".male" />
-          <label for="male">Homme</label>
+          <label for="male"><%= t("male_prefered").capitalize %></label>
         </div>
 
         <div class="cb-inline">
           <input id="female" type="checkbox" value=".female" />
-          <label for="female">Femme</label>
+          <label for="female"><%= t("female_prefered").capitalize %></label>
         </div>
 
 
@@ -47,8 +47,10 @@
     </div>
 
     <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+      La famille habite en...
+      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
+      Le séjour commence en...
       <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      <%= country_select("search", "country", only: ["FR", "ES", "IT", "UK", "DE", "BE", "SW", "IR", "LU"], selected: @country_code) %>
       <%= f.submit "Rechercher", class: "search-index-btn" %>
       <%= link_to "Effacer", families_path, class: "search-index-btn" %>
     <% end %>
@@ -94,4 +96,3 @@
 </div>
 
 </div>
-

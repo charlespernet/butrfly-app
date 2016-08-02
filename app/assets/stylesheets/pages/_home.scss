@@ -99,7 +99,7 @@
 .banner2 {
   color: white;
   text-align: center;
-  height: 17vh;
+  height: 100%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -452,6 +452,24 @@
   padding-left: 20px;
   padding-right: 20px;
   font-family: "Circular-Book" !important;
+}
+
+.testimonials-container {
+  display: flex;
+  height: 400px;
+  background-color: $bluegrey-dark;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-item {
+  width: 300px;
+  background-color: $bluegrey-light;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 3px;
 }
 
 
