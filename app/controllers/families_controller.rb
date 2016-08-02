@@ -5,9 +5,10 @@ class FamiliesController < ApplicationController
   def index
     search = params[:search]
     if search
-      @country_code = search["country"]
+      @country = Country.find(search["country"])
+      country_code = @country.code
       @date = Date.new search["date(1i)"].to_i, search["date(2i)"].to_i, search["date(3i)"].to_i
-      @families = Family.from_country(@country_code).searching_at_date(@date)
+      @families = Family.from_country(country_code).searching_at_date(@date)
     else
       @country_code = "FR"
       @date = Date.today
