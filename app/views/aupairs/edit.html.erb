@@ -19,7 +19,6 @@
         <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">#1</a></li>
         <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">#2</a></li>
         <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">#3</a></li>
-        <li role="presentation"><a href="#step4" aria-controls="step4" role="tab" data-toggle="tab">#4</a></li>
       </ul>
 
     </div>
@@ -33,7 +32,7 @@
 
           <div class="right-block-title">
             <div class="title-text-bold">#1</div>
-            <div class="title-text">Quelques questions pour commencer</div>
+            <div class="title-text">Tes coordonnées</div>
           </div>
 
           <div class="flex-form-right">
@@ -44,7 +43,7 @@
                 <%= f.input :first_name, label:"Ton petit nom" %>
                 <%= f.input :last_name, label:"Ton nom de famille" %>
               </div>
-                <%= f.input :email, label:"Ton email" %>
+                <%= f.input :email, label: "Ton email" %>
                 <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
               <div class="test-flex">
                 <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité" %>
@@ -76,8 +75,8 @@
           <div class="flex-form-right">
 
             <div class="form-right-block">
-              <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label:"Disponible à partir du" %> <!-- que le mois et l'année -->
-              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label:"Pour une durée de" %> <!-- 3 choix -->
+              <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %> <!-- que le mois et l'année -->
+              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?" %> <!-- 3 choix -->
             </div>
 
           </div>
@@ -101,13 +100,19 @@
           <div class="flex-form-right">
 
             <div class="form-right-block">
-              <%= f.input :description, label:"Décrivez-vous en quelques lignes" %>
+              <%= f.input :description, label: "Décrivez-vous en quelques lignes", :input_html => { :rows => 10 , :style => 'width: 350px;'} %>
               <div class="test-flex">
-                <%= f.association :languages, as: :check_boxes, label:"Quelles langues parles-tu ?" %>
+                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?" %>
               </div>
               <div class="test-flex">
-                <%= f.association :countries, as: :check_boxes %>
+                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?" %>
               </div>
+              <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
+              <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
+              <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
+              <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu deja eu une experience au pair ?" %>
+              <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
+              <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
             </div>
 
           </div>
@@ -115,39 +120,6 @@
         </div>
       </div>
       <!-- Step 3 end -->
-
-
-
-      <!-- Step 4 start -->
-      <div role="tabpanel" class="tab-pane" id="step4">
-        <div class="navpill-four">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">#4</div>
-            <div class="title-text">Infos diverses</div>
-          </div>
-
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-              <%= f.input :driving_license, label:"As tu le permis de conduire ?" %>
-              <%= f.input :accepted_domestic_animal, label:"Accepte tu les animaux domestiques ?" %>
-              <%= f.input :educational_experience, label:"As-tu l'habitude de garder des enfants ?"  %>
-              <%= f.input :experience_aupair, label:"As-tu deja eu une experience au pair ?" %>
-              <%= f.input :sports, label:"Pratique tu un sport ?" %>
-              <%= f.input :musician, label:"Joues-tu d'un instrument ?" %>
-
-              <!-- Pas de checkbox mais plutot un oui / non -->
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <!-- Step 4 end -->
-
 
 
 
@@ -160,4 +132,3 @@
 </div>
 
 <% end %>
-
