@@ -11,6 +11,12 @@
 
   <div class="right-edit-block">
 
+      <div class="completion-block">
+        <div class="completion-title">Votre profil est rempli à </div>
+        <div class="completion-percent"><%= @user.profile_completion %> %</div>
+        <%= f.button :submit, "Mettre à jour", class: "completion-update-btn" %>
+      </div>
+
 
       <div class="navbox-2">
 
@@ -42,8 +48,12 @@
                 <%= f.input :first_name, label:"Ton petit nom" %>
                 <%= f.input :last_name, label:"Ton nom de famille" %>
               </div>
+
+              <div class="test-flex">
                 <%= f.input :email, label: "Ton email" %>
                 <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
+              </div>
+
               <div class="test-flex">
                 <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité" %>
                 <%= f.input :gender, collection: Aupair.genders.keys, default: 0, label:"Ton sexe", label_method: lambda { |key| t(key) } %>

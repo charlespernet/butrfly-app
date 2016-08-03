@@ -147,19 +147,20 @@
 .boo-true-text {
   color: $bluegrey-dark;
   opacity: 1;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .boo-false-text {
   color: $bluegrey-dark;
   opacity: 1;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .no-comm {
   color: $bluegrey-dark;
   opacity: 0.8;
-  font-size: 12px;
+  font-size: 11px;
+  padding-left: 15px;
 }
 
 .warning-item {

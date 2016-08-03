@@ -17,7 +17,7 @@
       <div>
           <h6 class="spo-lan">Langues parlées</h6>
               <% @user.languages.each do |language| %>
-                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
+                <div class="family-name4"><%= I18n.t(language.name) %>&nbsp; &nbsp;</div>
             <% end %>
       </div>
 
@@ -49,7 +49,7 @@
         <div class="boo-false"><i class="fa fa-car" aria-hidden="true"></i></div>
         <div class="boo-false-text">Ne possède pas le permis de conduire</div>
       <% else %>
-        <div class="no-comm">Permis de conduire - Non communiqué</div>
+        <div class="no-comm">Permis de conduire</div>
         <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
       <% end %>
     </div>
@@ -63,7 +63,7 @@
         <div class="boo-false"><i class="fa fa-flag" aria-hidden="true"></i></div>
         <div class="boo-false-text">N'a jamais eu une expérience au pair</div>
       <% else %>
-        <div class="no-comm">Experience au-aupair - Non communiqué</div>
+        <div class="no-comm">Experience au-aupair</div>
         <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
       <% end %>
     </div>
@@ -77,7 +77,7 @@
         <div class="boo-false"><i class="fa fa-user" aria-hidden="true"></i></div>
         <div class="boo-false-text">N'a pas d'expérience dans la garde d'enfants</div>
       <% else %>
-        <div class="no-comm">Garde d'enfants - Non communiqué</div>
+        <div class="no-comm">Garde d'enfants</div>
         <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
       <% end %>
     </div>
@@ -97,7 +97,7 @@
         <div class="boo-false"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non sportive</div>
       <% else %>
-        <div class="no-comm">Sportif - Non communiqué</div>
+        <div class="no-comm">Sportif</div>
         <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
       <% end %>
     </div>
@@ -116,7 +116,7 @@
         <div class="boo-false"><i class="fa fa-music" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non musicienne</div>
       <% else %>
-        <div class="no-comm">Musicien - Non communiqué</div>
+        <div class="no-comm">Musicien</div>
         <div class="warning-item"><i class="fa fa-warning dsb-left-icon" aria-hidden="true"></i></div>
       <% end %>
     </div>
@@ -147,7 +147,7 @@
               Pays recherchés
                 <div class="sl-flex-inline">
                   <% @user.countries.each do |country| %>
-                    <div class="family-name4"><%= country.name %>&nbsp; &nbsp;</div>
+                    <div class="family-name4"><%= I18n.t(country.name) %>&nbsp; &nbsp;</div>
                   <% end %>
                 </div>
             </div>
