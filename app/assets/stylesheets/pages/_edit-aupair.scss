@@ -329,10 +329,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .input-inline-items {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+.edit-family-label {
+  width: 400px;
+}
+
