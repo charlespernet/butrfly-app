@@ -51,7 +51,9 @@
       <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
       Le séjour commence en...
       <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      <%= f.submit "Rechercher", class: "search-index-btn" %>
+      <div class="input-search-family">
+        <%= f.submit "Rechercher", class: "search-index-btn" %>
+      </div>
       <%= link_to "Effacer", families_path, class: "search-index-btn" %>
     <% end %>
 
