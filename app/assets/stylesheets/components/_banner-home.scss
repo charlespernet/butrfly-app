@@ -9,7 +9,7 @@
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
-  background-image: url(hero.jpg);
+  background-image: image-url("hero.jpg");
   background-position: center center;
   align-items: center;
   justify-content: center;
