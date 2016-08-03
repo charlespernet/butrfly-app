@@ -13,7 +13,7 @@
 
     <div class="item-dashboard">
 
-      <i class="fa fa-language dsb-left-icon" aria-hidden="true"></i>
+      <div class="boo-true"><i class="fa fa-language" aria-hidden="true"></i></div>
       <div>
           <h6 class="spo-lan">Langues parlées</h6>
               <% @user.languages.each do |language| %>
@@ -28,14 +28,14 @@
 
     <div class="item-dashboard">
 
-      <i class="fa fa-wheelchair dsb-left-icon" aria-hidden="true"></i>
+      <div class="boo-true"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
       <div>Son âge<div class="family-name4"><%= @user.age_display %> </div></div>
 
     </div>
 
     <div class="item-dashboard">
 
-      <i class="fa fa-venus-mars dsb-left-icon" aria-hidden="true"></i>
+      <div class="boo-true"><i class="fa fa-venus-mars" aria-hidden="true"></i></div>
       <div>Sexe<div class="family-name4"><%= @user.gender_display %></div></div>
 
     </div>
@@ -43,10 +43,10 @@
 
     <div class="item-dashboard">
       <% if @user.driving_license == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-car" aria-hidden="true"></i></div>
         <div class="boo-true-text">Possède le permis de conduire</div>
       <% elsif @user.driving_license == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-car" aria-hidden="true"></i></div>
         <div class="boo-false-text">Ne possède pas le permis de conduire</div>
       <% else %>
         <div class="no-comm">Permis de conduire - Non communiqué</div>
@@ -57,10 +57,10 @@
 
     <div class="item-dashboard">
       <% if @user.experience_aupair == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-flag" aria-hidden="true"></i></div>
         <div class="boo-true-text">A déjà eu une expérience au pair</div>
       <% elsif @user.experience_aupair == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-flag" aria-hidden="true"></i></div>
         <div class="boo-false-text">N'a jamais eu une expérience au pair</div>
       <% else %>
         <div class="no-comm">Experience au-aupair - Non communiqué</div>
@@ -71,10 +71,10 @@
 
     <div class="item-dashboard">
       <% if @user.educational_experience == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-user" aria-hidden="true"></i></div>
         <div class="boo-true-text">A une expérience dans la garde d'enfants</div>
       <% elsif @user.educational_experience == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-user" aria-hidden="true"></i></div>
         <div class="boo-false-text">N'a pas d'expérience dans la garde d'enfants</div>
       <% else %>
         <div class="no-comm">Garde d'enfants - Non communiqué</div>
@@ -85,16 +85,16 @@
 
     <div class="item-dashboard">
       <% if @user.gender == :male and @user.sports == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
         <div class="boo-true-text">Sportif</div>
       <% elsif @user.gender == :female and @user.sports == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
         <div class="boo-true-text">Sportive</div>
       <% elsif @user.gender == :male and @user.sports == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non sportif</div>
       <% elsif @user.gender == :female and @user.sports == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non sportive</div>
       <% else %>
         <div class="no-comm">Sportif - Non communiqué</div>
@@ -104,16 +104,16 @@
 
     <div class="item-dashboard">
       <% if @user.gender == :male and @user.musician == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-music" aria-hidden="true"></i></div>
         <div class="boo-true-text">Musicien</div>
       <% elsif @user.gender == :female and @user.musician == true %>
-        <div class="boo-true"><i class="fa fa-check-circle-o dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-true"><i class="fa fa-music" aria-hidden="true"></i></div>
         <div class="boo-true-text">Musicienne</div>
       <% elsif @user.gender == :male and @user.musician == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-music" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non musicien</div>
       <% elsif @user.gender == :female and @user.musician == false %>
-        <div class="boo-false"><i class="fa fa-times dsb-left-icon" aria-hidden="true"></i></div>
+        <div class="boo-false"><i class="fa fa-music" aria-hidden="true"></i></div>
         <div class="boo-false-text">Non musicienne</div>
       <% else %>
         <div class="no-comm">Musicien - Non communiqué</div>
