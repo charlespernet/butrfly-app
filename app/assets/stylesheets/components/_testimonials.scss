@@ -75,6 +75,7 @@
   color: $bluegrey-dark;
   font-size: 17px;
   opacity: 0.9;
+  font-family: "Circular-Medium";
 }
 
 .about-us-icon {
@@ -88,12 +89,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 110px;
+  padding-bottom: 110px;
   background-color: white;
   padding-left: 12%;
   padding-right: 12%;
-  border-bottom: 1px solid lightgrey;
 }
 
 .about-us-text-2 {
@@ -113,7 +113,7 @@
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 500px;
+  width: 610px;
 }
 
 .about-full-text-3 {
@@ -124,7 +124,7 @@
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 500px;
+  width: 610px;
 }
 
 
@@ -134,10 +134,8 @@
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
   padding-left: 28%;
   padding-right: 28%;
-  background-color: lightgrey;
 }
 
 .about-us-content-alt {
@@ -149,28 +147,28 @@
 }
 
 .features-container-duo {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: lightgrey;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: rgba(0,0,0,0.1);
 }
 
 
 .about-us-icon-left {
   margin-right: 50px;
   font-size: 42px;
-  color: #D1E9EA;
+  color: $brand-color;
 }
 
 .about-us-icon-right {
   margin-left: 50px;
   font-size: 42px;
-  color: #FC5050;
+  color: $brand-color;
 }
 
 .about-us-icon-right-2 {
   margin-left: 50px;
   font-size: 42px;
-  color: #FFD00C;
+  color: $brand-color;
 }
 
 
@@ -189,14 +187,14 @@
   color: $bluegrey-dark;
   opacity: 0.8;
   font-family: "Circular-Book" !important;
-  width: 500px;
+  width: 700px;
 }
 
 
 
 .features-container-trio {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 110px;
+  padding-bottom: 110px;
   background-color: white;
 }
 
