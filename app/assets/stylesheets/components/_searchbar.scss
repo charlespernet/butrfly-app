@@ -4,7 +4,7 @@
   border-top: 1px solid $border;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;;
 }
 
 input[type="submit"] {
@@ -108,3 +108,10 @@ input[type="submit"]:hover {
   opacity: 0.6;
 }
 
+.input-search-aupair {
+  margin-left: 300px;
+}
+
+.input-search-family {
+  margin-left: 270px;
+}

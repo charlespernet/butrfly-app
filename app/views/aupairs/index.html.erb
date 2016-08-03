@@ -1,124 +1,69 @@
 <div class="fullpage">
-
   <div class="filter-block">
-
     <div class="filter-index-title">
-
-        <div class="filter-top-title">Filtres</div>
-
+      <div class="filter-top-title">
+        Filtres
+      </div>
     </div>
 
-
-  <div class="filter-category filter-index">
-
-    <div id="form-ui" class="checkbox">
-
-
-      <div class="filter-title">Votre au pair doit parler...</div>
-
-
-
-      <div class="cb-inline">
-        <input id="fr" type="checkbox" value=".fr" />
-        <label for="fr">Français</label>
+    <div class="filter-category filter-index">
+      <div id="form-ui" class="checkbox">
+        <div class="filter-title">
+          Votre au pair doit parler...
+        </div>
+        <div class="cb-inline">
+          <input id="fr" type="checkbox" value=".fr" />
+          <label for="fr">Français</label>
+        </div>
+        <div class="cb-inline">
+          <input id="en" type="checkbox" value=".en" />
+          <label for="en">Anglais</label>
+        </div>
+        <div class="cb-inline">
+          <input id="de" type="checkbox" value=".de" />
+          <label for="de">Allemand</label>
+        </div>
+        <div class="cb-inline">
+          <input id="it" type="checkbox" value=".it" />
+          <label for="it">Italien</label>
+        </div>
+        <div class="cb-inline">
+          <input id="es" type="checkbox" value=".es" />
+          <label for="es">Espagnol</label>
+        </div>
+        <div class="cb-inline">
+          <input id="pt" type="checkbox" value=".pt" />
+          <label for="pt">Portuguais</label>
+        </div>
+        <div class="cb-inline">
+          <input id="ar" type="checkbox" value=".ar" />
+          <label for="ar">Arabe</label>
+        </div>
       </div>
-      <div class="cb-inline">
-        <input id="en" type="checkbox" value=".en" />
-        <label for="en">Anglais</label>
-      </div>
-      <div class="cb-inline">
-        <input id="de" type="checkbox" value=".de" />
-        <label for="de">Allemand</label>
-      </div>
-      <div class="cb-inline">
-        <input id="it" type="checkbox" value=".it" />
-        <label for="it">Italien</label>
-      </div>
-      <div class="cb-inline">
-        <input id="es" type="checkbox" value=".es" />
-        <label for="es">Espagnol</label>
-      </div>
-      <div class="cb-inline">
-        <input id="pt" type="checkbox" value=".pt" />
-        <label for="pt">Portuguais</label>
-      </div>
-      <div class="cb-inline">
-        <input id="ar" type="checkbox" value=".ar" />
-        <label for="ar">Arabe</label>
-      </div>
-
     </div>
-    </div>
-
   </div>
 
-
-
-<div class="content-block">
-
-
-  <div class="index-search-bar">
-
-    <div class="icon-search-bar">
-      <div>
-        <i class="fa fa-search" aria-hidden="true"></i>
+  <div class="content-block">
+    <div class="index-search-bar">
+      <div class="icon-search-bar">
+        <div>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
       </div>
-    </div>
-
-    <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-      Vous vivez en...
-      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
-      Le séjour commencera en...
-      <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      <%= f.submit "Rechercher", class: "search-index-btn" %>
-      <%= link_to "Effacer", aupairs_path, class: "search-index-btn" %>
-    <% end %>
-
-  </div>
-
-
-
-  <div class="search-results-container">
-
-    <% if @aupairs.count.zero? %>
-
-      <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-      <div class="search-result-icon-2"><i class="fa fa-low-vision" aria-hidden="true"></i></div>
-      <div class="results-text">Désolé , pas de résultats</div>
-      <div class="results-count"><%= @aupairs.count %> Résultats</div>
-
-    <% else %>
-
-      <% if @country.try(:name) %>
-
-        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-        <div class="results-text-center">Résultats pour " <%= @country.try(:name) %> "</div>
-        <div class="results-count"><%= @aupairs.count %> Résultats</div>
-
-      <% else %>
-
-        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-        <div class="search-result-icon-2"><i class="fa fa-warning" aria-hidden="true"></i></div>
-        <div class="results-text">Aucune recherche en cours</div>
-        <div class="results-count"><%= @aupairs.count %> Résultats</div>
-
+      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+        Vous vivez en...
+        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
+        Le séjour commencera en...
+        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+        <div class="input-search-aupair">
+          <%= f.submit "Rechercher", class: "search-index-btn" %>
+        </div>
+        <%= link_to "Effacer", aupairs_path, class: "search-index-btn" %>
       <% end %>
-
-    <% end %>
-
-  </div>
-
-
-
-
-
+    </div>
 
     <div class="grid">
       <%= render @aupairs %>
     </div>
-
-
-
-</div>
-
+  </div>
 </div>
