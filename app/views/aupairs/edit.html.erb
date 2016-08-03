@@ -16,9 +16,9 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs-2" role="tablist" id="myTab">
-        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">#1</a></li>
-        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">#2</a></li>
-        <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">#3</a></li>
+        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Tes coordonnées</a></li>
+        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Tes disponibiltés</a></li>
+        <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">Tes super pouvoirs</a></li>
       </ul>
 
     </div>
@@ -31,8 +31,7 @@
         <div class="navpill-two">
 
           <div class="right-block-title">
-            <div class="title-text-bold">#1</div>
-            <div class="title-text">Tes coordonnées</div>
+            <div class="title-text-bold">Quelques questions pour commencer</div>
           </div>
 
           <div class="flex-form-right">
@@ -67,16 +66,14 @@
         <div class="navpill-two">
 
           <div class="right-block-title">
-            <div class="title-text-bold">#2</div>
-            <div class="title-text">Tes disponibiltés</div>
+            <div class="title-text-bold">Ton départ pour l'aventure</div>
           </div>
-
 
           <div class="flex-form-right">
 
             <div class="form-right-block">
               <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %> <!-- que le mois et l'année -->
-              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?" %> <!-- 3 choix -->
+              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %> <!-- 3 choix -->
             </div>
 
           </div>
@@ -92,25 +89,23 @@
         <div class="navpill-three">
 
           <div class="right-block-title">
-            <div class="title-text-bold">#3</div>
-            <div class="title-text">Tes super pouvoirs</div>
+            <div class="title-text-bold">Dévoile nous tes secrets</div>
           </div>
 
 
           <div class="flex-form-right">
 
             <div class="form-right-block">
-              <%= f.input :description, label: "Décrivez-vous en quelques lignes", :input_html => { :rows => 10 , :style => 'width: 350px;'} %>
-              <div class="test-flex">
-                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?" %>
-              </div>
-              <div class="test-flex">
-                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?" %>
-              </div>
+              <%= f.input :description, label: "Décrivez-vous en quelques lignes" %>
+
+              <!-- Associations to inline -->
+              <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :label_select %>
+              <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :label_select %>
+
               <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
               <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
               <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
-              <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu deja eu une experience au pair ?" %>
+              <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu déjà eu une expérience au pair ?" %>
               <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
               <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
             </div>
