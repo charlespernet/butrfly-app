@@ -1,98 +1,47 @@
-
 <div class="fullpage">
-
   <div class="filter-block">
-
     <div class="filter-index-title">
-
-        <div class="filter-top-title">Filtres</div>
-
+      <div class="filter-top-title">Filtres</div>
     </div>
 
+    <div class="filter-category filter-index">
+      <div id="form-ui" class="checkbox">
+        <div class="filter-title">La famille recherche...</div>
+          <div class="cb-inline">
+            <input id="male" type="checkbox" value=".male" />
+            <label for="male"><%= t("male_prefered").capitalize %></label>
+          </div>
 
-  <div class="filter-category filter-index">
-
-    <div id="form-ui" class="checkbox">
-
-
-      <div class="filter-title">La famille recherche...</div>
-
-        <div class="cb-inline">
-          <input id="male" type="checkbox" value=".male" />
-          <label for="male"><%= t("male_prefered").capitalize %></label>
-        </div>
-
-        <div class="cb-inline">
-          <input id="female" type="checkbox" value=".female" />
-          <label for="female"><%= t("female_prefered").capitalize %></label>
-        </div>
-
-
-    </div>
-    </div>
-
-  </div>
-
-
-
-<div class="content-block">
-
-
-  <div class="index-search-bar">
-
-    <div class="icon-search-bar">
-      <div>
-        <i class="fa fa-search" aria-hidden="true"></i>
+          <div class="cb-inline">
+            <input id="female" type="checkbox" value=".female" />
+            <label for="female"><%= t("female_prefered").capitalize %></label>
+          </div>
       </div>
     </div>
-
-    <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-      La famille habite en...
-      <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
-      Le séjour commence en...
-      <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      <%= f.submit "Rechercher", class: "search-index-btn" %>
-      <%= link_to "Effacer", families_path, class: "search-index-btn" %>
-    <% end %>
-
-
   </div>
 
+  <div class="content-block">
+    <div class="index-search-bar">
+      <div class="icon-search-bar">
+        <div>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
 
-
-  <div class="search-results-container">
-
-    <% if @families.count == 0 %>
-
-      <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-      <div class="search-result-icon-2"><i class="fa fa-low-vision" aria-hidden="true"></i></div>
-      <div class="results-text">Désolé , pas de résultats</div>
-      <div class="results-count"><%= @families.count %> Résultats</div>
-
-    <% else %>
-
-
-
-        <div class="search-result-icon"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
-        <div class="results-text-center">Résultats pour " <%= @country_code %> "</div>
-        <div class="results-count"><%= @families.count %> Résultats</div>
-
-
-    <% end %>
-
-  </div>
-
-
-
-
-
+      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+        La famille habite en...
+        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
+        Le séjour commence en...
+        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+        <div class="input-search-family">
+          <%= f.submit "Rechercher", class: "search-index-btn" %>
+        </div>
+        <%= link_to "Effacer", families_path, class: "search-index-btn" %>
+      <% end %>
+    </div>
 
     <div class="grid">
       <%= render @families %>
     </div>
-
-
-
-</div>
-
+  </div>
 </div>
