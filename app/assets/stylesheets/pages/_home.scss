@@ -496,14 +496,17 @@
   position: absolute;
   bottom: -30px;
   left: 8px;
-  font-size: 16px;
-  color: $bluegrey-dark;
+  font-size: 14px;
+  color: $brand-color;
   font-family: "Circular-Book" !important;
 }
 
 .text-testi {
   font-size: 15px;
   opacity: 0.8;
+  font-family: "Lato";
+  font-weight: 400;
+  font-style: italic;
 }
 
 .fixed-social-links {
@@ -528,6 +531,10 @@
 
 .fixed-social-links i {
   font-size: 1.5em;
+  transition: 0.5s ease;
+  &:hover {
+    color: $brand-color;
+  }
 }
 
 
