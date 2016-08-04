@@ -16,12 +16,12 @@ class AupairDecorator < Draper::Decorator
 
   def dispo_from_display
     return "non communiqué" unless dispo_from
-    l(dispo_from, :format => '%B %Y')
+    I18n.l(dispo_from, :format => '%B %Y')
   end
 
   def stay_duration_display
     return "non communiqué" unless stay_duration
-    t(stay_duration)
+    I18n.t(stay_duration)
   end
 
   def sport_display
