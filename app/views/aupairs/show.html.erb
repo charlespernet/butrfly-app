@@ -15,10 +15,10 @@
 
       <div class="boo-true"><i class="fa fa-language" aria-hidden="true"></i></div>
       <div>
-          <h6 class="spo-lan">Langues parlées</h6>
-              <% @user.languages.each do |language| %>
-                <div class="family-name4"><%= t(language.code) %>&nbsp; &nbsp;</div>
-            <% end %>
+        <h6 class="spo-lan">Langues parlées</h6>
+        <% @user.languages.each do |language| %>
+          <div class="family-name4"><%= language.name_translated %>&nbsp; &nbsp;</div>
+        <% end %>
       </div>
 
     </div>
@@ -153,7 +153,7 @@
 
       <div class="your-search-item">
         <i class="fa fa-clock-o your-search-left-icon" aria-hidden="true"></i>
-        <div>Pour quelle durée <div class="family-name4"><%= t(@user.stay_duration) %></div></div>
+        <div>Pour quelle durée <div class="family-name4"><%= @user.stay_duration_display %></div></div>
       </div>
 
       <div class="your-search-item">
@@ -162,7 +162,7 @@
               Pays recherchés
                 <div class="sl-flex-inline">
                   <% @user.countries.each do |country| %>
-                    <div class="family-name4"><%= t(country.code) %>&nbsp; &nbsp;</div>
+                    <div class="family-name4"><%= country.name_translated %>&nbsp; &nbsp;</div>
                   <% end %>
                 </div>
             </div>

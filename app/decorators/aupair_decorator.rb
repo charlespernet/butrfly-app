@@ -19,6 +19,11 @@ class AupairDecorator < Draper::Decorator
     l(dispo_from, :format => '%B %Y')
   end
 
+  def stay_duration_display
+    return "non communiqué" unless stay_duration
+    t(stay_duration)
+  end
+
   def sport_display
     female? ? "Sportive" : "Sportif"
   end
