@@ -37,16 +37,20 @@
             <div class="form-right-block">
 
               <%= f.input :name, label: "Votre nom de famille" %>
-              <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: false, prompt: "Votre pays" %>
+              <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: "Vous habitez en", prompt: "Votre pays" %>
               <div class="input-inline-items">
-                <%= f.input :children_age_from, label: "Les enfants sont âgés entre ", collection: 0..10 %>
-                <%= f.input :children_age_to, label: "et", collection: 0..20 %>
+                Les enfants sont âgés entre&nbsp
+                <%= f.input :children_age_from, collection: 0..15, label: false %>
+                &nbspet&nbsp
+                <%= f.input :children_age_to, collection: 0..20, label: false %>
+                &nbspans
               </div>
-              <%= f.input :children_number, label: "Combien d'enfants seront confiés à l'au-pair ?", collection: 1..10 %>
+              <p>Combien d'enfants seront confiés à l'au-pair ?</p>
+              <%= f.input :children_number, label: false, collection: 1..10 %>
               <div class="description-padding">
                 <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
               </div>
-              <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :" %>
+              <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :", label_method: lambda { |key| t(key) } %>
               <div class="edit-family-label">
                 <%= f.input :experience_with_aupair, as: :radio_buttons, label: "Avez-vous deja accueilli une/un au-pair ?" %>
                 <%= f.input :domestic_animal, as: :radio_buttons, label: "Avez-vous un animal domestique ?" %>
@@ -76,10 +80,10 @@
 
             <div class="form-right-block">
 
-              <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0, label: "Vous recherchez plutot : une fille au-pair / un garçon au-pair ?" %>
+              <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0, label: "Vous recherchez plutot :", label_method: lambda { |key| t("#{key}_prefered") } %>
               <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 4, discard_day: true, label: "Début du séjour :" %>
-              <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Duréé du séjour souhaitée" %>
-              <%= f.input :housework, as: :radio_buttons, label: "l'aupair devra-t'il donner un coup de main pour les taches menageres ?" %>
+              <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Durée du séjour souhaitée", label_method: lambda { |key| t(key) } %>
+              <%= f.input :housework, as: :radio_buttons, label: "l'aupair devra-t'il donner un coup de main pour les tâches ménagères ?" %>
               <%= f.input :driving_license_required, as: :radio_buttons, label: "l'aupair doit-il disposer du permis de conduire ?" %>
 
 
