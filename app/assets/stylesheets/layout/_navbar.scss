@@ -43,6 +43,9 @@
   color: $bluegrey-dark;
   font-size: 14px;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar-wagon-link-black:hover {
   color: black;
