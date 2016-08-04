@@ -11,16 +11,16 @@
 
 
     <!-- Different navigation if login or not -->
-    <%= link_to "Blog", "http://blog.butrfly.com/", target: "_blank", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Blog", "http://blog.butrfly.com/", target: "_blank", class: "navbar-wagon-item navbar-wagon-link-black" %>
     <% if user_signed_in? %>
-      <%= link_to t("dashboard", default: "Mon compte"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
+      <%= link_to t("dashboard", default: "Mon compte"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
 
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Connexion"), '#login', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
-      <%= link_to t(".top_call_to_action", default: "Inscription"), '#signup', class: 'navbar-wagon-item navbar-wagon-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".sign_in", default: "Connexion"), '#login', class: 'navbar-wagon-item navbar-wagon-link-black', 'data-toggle' => 'modal' %>
+      <%= link_to t(".top_call_to_action", default: "Inscription"), '#signup', class: 'navbar-wagon-item navbar-wagon-link-black', 'data-toggle' => 'modal' %>
 
     <% end %>
 
