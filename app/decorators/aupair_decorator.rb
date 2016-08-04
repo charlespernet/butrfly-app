@@ -19,24 +19,17 @@ class AupairDecorator < Draper::Decorator
     l(dispo_from, :format => '%B %Y')
   end
 
+  def stay_duration_display
+    return "non communiqué" unless stay_duration
+    t(stay_duration)
+  end
+
   def sport_display
-    if gender == :male and sports == true
-      return "Sportif"
-    elsif gender == :female and sports == true
-      return "Sportive"
-    else
-      return "non communiqué"
-    end
+    female? ? "Sportive" : "Sportif"
   end
 
   def musician_display
-    if gender == :male
-      return "Musicien"
-    elsif gender == :female
-      return "Musicienne"
-    else
-      return "Musicien"
-    end
+    female? ? "Musicienne" : "Musicien"
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

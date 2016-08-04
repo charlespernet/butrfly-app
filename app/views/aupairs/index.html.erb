@@ -54,7 +54,7 @@
       <div>
       <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
         Vous vivez en...
-        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :label_select %>
+        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :name_translated %>
         Le séjour commencera en...
         <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
       </div>

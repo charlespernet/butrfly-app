@@ -12,11 +12,10 @@
     <% if user_signed_in? %>
       <%= link_to dashboard_path do %>
         <div class="navbar-wagon-item navbar-wagon-link-black">
-          <%= "" if current_user.specific.is_a?(Family) %>
-            Famille &nbsp
+          <%= "Famille &nbsp".html_safe if current_user.specific.is_a?(Family) %>
           <%= current_user.specific.try(:first_name) if current_user.specific.is_a?(Aupair) %>
           <span class="usertype">
-            <%= current_user.specific.try(:name) || current_user.specific.try(:last_name) %>
+            &nbsp<%= current_user.specific.try(:name) || current_user.specific.try(:last_name) %>
           </span>
         </div>
       <% end %>
