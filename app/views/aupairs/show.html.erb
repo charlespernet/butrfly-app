@@ -136,22 +136,7 @@
 
       <div class="aupair-show-info">
 
-          <div class="your-search-item">
-            <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
-            <div>Son âge <div class="family-name4"><%= @user.age_display %></div></div>
-          </div>
 
-          <div class="your-search-item">
-            <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
-            <div class="show-spokens">
-              Pays recherchés
-                <div class="sl-flex-inline">
-                  <% @user.countries.each do |country| %>
-                    <div class="family-name4"><%= t(country.code) %>&nbsp; &nbsp;</div>
-                  <% end %>
-                </div>
-            </div>
-          </div>
 
       </div>
 
@@ -170,6 +155,18 @@
         <i class="fa fa-clock-o your-search-left-icon" aria-hidden="true"></i>
         <div>Pour quelle durée <div class="family-name4"><%= t(@user.stay_duration) %></div></div>
       </div>
+
+      <div class="your-search-item">
+            <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
+            <div class="show-spokens">
+              Pays recherchés
+                <div class="sl-flex-inline">
+                  <% @user.countries.each do |country| %>
+                    <div class="family-name4"><%= t(country.code) %>&nbsp; &nbsp;</div>
+                  <% end %>
+                </div>
+            </div>
+          </div>
 
     </div>
 
