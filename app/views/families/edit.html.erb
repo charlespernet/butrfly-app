@@ -43,7 +43,9 @@
                 <%= f.input :children_age_to, label: "et", collection: 0..20 %>
               </div>
               <%= f.input :children_number, label: "Combien d'enfants seront confiés à l'au-pair ?", collection: 1..10 %>
-              <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
+              <div class="description-padding">
+                <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
+              </div>
               <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :" %>
               <div class="edit-family-label">
                 <%= f.input :experience_with_aupair, as: :radio_buttons, label: "Avez-vous deja accueilli une/un au-pair ?" %>
@@ -99,6 +101,3 @@
 </div>
 
 <% end %>
-
-
-
