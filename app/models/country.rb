@@ -1,5 +1,5 @@
 class Country < ActiveRecord::Base
-  def label_select
-    I18n.t(code)
+  def name_translated
+    I18n.t(code, scope: "country")
   end
 end

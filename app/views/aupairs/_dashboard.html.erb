@@ -14,7 +14,7 @@
     <div class="item-dashboard">
 
       <i class="fa fa-wheelchair dsb-left-icon" aria-hidden="true"></i>
-      <div>ton âge<div class="family-name4"><%= @user.age_display %></div></div>
+      <div>Ton âge<div class="family-name4"><%= @user.age_display %></div></div>
 
     </div>
 
@@ -87,7 +87,7 @@
           Ta recherche
             <div class="sl-flex-inline">
               <% @user.countries.each do |country| %>
-                <div class="family-name4"><%= country.name %>&nbsp; &nbsp;</div>
+                <div class="family-name4"><%= country.name_translated %>&nbsp; &nbsp;</div>
               <% end %>
             </div>
         </div>
@@ -99,7 +99,7 @@
           Langues parlées
             <div class="sl-flex-inline">
               <% @user.languages.each do |language| %>
-                <div class="family-name4"><%= language.name %>&nbsp; &nbsp;</div>
+                <div class="family-name4"><%= language.name_translated %>&nbsp; &nbsp;</div>
               <% end %>
             </div>
         </div>

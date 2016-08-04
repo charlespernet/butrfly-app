@@ -4,7 +4,7 @@
   border-top: 1px solid $border;
   display: flex;
   align-items: center;
-  justify-content: space-between;;
+  justify-content: center;
 }
 
 input[type="submit"] {
@@ -109,9 +109,9 @@ input[type="submit"]:hover {
 }
 
 .input-search-aupair {
-  margin-left: 300px;
+  margin-left: auto;
 }
 
 .input-search-family {
-  margin-left: 270px;
+  margin-left: auto;
 }
