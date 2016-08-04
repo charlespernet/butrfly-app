@@ -82,8 +82,12 @@
           <div class="flex-form-right">
 
             <div class="form-right-block">
-              <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %> <!-- que le mois et l'année -->
-              <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %> <!-- 3 choix -->
+
+              <div class="test-flex2">
+                <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
+                <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
+              </div>
+
             </div>
 
           </div>
@@ -103,22 +107,31 @@
           </div>
 
 
-          <div class="flex-form-right">
+          <div class="flex-form-right-alt">
 
-            <div class="form-right-block">
-              <%= f.input :description, label: "Décrivez-vous en quelques lignes" %>
+              <div class="description-padding">
+                <%= f.input :description, label: "Décrivez-vous en quelques lignes" %>
+              </div>
 
               <!-- Associations to inline -->
-              <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :label_select %>
-              <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :label_select %>
+              <div class="false-label">Quelles langues parles-tu ?</div>
+              <div class="fucking-inline">
+                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :label_select, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
+              </div>
 
+              <div class="false-label">Dans quel pays souhaites-tu partir ?</div>
+              <div class="fucking-inline">
+                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :label_select, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
+              </div>
+
+              <div class="boo-flex">
               <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
               <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
               <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
               <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu déjà eu une expérience au pair ?" %>
               <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
               <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
-            </div>
+              </div>
 
           </div>
 
