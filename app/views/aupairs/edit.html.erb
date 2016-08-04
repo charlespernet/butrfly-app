@@ -116,12 +116,12 @@
               <!-- Associations to inline -->
               <div class="false-label">Quelles langues parles-tu ?</div>
               <div class="fucking-inline">
-                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :label_select, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
+                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
               </div>
 
               <div class="false-label">Dans quel pays souhaites-tu partir ?</div>
               <div class="fucking-inline">
-                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :label_select, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
+                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
               </div>
 
               <div class="boo-flex">
