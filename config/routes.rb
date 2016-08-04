@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :aupairs, only: [:index, :show, :edit, :update]
 
   get 'dashboard', to: 'pages#dashboard'
+
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :new, :create]
+  end
 end
