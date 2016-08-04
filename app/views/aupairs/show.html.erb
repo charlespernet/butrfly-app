@@ -17,7 +17,7 @@
       <div>
           <h6 class="spo-lan">Langues parlées</h6>
               <% @user.languages.each do |language| %>
-                <div class="family-name4"><%= I18n.t(language.name) %>&nbsp; &nbsp;</div>
+                <div class="family-name4"><%= t(language.code) %>&nbsp; &nbsp;</div>
             <% end %>
       </div>
 
@@ -147,7 +147,7 @@
               Pays recherchés
                 <div class="sl-flex-inline">
                   <% @user.countries.each do |country| %>
-                    <div class="family-name4"><%= I18n.t(country.name) %>&nbsp; &nbsp;</div>
+                    <div class="family-name4"><%= t(country.code) %>&nbsp; &nbsp;</div>
                   <% end %>
                 </div>
             </div>
