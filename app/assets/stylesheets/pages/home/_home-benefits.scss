@@ -1,0 +1,88 @@
+.benefits-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.benefits-aupair-container {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  padding-left: 18%;
+  padding-right: 18%;
+  background-color: rgba(55,0,155,0.1);
+}
+
+.benefits-family-container {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  padding-left: 18%;
+  padding-right: 18%;
+  background-color: white;
+}
+
+.benefits-text-block-left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.benefits-text-block-right {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+.benefits-fulltext-left {
+  font-size: 14px;
+  text-align: left;
+  text-align-last: left;
+  text-justify: right;
+  color: $bluegrey-dark;
+  opacity: 0.8;
+  font-family: "Circular-Book" !important;
+  width: 100%;
+}
+
+.benefits-fulltext-right {
+  font-size: 14px;
+  text-align: right;
+  text-align-last: right;
+  text-justify: right;
+  color: $bluegrey-dark;
+  opacity: 0.8;
+  font-family: "Circular-Book" !important;
+  width: 100%;
+}
+
+.benefits-icon-left {
+  margin-right: 50px;
+  font-size: 42px;
+  color: $brand-color;
+}
+
+.benefits-icon-right {
+  margin-left: 50px;
+  font-size: 42px;
+  color: $brand-color;
+}
+
+.benefits-title-left {
+  padding-bottom: 14px;
+  color: $bluegrey-dark;
+  font-size: 17px;
+  opacity: 0.9;
+  font-family: "Circular-Medium";
+  text-align: left;
+}
+
+.benefits-title-right {
+  padding-bottom: 14px;
+  color: $bluegrey-dark;
+  font-size: 17px;
+  opacity: 0.9;
+  font-family: "Circular-Medium";
+  text-align: right;
+}
+

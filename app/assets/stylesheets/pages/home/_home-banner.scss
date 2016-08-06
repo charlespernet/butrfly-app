@@ -1,0 +1,40 @@
+.home-banner-logo {
+  width: 320px;
+  margin-right: 25px;
+}
+
+.home-banner {
+  color: white;
+  height: 50vh;
+  background-size: cover !important;
+  display: flex;
+  background-image: image-url("hero.jpg");
+  background-position: center center;
+  align-items: center;
+  justify-content: center;
+}
+.home-banner h1 {
+  font-size: 30px;
+  font-family: "Lato";
+  letter-spacing: 6px;
+  font-weight: 200;
+}
+.home-banner p {
+  font-family: "Lato";
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+.home-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-banner-icon {
+  margin-left: 25px;
+  font-size: 45px;
+}
