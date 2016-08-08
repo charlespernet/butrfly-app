@@ -12,10 +12,9 @@
 }
 
 .testimonial-item {
-  min-width: 60px;
+  min-width: 100%;
   max-width: 100%;
   background-color: white;
-  padding: 40px 45px;
   border-radius: 3px;
   position: relative;
   display: flex;
@@ -24,15 +23,15 @@
   border: 1px solid $border;
   margin-top: 40px;
   margin-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .avatar-testimonial {
   width: 70px;
   height: 70px;
-  position: absolute;
-  border: 4px solid rgba(255,255,255,1);
-  bottom: -35px;
-  right: 30px;
   background-color: grey;
   border-radius: 50%;
   background-image: url(https://www.meetic.fr/pages/uptodate/wp-content/uploads/sites/23/2014/01/photo-profil.jpg);
@@ -40,19 +39,46 @@
   background-position: center center;
 }
 
-.author-testi {
+.ttt {
+  width: 50%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: -30px;
-  left: 8px;
-  font-size: 14px;
-  color: $brand-color;
-  font-family: "Circular-Book" !important;
+  bottom: -60px;
+  right: 25%;
 }
 
+.author-testi {
+  font-size: 16px;
+  color: $brand-color;
+  font-family: "Circular-Bold" !important;
+  letter-spacing: -0.5px;
+}
+
+.author-testi-type {
+  font-size: 16px;
+  color: $brand-color;
+  font-family: "Circular-Book" !important;
+  letter-spacing: -0.5px;
+  opacity: 0.6;
+}
+
+.author-testi-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20%;
+  top: 35px;
+  left: 40%;
+}
+
+
 .text-testi {
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.8;
-  font-family: "Lato";
-  font-weight: 400;
-  font-style: italic;
+  font-family: "Circular-Book";
+  letter-spacing: -0.5px;
 }
