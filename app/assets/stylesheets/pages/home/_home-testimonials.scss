@@ -2,7 +2,7 @@
   display: flex;
   padding-top: 110px;
   padding-bottom: 110px;
-  background-color: white;
+  background-color: rgba(0,0,0,0.9);
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid $border;
@@ -14,14 +14,14 @@
 .testimonial-item {
   min-width: 100%;
   max-width: 100%;
-  background-color: white;
+  background-color: transparent;
   border-radius: 3px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $border;
-  margin-top: 40px;
+  // border: 1px solid rgba(255,255,255,0.2);
+  margin-top: 20px;
   margin-bottom: 40px;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -51,14 +51,14 @@
 }
 
 .author-testi {
-  font-size: 16px;
+  font-size: 19px;
   color: $brand-color;
   font-family: "Circular-Bold" !important;
   letter-spacing: -0.5px;
 }
 
 .author-testi-type {
-  font-size: 16px;
+  font-size: 19px;
   color: $brand-color;
   font-family: "Circular-Book" !important;
   letter-spacing: -0.5px;
@@ -78,7 +78,8 @@
 
 .text-testi {
   font-size: 16px;
-  opacity: 0.8;
+  opacity: 0.7;
   font-family: "Circular-Book";
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  color: white;
 }
