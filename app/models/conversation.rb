@@ -14,6 +14,7 @@ class Conversation < ActiveRecord::Base
     )
   end
 
+  # can be replaced with ActiveRecord .or Method when application updated to rails 5
   scope :involving, -> (user) do
    where("conversations.sender_id = ? OR conversations.recipient_id = ?", user.id, user.id)
  end
