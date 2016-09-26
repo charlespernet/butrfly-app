@@ -1,5 +1,7 @@
 <div class="fullpage">
-  <div class="filter-block">
+
+  <div class="left-column mq-hidden-under-680">
+
     <div class="filter-index-title">
       <div class="filter-top-title">Filtres</div>
     </div>
@@ -18,33 +20,15 @@
           </div>
       </div>
     </div>
+
   </div>
 
-  <div class="content-block">
-    <div class="index-search-bar">
-      <div class="icon-search-bar">
-        <div>
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </div>
-      </div>
 
-      <div>
-      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-        La famille habite en...
-        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :name_translated %>
-        Le séjour commence en...
-        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      </div>
+  <div class="right-column">
 
-        <div class="input-search-family">
-          <%= f.submit "Rechercher", class: "search-index-btn" %>
-          <%= link_to "Effacer", families_path, class: "search-index-btn" %>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'shared/family_index_searchbar' %>
+    <div class="grid"><%= render @families %></div>
 
-    <div class="grid">
-      <%= render @families %>
-    </div>
   </div>
+
 </div>

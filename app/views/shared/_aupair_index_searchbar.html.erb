@@ -1,0 +1,23 @@
+<div class="index-search-bar">
+      <div class="mq-hidden-under-680 icon-search-bar">
+        <div>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div>
+      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
+        <div class="mq-hidden-under-680">Vous vivez en...</div>
+        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :name_translated %>
+        <div class="mq-hidden-under-680">Le séjour commencera en...</div>
+        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
+      </div>
+
+        <div class="input-search-aupair">
+          <%= f.submit "Rechercher", class: "search-index-btn mq-hidden-under-680" %>
+          <%= f.submit "Go!!", class: "search-index-btn mq-show-under-680" %>
+          <%= link_to "Effacer", aupairs_path, class: "search-index-btn mq-hidden-under-680" %>
+          <%= link_to "", aupairs_path, class: "search-index-btn fa fa-times mq-show-under-680" %>
+        </div>
+      <% end %>
+    </div>

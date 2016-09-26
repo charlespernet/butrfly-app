@@ -1,6 +1,6 @@
 <div class="fullpage">
 
-  <div class="filter-block">
+  <div class="left-column mq-hidden-under-680">
 
     <div class="identity-dashboard">
 
@@ -125,7 +125,7 @@
 
 
 
-  <div class="content-block">
+  <div class="right-column">
 
     <div class="dashboard-top-container">
 
@@ -180,6 +180,8 @@
       <div class="dsc-text">
         <%= @user.try(:description) %>
       </div>
+
+      <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.acting_as.id), class: 'btn btn-primary', method: :post %>
 
     </div>
 

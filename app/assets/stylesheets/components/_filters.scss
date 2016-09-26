@@ -89,13 +89,13 @@
 
 
 .checkbox input[type="checkbox"]:not(:checked) + label:before {
-  content: url(cb-oval-unchecked.png);
+  content: image-url("cb-oval-unchecked.png");
   padding-right: 12px;
   transition: 0.4s;
 }
 
 .checkbox input[type="checkbox"]:checked + label:before {
-  content: url(cb-oval-checked.png);
+  content: image-url("cb-oval-checked.png");
   padding-right: 20px;
   transition:  0.4s;
 }
@@ -104,8 +104,3 @@
   padding-top: 0px;
   margin-top: 0px;
 }
-
-
-
-
-
