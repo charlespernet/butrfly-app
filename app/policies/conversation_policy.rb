@@ -9,4 +9,8 @@ class ConversationPolicy < ApplicationPolicy
   def index?
     @user == record.sender || @user == record.recipient
   end
+
+  def create?
+    index?
+  end
 end

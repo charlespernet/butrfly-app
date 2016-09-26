@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
 
-  resources :conversations, only: [:index, :create] do
-    resources :messages, only: [:index, :new, :create]
+  resources :conversations, only: [:create] do
+    resources :messages, only: [:index, :create]
   end
 end
