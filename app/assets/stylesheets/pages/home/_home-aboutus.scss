@@ -1,0 +1,30 @@
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: white;
+  padding-left: 18%;
+  padding-right: 18%;
+}
+
+.about-us-title {
+  padding-bottom: 14px;
+  color: $bluegrey-dark;
+  font-size: 17px;
+  opacity: 0.9;
+  font-family: "Circular-Medium";
+  transition: 1s ease;
+}
+
+.about-us-fulltext {
+  font-size: 14px;
+  text-align: left;
+  text-align-last: left;
+  color: $bluegrey-dark;
+  opacity: 0.8;
+  font-family: "Circular-Book" !important;
+  width: 100%;
+}
+

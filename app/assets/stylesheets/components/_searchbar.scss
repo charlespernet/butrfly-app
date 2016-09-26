@@ -46,6 +46,8 @@ input[type="submit"]:hover {
   text-decoration: none;
   margin: none;
   opacity: 0.8;
+  min-width: 20px;
+  max-width: 70px;
 }
 
 .index-search-bar select:hover {
@@ -66,11 +68,6 @@ input[type="submit"]:hover {
   text-decoration: none;
 }
 
-@media all and (max-width: 850px) {
-  .index-search-bar {
-    display: none;
-  }
-}
 
 #search_date_3i {
   display: none;

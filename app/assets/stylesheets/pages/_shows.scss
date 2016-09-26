@@ -14,24 +14,14 @@
   text-align: center;
   border-right: 1px solid $border;
   border-top: 1px solid $border;
+  min-height: 100vh;
 }
 
 .content-block {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-@media all and (max-width: 680px) {
-  .filter-block {
-    display: none;
-  }
-}
-
-@media all and (min-width: 680px) {
-  .banner-content {
-    display: none;
-  }
-}
 
 .aupair-infos {
   height: 50px;

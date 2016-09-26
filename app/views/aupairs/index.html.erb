@@ -1,5 +1,7 @@
 <div class="fullpage">
-  <div class="filter-block">
+
+  <div class="left-column mq-hidden-under-680">
+
     <div class="filter-index-title">
       <div class="filter-top-title">
         Filtres
@@ -43,31 +45,11 @@
     </div>
   </div>
 
-  <div class="content-block">
-    <div class="index-search-bar">
-      <div class="icon-search-bar">
-        <div>
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </div>
-      </div>
+  <div class="right-column">
 
-      <div>
-      <%= simple_form_for :search, method: :get, html: { class: "form-inline" }, defaults: { label: false } do |f| %>
-        Vous vivez en...
-        <%= f.input :country, collection: Country.all, selected: @country.try(:id), prompt: "Pays", label_method: :name_translated %>
-        Le séjour commencera en...
-        <%= f.input :date, as: :date, selected: @date, start_year: Date.today.year, end_year: Date.today.year + 2 %>
-      </div>
+    <%= render 'shared/aupair_index_searchbar' %>
+    <div class="grid"><%= render @aupairs %></div>
 
-        <div class="input-search-aupair">
-          <%= f.submit "Rechercher", class: "search-index-btn" %>
-          <%= link_to "Effacer", aupairs_path, class: "search-index-btn" %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="grid">
-      <%= render @aupairs %>
-    </div>
   </div>
+
 </div>
