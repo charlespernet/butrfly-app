@@ -94,8 +94,9 @@
         <%= @user.try(:description) %>
       </div>
 
-    </div>
+      <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.acting_as.id), class: 'btn btn-primary', method: :post %>
 
+    </div>
 
   </div>
 

@@ -1,0 +1,13 @@
+<div class="container">
+  <% @messages.each do |message| %>
+    <p><%= message.user.specific.id %> : <%= message.body %></p>
+  <% end %>
+
+
+  <%= simple_form_for [@conversation, @new_message] do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :body, label: false %>
+    <%= f.submit 'Répondre' %>
+  <% end %>
+
+</div>
