@@ -50,7 +50,8 @@ class FamiliesController < ApplicationController
       :children_age_to,
       :children_number,
       :housework,
-      :driving_license_required
+      :driving_license_required,
+      photos: []
     )
   end
 

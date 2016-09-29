@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804093942) do
+ActiveRecord::Schema.define(version: 20160929092201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "aupairs", force: :cascade do |t|
     t.string  "first_name"
@@ -30,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160804093942) do
     t.boolean "sports"
     t.date    "dispo_from"
     t.integer "stay_duration_cd"
+    t.string  "photo"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -63,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160804093942) do
     t.integer "family_type_cd",           default: 0
     t.boolean "housework"
     t.boolean "driving_license_required"
+    t.string  "photo"
   end
 
   create_table "languages", force: :cascade do |t|

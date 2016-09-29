@@ -9,6 +9,10 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
+gem 'cloudinary', '1.1.0'
+gem "attachinary", github: "assembler/attachinary"
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
 
 gem 'devise'
 gem 'devise-i18n'
