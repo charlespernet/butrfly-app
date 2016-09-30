@@ -129,7 +129,7 @@
 
     <div class="dashboard-top-container">
 
-      <div class="aupair-photo">
+      <div class="aupair-photo" style="background-image: url(<%= if @user.photo == nil then "" else  cl_image_path @user.photo.path end %>);">
         <div class="site-info">"Au-pair photo"</div>
       </div>
 

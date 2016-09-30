@@ -7,6 +7,7 @@ class Family < ActiveRecord::Base
     family_type
     experience_with_aupair)
 
+  has_attachments :photos, maximum: 5
   acts_as :user
   as_enum :family_type, nuclear: 0, single: 1, homo: 2, blended: 3
   as_enum :prefered_gender, Aupair.genders

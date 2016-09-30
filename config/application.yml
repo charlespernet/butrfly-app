@@ -6,9 +6,15 @@
 # stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
 # stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
 #
-# production:
-#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
-#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+
+production:
+  api_key: "932983599627195"
+  api_secret: "MARiIoYTNhQD0-LvgFcnrxwbwcY"
+
 
 HTTP_AUTH_NAME: "butrfly"
 HTTP_AUTH_PASSWORD: "butrfly"
+
+
+CLOUDINARY_URL: "cloudinary://932983599627195:MARiIoYTNhQD0-LvgFcnrxwbwcY@butrfly"
