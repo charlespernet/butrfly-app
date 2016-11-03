@@ -1,5 +1,5 @@
   <div class="mansory-container item <%= family.prefered_gender %>">
-    <div class="mansory-picture" style="background-image: url(<%= if family.photo == nil then "" else  cl_image_path family.photos.first.path end %>);">
+    <div class="mansory-picture" style="background-image: url(<%= if family.photos.empty? then "" else  cl_image_path family.photos.first.path end %>);">
 
     </div>
     <div class="mansory-text">
