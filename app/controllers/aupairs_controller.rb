@@ -50,9 +50,9 @@ class AupairsController < ApplicationController
       :educational_experience,
       :accepted_domestic_animal,
       :sports,
-      :photo,
       language_ids: [],
-      country_ids: []
+      country_ids: [],
+      photos: []
     )
   end
 end

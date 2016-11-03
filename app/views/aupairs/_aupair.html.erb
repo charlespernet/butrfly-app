@@ -1,7 +1,7 @@
 
 <div class="mansory-container item <%= aupair.languages.pluck(:code).join(" ") %>">
 
-  <div class="mansory-picture" style="background-image: url(<%= if aupair.photo == nil then "" else  cl_image_path aupair.photo.path end %>);"></div>
+  <div class="mansory-picture" style="background-image: url(<%= if aupair.photos.empty? then "" else  cl_image_path aupair.photos.first.path end %>);"></div>
 
   <div class="mansory-text">
     <div class="m-real-text">
