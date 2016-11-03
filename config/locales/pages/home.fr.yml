@@ -8,5 +8,11 @@ fr:
       about_us:
         title: "La philosophie Butrfly"
         text: "L'équipe BUTFRLY, c'est quelques personnes encore tout émues des merveilleuses expériences qu'elles ont pu vivre à travers l'au pairing, soit en tant qu'enfants, soit en tant que parents, soit en tant qu’au pair. Avec BUTRFLY ils ont eu envie de faire entrer cette belle idée dans le monde d’aujourd’hui qui changera votre vie."
-
+      benefits:
+        aupairtitle: "AUPAIRS"
+        aupairsubtitle01: ""
+        aupairtext01: ""
+        familytitle: "FAMILLES"
+        familysubtitle01: ""
+        familytext01: ""
 
