@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :families, only: [:index, :show, :edit, :update]
   resources :aupairs, only: [:index, :show, :edit, :update]
 
+  resources :payments, only: [:new, :create]
+
   get 'dashboard', to: 'pages#dashboard'
+  get 'plans', to: 'pages#plans'
 
   resources :conversations, only: [:create] do
     resources :messages, only: [:index, :create]
