@@ -17,4 +17,10 @@ class User < ActiveRecord::Base
     return nil unless country
     country.translations[I18n.locale.to_s] || country.name
   end
+
+  def active?(date = Date.today)
+    # end_date > date_to_try
+    return false unless active_until
+    active_until > date
+  end
 end
