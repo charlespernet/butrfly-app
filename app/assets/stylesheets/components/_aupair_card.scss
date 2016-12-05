@@ -1,0 +1,18 @@
+.aupair-card {
+ background-color: $aupair-color;
+  width: 300px;
+  padding: 35px;
+  outline: 2px solid white;
+  outline-offset: -20px;
+  color: white;
+  p {
+    color: white;
+  }
+  hr {
+    border-top: 1px solid white;
+    width: 15%;
+  }
+  span {
+    color: black;
+  }
+}

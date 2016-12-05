@@ -1,0 +1,18 @@
+.family-card {
+ background-color: $family-color;
+  width: 300px;
+  padding: 35px;
+  outline: 2px solid black;
+  outline-offset: -20px;
+  color: black;
+  p {
+    color: black;
+  }
+  hr {
+    border-top: 1px solid black;
+    width: 15%;
+  }
+  span {
+    color: white;
+  }
+}

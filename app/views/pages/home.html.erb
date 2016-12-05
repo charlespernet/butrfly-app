@@ -1,4 +1,31 @@
+<!-- Banner position absolute, add content in .home-banner-content -->
 <div class="home-banner">
+</div>
+<div class="home-banner-content">
+</div>
+
+<!-- cards link to index pages -->
+<div class="home-search-container centered">
+  <%= link_to aupairs_path do %>
+    <div class="family-card text-center">
+      <h1>JE SUIS UNE FAMILLE</h1>
+      <p><span>Je cherche mon aupair</span></p>
+      <hr>
+      <p>Je créé un profil</p>
+      <p>Je trouve mon aupair</p>
+      <p>Je l’accueille</p>
+    </div>
+  <% end %>
+  <%= link_to families_path do %>
+    <div class="aupair-card text-center">
+      <h1>JE SUIS UN AUPAIR</h1>
+      <p><span>Je cherche une famille</span></p>
+      <hr>
+      <p>Je créé un profil</p>
+      <p>Je trouve ma famille</p>
+      <p>On m'accueille</p>
+    </div>
+  <% end %>
 </div>
 
 <%= render 'pages/home_partials/about_us' %>
@@ -6,19 +33,3 @@
 <%= render 'pages/home_partials/benefits' %>
 
 <%= render 'pages/home_partials/home_testimonials' %>
-
-<%= content_for :after_js do %>
-  <script type="text/javascript">
-    $(window).scroll(function() {
-        if ($(".navbar-wagon").offset().top > 50) {
-            $('.navbar-wagon').addClass('affix');
-            $(".navbar-fixed-top").addClass("top-nav-collapse");
-            $(".navbar-wagon-item").addClass('affix2');
-        } else {
-            $('.navbar-wagon').removeClass('affix');
-            $('.navbar-wagon-item').removeClass('affix2');
-            $(".navbar-fixed-top").removeClass("top-nav-collapse");
-        }
-    });
-  </script>
-<% end %>
