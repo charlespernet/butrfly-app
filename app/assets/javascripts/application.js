@@ -2,12 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
-//= require alert
-//= require filters_logic
-//= require index_filters
-//= dynamicnavbar
-//= viewportchecker
-//= homepage_animate
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
