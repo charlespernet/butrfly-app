@@ -5,7 +5,6 @@
 //= require alert
 //= require filters_logic
 //= require index_filters
-//= dynamicnavbar
 //= viewportchecker
 //= homepage_animate
 //= require jquery-fileupload/basic
