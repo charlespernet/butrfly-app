@@ -6,3 +6,19 @@
 <%= render 'pages/home_partials/benefits' %>
 
 <%= render 'pages/home_partials/home_testimonials' %>
+
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    $(window).scroll(function() {
+        if ($(".navbar-wagon").offset().top > 50) {
+            $('.navbar-wagon').addClass('affix');
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+            $(".navbar-wagon-item").addClass('affix2');
+        } else {
+            $('.navbar-wagon').removeClass('affix');
+            $('.navbar-wagon-item').removeClass('affix2');
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        }
+    });
+  </script>
+<% end %>
