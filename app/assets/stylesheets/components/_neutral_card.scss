@@ -1,5 +1,5 @@
 .neutral-card {
- background-color: $neutral-color;
+  background-color: $neutral-color;
   max-width: 400px;
   min-width: 100px;
   padding: 35px;
@@ -13,6 +13,26 @@
   a {
     color: black;
     border-bottom: 2px solid black;
+    padding-bottom: 1px;
+  }
+}
+
+.small-neutral-card {
+  background-color: $neutral-color;
+  max-width: 400px;
+  min-width: 100px;
+  padding: 25px;
+  outline: 1px solid black;
+  outline-offset: -10px;
+  color: black;
+  font-size: 15px;
+  hr {
+    border-top: 1px solid black;
+    width: 15%;
+  }
+  a {
+    color: black;
+    border-bottom: 1px solid black;
     padding-bottom: 1px;
   }
 }
