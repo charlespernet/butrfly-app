@@ -1,0 +1,20 @@
+.neutral-card {
+ background-color: $neutral-color;
+  width: 400px;
+  padding: 35px;
+  outline: 2px solid black;
+  outline-offset: -20px;
+  color: black;
+  hr {
+    border-top: 1px solid black;
+    width: 15%;
+  }
+  a {
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 1px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}

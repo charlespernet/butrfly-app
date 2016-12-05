@@ -3,8 +3,8 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Lora" rel="stylesheet");
-$base-font: "Lora", "serif";
-$header-font: "Josefin Sans", "sans-serif";
+$base-font: "Lora", serif;
+$header-font: 'Josefin Sans', sans-serif;
 
 $base-size: 14px;
 $base-height: 1.4;
@@ -16,6 +16,7 @@ $base-height: 1.4;
 $brand-color: #FE305C;
 $aupair-color: #61B0B3;
 $family-color: #F2D05D;
+$neutral-color: rgba(255, 255, 255, 0.8);
 
 $red: #EE5F5B;
 $blue: #3EBECE;

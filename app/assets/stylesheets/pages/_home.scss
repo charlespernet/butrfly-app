@@ -2,442 +2,57 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-
-
-.btnpad {
-  margin: 16px;
-}
-
-.btn {
-  font-family: "Lato";
-  font-weight: 500;
-  font-size: 14px;
-  padding: 7px 22px;
-}
-
-.loginview {
-  padding-left: 25%;
-  padding-right: 25%;
-  margin-top: 100px;
-}
-
-
-
-.loginmargins {
-  margin-top: 30px;
-}
-
-.features {
-  font-family: "Circular-Black";
-  font-weight: 400;
-  letter-spacing: 0.5;
-  color: $bluegrey-dark;
-  font-size: 16px;
-  margin-top: 35px;
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
-
-.homeblock {
-  margin-top: 30px;
-}
-
-.navbar-wagon-link2 {
-  color: $bluegrey-dark;
-  font-size: 14px;
-}
-.navbar-wagon-link2:hover {
-  text-decoration: none;
-}
-
-
-.modalog {
-  color: $bluegrey-dark;
-}
-
-.features-text {
-  text-justify: left;
-  color: $bluegrey-dark;
-  width: 50%;
-  padding-left: auto;
-  padding-right: auto;
-  font-size: 12px;
-  opacity: 0.8;
-  margin-bottom: 60px;
-  line-height: 1.5;
-}
-
-.icon-box p {
-  line-height: 110%;
-}
-
-
-.banner2 {
-  color: white;
-  text-align: center;
-  height: 100%;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
+ .home-search-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(-270deg, rgba(255,191,20,0.3) 0%, rgba(255,180,20,0.4) 50%), url(family-image.jpg);
-  background-position: center;
-  background: linear-gradient(to left, #EB3349 , #F45C43);
-  opacity: 0.9;
-}
-.banner2 h1 {
-  font-size: 24px;
-  font-family: "Lato";
-  letter-spacing: 2px;
-  font-weight: 200;
-}
-
-.banner2 h4 {
-  font-size: 14px;
-  font-family: "Circular-Book";
-  letter-spacing: 0.6;
-}
-.banner2 p {
-  font-family: "Circular-Book";
-  font-size: 15px;
-  color: white;
-  margin-bottom: 20px;
-}
-
-
-.tabs {
-  background: white;
-  display: flex;
-  padding: 10px 10px 0 10px
-}
-.tabs a {
-  color: $bluegrey-dark;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-}
-.tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 0;
-}
-.tabs p {
-  margin-bottom: 0;
-}
-.tab {
-  background: white;
-  flex: 0 0 25%;
-  text-align: center;
-  padding: 20px 0;
-  text-decoration: none;
-}
-.tab:first-child {
-  border-radius: 0px;
-}
-.tab:last-child {
-  border-radius: 0px;
-}
-.tab.active {
-  background: white;
-  color: $brand-color;
-  font-family: "Circular-Medium";
-  text-decoration: none;
-}
-
-.tabs p:active {
-  text-decoration: none;
-}
-
-.nav-tabs {
-  display: flex;
-  padding: 5px;
-  border-style: none;
-}
-
-.nav-tabs li {
-  flex: 0 0 25%;
-  text-align: center;
-  text-decoration: none;
-  border-style: none;
-}
-
-.nav-tabs li.active a {
-  color: $brand-color;
-  font-family: "Circular-Book";
-  text-decoration: none;
-  font-size: 13px;
-  border-style: none;
-}
-
-.nav-tabs li.active a:hover {
-  color: $brand-color;
-  font-family: "Circular-Book";
-  text-decoration: none;
-  font-size: 13px;
-  background-color: white;
-  border-style: none;
-}
-
-.nav-tabs li.active a:focus {
-  color: $brand-color;
-  font-family: "Circular-Book";
-  text-decoration: none;
-  font-size: 13px;
-  border-style: none;
-}
-
-.nav-tabs li a {
-  color: $bluegrey-light;
-  font-family: "Circular-Book";
-  text-decoration: none;
-  font-size: 13px;
-  background-color: white;
-  border-style: none;
-  padding: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.nav-tabs li a:hover {
-  background-color: white;
-  border-style: none;
-  color: $brand-color;
-}
-
-.navbox {
-  padding-left: 25%;
-  padding-right: 25%;
-  border-bottom: 1px solid lightgrey;
-}
-
-@media all and (max-width: 680px) {
-  .navbox {
-    padding-left: 5%;
-    padding-right: 5%;
+  justify-content: space-around;
+  width: 60vw;
+  a:hover {
+    text-decoration: none;
   }
 }
 
-.usertype {
-  font-family: "Circular-Bold";
-  color: $brand-color;
-  margin-right: 20px;
-}
-.usertype2 {
-  font-family: "Circular-Bold";
-  color: $brand-color;
-}
-
-.titleanimate {
-  animation-duration: 8s;
-  delay: 2s;
-  iteration-count: infinite;
-}
-
-.navpill-one {
-  margin-top: 25px;
-}
-
-.navpill-title {
-  font-family: "Circular-Book";
-  font-size: 13px;
-  color: $bluegrey-light;
-}
-
-
-.cardcondition {
-  width: 200px;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.icon-family {
-  width: 60px;
-}
-
-.cardinfos {
-  width: 200px;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  padding: 15px;
-  margin-bottom: 20px;
-  margin-top: 8px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card-titre {
-  font-family: "Circular-Book";
-  margin-top: 15px;
-  font-size: 11px;
-  color: $brand-color;
-}
-
-.fa-users {
-  color: $brand-color;
-}
-
-.fa-globe {
-  color: $brand-color;
-}
-
-.icon-box h4 {
-  font-family: "Circular-Bold";
-  font-size: 16px;
+.butrfly-title {
+  padding-bottom: 14px;
   color: $bluegrey-dark;
-}
-
-.icon-box p {
-  font-family: "Circular-Book";
-  color: $bluegrey-dark;
-  font-size: 14px;
-  opacity: 0.8;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-}
-
-
-.icon-box p {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.fa-universal-access {
-  color: $brand-color;
-}
-
-.loginview2 {
-  padding-left: 25%;
-  padding-right: 25%;
-  margin-top: 20px;
-}
-
-.call-to-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 17px;
-  padding-top: 17px;
-  background-color: rgba(255,255,255,0.3);
-  border: 1px solid lightgrey;
-}
-
-.btn-banner-home {
-  color: white;
-  font-size: 13px;
-  font-family: "Circular-Book" !important;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: $bluegrey-light;
-  text-align: center;
-  margin-left: 9px;
-  margin-right: 9px;
-  border-radius: 3px;
+  font-size: 35px;
   opacity: 0.9;
-  transition: 0.5s ease;
+  font-family: $header-font;
 }
 
-.content {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.search-home {
-  font-family: "Circular-Book" !important;
-  font-size: 14px;
+.butrfly-fulltext {
   color: $bluegrey-dark;
-  letter-spacing: -0.5px;
+  opacity: 0.8;
 }
 
-.btn-banner-home2 {
+.butrfly-container {
+  padding: 60px 25%;
+}
+
+
+// BANNERS
+
+.home-banner {
   color: white;
-  font-size: 12px;
-  font-family: "Circular-Book" !important;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: $bluegrey-dark;
-  text-align: center;
-  margin-left: 9px;
-  margin-right: 9px;
-  border-radius: 3px;
-  letter-spacing: -0.2px;
-  transition: 0.5s ease;
+  height: 450px;
+  width: 100%;
+  background-size: cover;
+  background-image: image-url("home-background.jpg");
+  background-position: center center;
+  position: absolute;;
+  top: 0;
+  z-index: -1;
 }
 
-.btn-banner-home2:hover {
-  text-decoration: none;
-  color: white;
-  transition: 0.5s ease;
-  background-color: $brand-color;
+.home-banner-content {
+  min-height: 300px;
 }
 
-.btn-banner-home2:visited {
-  text-decoration: none;
-  color: white;
+.mission-banner {
+  background-size: cover;
+  background-image: image-url("home-mission.jpg");
+  background-position: center;
 }
 
-.btn-banner-home:hover {
-  text-decoration: none;
-  color: white;
-  opacity: 1;
-  transition: 0.5s ease;
+.mission-container {
+  padding: 80px;
 }
-
-.btn-banner-home:visited {
-  text-decoration: none;
-  color: white;
-}
-
-.home-searchbox {
-  display: flex;
-  height: 46px;
-  align-items: center;
-  justify-content: center;
-  padding-left: 20%;
-  padding-right: 20%;
-  border-bottom: 1px solid lightgrey;
-}
-
-.home-searchbox input {
-  border: none;
-  outline: none;
-  height: 100%;
-  max-width: 150px;
-  font-size: 12px;
-  font-family: "Circular-Book" !important;
-  border-left: 1px solid lightgrey;
-  padding-left: 15px;
-}
-
-.home-searchbox input[type="submit"] {
-  background-color: $bluegrey-dark;
-  color: white;
-  font-size: 13px;
-  max-width: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-family: "Circular-Book" !important;
-}
-
-.invisible {
-  opacity:0;
-}
-.visible {
-  opacity:1;
-}
-
-.carousel-indicators {
-  color: black;
-}
-

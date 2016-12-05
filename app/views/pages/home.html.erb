@@ -28,8 +28,26 @@
   <% end %>
 </div>
 
-<%= render 'pages/home_partials/about_us' %>
+<!-- about us start -->
+<div class="butrfly-container text-center">
+  <h2 class="butrfly-title"><%= t(".title").upcase %></h2>
+  <p class="butrfly-fulltext"><%= t(".text") %></p>
+</div>
+<!-- about us end -->
 
-<%= render 'pages/home_partials/benefits' %>
+<div class="mission-banner">
+  <div class="mission-container">
+  <div class="neutral-card text-center centered">
+    <h3>LA MISSION BUTRFLY</h3>
+    <p>
+      Faciliter le recrutement du jeune Au pair et la recherche de la Famille d’accueil via un service rassurant et personnalisé
+    </p>
+    <%= link_to "EN SAVOIR PLUS", "#" %>
+  </div>
+  </div>
+</div>
 
-<%= render 'pages/home_partials/home_testimonials' %>
+<!-- WIP -->
+<div class="butrfly-container text-center">
+  <h2 class="butrfly-title">RETROUVEZ TOUTES NOS ACTUS SUR LE BLOG</h2>
+</div>
