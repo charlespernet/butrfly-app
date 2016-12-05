@@ -1,6 +1,7 @@
 .neutral-card {
  background-color: $neutral-color;
-  width: 400px;
+  max-width: 400px;
+  min-width: 100px;
   padding: 35px;
   outline: 2px solid black;
   outline-offset: -20px;
@@ -13,8 +14,5 @@
     color: black;
     border-bottom: 2px solid black;
     padding-bottom: 1px;
-  }
-  a:hover {
-    text-decoration: none;
   }
 }

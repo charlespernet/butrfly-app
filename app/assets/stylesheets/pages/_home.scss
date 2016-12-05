@@ -2,16 +2,7 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
- .home-search-container {
-  display: flex;
-  justify-content: space-around;
-  width: 60vw;
-  a:hover {
-    text-decoration: none;
-  }
-}
-
-.butrfly-title {
+ .butrfly-title {
   padding-bottom: 14px;
   color: $bluegrey-dark;
   font-size: 35px;
@@ -22,13 +13,22 @@
 .butrfly-fulltext {
   color: $bluegrey-dark;
   opacity: 0.8;
+  font-size: 18px;
 }
 
 .butrfly-container {
-  padding: 60px 25%;
+  padding: 30px 20%;
 }
 
+.padded {
+  padding: 60px 20%;
+}
 
+.butrfly-flex-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 // BANNERS
 
 .home-banner {
@@ -44,15 +44,11 @@
 }
 
 .home-banner-content {
-  min-height: 300px;
+  min-height: 220px;
 }
 
 .mission-banner {
   background-size: cover;
   background-image: image-url("home-mission.jpg");
   background-position: center;
-}
-
-.mission-container {
-  padding: 80px;
 }
