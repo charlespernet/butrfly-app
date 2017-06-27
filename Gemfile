@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.4.1'
 
 gem 'rails-i18n'
 
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.3'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
-gem 'cloudinary', '1.1.0'
-gem "attachinary", github: "assembler/attachinary"
+gem 'cloudinary'
+gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 
@@ -23,7 +23,7 @@ gem 'simple_enum'
 gem 'active_record-acts_as'
 
 gem "pundit"
-gem 'draper', '~> 1.3'
+gem 'draper'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -39,7 +39,6 @@ gem 'rails_admin', '~> 1.2'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'quiet_assets'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
