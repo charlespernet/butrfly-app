@@ -7,8 +7,17 @@
     <div class="m-real-text">
       <%= aupair.first_name %> <%= aupair.last_name %>
     </div>
+    <div class="m-real-text">
+      <%= aupair.age %> ans
+    </div>
+    <br>
+    <div class="m-real-text">
+      <%= aupair.country_name%>
+    </div>
     <div>
-      <%= link_to "Voir", aupair, class: "mansory-button" %>
+      <% if policy(aupair).show? %>
+        <%= link_to "Voir", aupair, class: "mansory-button" %>
+      <% end %>
     </div>
   </div>
 

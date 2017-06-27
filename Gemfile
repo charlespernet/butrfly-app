@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem 'stripe'
+gem 'rails_admin', '~> 1.2'
 
 group :development, :test do
   gem 'binding_of_caller'
