@@ -7,7 +7,9 @@
         Famille <%= family.name %>
       </div>
       <div>
-        <%= link_to "Voir", family, class: "mansory-button" %>
+        <% if policy(family).show? %>
+          <%= link_to "Voir", family, class: "mansory-button" %>
+        <% end %>
       </div>
     </div>
   </div>
