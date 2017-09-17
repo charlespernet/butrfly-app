@@ -15,8 +15,12 @@ development:
   STRIPE_SECRET_KEY: "sk_test_7d4el5drvTxURnNPRRKXL2Ht"
 
 production:
+  HOST: "https://butrfly-app.herokuapp.com"
   api_key: "932983599627195"
   api_secret: "MARiIoYTNhQD0-LvgFcnrxwbwcY"
+
+staging:
+  HOST: "https://butrfly-app-staging.herokuapp.com"
 
 
 HTTP_AUTH_NAME: "butrfly"
