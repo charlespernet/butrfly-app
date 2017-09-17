@@ -1,0 +1,1 @@
+ButrflyApp::Application.config.secret_key_base = '0841979aeaced197af58036250a8908a49a4865c390dd9f55c7eee374c30f603ebce150bc4cbcda2324a7c317b3e40fec9d3305fad17bbb6e6069b15003251d9'
