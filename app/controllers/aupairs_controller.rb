@@ -51,7 +51,8 @@ class AupairsController < ApplicationController
       :accepted_domestic_animal,
       :sports,
       language_ids: [],
-      country_ids: []
+      country_ids: [],
+      photos: []
     )
   end
 end

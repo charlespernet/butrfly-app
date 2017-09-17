@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>L'index des plans</h1>
+  <div class="row text-center">
+    <div class="col-md-6 col-xs-12">
+      <p>Le plan 1</p>
+      <%= form_tag payments_path do %>
+
+        <%= hidden_field_tag 'amount_cents', 4900 %>
+        <%= hidden_field_tag 'duration', 2 %>
+        <article>
+          <label class="amount">
+            <span>Montant: 49 euros</span>
+          </label>
+        </article>
+
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+          data-amount="4900"
+          data-name="Demo Site"
+          data-description="Widget"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-zip-code="true"
+          data-currency="eur">
+        </script>
+
+      <% end %>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <p>Le plan 2</p>
+      <%= form_tag payments_path do %>
+        <%= hidden_field_tag 'amount_cents', 14900 %>
+        <%= hidden_field_tag 'duration', 2 %>
+
+        <article>
+          <label class="amount">
+            <span>Montant: 149 euros</span>
+          </label>
+        </article>
+
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+          data-amount="14900"
+          data-name="Demo Site"
+          data-description="Widget"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-zip-code="true"
+          data-currency="eur">
+        </script>
+
+      <% end %>
+    </div>
+  </div>
+</div>

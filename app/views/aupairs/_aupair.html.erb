@@ -1,14 +1,23 @@
 
 <div class="mansory-container item <%= aupair.languages.pluck(:code).join(" ") %>">
 
-  <div class="mansory-picture"></div>
+  <div class="mansory-picture" style="background-image: url(<%= if aupair.photos.empty? then "" else  cl_image_path aupair.photos.first.path end %>);"></div>
 
   <div class="mansory-text">
     <div class="m-real-text">
       <%= aupair.first_name %> <%= aupair.last_name %>
     </div>
+    <div class="m-real-text">
+      <%= aupair.age %> ans
+    </div>
+    <br>
+    <div class="m-real-text">
+      <%= aupair.country_name%>
+    </div>
     <div>
-      <%= link_to "Voir", aupair, class: "mansory-button" %>
+      <% if policy(aupair).show? %>
+        <%= link_to "Voir", aupair, class: "mansory-button" %>
+      <% end %>
     </div>
   </div>
 
