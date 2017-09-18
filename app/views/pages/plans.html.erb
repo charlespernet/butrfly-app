@@ -1,57 +1,75 @@
-<div class="container">
-  <h1>L'index des plans</h1>
-  <div class="row text-center">
-    <div class="col-md-6 col-xs-12">
-      <p>Le plan 1</p>
-      <%= form_tag payments_path do %>
-
-        <%= hidden_field_tag 'amount_cents', 4900 %>
-        <%= hidden_field_tag 'duration', 2 %>
-        <article>
-          <label class="amount">
-            <span>Montant: 49 euros</span>
-          </label>
-        </article>
-
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
-          data-amount="4900"
-          data-name="Demo Site"
-          data-description="Widget"
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto"
-          data-zip-code="true"
-          data-currency="eur">
-        </script>
-
-      <% end %>
+<div class="wrapper-both">
+  <div class="container" id="plans-page">
+    <div class="row">
+      <div class="text-center div-white">
+        <h1>Abonnement</h1>
+        <p>Vous avez trouvé la perle rare ?! Mais pour pouvoir rentrer en contact avec il/elle, vous devez d’abord créer votre profil et si c’est déjà fait il ne vous reste plus qu’à choisir l’abonnement qu’il vous convient !</p>
+      </div>
     </div>
-    <div class="col-md-6 col-xs-12">
-      <p>Le plan 2</p>
-      <%= form_tag payments_path do %>
-        <%= hidden_field_tag 'amount_cents', 14900 %>
-        <%= hidden_field_tag 'duration', 2 %>
 
-        <article>
-          <label class="amount">
-            <span>Montant: 149 euros</span>
-          </label>
-        </article>
+    <div class="row text-center">
+      <div class="col-md-6 col-xs-12">
+        <div class="text-center div-white div-flex-center">
+          <h2>Abonnement Standard</h2>
+          <%= form_tag payments_path do %>
 
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
-          data-amount="14900"
-          data-name="Demo Site"
-          data-description="Widget"
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto"
-          data-zip-code="true"
-          data-currency="eur">
-        </script>
+            <%= hidden_field_tag 'amount_cents', 5990 %>
+            <%= hidden_field_tag 'duration', 2 %>
+            <div class="div-space">
+              <article>
+                <label class="amount">
+                  <span>59,90 €</span>
+                </label>
+              </article>
+            </div>
 
-      <% end %>
+            <div class="div-space">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+                data-amount="4900"
+                data-name="Demo Site"
+                data-description="Widget"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-zip-code="true"
+                data-currency="eur">
+              </script>
+            </div>
+          <% end %>
+          <p>1. Envoi de messages aux Au Pairs choisis, illimité pendant 2mois</p>
+          <p>2. Accompagnement tout au long de votre séjour</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <div class="text-center div-white">
+          <h2>Abonnement Premium</h2>
+          <%= form_tag payments_path do %>
+            <%= hidden_field_tag 'amount_cents', 12990 %>
+            <%= hidden_field_tag 'duration', 2 %>
+
+            <article>
+              <label class="amount">
+                <span>129,90 €</span>
+              </label>
+            </article>
+
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+              data-amount="14900"
+              data-name="Demo Site"
+              data-description="Widget"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-locale="auto"
+              data-zip-code="true"
+              data-currency="eur">
+            </script>
+
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
