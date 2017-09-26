@@ -1,75 +1,107 @@
 <div class="wrapper-both">
   <div class="container" id="plans-page">
+
     <div class="row">
-      <div class="text-center div-white">
-        <h1>Abonnement</h1>
-        <p>Vous avez trouvé la perle rare ?! Mais pour pouvoir rentrer en contact avec il/elle, vous devez d’abord créer votre profil et si c’est déjà fait il ne vous reste plus qu’à choisir l’abonnement qu’il vous convient !</p>
+      <div class="col-xs-12">
+        <div class="text-center div-white div-flex-around">
+          <div class="plans-title">
+            <h1>Abonnement</h1>
+            <p>Vous avez trouvé la perle rare ?! Mais pour pouvoir rentrer en contact avec il/elle, vous devez d’abord créer votre profil et si c’est déjà fait il ne vous reste plus qu’à choisir l’abonnement qu’il vous convient !</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row text-center">
-      <div class="col-md-6 col-xs-12">
-        <div class="text-center div-white div-flex-center">
-          <h2>Abonnement Standard</h2>
-          <%= form_tag payments_path do %>
-
-            <%= hidden_field_tag 'amount_cents', 5990 %>
-            <%= hidden_field_tag 'duration', 2 %>
-            <div class="div-space">
-              <article>
-                <label class="amount">
-                  <span>59,90 €</span>
-                </label>
-              </article>
+      <div class="col-xs-12 col-md-6 ">
+        <div class="text-center div-white div-padding">
+          <div class="div-border div-flex-column-between">
+            <div>
+              <div class="div-flex-column-around">
+                <h2>Abonnement Standard</h2>
+                <%= form_tag payments_path do %>
+                  <%= hidden_field_tag 'amount_cents', 5990 %>
+                  <%= hidden_field_tag 'duration', 2 %>
+                  <div>
+                    <article>
+                      <label class="amount">
+                        <span>59,90 €</span>
+                      </label>
+                    </article>
+                  </div>
+                  <div>
+                    <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+                      data-amount="4900"
+                      data-name="Demo Site"
+                      data-description="Widget"
+                      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                      data-locale="auto"
+                      data-zip-code="true"
+                      data-currency="eur">
+                    </script>
+                  </div>
+                <% end %>
+              </div>
+              <div class="div-flex-column-around plans-text-margin">
+                <p>1. Envoi de messages aux Au Pairs choisis, illimité pendant 2mois</p>
+                <p>2. Accompagnement tout au long de votre séjour</p>
+                <p>3. Contrat</p>
+                <p>4. Ouverture d’un compte en banque gratuit pour l’Au Pair</p>
+                <p>5. Conseils et accompagnement tout au long de votre expérience</p>
+              </div>
             </div>
-
-            <div class="div-space">
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
-                data-amount="4900"
-                data-name="Demo Site"
-                data-description="Widget"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-locale="auto"
-                data-zip-code="true"
-                data-currency="eur">
-              </script>
+            <div class="plans-bottom-text div-padding-borders">
+              <p> C’EST L’OPTION POUR LES FAMILLES QUI ONT LE TEMPS DE CHERCHER!</p>
             </div>
-          <% end %>
-          <p>1. Envoi de messages aux Au Pairs choisis, illimité pendant 2mois</p>
-          <p>2. Accompagnement tout au long de votre séjour</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 col-xs-12">
-        <div class="text-center div-white">
-          <h2>Abonnement Premium</h2>
-          <%= form_tag payments_path do %>
-            <%= hidden_field_tag 'amount_cents', 12990 %>
-            <%= hidden_field_tag 'duration', 2 %>
+      <div class="col-xs-12 col-md-6 ">
+        <div class="text-center div-white div-padding">
+          <div class="div-border div-flex-column-between">
+            <div>
+              <div class="div-flex-column-around">
+                <h2>Abonnement Premium</h2>
+                <%= form_tag payments_path do %>
+                  <%= hidden_field_tag 'amount_cents', 12990 %>
+                  <%= hidden_field_tag 'duration', 2 %>
+                  <article>
+                    <label class="amount">
+                      <span>129,90 €</span>
+                    </label>
+                  </article>
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+                    data-amount="14900"
+                    data-name="Demo Site"
+                    data-description="Widget"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto"
+                    data-zip-code="true"
+                    data-currency="eur">
+                  </script>
 
-            <article>
-              <label class="amount">
-                <span>129,90 €</span>
-              </label>
-            </article>
-
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
-              data-amount="14900"
-              data-name="Demo Site"
-              data-description="Widget"
-              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-              data-locale="auto"
-              data-zip-code="true"
-              data-currency="eur">
-            </script>
-
-          <% end %>
+                <% end %>
+              </div>
+              <div class="div-flex-column-around plans-text-margin">
+                <p>1. Pré-sélection de 3 Au Pairs</p>
+                <p>2. Envoi de messages aux Au Pairs choisis, illimité pendant 2mois</p>
+                <p>3. Accompagnement tout au long de votre séjour</p>
+                <p>4. Contrat</p>
+                <p>5. Assurance santé pour l’Au pair</p>
+                <p>6. Ouverture d’un compte en banque gratuit pour l’Au Pair</p>
+                <p>7. Conseils et accompagnement tout au long de votre expérience</p>
+              </div>
+            </div>
+            <div class="plans-bottom-text div-padding-borders">
+              <p>C’EST L’OPTION IDÉALE POUR LES FAMILLES TRÈS OCCUPÉES ET QUI ONT PEUR DE FAIRE LE MAUVAIS CHOIX ! BUTRFLY S’OCCUPE DE TOUT !!</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
