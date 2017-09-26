@@ -18,7 +18,10 @@
           <div class="div-border div-flex-column-between">
             <div>
               <div class="div-flex-column-around">
-                <h2>Abonnement Standard</h2>
+                <%= image_tag "papillon-gris.png", class: "papillon-gris-size" %>
+                <div class="plans-title-size text-center">
+                  <h2>Abonnement Standard</h2>
+                </div>
                 <%= form_tag payments_path do %>
                   <%= hidden_field_tag 'amount_cents', 5990 %>
                   <%= hidden_field_tag 'duration', 2 %>
@@ -52,6 +55,9 @@
                 <p>5. Conseils et accompagnement tout au long de votre expérience</p>
               </div>
             </div>
+            <div>
+              <p>___________</p>
+            </div>
             <div class="plans-bottom-text div-padding-borders">
               <p> C’EST L’OPTION POUR LES FAMILLES QUI ONT LE TEMPS DE CHERCHER!</p>
             </div>
@@ -63,7 +69,10 @@
           <div class="div-border div-flex-column-between">
             <div>
               <div class="div-flex-column-around">
-                <h2>Abonnement Premium</h2>
+                <%= image_tag "papillon-gris.png", class: "papillon-gris-size" %>
+                <div class="plans-title-size text-center">
+                  <h2>Abonnement Premium</h2>
+                </div>
                 <%= form_tag payments_path do %>
                   <%= hidden_field_tag 'amount_cents', 12990 %>
                   <%= hidden_field_tag 'duration', 2 %>

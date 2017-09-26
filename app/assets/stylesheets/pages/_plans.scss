@@ -14,11 +14,8 @@
 }
 .div-border {
   border: 2px solid $bluegrey-dark;
-  padding: 0px 20px 20px 20px;
-  height: 600px;
-  h2 {
-    padding: 0px 40px;
-  }
+  padding: 20px 20px 20px 20px;
+  height: 650px;
 }
 .div-flex-around {
   display: flex;
@@ -61,4 +58,12 @@
 .plans-title {
   padding: 0px 100px;
 }
+.papillon-gris-size {
+  height: 40px;
+}
+.plans-title-size {
+  width: 200px;
+}
+
+
 
