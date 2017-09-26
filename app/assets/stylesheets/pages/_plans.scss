@@ -15,7 +15,7 @@
 .div-border {
   border: 2px solid $bluegrey-dark;
   padding: 20px 20px 20px 20px;
-  height: 650px;
+  height: 700px;
 }
 .div-flex-around {
   display: flex;
@@ -38,6 +38,7 @@
   margin-top: 30px;
   p {
     font-style: italic;
+    padding: 0 15px;
   }
 }
 .div-padding {
@@ -63,6 +64,9 @@
 }
 .plans-title-size {
   width: 200px;
+}
+.space-height {
+  height: 90px;
 }
 
 
