@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -17,8 +16,8 @@ ActiveRecord::Schema.define(version: 20170621150227) do
   enable_extension "plpgsql"
 
   create_table "attachinary_files", force: :cascade do |t|
-    t.integer  "attachinariable_id"
     t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
     t.string   "scope"
     t.string   "public_id"
     t.string   "version"
@@ -28,9 +27,8 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.string   "resource_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
-
-  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "aupairs", force: :cascade do |t|
     t.string  "first_name"
@@ -54,10 +52,9 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
+    t.index ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
   end
-
-  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
-  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -96,30 +93,27 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
-
-  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "prefered_countries", force: :cascade do |t|
     t.integer  "aupair_id"
     t.integer  "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["aupair_id"], name: "index_prefered_countries_on_aupair_id", using: :btree
+    t.index ["country_id"], name: "index_prefered_countries_on_country_id", using: :btree
   end
-
-  add_index "prefered_countries", ["aupair_id"], name: "index_prefered_countries_on_aupair_id", using: :btree
-  add_index "prefered_countries", ["country_id"], name: "index_prefered_countries_on_country_id", using: :btree
 
   create_table "spoken_languages", force: :cascade do |t|
     t.integer  "aupair_id"
     t.integer  "language_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["aupair_id"], name: "index_spoken_languages_on_aupair_id", using: :btree
+    t.index ["language_id"], name: "index_spoken_languages_on_language_id", using: :btree
   end
-
-  add_index "spoken_languages", ["aupair_id"], name: "index_spoken_languages_on_aupair_id", using: :btree
-  add_index "spoken_languages", ["language_id"], name: "index_spoken_languages_on_language_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -134,16 +128,15 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "actable_id"
     t.string   "actable_type"
+    t.integer  "actable_id"
     t.string   "country_code"
     t.string   "stripe_id"
     t.datetime "active_until"
     t.boolean  "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
