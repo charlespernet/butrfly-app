@@ -3,8 +3,8 @@ class FamilyPolicy < ApplicationPolicy
     @user == record
   end
 
-  def show?
-    @user.admin
-  end
+  # def show?
+  #   @user.admin
+  # end
 
 end

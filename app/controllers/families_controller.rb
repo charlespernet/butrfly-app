@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: :index
+  # skip_before_action :authenticate_user!, only: :index
 
   def index
     search = params[:search]
