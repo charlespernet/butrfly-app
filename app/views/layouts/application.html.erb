@@ -11,12 +11,7 @@
   </head>
   <body>
     <!-- navbar is different on homepage only -->
-    <% if current_page?('/') %>
-      <%= render 'shared/navbar_home' %>
-    <% else %>
-      <%= render 'shared/navbar'  %>
-    <% end %>
-
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
 
