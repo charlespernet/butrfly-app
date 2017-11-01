@@ -1,27 +1,16 @@
-<%= render 'shared/social_links_fixed' %>
 
-<%= render 'pages/home_partials/home_banner' %>
-
-<%= render 'pages/home_partials/home_searchbar' %>
-
-<%= render 'pages/home_partials/about_us' %>
-
-<%= render 'pages/home_partials/benefits' %>
-
-<%= render 'pages/home_partials/home_testimonials' %>
-
-<%= content_for :after_js do %>
-  <script type="text/javascript">
-    $(window).scroll(function() {
-        if ($(".navbar-wagon").offset().top > 50) {
-            $('.navbar-wagon').addClass('affix');
-            $(".navbar-fixed-top").addClass("top-nav-collapse");
-            $(".navbar-wagon-item").addClass('affix2');
-        } else {
-            $('.navbar-wagon').removeClass('affix');
-            $('.navbar-wagon-item').removeClass('affix2');
-            $(".navbar-fixed-top").removeClass("top-nav-collapse");
-        }
-    });
-  </script>
-<% end %>
+<div class="home-banner">
+  <div class="home-banner-bg" style="background-image: url(<%= image_path 'hero.jpg' %>);">
+  </div>
+  <div class="home-banner-roles">
+    <div class="frame-default">
+      <h2>JE SUIS UNE FAMILLE</h2>
+      <h3>JE CHERCHE MON AU PAIR</h3>
+      <div class="border-bottom"></div>
+      <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
+    </div>
+    <div class="frame-default frame-blue">
+      coco
+    </div>
+  </div>
+</div>
