@@ -1,35 +1,37 @@
 <div class="modal fade login-sm" id="login" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
+
       <div class="modal-border">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-close text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
 
         <%= link_to root_path do %>
           <%= image_tag("papillon-gris.png", class: "modal-logo") %>
         <% end %>
 
-        <%= simple_form_for(:user, url: new_user_session_path) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :email, required: false, autofocus: true, placeholder: 'Email', label: false %>
-            <%= f.input :password, required: false, placeholder: 'Password', label: false %>
-            <%= f.input :remember_me, as: :boolean %>
-          </div>
-
-          <div class="form-actions text-center" id="modal-button-signin">
-            <%= f.button :submit, "Connexion" %>
-          </div>
-        <% end %>
-
-        <div class="loginmargins modal-links">
-
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class:"link-item2" %><br />
+        <div class="modal-form">
+          <%= simple_form_for(:user, url: new_user_session_path, html: {class: 'modal-form-inputs'}) do |f| %>
+            <%= f.input :email, required: false, autofocus: true, placeholder: 'adresse e-mail', label: false %>
+            <div>
+              <%= f.input :password, required: false, placeholder: 'Password', label: false %>
+              <%= f.input :remember_me, as: :boolean %>
+            </div>
+            <div class="form-actions text-center" id="modal-button-signin">
+              <%= f.button :submit, "Connexion" %>
+            </div>
           <% end %>
 
+          <div class="loginmargins modal-links">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class:"link-item2" %><br />
+            <% end %>
+          </div>
+
         </div>
+
       </div>
-
-
     </div>
   </div>
 </div>
