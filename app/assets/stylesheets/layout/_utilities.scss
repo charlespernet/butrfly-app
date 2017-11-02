@@ -4,6 +4,14 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.site-content {
+  flex: 1;
+}
 .border-bottom {
   margin-left: 40%;
   width: 20%;

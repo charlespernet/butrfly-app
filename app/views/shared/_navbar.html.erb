@@ -3,12 +3,12 @@
     <%= link_to root_path do %>
       <%= image_tag("papillon-noir.png", class: "navbar-logo") %>
     <% end %>
-    <h2 class="navbar-title">BUTRFLY</h2>
+    <h2 class="navbar-title"><%=  t('meta-title') %></h2>
   </div>
 
   <div class="navbar-right hidden-xs">
     <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
-    <%= link_to "BLOG", "http://blog.butrfly.com/", target: "_blank", class: "navbar-link" %>
+    <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
     <% if user_signed_in? %>
       <%= link_to dashboard_path do %>
         <div class="navbar-link">
@@ -32,7 +32,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
-        <%= link_to "BLOG", "http://blog.butrfly.com/", target: "_blank", class: "navbar-link" %>
+        <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
         <% if user_signed_in? %>
           <div class="navbar-link usertype2">- <%= current_user.actable_type.capitalize %> -</div>
           <div class="navbar-link"><%= current_user.email %></div>
