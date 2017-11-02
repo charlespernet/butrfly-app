@@ -4,10 +4,15 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+a {
+  text-decoration: none;
+}
+
 .border-bottom {
   margin-left: 40%;
   width: 20%;
   border-bottom: solid 1px black;
+  margin-bottom: 10px;
 }
 
 

@@ -1,0 +1,25 @@
+.card-user {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.card-user-title {
+  width: 100%;
+  margin-bottom: 5px;
+  min-height: 30px;
+  background-color: $lighter-white;
+}
+.card-feedback {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 260px;
+  .card-user {
+    width: 150px;
+    height: 150px;
+    min-height: 150px;
+  }
+}

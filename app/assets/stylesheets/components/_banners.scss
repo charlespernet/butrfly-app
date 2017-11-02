@@ -15,7 +15,20 @@
   width: 100%;
   .frame-default {
     width: 250px;
-    height: 250px;
+    min-height: 250px;
     margin: 10px;
+  }
+}
+
+.standard-banner {
+  text-align: center;
+  height: 50vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .frame-default {
+    width: 300px;
+    min-height: 150px;
   }
 }
