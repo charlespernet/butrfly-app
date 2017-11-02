@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :payments, only: [:new, :create]
 
   get 'dashboard', to: 'pages#dashboard'
-  get 'plans', to: 'pages#plans'
+  get 'procedure', to: 'pages#procedure'
+  # get 'plans', to: 'pages#plans'
 
   resources :conversations, only: [:create] do
     resources :messages, only: [:index, :create]

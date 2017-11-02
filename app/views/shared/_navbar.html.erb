@@ -6,12 +6,44 @@
     <h2 class="navbar-title">BUTRFLY</h2>
   </div>
 
-  <div class="navbar-right">
-    <p>COMMENT ÇA MARCHE ?</p>
-    <p>AIDE</p>
-    <p>BLOG</p>
-    <p>INSCRIPTION</p>
-    <p>CONNEXION</p>
+  <div class="navbar-right hidden-xs">
+    <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
+    <%= link_to "BLOG", "http://blog.butrfly.com/", target: "_blank", class: "navbar-link" %>
+    <% if user_signed_in? %>
+      <%= link_to dashboard_path do %>
+        <div class="navbar-link">
+          <%= "Famille &nbsp".html_safe if current_user.specific.is_a?(Family) %>
+          <%= current_user.specific.try(:first_name) if current_user.specific.is_a?(Aupair) %>
+          <span class="usertype">
+            &nbsp<%= current_user.specific.try(:name) || current_user.specific.try(:last_name) %>
+          </span>
+        </div>
+      <% end %>
+
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-link", method: :delete %>
+    <% else %>
+      <%= link_to t(".top_call_to_action", default: "INSCRIPTION"), '#signup', class: 'navbar-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".sign_in", default: "CONNEXION"), '#login', class: 'navbar-link', 'data-toggle' => 'modal' %>
+    <% end %>
+  </div>
+
+  <div class="navbar-link hidden-sm hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
+        <%= link_to "BLOG", "http://blog.butrfly.com/", target: "_blank", class: "navbar-link" %>
+        <% if user_signed_in? %>
+          <div class="navbar-link usertype2">- <%= current_user.actable_type.capitalize %> -</div>
+          <div class="navbar-link"><%= current_user.email %></div>
+          <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-link", method: :delete %>
+        <% else %>
+          <%= link_to t(".top_call_to_action", default: "INSCRIPTION"), new_user_registration_path, class: "navbar-link" %>
+          <%= link_to t(".sign_in", default: "CONNEXION"), new_user_session_path, class: "navbar-link" %>
+
+        <% end %>
+      </ul>
+    </div>
   </div>
 
 </div>

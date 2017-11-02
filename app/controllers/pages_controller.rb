@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :plans]
+  skip_before_action :authenticate_user!, only: [:home, :procedure, :plans]
 
   def home
   end
@@ -8,6 +8,9 @@ class PagesController < ApplicationController
     @user = current_user.specific.decorate
   end
 
-  def plans
+  def procedure
   end
+
+  # def plans
+  # end
 end

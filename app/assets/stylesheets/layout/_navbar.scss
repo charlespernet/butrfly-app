@@ -20,12 +20,6 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  p {
-    color: $white;
-    font-size: 11px;
-    padding: 0 10px;
-    margin: 0;
-  }
 }
 .navbar-logo {
   width: 30px;
@@ -39,6 +33,17 @@
 .navbar-link {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 10px;
+  text-decoration: none;
+  color: $white;
+  font-size: 11px;
+}
+.navbar-link:hover {
+  color: $yellow;
+  text-decoration: none;
+}
+.navbar-link:focus {
+  color: $white;
+  outline: 0;
   text-decoration: none;
 }
