@@ -1,55 +1,37 @@
-<div class="navbar-wagon-main">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-company-brand" do %>
-    <%= image_tag("logo-test-2.png", class: "menu-icon") %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs">
-
-    <!-- Different navigation if login or not -->
-    <%= link_to "Blog", "http://blog.butrfly.com/", target: "_blank", class: "navbar-wagon-item navbar-wagon-link-black" %>
-    <% if user_signed_in? %>
-      <%= link_to dashboard_path do %>
-        <div class="navbar-wagon-item navbar-wagon-link-black">
-          <%= "Famille &nbsp".html_safe if current_user.specific.is_a?(Family) %>
-          <%= current_user.specific.try(:first_name) if current_user.specific.is_a?(Aupair) %>
-          <span class="usertype">
-            &nbsp<%= current_user.specific.try(:name) || current_user.specific.try(:last_name) %>
-          </span>
-        </div>
-      <% end %>
-
-      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
-    <% else %>
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Se connecter"), '.login-sm', class: 'navbar-wagon-link2 navbar-wagon-item', 'data-toggle' => 'modal' %>
-      <%= link_to t(".top_call_to_action", default: "Créer un compte"), '.signup-sm', class: 'navbar-wagon-link2 navbar-wagon-item', 'data-toggle' => 'modal' %>
+<div class="navbar-main">
+  <div class="navbar-left">
+    <%= link_to root_path do %>
+      <%= image_tag("papillon-noir.png", class: "navbar-logo") %>
     <% end %>
-
-    <!-- Button (call-to-action) -->
-
+    <h2 class="navbar-title"><%=  t('meta-title') %></h2>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
+  <div class="navbar-right hidden-xs">
+    <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
+    <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
+    <% if user_signed_in? %>
+      <%= link_to t(".sign_out", default: "SE DÉCONNECTER"), destroy_user_session_path, class: "navbar-link", method: :delete %>
+    <% else %>
+      <%= link_to t(".top_call_to_action", default: "INSCRIPTION"), '#signup', class: 'navbar-link', 'data-toggle' => 'modal' %>
+      <%= link_to t(".sign_in", default: "CONNEXION"), '#login', class: 'navbar-link', 'data-toggle' => 'modal' %>
+    <% end %>
+  </div>
+
+  <div class="navbar-dropdown hidden-sm hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <%= link_to "Blog", "http://blog.butrfly.com/", target: "_blank", class: "navbar-wagon-item navbar-wagon-link-black" %>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
+        <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
         <% if user_signed_in? %>
-          <div class="navbar-wagon-item usertype2">- <%= current_user.actable_type.capitalize %> -</div>
-          <div class="navbar-wagon-item navbar-wagon-link-grey"><%= current_user.email %></div>
-          <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black", method: :delete %>
+          <div class="navbar-link usertype2">- <%= current_user.actable_type.capitalize %> -</div>
+          <div class="navbar-link"><%= current_user.email %></div>
+          <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, class: "navbar-link", method: :delete %>
         <% else %>
-          <!-- Login text link -->
-          <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
-          <%= link_to t(".top_call_to_action", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link-black" %>
+          <%= link_to t(".top_call_to_action", default: "INSCRIPTION"), new_user_registration_path, class: "navbar-link" %>
+          <%= link_to t(".sign_in", default: "CONNEXION"), new_user_session_path, class: "navbar-link" %>
 
         <% end %>
-
-
-
       </ul>
     </div>
   </div>

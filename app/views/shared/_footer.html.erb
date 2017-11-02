@@ -1,0 +1,41 @@
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="footer-infos">
+          <h2>BUTRFLY</h2>
+          <p><%= t('meta-hours') %></p>
+          <p><%= mail_to t('meta-email') %></p>
+
+          <ul class="list-inline social">
+            <li><a <%= t('meta-url-fb') %> ><i class="fa fa-facebook"></i></a></li>
+            <li><a <%= t('meta-url-pinterest') %> ><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li class="hidden-xs"><a <%= t('meta-url-linkedin') %> ><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="footer-infos">
+          <h2>AU PAIR</h2>
+          <%= link_to "Comment ça marche ?", procedure_path %>
+          <%= link_to "Témoignages", "http://blog.butrfly.com/temoignage-carmen-espagnole-au-pair/", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="footer-infos">
+          <h2>FAMILLE</h2>
+          <%= link_to "Comment ça marche ?", procedure_path %>
+          <%= link_to "Témoignages", "http://blog.butrfly.com/temoignages-la-famille-au-pair-chipiron/", target: "_blank" %>
+          </div>
+        </div>
+      <div class="col-sm-3">
+        <div class="footer-infos">
+          <h2>A PROPOS</h2>
+          <%= link_to "Qui sommes nous ?", about_path %>
+          <%= link_to "Le blog", t('meta-url-blog'), target: "_blank" %>
+          <p>CGV</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,39 @@
-// Your footer style
+#footer {
+  width: 100%;
+  background: $brown-dark;
+  padding: 15px 0;
+  color: $white;
+  h2 {
+    font-size: 17px;
+  }
+  p {
+    font-size: 14px;
+    width: 150px;
+  }
+  a {
+    color: $white;
+    font-size: 14px;
+    transition: color 0.5s ease;
+    margin-bottom: 10px;
+  }
+  a:hover{
+    color: $yellow;
+    text-decoration: none;
+  }
+  a:focus{
+    text-decoration: none;
+  }
+  a:visited{
+    text-decoration: none;
+  }
+  .social a {
+    font-size: 100%;
+    letter-spacing: 1rem;
+  }
+}
+.footer-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+
