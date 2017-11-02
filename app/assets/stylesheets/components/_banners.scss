@@ -1,0 +1,35 @@
+.home-banner {
+  height: calc(100vh - 70px);
+  position: relative;
+}
+.home-banner-bg {
+  height: 70%;
+  background-size: cover !important;
+  background-position: center;
+}
+.home-banner-roles {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .frame-default {
+    width: 250px;
+    min-height: 250px;
+    margin: 10px;
+  }
+}
+
+.standard-banner {
+  text-align: center;
+  height: 70vh;
+  background-size: cover !important;
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .frame-default {
+    width: 300px;
+    min-height: 150px;
+  }
+}

@@ -1,25 +1,26 @@
 .frame-default {
   position: relative;
-  background-color: orange;
-  color: black;
-  padding: 20px;
+  background-color: $yellow;
+  color: $black;
+  padding: 25px;
   margin: 20px;
   text-align: center;
-  height: 250px;
+  min-height: 250px;
   width: 250px;
   h2 {
+    // margin-top: 0px;
     font-size: 24px;
   }
   h3 {
     font-size: 10px;
-    color: white;
+    color: $white;
   }
   p {
     font-size: 12px;
   }
   &::before {
     content: "";
-    border:solid 2px black;
+    border:solid 2px $black;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -28,14 +29,24 @@
   }
 }
 .frame-blue {
-  background-color: blue;
-  color: white;
+  background-color: $blue;
+  color: $white;
   h3 {
-    color: black;
+    color: $black;
   }
   &::before {
-    border:solid 2px white;
+    border:solid 2px $white;
   }
 }
-
+.frame-white {
+  background-color: $lighter-white;
+  h2 {
+    font-size: 18px;
+  }
+  a {
+    font-size: 12px;
+    font-family: "Josefin Sans", "sans-serif";
+    text-decoration: underline;
+  }
+}
 
