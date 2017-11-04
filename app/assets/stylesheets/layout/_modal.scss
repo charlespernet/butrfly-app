@@ -1,6 +1,12 @@
 .modal-content {
-  width: 500px;
-  height: 565px;
+  @media (max-width: 468px) {
+    width: 300px;
+    height: 500px;
+  }
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 565px;
+  }
   padding: 30px;
 }
 .modal-logo {
@@ -47,9 +53,14 @@
   height: 100%;
   .form-control {
     text-align: center;
-    width: 320px;
     border: solid 1px $brown-dark;
     border-bottom: solid 2px $gray-middle;
+    @media (max-width: 468px) {
+      width: 200px;
+    }
+    @media (min-width: 768px) {
+      width: 320px;
+    }
   }
 }
 .modal-form-inputs {
