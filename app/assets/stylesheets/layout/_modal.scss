@@ -1,13 +1,14 @@
 .modal-content {
   @media (max-width: 468px) {
-    width: 300px;
+    width: 83%;
     height: 500px;
   }
   @media (min-width: 768px) {
     width: 500px;
-    height: 565px;
+    height: 600px;
   }
   padding: 30px;
+  margin-left: 8%;
 }
 .modal-logo {
   width: 50px;
@@ -23,6 +24,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  h3 {
+    font-size: 21px;
+    font-weight: 400;
+  }
 }
 .modal-close {
   width: 30px;
@@ -56,7 +61,7 @@
     border: solid 1px $brown-dark;
     border-bottom: solid 2px $gray-middle;
     @media (max-width: 468px) {
-      width: 200px;
+      width: 170px;
     }
     @media (min-width: 768px) {
       width: 320px;
@@ -96,4 +101,11 @@
   background-color: $black;
   color: $white;
   font-size: 15px;
+}
+.modal-bottom-link {
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

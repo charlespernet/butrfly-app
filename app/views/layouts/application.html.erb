@@ -20,8 +20,9 @@
 
     <!-- login and sign_up modals -->
     <% unless user_signed_in? %>
-      <%= render 'shared/signin_modal' %>
       <%= render 'shared/signup_modal' %>
+      <%= render 'shared/signin_modal' %>
+
     <% end %>
 
     <%= javascript_include_tag 'application' %>
