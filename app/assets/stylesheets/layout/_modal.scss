@@ -1,18 +1,17 @@
 .modal-content {
   width: 500px;
-  height: 600px;
+  height: 565px;
   padding: 30px;
 }
 .modal-logo {
-  width: 30px;
-  border-radius: 3px;
+  width: 50px;
+  border-radius: 5px;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .modal-border {
   width: 100%;
   height: 100%;
-  // margin: 30px;
   border: solid 2px $brown-dark;
   display: flex;
   flex-direction: column;
@@ -25,7 +24,7 @@
   position: absolute;
   top: -13px;
   right: -13px;
-  border: solid 1px $brown-dark;
+  border: solid 1px $gray-light;
   border-radius: 50%;
   background-color: $white;
   z-index: 2;
@@ -34,17 +33,24 @@
   font-size: 27px;
   font-weight: 100;
   float: none;
-  color: $brown-dark;
+  color: $gray-light;
   opacity: 0.8;
 }
 .modal-form {
-  margin: 30px 0px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  .form-control {
+    text-align: center;
+    width: 320px;
+    border: solid 1px $brown-dark;
+    border-bottom: solid 2px $gray-middle;
+  }
 }
 .modal-form-inputs {
   flex: 1 0 auto;
@@ -52,4 +58,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+.modal-password-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_remember_me .checkbox label {
+  font-style: italic;
+  font-size: 11px;
+  color: $gray-middle;
+  padding-left: 0;
+  input {
+    display: none;
+  }
+}
+.modal-input-italic {
+  font-style: italic;
+}
+.modal-link-italic {
+  font-style: italic;
+  font-size: 17px;
+  margin-top: 26px;
+}
+.modal-btn-submit {
+  background-color: $black;
+  color: $white;
+  font-size: 15px;
 }
