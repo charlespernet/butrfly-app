@@ -141,6 +141,7 @@
   background-color: $black;
   color: $white;
   font-size: 15px;
+  font-family: $header-font;
 }
 .modal-bottom-link {
   width: 100%;
@@ -227,4 +228,50 @@
   .radio + .radio {
     margin-top: 0;
   }
+}
+#oops {
+  color: $black;
+  .modal-content{
+    @media (max-width: 468px) {
+      width: 100%;
+      height: 460px;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+  .modal-border {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    justify-content: space-between;
+  }
+  .modal-logo {
+    margin: 0;
+  }
+  h1 {
+    @media (max-width: 468px) {
+      font-size: 50px;
+    }
+    @media (min-width: 768px) {
+      font-size: 100px;
+    }
+    font-style: italic;
+    margin-top: 0;
+  }
+  p {
+    font-size: 17px;
+    font-style: italic;
+  }
+}
+.modal-oops-link {
+  background-color: $black;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: $header-font;
+  padding: 6px 6px;
 }
