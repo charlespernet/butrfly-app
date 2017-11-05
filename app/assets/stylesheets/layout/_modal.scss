@@ -27,6 +27,7 @@
   h3 {
     font-size: 21px;
     font-weight: 400;
+    margin-bottom: 0;
   }
 }
 .modal-close {
@@ -80,6 +81,17 @@
   flex-direction: column;
   align-items: center;
 }
+.user_password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .help-block {
+    font-style: italic;
+    font-size: 11px;
+    color: $gray-middle;
+    margin-top: 10px;
+  }
+}
 .user_remember_me .checkbox label {
   font-style: italic;
   font-size: 11px;
@@ -95,7 +107,7 @@
 .modal-link-italic {
   font-style: italic;
   font-size: 17px;
-  margin-top: 26px;
+  //margin-top: 26px;
 }
 .modal-btn-submit {
   background-color: $black;
@@ -108,4 +120,55 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 15px;
+}
+.modal-border-bottom {
+  width: 20%;
+  border-bottom: solid 1px black;
+  margin-bottom: 25px;
+  margin-top: 22px;
+}
+.user_type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  color: $black;
+  .radio {
+    margin-top: 0;
+    input[type='radio']:after {
+      width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      top: -2px;
+      left: -5px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $black;
+      background-color: $white;
+    }
+    input[type='radio']:checked:after {
+      width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      top: -2px;
+      left: -5px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $black;
+      background-color: $black;
+
+    }
+    label {
+      font-size: 18px;
+    }
+  }
+  .radio + .radio {
+    margin-top: 0;
+  }
 }
