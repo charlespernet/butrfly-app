@@ -1,14 +1,37 @@
+#login {
+  .modal-content{
+    @media (max-width: 468px) {
+      width: 83%;
+      height: 460px;
+      margin: 0 8%;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+}
+#signup {
+  .modal-content {
+    @media (max-width: 468px) {
+      width: 100%;
+      height: 615px;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+
+}
+#modal_forgotten_password {
+  margin: 15px 0px;
+}
 .modal-content {
-  @media (max-width: 468px) {
-    width: 83%;
-    height: 500px;
-  }
-  @media (min-width: 768px) {
-    width: 500px;
-    height: 600px;
-  }
   padding: 30px;
-  margin-left: 8%;
 }
 .modal-logo {
   width: 50px;
@@ -28,6 +51,7 @@
     font-size: 21px;
     font-weight: 400;
     margin-bottom: 0;
+    text-align: center;
   }
 }
 .modal-close {
@@ -49,7 +73,12 @@
   opacity: 0.8;
 }
 .modal-form {
-  margin-top: 40px;
+  @media (max-width: 468px) {
+    margin-top: 20px;
+  }
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -107,7 +136,6 @@
 .modal-link-italic {
   font-style: italic;
   font-size: 17px;
-  //margin-top: 26px;
 }
 .modal-btn-submit {
   background-color: $black;
@@ -116,23 +144,38 @@
 }
 .modal-bottom-link {
   width: 100%;
-  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
+  @media (max-width: 468px) {
+    padding: 0 15px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
 }
 .modal-border-bottom {
   width: 20%;
   border-bottom: solid 1px black;
   margin-bottom: 25px;
-  margin-top: 22px;
+  @media (max-width: 468px) {
+    margin-top: 0;
+  }
+  @media (min-width: 768px) {
+    margin-top: 22px;
+  }
 }
 .user_type {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  @media (max-width: 468px) {
+    width: 112%;
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+  }
   padding: 0 20px;
   color: $black;
   .radio {
