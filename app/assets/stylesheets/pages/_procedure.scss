@@ -1,0 +1,33 @@
+.procedure-main {
+  text-align: center;
+  img {
+    width: 50px;
+  }
+  h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+.procedure-title {
+  padding: 20px 0px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 20px;
+  h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+.procedure-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.procedure-icon {
+  // padding: 0 15px;
+
+}
+
