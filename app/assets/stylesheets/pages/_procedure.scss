@@ -34,6 +34,10 @@
   width: 120px;
   padding: 0 6px;
 }
+.procedure-center {
+  display: flex;
+  justify-content: flex-end;
+}
 .procedure-frame {
   @media (max-width: 468px) {
     width: 100%;
@@ -72,14 +76,26 @@
 .procedure-details {
   border: solid 1px $brown-dark;
   margin-bottom: 25px;
-  padding: 25px;
+  @media (max-width: 468px) {
+   padding: 15px;
+  }
+  @media (min-width: 768px) {
+   padding: 25px;
+  }
+
   padding-bottom: 0;
   img {
     height: 30px;
-    margin-right: 20px;
+    @media (max-width: 468px) {
+     margin-right: 10px;
+    }
+    @media (min-width: 768px) {
+     margin-right: 20px;
+    }
   }
   h2 {
-    margin: 1px 0;
+    margin-top: 6px;
+    margin-bottom: 0;
     font-size: 18px;
     font-weight: 600;
   }
@@ -98,8 +114,7 @@
 }
 .procedure-details-title {
   display: inline-block;
-  height: 35px;
-  padding: 10px;
+  padding: 4px 10px;
   margin-bottom: 10px;
   color: white;
   background-color: $brown-dark;
