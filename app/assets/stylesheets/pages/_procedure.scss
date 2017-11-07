@@ -67,9 +67,43 @@
   }
   p {
     text-align: justify;
-
   }
-
+}
+.procedure-details {
+  border: solid 1px $brown-dark;
+  margin-bottom: 25px;
+  padding: 25px;
+  padding-bottom: 0;
+  img {
+    height: 30px;
+    margin-right: 20px;
+  }
+  h2 {
+    margin: 1px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
+    img {
+      height: 15px;
+      margin: 0 2px;
+    }
+  }
+}
+.procedure-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.procedure-details-title {
+  display: inline-block;
+  height: 35px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: $brown-dark;
+  border: solid 1px $gray-light;
 }
 
 
