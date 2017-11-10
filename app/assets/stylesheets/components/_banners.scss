@@ -33,3 +33,32 @@
     min-height: 150px;
   }
 }
+
+.process-banner-default {
+  text-align: center;
+  width: 100%;
+  background-color: $blue;
+  color: $black;
+  h2 {
+    // margin-top: 0px;
+    font-size: 24px;
+    flex: 1 0 auto;
+    color: $white;
+  }
+  h3 {
+    font-size: 10px;
+    color: $white;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.process-banner-step {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ img {
+  width: 50px;
+ }
+}

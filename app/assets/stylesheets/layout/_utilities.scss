@@ -6,6 +6,27 @@
 
 a {
   text-decoration: none;
+  &:hover {
+   text-decoration: none;
+  }
+}
+
+.div-spacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.div-spacearound {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.div-center {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .site {

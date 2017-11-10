@@ -3,18 +3,18 @@
   <div class="home-banner-bg" style="background-image: url(<%= image_path 'hero.jpg' %>);">
   </div>
   <div class="home-banner-roles">
-    <div class="frame-default">
+    <%= link_to root_path, class: "frame-default" do %>
       <h2>JE SUIS UNE FAMILLE</h2>
       <h3>JE CHERCHE MON AU PAIR</h3>
       <div class="border-bottom"></div>
       <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
-    </div>
-    <div class="frame-default frame-blue">
+    <% end %>
+    <%= link_to root_path, class: "frame-default frame-blue" do %>
       <h2>JE SUIS AU PAIR</h2>
       <h3>JE CHERCHE UNE FAMILLE</h3>
       <div class="border-bottom"></div>
       <p>Je crée un profil<br>Je trouve une famille<br>On m'accueille</p>
-    </div>
+    <% end %>
   </div>
 </div>
 
