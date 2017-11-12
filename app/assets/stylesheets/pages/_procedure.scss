@@ -111,6 +111,12 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
+  a {
+    text-decoration: underline;
+    font-weight: 600;
+    font-style: italic;
+
+  }
 }
 .procedure-details-title {
   display: inline-block;
