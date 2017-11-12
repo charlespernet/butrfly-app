@@ -14,10 +14,15 @@
           <h1>OUPS!</h1>
           <p>Tu as manqué une étape! Tu dois d'abord:</p>
         </div>
-        <!-- NB: METTRE à JOUR LES PATH POUR LES LIENS CI DESSOUS -->
-        <%= link_to "CRÉER TON PROFIL", procedure_path, class: "btn btn-default modal-oops-link" %>
-        <p>et</p>
-        <%= link_to "PRENDRE TON ABONNEMENT", procedure_path, class: "btn btn-default modal-oops-link" %>
+
+        <%= link_to "CRÉER TON COMPTE", '#signup', class: "btn btn-default modal-oops-link", 'data-toggle' => 'modal'  %>
+
+        <%- if controller_name != 'sessions' %>
+          <div class="modal-bottom-link">
+            <div class="modal-link-italic">Déjà inscrit?</div>
+            <%= link_to "Connexion", '#login', 'data-toggle' => 'modal', class: "modal-link-italic" %>
+          </div>
+        <% end -%>
       </div>
     </div>
   </div>
