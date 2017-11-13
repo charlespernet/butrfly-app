@@ -39,13 +39,14 @@
   justify-content: flex-end;
 }
 .procedure-frame {
+  display: inline-block;
   @media (max-width: 468px) {
     width: 100%;
     margin: 25px 0;
   }
   @media (min-width: 768px) {
     width: 420px;
-    height: 540px;
+    // height: 540px;
   }
   padding: 40px;
   display: flex;
@@ -59,14 +60,14 @@
     margin-top: 25px;
     margin-bottom: 15px;
   }
-  h3 {
+  h4 {
     font-family: $base-font;
     font-family: "Lora", "serif";
     font-size: 11px;
     font-weight: 600;
     text-align: left;
   }
-  h3.procedure-h3-right{
+  h4.procedure-right{
     text-align: right;
   }
   p {
