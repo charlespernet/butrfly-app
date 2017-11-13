@@ -36,3 +36,16 @@
   font-family: $header-font;
   margin-top: 50px;
 }
+.about-bold {
+  font-weight: 600;
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 5px;
+  }
+}
+.about-member {
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 10px;
+  }
+}
