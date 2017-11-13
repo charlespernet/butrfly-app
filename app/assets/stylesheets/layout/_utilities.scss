@@ -29,6 +29,12 @@ a {
   height: 50px;
   width: 50px;
 }
+.background-bicolor {
+  background-image: linear-gradient(-260deg, rgba(252, 219, 85, 1.00) 50%, rgba(101, 185, 190, 1.00) 50%);
+}
+.background-bicolor-rotate {
+  background-image: linear-gradient(5deg, rgba(252, 219, 85, 1.00) 50%, rgba(101, 185, 190, 1.00) 50%);
+}
 
 // // Paddings
 // .padded {
