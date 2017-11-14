@@ -29,6 +29,9 @@ a {
   height: 50px;
   width: 50px;
 }
+.margin-top {
+  margin-top: 20px;
+}
 
 // // Paddings
 // .padded {
@@ -43,9 +46,12 @@ a {
 // .bg-grey {
 //   background: #aeaeae;
 // }
-// .bg-blue {
-//   background: #00a3e1;
-// }
+.bg-blue {
+  background-color: $blue;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
 // .bg-dark-blue {
 //   background: #3b5998;
 // }

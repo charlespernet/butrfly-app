@@ -53,6 +53,10 @@
     margin-bottom: 0;
     text-align: center;
   }
+  p {
+    font-size: 17px;
+    font-style: italic;
+  }
 }
 .modal-close {
   width: 30px;
@@ -137,8 +141,8 @@
   font-style: italic;
   font-size: 17px;
 }
-.modal-btn-submit {
-  background-color: $black;
+.modal-btn {
+  background-color: $brown-dark;
   color: $white;
   font-size: 15px;
   font-family: $header-font;
@@ -262,10 +266,10 @@
     font-style: italic;
     margin-top: 0;
   }
-  p {
-    font-size: 17px;
-    font-style: italic;
-  }
+  // p {
+  //   font-size: 17px;
+  //   font-style: italic;
+  // }
 }
 .modal-oops-link {
   background-color: $black;
@@ -275,3 +279,20 @@
   font-family: $header-font;
   padding: 6px 6px;
 }
+.modal-btn-colors {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 35px;
+  margin-bottom: 40px;
+}
+.modal-btn-color {
+  white-space: pre-wrap;
+  width: 240px;
+  color: white;
+  font-size: 15px;
+  font-family: "Josefin Sans", "sans-serif";
+}
+
+
