@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'procedure', to: 'pages#procedure'
   get 'about', to: 'pages#about'
+  get 'congratulations', to: 'pages#congratulations'
   # get 'plans', to: 'pages#plans'
 
   resources :conversations, only: [:create] do

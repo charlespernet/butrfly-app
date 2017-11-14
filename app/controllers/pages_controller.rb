@@ -15,6 +15,9 @@ class PagesController < ApplicationController
 
   end
 
+  def congratulations
+  end
+
   # def plans
   # end
 end
