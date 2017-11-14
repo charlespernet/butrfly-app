@@ -7,4 +7,8 @@ class FamilyPolicy < ApplicationPolicy
   #   @user.admin
   # end
 
+  # def index?
+  #   true
+  # end
+
 end

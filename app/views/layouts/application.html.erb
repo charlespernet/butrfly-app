@@ -19,9 +19,8 @@
     <%= render 'shared/footer' %>
 
     <!-- login and sign_up modals -->
-    <%= render 'shared/congrats_modal' %>
+    <%#= render 'shared/congrats_modal' if @just_signed_up %>
     <% unless user_signed_in? %>
-      <%= render 'shared/oops_modal' %>
       <%= render 'shared/signup_modal' %>
       <%= render 'shared/signin_modal' %>
     <% end %>

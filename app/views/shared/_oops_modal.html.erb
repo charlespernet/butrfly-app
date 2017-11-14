@@ -27,3 +27,11 @@
     </div>
   </div>
 </div>
+
+<%= link_to "", "#oops", 'data-toggle' => 'modal', id: "link_oops" %>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#link_oops').trigger('click');
+  </script>
+<% end %>

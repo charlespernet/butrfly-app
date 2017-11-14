@@ -17,8 +17,8 @@
 
           <% if user_signed_in? %>
             <div class="modal-btn-colors">
-              <%= link_to "JE SUIS UNE FAMILLE, \n JE CHERCHE UN(E) AU PAIR", families_path, class: "bg-yellow modal-btn-color btn  " %>
-              <%= link_to "JE SUIS UN(E) AU PAIR, \n JE CHERCHE UNE FAMILLE", aupairs_path, class: " bg-blue  modal-btn-color btn" %>
+              <%= link_to "JE SUIS UNE FAMILLE, \n JE CHERCHE UN(E) AU PAIR", aupairs_path, class: "bg-yellow modal-btn-color btn  " %>
+              <%= link_to "JE SUIS UN(E) AU PAIR, \n JE CHERCHE UNE FAMILLE", families_path, class: " bg-blue  modal-btn-color btn" %>
             </div>
 
             <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
@@ -33,3 +33,11 @@
     </div>
   </div>
 </div>
+
+<%= link_to "", "#congrats", 'data-toggle' => 'modal', id: "link_congrats" %>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#link_congrats').trigger('click');
+  </script>
+<% end %>
