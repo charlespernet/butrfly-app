@@ -17,12 +17,11 @@
 
         <%= link_to "CRÉER TON COMPTE", '#signup', class: "btn btn-default modal-oops-link", 'data-toggle' => 'modal'  %>
 
-        <%- if controller_name != 'sessions' %>
-          <div class="modal-bottom-link">
-            <p>Déjà inscrit?</p>
-            <%= link_to "Connexion", '#login', 'data-toggle' => 'modal', class: "modal-link-italic" %>
-          </div>
-        <% end -%>
+        <div class="modal-bottom-link">
+          <p>Déjà inscrit?</p>
+          <%= link_to "Connexion", '#login', 'data-toggle' => 'modal', class: "modal-link-italic" %>
+        </div>
+
       </div>
     </div>
   </div>
