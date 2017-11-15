@@ -3,12 +3,4 @@ class FamilyPolicy < ApplicationPolicy
     @user == record
   end
 
-  # def show?
-  #   @user.admin
-  # end
-
-  # def index?
-  #   true
-  # end
-
 end

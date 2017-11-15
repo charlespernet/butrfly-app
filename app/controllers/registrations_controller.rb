@@ -22,14 +22,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  # protected
+  protected
 
-  # def after_sign_up_path_for(resource)
-  #   # congratulations_path
-  #   # dashboard_path
-  #   # flash[:notice] = 'congrats'
-  #   current_user.specific.is_a?(Aupair) ? families_path : aupairs_path
-
-
-  # end
+  def after_sign_up_path_for(resource)
+    # congratulations_path
+    # dashboard_path
+    flash[:notice] = 'congrats'
+    current_user.specific.is_a?(Aupair) ? families_path : aupairs_path
+  end
 end
