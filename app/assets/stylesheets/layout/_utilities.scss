@@ -11,22 +11,42 @@ a {
   }
 }
 
+.butrfly-wrapper {
+}
+
+.butrfly-container {
+  width: 100%;
+  max-width: 950px;
+  margin-top: 30px;
+}
+
+.index-container{
+  flex: 1 0 auto;
+}
+
 .div-spacebetween {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  // align-items: center;
 }
 
 .div-spacearound {
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  // align-items: baseline;
 }
 
 .div-center {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  // align-items: baseline;
+}
+
+.div-left {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  // align-items: baseline;
 }
 
 .site {

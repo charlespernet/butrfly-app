@@ -29,7 +29,7 @@ module ApplicationHelper
     if user.photos.present?
       image_path user.photos.first.path
     else
-      "http://www.techweez.com/wp-content/uploads/2017/07/NO-IMAGE.png"
+      "https://techreport.com/forums/styles/canvas/theme/images/no_avatar.jpg"
     end
   end
 
