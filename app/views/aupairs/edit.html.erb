@@ -1,157 +1,125 @@
-
 <%= simple_form_for @user do |f| %>
 
-<div class="edit-flex-container">
-
-  <div class="left-edit-block">
-    <div class="left-title">Mon profil</div>
-    <div class="left-percent"><%= @user.profile_completion %> %</div>
-    <%= f.button :submit, "Mettre à jour", class: "left-update-btn" %>
-  </div>
-
-  <div class="right-edit-block">
-
-      <div class="completion-block">
-        <div class="completion-title">Votre profil est rempli à </div>
-        <div class="completion-percent"><%= @user.profile_completion %> %</div>
-        <%= f.button :submit, "Mettre à jour", class: "completion-update-btn" %>
+  <div class="butrfly-wrapper div-center">
+    <div class="butrfly-container div-center">
+      <div>
+        <div class="filters-box frame-default frame-blue">
+          <h2>MON PROFIL</h2>
+        </div>
+        <div class="filters-box frame-default frame-blue">
+          <%= f.button :submit, "Update" %>
+        </div>
       </div>
-
-
-      <div class="navbox-2">
-
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs-2" role="tablist" id="myTab">
-        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Tes coordonnées</a></li>
-        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Tes disponibiltés</a></li>
-        <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">Tes super pouvoirs</a></li>
-      </ul>
-
-    </div>
-
-
-
-    <div class="tab-content">
-      <!-- Step 1 start -->
-      <div role="tabpanel" class="tab-pane active" id="step1">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Quelques questions pour commencer</div>
+      <div class="index-container">
+        <%= edit_tabs_html("blue") %>
+        <div class:="border-default width-100">
+          <%= render "shared/titles-blue-and-white", index: 0 %>
+          <div class="div-left">
+            <%= f.input :email, required: true, autofocus: true %>
+            <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
+            <% end %>
+            <%= f.input :current_password, required: true %>
           </div>
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <div class="test-flex">
-                <%= f.input :first_name, label:"Ton petit nom" %>
-                <%= f.input :last_name, label:"Ton nom de famille" %>
-              </div>
-
-              <div class="test-flex">
-                <%= f.input :email, label: "Ton email" %>
-                <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
-              </div>
-
-              <div class="test-flex">
-                <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité" %>
+          <div class="div-left">
+            <%= f.input :password, autocomplete: "off", required: false %>
+            <%= f.input :password_confirmation, required: false %>
+          </div>
+          <%= render "shared/titles-blue-and-white", index: 1 %>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
                 <%= f.input :gender, collection: Aupair.genders.keys, default: 0, label:"Ton sexe", label_method: lambda { |key| t(key) } %>
               </div>
-
-             </div>
-
-
+              <div class="col-md-6">
+                <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :first_name, label:"Ton petit nom" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :last_name, label:"Ton nom de famille" %>
+              </div>
             </div>
-
-
-          </div>
-      </div>
-      <!-- Step 1 end -->
-
-
-
-      <!-- Step 2 start -->
-      <div role="tabpanel" class="tab-pane" id="step2">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Ton départ pour l'aventure</div>
-          </div>
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <div class="test-flex2">
-                <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
-                <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité" %>
               </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <!-- Step 2 end -->
-
-
-
-      <!-- Step 3 start -->
-      <div role="tabpanel" class="tab-pane" id="step3">
-        <div class="navpill-three">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Dévoile nous tes secrets</div>
-          </div>
-
-
-          <div class="flex-form-right-alt">
-
-              <div class="description-padding">
-                <%= f.input :description, label: "Décrivez-vous en quelques lignes" %>
-              </div>
-
-              <!-- Associations to inline -->
-              <div class="false-label">Quelles langues parles-tu ?</div>
-              <div class="fucking-inline">
-                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
-              </div>
-
-              <div class="false-label">Une petite photo ?</div>
-              <div class="fucking-inline">
+              <div class="col-xs-12 div-left width-100">
                 <%= f.input :photos, as: :attachinary %>
               </div>
-
-              <div class="false-label">Dans quel pays souhaites-tu partir ?</div>
-              <div class="fucking-inline">
-                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
-              </div>
-
-              <div class="boo-flex">
-              <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
-              <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
-              <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
-              <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu déjà eu une expérience au pair ?" %>
-              <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
-              <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
-              </div>
-
+            </div>
           </div>
+          <%= render "shared/titles-blue-and-white", index: 2 %>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu déjà eu une expérience au pair ?" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
+              </div>
 
+              <div class="col-xs-12">
+                <%= f.input :description, label: "Décrivez-vous en quelques lignes", input_html: {class: "border-default" } %>
+              </div>
+            </div>
+          </div>
+          <%#= render "shared/titles-blue-and-white", index: 3 %>
+          <%= render "shared/titles-blue-and-white", index: 4 %>
+          <div class="container-fluid">
+            <div class="row">
+              <div class='col-md-5'>
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker7'>
+                    <span class="input-group-addon width-10">
+                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    </span>
+                    <input type='text' class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Step 3 end -->
-
-
-
     </div>
-
-
   </div>
 
 
-</div>
 
+
+
+
+<%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
+<%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
+
+
+
+
+
+<% end %>
+
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker7').datetimepicker({format: "DD/MM/YYYY"});
+    });
+  </script>
 <% end %>

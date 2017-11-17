@@ -65,4 +65,44 @@ module ApplicationHelper
     end
     process.join.html_safe
   end
+
+  def edit_tabs
+    {
+      blue: [
+        {
+          title: "TES IDENTIFIANTS",
+          path: root_path
+        },
+        {
+          title: "TOI",
+          path: root_path,
+          infos: "Quelques questions pour commencer !"
+        },
+        {
+          title: "TES SUPERS POUVOIRS",
+          path: root_path,
+          infos: "Dévoile nous tes secrets..."
+        },
+        {
+          title: "TA FAMILLE IDÉALE",
+          path: root_path
+        },
+        {
+          title: "TES DISPONIBILITÉS",
+          path: root_path,
+          infos: "Ton départ pour l'aventure !"
+        }
+      ]
+    }
+  end
+
+  def edit_tabs_html(color)
+    content_tag :div, class: "div-spacebetween" do
+      edit_tabs[color.to_sym].each.with_index.inject(""){ |tabs, (tab, i)|
+        tabs + link_to( "#{ i + 1 }. #{ tab[:title] }",
+                       tab[:path],
+                       class: "btn btn-#{color}-default width-100")
+      }.html_safe
+    end
+  end
 end
