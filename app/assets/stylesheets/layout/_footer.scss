@@ -5,6 +5,10 @@
   color: $white;
   h2 {
     font-size: 17px;
+    @media (max-width: 468px) {
+      margin-bottom: 6px;
+      margin-top: 24px;
+    }
   }
   p {
     font-size: 14px;
@@ -14,8 +18,13 @@
     color: $white;
     font-size: 14px;
     transition: color 0.5s ease;
-    margin-bottom: 10px;
     cursor: pointer;
+    @media (max-width: 468px) {
+      margin-bottom: 5px;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 10px;
+    }
   }
   a:hover{
     color: $yellow;
@@ -26,6 +35,11 @@
   }
   a:visited{
     text-decoration: none;
+  }
+  .list-inline {
+    @media (max-width: 468px) {
+      margin-bottom: 3px;
+    }
   }
   .social a {
     font-size: 100%;
