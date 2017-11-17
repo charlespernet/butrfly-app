@@ -1,0 +1,24 @@
+<div class="background-bicolor text-center">
+  <div class="congrats-bg-white ">
+    <%= link_to root_path do %>
+      <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+    <% end %>
+    <h3>FÉLICITATIONS!</h3>
+    <div class="modal-form">
+      <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
+      <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
+
+      <% if user_signed_in? %>
+        <div class="modal-btn-colors">
+          <%= link_to "JE SUIS UNE FAMILLE, \n JE CHERCHE UN(E) AU PAIR", families_path, class: "bg-yellow modal-btn-color btn  " %>
+          <%= link_to "JE SUIS UN(E) AU PAIR, \n JE CHERCHE UNE FAMILLE", aupairs_path, class: " bg-blue  modal-btn-color btn" %>
+        </div>
+
+        <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
+        <div class="margin-top">
+          <%= link_to t("shared.account"), family_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Family)  %>
+          <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Aupair)  %>
+        </div>
+      <% end %>
+  </div>
+</div>

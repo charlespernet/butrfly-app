@@ -1,0 +1,29 @@
+<div class="new-session-view">
+
+        <div class="text-center title-modal2">Inscription</div>
+
+
+
+        <%= simple_form_for(:user, url: user_registration_path) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first, label: false %>
+            <%= f.input :email, required: true, autofocus: true, placeholder: 'Email', label: false %>
+            <%= f.input :password, required: true, placeholder: 'Password', hint: ("6 characters minimum"), label: false %>
+          </div>
+
+          <div class="form-actions text-center" id="modal-button-signin">
+            <%= f.button :submit, "Inscription", class: "btn-modal" %>
+          </div>
+        <% end %>
+
+        <div class="loginmargins modal-links">
+          <%- if controller_name != 'sessions' %>
+            <div class="link-item">Déjà inscrit?</div>
+            <%= link_to "Connexion", new_session_path(resource_name), class:"link-item2" %><br />
+          <% end -%>
+
+        </div>
+
+</div>

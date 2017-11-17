@@ -1,0 +1,43 @@
+<div class="modal fade" id="congrats" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-border">
+        <div class="modal-close text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <%= link_to root_path do %>
+          <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+        <% end %>
+        <h3>FÉLICITATIONS!</h3>
+        <div class="modal-form">
+          <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
+          <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
+
+          <% if user_signed_in? %>
+            <div class="modal-btn-colors">
+              <%= link_to "JE SUIS UNE FAMILLE, \n JE CHERCHE UN(E) AU PAIR", aupairs_path, class: "bg-yellow modal-btn-color btn  " %>
+              <%= link_to "JE SUIS UN(E) AU PAIR, \n JE CHERCHE UNE FAMILLE", families_path, class: " bg-blue  modal-btn-color btn" %>
+            </div>
+
+            <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
+            <div class="margin-top">
+              <%= link_to t("shared.account"), family_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Family)  %>
+              <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Aupair)  %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to "", "#congrats", 'data-toggle' => 'modal', id: "link_congrats" %>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#link_congrats').trigger('click');
+  </script>
+<% end %>
