@@ -72,10 +72,11 @@
               <div class="col-md-6">
                 <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
               </div>
-              <div class="col-md-6">
-                <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
+              <div class="col-md-6 div-left">
+                <p>Joues-tu d'un instrument ?</p>
+                <%= f.collection_radio_buttons :musician, [[true, 'Yes'] ,[false, 'No']], :first, :last, item_wrapper_class: "custom-radio text-left" %>
               </div>
-
+          </div>
               <div class="col-xs-12">
                 <%= f.input :description, label: "Décrivez-vous en quelques lignes", input_html: {class: "border-default" } %>
               </div>
@@ -85,15 +86,18 @@
           <%= render "shared/titles-blue-and-white", index: 4 %>
           <div class="container-fluid">
             <div class="row">
-              <div class='col-md-5'>
+              <div class='col-md-6'>
                 <div class="form-group">
                   <div class='input-group date' id='datetimepicker7'>
                     <span class="input-group-addon width-10">
                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
                     </span>
-                    <input type='text' class="form-control" />
+                    <input type='text' class="form-control" name='dispo_from' />
                   </div>
                 </div>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
               </div>
             </div>
           </div>
@@ -107,8 +111,8 @@
 
 
 
-<%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
-<%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
+<%#= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
+
 
 
 

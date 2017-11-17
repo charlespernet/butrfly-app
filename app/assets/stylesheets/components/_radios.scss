@@ -1,0 +1,80 @@
+.filter-radio {
+  input[type=radio] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  }
+  // input[type=radio] ~ label {
+  //   width: calc(100% + 30px);
+  // }
+  label {
+    font-size: 10px;
+    margin-bottom: 0px;
+  }
+
+  input[type=radio] ~ label:before {
+      font-family: FontAwesome;
+      display: inline-block;
+      content: "\f1db";
+      letter-spacing: 10px;
+      font-size: 10px;
+      color: $white;
+      margin-left: -15px;
+  }
+
+  input[type=radio]:checked ~ label:before {
+      content: "\f00c";
+      font-size: 10px;
+      color: $black;
+      letter-spacing: 5px;
+  }
+}
+
+.custom-radio {
+  // .form-group {
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   align-items: baseline;
+  // }
+  input[type=radio] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  }
+  // input[type=radio] ~ label {
+  //   width: calc(100% + 30px);
+  // }
+  label {
+    // flex: 1 0 auto;
+    // font-size: 10px;
+    margin-bottom: 0px;
+    font-weight: normal;
+  }
+
+  input[type=radio] ~ label:before {
+      font-family: FontAwesome;
+      display: inline-block;
+      content: "\f1db";
+      letter-spacing: 5px;
+      font-size: 14px;
+      color: $blue;
+      margin-left: 15px;
+  }
+
+  input[type=radio]:checked ~ label:before {
+      content: "\f00c";
+      font-size: 10px;
+      color: $black;
+      letter-spacing: 5px;
+  }
+}
