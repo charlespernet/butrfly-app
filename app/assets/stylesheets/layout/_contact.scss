@@ -2,10 +2,13 @@
   position: sticky;
   left: 0px;
   bottom: 100px;
-  color: $brown-dark;
   cursor: pointer;
   width: 300px;
   height: 200px;
+}
+.contact-style {
+  color: $white;
+  background-color: $brown-dark;
 }
 .rotate {
   transform: rotate(-90.0deg);
