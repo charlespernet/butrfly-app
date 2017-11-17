@@ -1,1 +1,225 @@
-<h1>Comment ça marche</h1>
+<% content_for(:title) do %>
+  Comment ça marche BUTRFLY
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="procedure-main background-bicolor">
+        <div class="procedure-title ">
+          <h2>COMMENT ÇA MARCHE ?</h2>
+        </div>
+        <div class="procedure-icons">
+          <div class="procedure-icon">
+            <%= image_tag 'web-white.png' %>
+            <h4>JE CRÉE MON COMPTE</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'computer-white.svg' %>
+            <h4>JE REMPLIS MON PROFIL</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'cart-white.svg' %>
+            <h4>JE SÉLECTIONNE MON ABONNEMENT</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'loup-white.svg' %>
+            <h4>JE CHOISIS MON AU PAIR OU MA FAMILLE ET JE LE/A CONTACTE</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'check-white.svg' %>
+            <h4>JE VALIDE MA SÉLECTION</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'envelop-white.svg' %>
+            <h4>JE REÇOIS MON CONTRAT</h4>
+          </div>
+          <div class="procedure-icon">
+            <%= image_tag 'three-1-white.png' %>
+            <h4>JE VIS L’EXPÉRIENCE ET JE REJOINS LA COMMUNAUTÉ</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-push-6">
+      <div class="procedure-center">
+        <div class="frame-default frame-blue procedure-frame">
+          <div>
+            <h2><%= "Nos engagements pour les  jeunes au pair".upcase %></h2>
+            <h3>
+              PARCE CE QUE BUTRFLY SOUHAITE QUE VOTRE EXPÉRIENCE AU PAIR SOIT INOUBLIABLE, NOUS NOUS ENGAGEONS.
+            </h3>
+            <div class="border-bottom"></div>
+          </div>
+          <div>
+            <h4>
+              <%= "La certification des profils des familles qui nous rejoignent pour un accueil en toute sécurité.".upcase %>
+            </h4>
+            <p>
+              Nous vérifions l’identité des familles, leur domicile et les conditions d’accueil de la famille (type de logement), leur casier judiciaire et les motivations à accueillir un ou une jeune au pair chez eux.
+            </p>
+            <h4 class="procedure-right"><%= "La rémunération automatisée".upcase %></h4>
+            <p>
+              Avec BUTRFLY, plus de retard de paiement de votre argent de poche. En rejoignant la communauté, BUTRFLY vous ouvre dès votre arrivée un compte bancaire online avec une carte de crédit.
+              Votre argent de poche est donc prélevé systématiquement sur le compte de la famille et versé sur votre compte chaque semaine.
+            </p>
+            <h4><%= "Une formation pédagogique".upcase %></h4>
+            <p>
+              Parce que c’est peut être votre première expérience au pair et que vous la vivrez encore mieux avec quelques outils, BUTRFLY est la seule plateforme vous proposant une formation pédagogique à votre arrivée : organisation d’une journée, les gestes de premiers secours en cas d’accident, des conseils  pour gérer les enfants au quotidien, savoir communiquer avec les parents, des idées d'ateliers créatifs, des fiches cuisine pour vous inspirer.
+            </p>
+            <h4 class="procedure-right"><%= "L’adhésion à la charte morale BUTRFLY".upcase %></h4>
+            <p>
+              En signant notre charte, les familles et les jeunes Au pair s’engagent à respecter le cadre du contrat d’Au pair mais aussi à adhérer à nos valeurs fondamentales : la bienveillance, le respect de l’autre, l’éducation positive vis-à-vis des enfants.
+            </p>
+            <h4><%= "Un accompagnement à l’intégration".upcase %></h4>
+            <p>
+              Pour que vous ne passiez que des moments agréables dès votre arrivée,  BUTRFLY vous donne un KIT d’intégration pour vous simplifier la vie  : les contacts clés, les lieux importants à connaître autour de chez vous, la localisation des autres jeunes au Pair BUTRFLY.
+            </p>
+            <h4 class="procedure-right"><%= "L’assistance en cas de problème".upcase %></h4>
+            <p>
+              En cas de litige avec votre famille d’accueil qui ne puisse pas être résolu seul, BUTRFLY est à vos côtés pour vous aider. Ensemble nous trouverons la meilleure solution pour résoudre le problème.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-sm-pull-6">
+      <div class="frame-default procedure-frame">
+      <div>
+        <h2><%= "Nos engagements pour les familles d’accueil".upcase %> </h2>
+        <h3>
+          PARCE QUE BUTRFLY SOUHAITE QUE VOTRE EXPÉRIENCE AU PAIR SE PASSE DANS LES MEILLEURES CONDITIONS, NOUS NOUS ENGAGEONS.
+        </h3>
+        <div class="border-bottom"></div>
+      </div>
+      <div>
+        <h4>
+          <%= "La certification des profils des jeunes au pairs qui nous rejoignent pour un accueil en toute sécurité".upcase %>
+        </h4>
+        <p>
+          Nous vérifions l’identité du jeune au pair , son casier judiciaire, son CV et ses recommandations.
+        </p>
+        <h4 class="procedure-right"><%= "Une formation pédagogique pour les jeunes Au Pair".upcase %></h4>
+        <p>
+          Pour que votre jeune Au Pair puisse pleinement vivre sa mission et se sentir à l'aise dès ses premiers jours, BUTRFLY est la seule plateforme lui  proposant une formation pédagogique à son arrivée : comment organiser une journée avec les enfants, les gestes de premiers secours en cas d’accident, des conseils  pour gérer les enfants au quotidien, des ateliers créatifs, des fiches cuisine pour s’inspirer si il/elle doit cuisiner.
+        </p>
+        <h4><%= "L’adhésion à la charte morale BUTRFLY".upcase %></h4>
+        <p>
+          En signant notre charte, les familles et les jeunes Au pair s’engagent à respecter le cadre du contrat d’Au pair mais aussi à adhérer à nos valeurs fondamentales : la bienveillance, le respect de l’autre, l’éducation positive vis-à-vis des enfants.
+        </p>
+        <h4 class="procedure-right"><%= "Un Kit d’intégration".upcase %></h4>
+        <p>
+          Pour que vous ne perdiez pas de temps à chercher la bonne info et que vous prépariez au mieux l’intégration de votre jeune au pair, BUTRFLY vous fournit un kit d’intégration (aide aux démarches administratives avant l’arrivée de votre jeune au pair, planning et règles de vie, guide des bonnes pratiques).
+        </p>
+        <h4><%= "L’assistance en cas de problème".upcase %></h4>
+        <p>
+          En cas de litige avec votre jeune au pair qui ne puisse pas être résolu, BUTRFLY est à vos côtés. Ensemble nous trouverons la meilleure solution pour résoudre le problème.
+        </p>
+        <h4 class="procedure-right"><%= "La rémunération automatisée".upcase %></h4>
+        <p>
+          Fini les contraintes et plus d’échange d’argent , l’argent de poche de votre jeune au pair est prélevé chaque semaine sur votre compte et versé sur le compte bancaire français de votre jeune au pair.
+        </p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="procedure-details">
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>1- JE M’IDENTIFIE.</h2>
+            </div>
+            <p>
+              Saisissez votre adresse email et votre mot de passe. Ainsi vous pouvez consulter gratuitement les profils des <%= link_to "Au Pairs", aupairs_path %> ou des <%= link_to "Familles", families_path %>.<br>
+              <em><strong>CONSEILS : Attention! Votre profil ne sera visible qu’une fois l’abonnement choisi !</strong></em>
+            </p>
+          </div>
+        </div>
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>2- JE CRÉE MON PROFIL.</h2>
+            </div>
+            <p>
+              Enregistrez vos données personnelles, sélectionnez vos critères de recherche et ajoutez vos photos. Vous pourrez les modifier à tout moment ! <br>
+              <em><strong>CONSEILS : Choisissez des photos récentes, ainsi pas de surprise !</strong></em>
+            </p>
+          </div>
+        </div>
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>3- JE SÉLECTIONNE MON ABONNEMENT.</h2>
+            </div>
+            <p>
+              La prise d’abonnement est obligatoire pour que votre profil soit actif et profitez pleinement des fonctionnalités de notre messagerie
+            </p>
+            <p>
+              - En tant que Famille, vous avez le choix entre 2 Abonnements à souscrire:<br>
+              - Abonnement « <strong>Do It Yourself</strong> »: Envoi de messages aux Au Pairs choisis, illimité pendant 2mois; Conseils et Accompagnement tout au long de votre expérience; Contrat; Ouverture d’un compte en banque gratuit pour l’Au pair.<br>
+              - Abonnement « <strong>Take It Easy</strong> »: Pré-sélection de 3 Au Pairs; Envoi de messages aux Au Pairs choisis, illimité pendant 2mois; Conseils et Accompagnement tout au long de votre expérience; Contrat; Ouverture d’un compte en banque gratuit pour l’Au pair; Assurance santé complémentaire pour l’Au Pair.
+            </p>
+            <p>
+              - En tant qu’ Au Pair, il y a un abonnement unique à souscrire:<br>
+              - Abonnement Au Pair: Envoi d’email aux Familles, illimité pendant 6mois; Conseils et Accompagnement tout au long de ton expérience;Contrat ; Ouverture d’un compte en banque gratuit; Conseils et suivi tout au long de ton expérience.
+            </p>
+          </div>
+        </div>
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>4- JE SÉLECTIONNE LE(S) AU PAIRS OU LE(S) FAMILLES.</h2>
+            </div>
+            <p>
+              Sélectionnez le(s) profil(s) qui vous correspondent en les ajoutant à mes favoris <i class='fa fa-heart' aria-hidden='true'></i>  et/ou rentrez en contact via notre messagerie <span><%= image_tag 'interface.svg' %></span> <br>
+              Pour pouvoir envoyer un 1er message, vous devez, d’abord, souscrire à un abonnement.
+            </p>
+            <p>
+              <em><strong>CONSEILS : Si le 1er contact écrit est positif, nous vous conseillons d’établir un contact visuel via Skype, Facetime ou autre.</strong></em>
+            </p>
+          </div>
+        </div>
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>5- JE VALIDE MA SÉLECTION.</h2>
+            </div>
+            <p>
+              Une fois votre choix fait, chacune des parties doit valider sa sélection dans un délai de 48h. Pour cela, vous devez aller dans « Mes Favoris » <i class='fa fa-heart' aria-hidden='true'></i>, cliquez sur le profil choisi puis cliquez sur « Sélectionner » dans la colonne de gauche.
+            </p>
+            <p>
+              Chacun recevra, ensuite, par email, un exemplaire du contrat pré rempli qui devra être signé conjointement dès l’arrivée de l’ Au Pair dans sa Famille.
+            </p>
+            <p>
+              La famille devra ensuite l’adresser aux autorités compétentes.
+            </p>
+          </div>
+        </div>
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg' %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>6. JE VIS L’EXPÉRIENCE ET JE REJOINS LA COMMUNAUTÉ BUTRFLY.</h2>
+            </div>
+            <p>
+              Butrfly vous accompagne tout au long de votre expérience, vous donnant des conseils, des outils et un soutien permanent en cas de doutes, problèmes ou autres via notre service clients ouvert du lundi au vendredi, de 9h à 18h.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
