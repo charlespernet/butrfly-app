@@ -8,9 +8,11 @@
           <p><%= mail_to t('meta-email') %></p>
 
           <ul class="list-inline social">
-            <li><a <%= t('meta-url-fb') %> ><i class="fa fa-facebook"></i></a></li>
-            <li><a <%= t('meta-url-pinterest') %> ><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-            <li class="hidden-xs"><a <%= t('meta-url-linkedin') %> ><i class="fa fa-linkedin"></i></a></li>
+            <li>
+              <%= link_to t('meta-url-fb'), target: "_blank" do %>
+                <i class="fa fa-facebook"></i></a>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
