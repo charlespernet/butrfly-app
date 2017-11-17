@@ -27,20 +27,4 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  # def just_signed_up?
-  #   @just_signed_up = params[:just_signed_up]
-  # end
-
-  # protected
-
-  # def authenticate_user!
-  #   raise
-  #   if user_signed_in?
-  #     super
-  #   else
-  #     redirect_to root_path #, :notice => 'oops'
-  #     ## if you want render 404 page
-  #     ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
-  #   end
-  # end
 end
