@@ -1,0 +1,36 @@
+<div class="modal fade" id="oops" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-border">
+        <div class="modal-close text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <%= link_to root_path do %>
+          <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+        <% end %>
+        <div>
+          <h1>OUPS!</h1>
+          <p>Tu as manqué une étape! Tu dois d'abord:</p>
+        </div>
+
+        <%= link_to "CRÉER TON COMPTE", '#signup', class: "btn btn-default modal-oops-link", 'data-toggle' => 'modal'  %>
+
+        <div class="modal-bottom-link">
+          <p>Déjà inscrit?</p>
+          <%= link_to "Connexion", '#login', 'data-toggle' => 'modal', class: "modal-link-italic" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to "", "#oops", 'data-toggle' => 'modal', id: "link_oops" %>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#link_oops').trigger('click');
+  </script>
+<% end %>

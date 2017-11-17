@@ -1,29 +1,29 @@
-<div class="new-session-view">
+<div class="container text-center">
+  <%= link_to root_path do %>
+    <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+  <% end %>
+  <h3>JE CRÉE UN COMPTE EN TANT QUE :</h3>
+  <div class="modal-form">
+    <%= simple_form_for(:user, url: user_registration_path, html: {class: 'modal-form-inputs'}) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :type, as: :radio_buttons, radio_buttons_style: :inline, collection: User::DEVISE_TYPES, checked: "Aupair", label: false %>
+      <div class="modal-border-bottom"></div>
+      <%= f.input :email, required: false, autofocus: true, placeholder: 'adresse e-mail', label: false,
+      input_html: {class: 'modal-input-italic'} %>
+      <div class="modal-password-group">
+        <%= f.input :password, required: false, placeholder: "mot de passe", label: false, hint: ("6 characters minimum") %>
+      </div>
 
-        <div class="text-center title-modal2">Inscription</div>
+      <div class="form-actions">
+        <%= f.button :submit, t('shared.sign_up'), class: 'modal-btn' %>
+      </div>
+    <% end %>
 
-
-
-        <%= simple_form_for(:user, url: user_registration_path) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :type, as: :radio_buttons, collection: User::TYPES, checked: User::TYPES.first, label: false %>
-            <%= f.input :email, required: true, autofocus: true, placeholder: 'Email', label: false %>
-            <%= f.input :password, required: true, placeholder: 'Password', hint: ("6 characters minimum"), label: false %>
-          </div>
-
-          <div class="form-actions text-center" id="modal-button-signin">
-            <%= f.button :submit, "Inscription", class: "btn-modal" %>
-          </div>
-        <% end %>
-
-        <div class="loginmargins modal-links">
-          <%- if controller_name != 'sessions' %>
-            <div class="link-item">Déjà inscrit?</div>
-            <%= link_to "Connexion", new_session_path(resource_name), class:"link-item2" %><br />
-          <% end -%>
-
-        </div>
-
+    <%- if controller_name != 'sessions' %>
+      <div class="signup-bottom-link">
+        <div class="modal-link-italic">Déjà inscrit?</div>
+        <%= link_to "Connexion", '#login', 'data-toggle' => 'modal', class: "modal-link-italic" %>
+      </div>
+    <% end -%>
+  </div>
 </div>

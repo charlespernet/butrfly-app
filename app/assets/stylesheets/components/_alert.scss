@@ -1,0 +1,11 @@
+.alert {
+  margin: 0;
+  text-align: center;
+}
+.alert-dismissable, .alert-dismissible {
+  .close {
+    position: relative;
+    top: 4px;
+    right: 10px;
+  }
+}
