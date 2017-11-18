@@ -11,6 +11,60 @@ a {
   }
 }
 
+
+.input-string {
+  .datepicker {
+    width: 200px;
+    .input-group-addon {
+      border: none;
+      background: transparent;
+      color: $blue;
+    }
+  }
+  .form-group {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  i.fa.fa-sort-desc {
+    padding: 0 7px;
+    color: $blue;
+  }
+  input {
+    width: auto;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 1px $blue;
+    margin-left: 10px;
+    text-align: center;
+
+  }
+  select {
+    width: 150px;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    border-radius: 0px;
+    margin-left: -18px;
+    -webkit-appearance: none;
+    background: transparent;
+    display: flex;
+    padding: 0px 20px;
+    align-items: flex-end;
+    z-index: 1000;
+    color: $gray-light;
+    &:focus {
+      -webkit-appearance: none;
+      box-shadow: none;
+    }
+  }
+  label {
+    margin-bottom: 0px;
+    font-weight: normal;
+  }
+}
+
 .attachinary_container>ul {
   display: flex;
   justify-content: space-between;
@@ -25,6 +79,7 @@ a {
 
 .border-default {
   border: solid 2px $blue;
+  box-shadow: none;
 }
 
 .butrfly-wrapper {
@@ -32,29 +87,33 @@ a {
 
 .butrfly-container {
   width: 100%;
-  max-width: 950px;
+  max-width: 1000px;
   margin-top: 30px;
 }
 
 .index-container{
-  flex: 1 0 auto;
+  flex: 1;
+  // width: calc(100% - 240px)
 }
 
 .div-spacebetween {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   // align-items: center;
 }
 
 .div-spacearound {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   // align-items: baseline;
 }
 
 .div-center {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   // align-items: baseline;
 }
 
@@ -63,6 +122,24 @@ a {
   justify-content: left;
   flex-wrap: wrap;
   // align-items: baseline;
+}
+
+.items-center {
+  align-items: center;
+  h2, h3, p {
+    margin: 0px;
+  }
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.items-baseline {
+  align-items: baseline;
+  h2, h3, p {
+    margin: 0px;
+  }
 }
 
 .site {
@@ -86,6 +163,8 @@ a {
   height: 50px;
   width: 50px;
 }
+
+
 
 // // Paddings
 // .padded {

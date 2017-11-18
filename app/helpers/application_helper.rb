@@ -101,8 +101,45 @@ module ApplicationHelper
       edit_tabs[color.to_sym].each.with_index.inject(""){ |tabs, (tab, i)|
         tabs + link_to( "#{ i + 1 }. #{ tab[:title] }",
                        tab[:path],
-                       class: "btn btn-#{color}-default width-100")
+                       class: "btn btn-#{color}-default flex-auto")
       }.html_safe
     end
   end
+
+  def input_boolean_html( color: :blue,
+                          css_class: "col-md-6 div-left items-center",
+                          answers: [['Oui', true], ['Non', false]],
+                          **attrs
+                        )
+    content_tag :div, class: css_class do
+      image_tag("papillon-noir.png", width: 30, height: 30 ) +
+      content_tag(:p, attrs[:question]) +
+      attrs[:f].collection_radio_buttons( attrs[:field],
+                                  answers,
+                                  :last,
+                                  :first,
+                                  item_wrapper_class: "custom-radio text-left"
+                                )
+    end
+  end
+
+  def input_collection_html(  color: :blue,
+                              css_class: "col-md-6 input-string div-left items-center",
+                              f: nil,
+                              field: nil,
+                              question: "",
+                              **attrs
+                            )
+    content_tag :div, class: css_class do
+      content_tag(:p, question) +
+      content_tag(:i, "", class: "fa fa-sort-desc", "aria-hidden": "true") +
+      f.input( field, attrs )
+    end
+  end
 end
+
+
+
+
+
+
