@@ -15,15 +15,37 @@
         <div class="border-default width-100">
           <%= render "shared/titles-blue-and-white", index: 0 %>
           <div class="div-left">
-            <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "email", input_html: { class: "border-default"} %>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        label: false,
+                        placeholder: "email",
+                        input_html: { class: "border-default"}
+            %>
             <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
             <% end %>
-            <%= f.input :current_password, required: true, label: false, placeholder: "nouveau mot de passe", input_html: { class: "border-default"} %>
+            <%= f.input :current_password,
+                        required: true,
+                        label: false,
+                        placeholder: "nouveau mot de passe",
+                        input_html: { class: "border-default"}
+            %>
           </div>
           <div class="div-left">
-            <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "ancien mot de passe", input_html: { class: "border-default"} %>
-            <%= f.input :password_confirmation, required: false, label: false, placeholder: "confirmation", input_html: { class: "border-default"} %>
+            <%= f.input :password,
+                        autocomplete: "off",
+                        required: false,
+                        label: false,
+                        placeholder: "ancien mot de passe",
+                        input_html: { class: "border-default"}
+            %>
+            <%= f.input :password_confirmation,
+                        required: false,
+                        label: false,
+                        placeholder: "confirmation",
+                        input_html: { class: "border-default"}
+            %>
           </div>
           <%= render "shared/titles-blue-and-white", index: 1 %>
           <div class="container-fluid">
@@ -31,15 +53,24 @@
               <%= input_boolean_html  f: f,
                                       field: :gender,
                                       answers: Aupair.genders.hash.to_a,
-                                      question: ""  %>
-              <div class="col-md-6">
-                <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
+                                      question: ""
+              %>
+              <%= render  "shared/datepicker",
+                          container_class: "col-md-6 div-left",
+                          question: "Ta date de naissance",
+                          css_id: "datetimepicker-year", field: "birth_date"
+              %>
+              <div class="col-md-6 input-string">
+                <%= f.input :first_name,
+                            label:"Ton petit nom :",
+                            placeholder: "Prénom"
+                %>
               </div>
               <div class="col-md-6 input-string">
-                <%= f.input :first_name, label:"Ton petit nom :", placeholder: "Prénom" %>
-              </div>
-              <div class="col-md-6 input-string">
-                <%= f.input :last_name, label:"Ton nom de famille :", placeholder: "Nom" %>
+                <%= f.input :last_name,
+                            label:"Ton nom de famille :",
+                            placeholder: "Nom"
+                %>
               </div>
               <%= input_collection_html f: f,
                                         field: :country_code,
@@ -57,24 +88,34 @@
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :driving_license,
-                                      question: "As-tu le permis de conduire ?"  %>
+                                      question: "As-tu le permis de conduire ?"
+              %>
               <%= input_boolean_html  f: f,
                                       field: :accepted_domestic_animal,
-                                      question: "Acceptes-tu les animaux domestiques ?"  %>
+                                      question: "Acceptes-tu les animaux domestiques ?"
+              %>
               <%= input_boolean_html  f: f,
                                       field: :educational_experience,
-                                      question: "As-tu l'habitude de garder des enfants ?"  %>
+                                      question: "As-tu l'habitude de garder des enfants ?"
+              %>
               <%= input_boolean_html  f: f,
                                       field: :experience_aupair,
-                                      question: "As-tu déjà eu une expérience au pair ?"  %>
+                                      question: "As-tu déjà eu une expérience au pair ?"
+              %>
               <%= input_boolean_html  f: f,
                                       field: :sports,
-                                      question: "Pratiques-tu un sport ?"  %>
+                                      question: "Pratiques-tu un sport ?"
+              %>
               <%= input_boolean_html  f: f,
                                       field: :musician,
-                                      question: "Joues-tu d'un instrument ?"  %>
+                                      question: "Joues-tu d'un instrument ?"
+              %>
               <div class="col-xs-12">
-                <%= f.input :description, label: false , placeholder: "Dis nous en un peu plus sur toi", input_html: {class: "border-default text-center" } %>
+                <%= f.input :description,
+                            label: false ,
+                            placeholder: "Dis nous en un peu plus sur toi",
+                            input_html: {class: "border-default text-center" }
+                %>
               </div>
             </div>
           </div>
@@ -82,20 +123,14 @@
           <%= render "shared/titles-blue-and-white", index: 4 %>
           <div class="container-fluid">
             <div class="row">
-              <div class='col-md-6 div-left input-string'>
-                <p>coco ?</p>
-                <div class="form-group datepicker">
-                  <div class='input-group date' id='datetimepicker7'>
-                    <span class="input-group-addon width-10">
-                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                    </span>
-                    <input type='text' class="form-control" name='dispo_from' />
-                  </div>
-                </div>
-              </div>
+              <%= render  "shared/datepicker",
+                          container_class: "col-md-6 div-left",
+                          question: "À partir de quelle date es-tu disponible ?",
+                          css_id: "datetimepicker-standar", field: "dispo_from"
+              %>
               <%= input_collection_html f: f,
                                         field: :stay_duration,
-                                        question: "A partir de quelles dates es-tu disponible ?",
+                                        question: "Pour quelle période souhaites-tu partir ?",
                                         collection: Aupair.stay_durations.keys,
                                         default: 0,
                                         priority: ["FR", "GB", "ES"],
@@ -109,24 +144,6 @@
     </div>
   </div>
 
-
-
-
-
-
-<%#= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
-
-
-
-
-
-
 <% end %>
 
-<%= content_for :after_js do %>
-  <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker7').datetimepicker({format: "DD/MM/YYYY"});
-    });
-  </script>
-<% end %>
+
