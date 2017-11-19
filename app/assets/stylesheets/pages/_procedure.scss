@@ -1,0 +1,139 @@
+.procedure-main {
+  text-align: center;
+  img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 15px;
+  }
+}
+.procedure-title {
+  padding-bottom: 15px;
+  padding-top: 20px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 20px;
+  h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+.procedure-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+.procedure-icon {
+  width: 120px;
+  padding: 0 6px;
+}
+.procedure-center {
+  display: flex;
+  justify-content: flex-end;
+}
+.procedure-frame {
+  display: inline-block;
+  @media (max-width: 468px) {
+    width: 100%;
+    margin: 25px 0;
+  }
+  @media (min-width: 768px) {
+    width: 420px;
+    height: 970px;
+  }
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: around;
+  h2 {
+    font-size: 19px;
+    color: $black;
+  }
+  .border-bottom{
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  h4 {
+    font-family: $base-font;
+    font-family: "Lora", "serif";
+    font-size: 11px;
+    font-weight: 600;
+    text-align: left;
+  }
+  h4.procedure-right{
+    text-align: right;
+  }
+  p {
+    text-align: justify;
+  }
+}
+.procedure-details {
+  border: solid 1px $brown-dark;
+  margin-bottom: 25px;
+  @media (max-width: 468px) {
+   padding: 15px;
+  }
+  @media (min-width: 768px) {
+   padding: 25px;
+  }
+
+  padding-bottom: 0;
+  img {
+    height: 30px;
+    @media (max-width: 468px) {
+     margin-right: 10px;
+    }
+    @media (min-width: 768px) {
+     margin-right: 20px;
+    }
+  }
+  h2 {
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
+    img {
+      height: 15px;
+      margin: 0 2px;
+    }
+  }
+}
+.procedure-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  a {
+    text-decoration: underline;
+    font-weight: 600;
+    font-style: italic;
+
+  }
+}
+.procedure-details-title {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: $brown-dark;
+  border: solid 1px $gray-light;
+}
+
+
+
+
+

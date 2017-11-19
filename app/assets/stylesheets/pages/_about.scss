@@ -1,0 +1,52 @@
+.about-padded {
+  padding-top: 2em;
+  padding-bottom: 5em;
+  text-align: justify;
+  p {
+    margin: 0;
+  }
+  h3{
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+  img {
+    @media (max-width: 468px) {
+      width: 250px;
+    }
+    @media (min-width: 468px) {
+      width: 450px;
+    }
+  }
+}
+.about-btn {
+  background-color: $brown-dark;
+  color: $white;
+  font-size: 18px;
+  font-family: $header-font;
+  margin-top: 50px;
+}
+.about-bold {
+  font-weight: 600;
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 5px;
+  }
+}
+.about-member {
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 10px;
+  }
+}
+.blog-link {
+  font-weight: 600;
+  text-decoration: underline;
+}

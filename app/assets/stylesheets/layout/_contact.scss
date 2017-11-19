@@ -1,0 +1,44 @@
+#contact {
+  position: sticky;
+  left: 0px;
+  bottom: 100px;
+  cursor: pointer;
+  width: 300px;
+  height: 200px;
+}
+.contact-style {
+  color: $white;
+  background-color: $brown-dark;
+}
+.rotate {
+  transform: rotate(-90.0deg);
+}
+#contact_title {
+  border: solid 2px $brown-dark;
+  border-radius: 3px;
+  height: 40px;
+  width: 137px;
+  position: absolute;
+  left: -40px;
+  top: 80px;
+  //display: inline-block;
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 10px;
+  }
+}
+#contact_content {
+  color: $brown-dark;
+  background-color: $white;
+  border: solid 2px $brown-dark;
+  border-radius: 3px;
+  width: 165px;
+  padding: 10px;
+  position: absolute;
+  left: 50px;
+  top: 31px;
+
+}
+

@@ -175,6 +175,16 @@ a {
   height: 50px;
   width: 50px;
 }
+.background-bicolor {
+  background-image: linear-gradient(-260deg, rgba(252, 219, 85, 1.00) 50%, rgba(101, 185, 190, 1.00) 50%);
+}
+.background-bicolor-rotate {
+  background-image: linear-gradient(193deg, rgba(252, 219, 85, 1.00) 50%, rgba(101, 185, 190, 1.00) 50%);
+}
+.margin-top {
+  margin-top: 20px;
+}
+
 
 
 
@@ -191,9 +201,15 @@ a {
 // .bg-grey {
 //   background: #aeaeae;
 // }
-// .bg-blue {
-//   background: #00a3e1;
-// }
+.bg-blue {
+  background-color: $blue;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+.bg-white {
+  background-color: $white;
+}
 // .bg-dark-blue {
 //   background: #3b5998;
 // }

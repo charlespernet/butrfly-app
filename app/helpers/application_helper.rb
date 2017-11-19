@@ -25,6 +25,7 @@ module ApplicationHelper
     end
   end
 
+
   def default_photo(user)
     if user.photos.present?
       image_path user.photos.first.path

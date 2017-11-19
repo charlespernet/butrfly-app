@@ -3,8 +3,4 @@ class AupairPolicy < ApplicationPolicy
     @user == record
   end
 
-  # def show?
-  #   @user.admin
-  # end
-
 end

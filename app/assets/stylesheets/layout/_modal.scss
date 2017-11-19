@@ -1,0 +1,298 @@
+#login {
+  .modal-content{
+    @media (max-width: 468px) {
+      width: 83%;
+      height: 460px;
+      margin: 0 8%;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+}
+#signup {
+  .modal-content {
+    @media (max-width: 468px) {
+      width: 100%;
+      height: 615px;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+
+}
+#modal_forgotten_password {
+  margin: 15px 0px;
+}
+.modal-content {
+  padding: 30px;
+}
+.modal-logo {
+  width: 50px;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.modal-border {
+  width: 100%;
+  height: 100%;
+  border: solid 2px $brown-dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  h3 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  p {
+    font-size: 17px;
+    font-style: italic;
+  }
+}
+.modal-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  border: solid 1px $gray-light;
+  border-radius: 50%;
+  background-color: $white;
+  z-index: 2;
+}
+.close {
+  font-size: 27px;
+  font-weight: 100;
+  float: none;
+  color: $gray-light;
+  opacity: 0.8;
+}
+.modal-form {
+  @media (max-width: 468px) {
+    margin-top: 20px;
+  }
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  .form-control {
+    text-align: center;
+    border: solid 1px $brown-dark;
+    border-bottom: solid 2px $gray-middle;
+    @media (max-width: 468px) {
+      width: 170px;
+    }
+    @media (min-width: 768px) {
+      width: 320px;
+    }
+  }
+}
+.modal-form-inputs {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.modal-password-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .help-block {
+    font-style: italic;
+    font-size: 11px;
+    color: $gray-middle;
+    margin-top: 10px;
+  }
+}
+.user_remember_me .checkbox label {
+  font-style: italic;
+  font-size: 11px;
+  color: $gray-middle;
+  padding-left: 0;
+  input {
+    display: none;
+  }
+}
+.modal-input-italic {
+  font-style: italic;
+}
+.modal-link-italic {
+  font-style: italic;
+  font-size: 17px;
+}
+.modal-btn {
+  background-color: $brown-dark;
+  color: $white;
+  font-size: 15px;
+  font-family: $header-font;
+}
+.modal-bottom-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  @media (max-width: 468px) {
+    padding: 0 15px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+}
+.signup-bottom-link {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  @media (max-width: 468px) {
+    padding: 0 15px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+}
+.modal-border-bottom {
+  width: 20%;
+  border-bottom: solid 1px black;
+  margin-bottom: 25px;
+  @media (max-width: 468px) {
+    margin-top: 0;
+  }
+  @media (min-width: 768px) {
+    margin-top: 22px;
+  }
+}
+.user_type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 468px) {
+    width: 112%;
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+  padding: 0 20px;
+  color: $black;
+  .radio {
+    margin-top: 0;
+    input[type='radio']:after {
+      width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      top: -2px;
+      left: -5px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $black;
+      background-color: $white;
+    }
+    input[type='radio']:checked:after {
+      width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      top: -2px;
+      left: -5px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $black;
+      background-color: $black;
+
+    }
+    label {
+      font-size: 18px;
+    }
+  }
+  .radio + .radio {
+    margin-top: 0;
+  }
+}
+#oops {
+  color: $black;
+  .modal-content{
+    @media (max-width: 468px) {
+      width: 100%;
+      height: 460px;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 600px;
+      margin: 0 8%;
+    }
+  }
+  .modal-border {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    justify-content: space-between;
+  }
+  .modal-logo {
+    margin: 0;
+  }
+  h1 {
+    @media (max-width: 468px) {
+      font-size: 50px;
+    }
+    @media (min-width: 768px) {
+      font-size: 100px;
+    }
+    font-style: italic;
+    margin-top: 0;
+  }
+  // p {
+  //   font-size: 17px;
+  //   font-style: italic;
+  // }
+}
+.modal-oops-link {
+  background-color: $black;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: $header-font;
+  padding: 6px 6px;
+}
+.modal-btn-colors {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 35px;
+  margin-bottom: 40px;
+}
+.modal-btn-color {
+  white-space: pre-wrap;
+  width: 240px;
+  color: white;
+  font-size: 15px;
+  font-family: "Josefin Sans", "sans-serif";
+}
+
+

@@ -1,0 +1,17 @@
+<div id="contact" >
+  <div id="contact_title" class="rotate text-center contact-style">
+    <h2>CONTACT</h2>
+  </div>
+  <div id="contact_content" class="contact-style hidden">
+    <p><%= t('meta-hours') %></p>
+    <p><%= mail_to t('meta-email') %></p>
+  </div>
+</div>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#contact').click(function() {
+      $('#contact_content').toggleClass('hidden');
+    });
+  </script>
+<% end %>
