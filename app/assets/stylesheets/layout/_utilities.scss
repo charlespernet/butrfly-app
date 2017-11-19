@@ -11,6 +11,72 @@ a {
   }
 }
 
+.upload-photos {
+  width: 100%;
+  ul {
+    list-style:none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  a {
+    color: $black;
+    font-family: "Josefin Sans", "sans-serif";
+    background-color: $blue;
+    font-size: 12px;
+    // padding: 15px 18px 12px 18px;
+    height: 45px;
+    width: 100px;
+    border: solid 1px $white;
+    position: relative;
+    color: $blue;
+    &:after {
+      color: $black;
+      content: "SUPPRIMER";
+      position: absolute;
+      top: calc(50% - 6px);
+      left: 14px;
+    }
+  }
+  .attachinary-input {
+    height: 45px;
+    width: 120px;
+    // visibility: hidden;
+    position: relative;
+    margin-left: 140px;
+    &:before {
+      // width: 140px;
+      position: absolute;
+      content: "Ajoute tes photes :";
+      left: -140px;
+    }
+    &:after {
+      font-family: "Josefin Sans", "sans-serif";
+      font-size: 12px;
+      background-color: $blue;
+      color: $black;
+      content: "TÉLECHARGER";
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      padding-top: 17px;
+      padding-left: 15px;
+      left: 0px;
+      right: 0px;
+    }
+  }
+}
+
 .padding-20px {
   padding: 20px;
 }

@@ -3,14 +3,8 @@
   <div class="butrfly-wrapper div-center">
     <div class="butrfly-container div-center">
       <div class="hidden-xs hidden-ms">
-        <div class="filters-box frame-default frame-blue div-center items-center">
-          <h2>MON<br>PROFIL</h2>
-        </div>
-        <div class="cursor-bg">
-          <div class="cursor-progession div-center items-center" style="width: 71%;">
-            <p>71%</p>
-          </div>
-        </div>
+        <%= render "shared/square_box", title: "MON<br>PROFIL", color: :blue %>
+        <%= render "shared/cursor", percent: 71, color: :blue %>
         <div class="frame-default frame-white">
           <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
         </div>
@@ -89,7 +83,9 @@
                                         label: false
               %>
               <div class="col-xs-12 div-left width-100">
-                <%= f.input :photos, as: :attachinary %>
+                <div class="upload-photos">
+                  <%= f.input :photos, label: false, as: :attachinary %>
+                </div>
               </div>
             </div>
           </div>
