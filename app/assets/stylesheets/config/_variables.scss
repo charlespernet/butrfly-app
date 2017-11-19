@@ -7,6 +7,9 @@
 $base-font: "Lora", "serif";
 $header-font: "Josefin Sans", "sans-serif";
 
+
+// @import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
+
 // @import url("https://fonts.googleapis.com/css?family=Montserrat:400,300,700|Lato:400,100,300,700,500");
 // $base-font: "Circular-Book", "sans-serif";
 // $header-font: "Circular-Black", "sans-serif";
@@ -83,6 +86,6 @@ $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 
-$lighter-white: rgba(250, 250, 250, 0.8);
+$lighter-white: rgba(250, 250, 250, 0.9);
 
-$brand-color: $black;
+$brand-color: $blue;

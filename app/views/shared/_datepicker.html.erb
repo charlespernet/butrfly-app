@@ -1,0 +1,27 @@
+<div class="<%= container_class %> input-string">
+  <p><%= question %></p>
+  <div class="butrfly-datepicker">
+    <div class="form-group">
+      <div class='input-group date' id="<%= css_id %>">
+        <span class="input-group-addon">
+          <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        </span>
+        <input type='text' class="form-control datepicker-input" name="<%= field %>" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker-standar').datetimepicker({format: "DD/MM/YYYY"});
+    });
+    $(function () {
+      $('#datetimepicker-year').datetimepicker({
+        format: "DD/MM/YYYY",
+        viewMode: 'years'
+      });
+    });
+  </script>
+<% end %>

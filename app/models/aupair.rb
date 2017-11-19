@@ -39,4 +39,13 @@ class Aupair < ActiveRecord::Base
     end
     count * 100 / COMPLETION_ATTRIBUTES.count
   end
+
+  def name
+    if first_name && last_name
+      "#{first_name.capitalize} #{last_name.capitalize.first}."
+    else
+      "Anomyme"
+    end
+  end
+
 end

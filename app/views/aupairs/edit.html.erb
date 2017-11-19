@@ -1,157 +1,149 @@
-
 <%= simple_form_for @user do |f| %>
 
-<div class="edit-flex-container">
-
-  <div class="left-edit-block">
-    <div class="left-title">Mon profil</div>
-    <div class="left-percent"><%= @user.profile_completion %> %</div>
-    <%= f.button :submit, "Mettre à jour", class: "left-update-btn" %>
-  </div>
-
-  <div class="right-edit-block">
-
-      <div class="completion-block">
-        <div class="completion-title">Votre profil est rempli à </div>
-        <div class="completion-percent"><%= @user.profile_completion %> %</div>
-        <%= f.button :submit, "Mettre à jour", class: "completion-update-btn" %>
-      </div>
-
-
-      <div class="navbox-2">
-
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs-2" role="tablist" id="myTab">
-        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Tes coordonnées</a></li>
-        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Tes disponibiltés</a></li>
-        <li role="presentation"><a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">Tes super pouvoirs</a></li>
-      </ul>
-
-    </div>
-
-
-
-    <div class="tab-content">
-      <!-- Step 1 start -->
-      <div role="tabpanel" class="tab-pane active" id="step1">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Quelques questions pour commencer</div>
-          </div>
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <div class="test-flex">
-                <%= f.input :first_name, label:"Ton petit nom" %>
-                <%= f.input :last_name, label:"Ton nom de famille" %>
-              </div>
-
-              <div class="test-flex">
-                <%= f.input :email, label: "Ton email" %>
-                <%= f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, label:"Ta date de naissance" %>
-              </div>
-
-              <div class="test-flex">
-                <%= f.input :country_code, priority: ["FR", "GB", "ES"], label:"Ta nationalité" %>
-                <%= f.input :gender, collection: Aupair.genders.keys, default: 0, label:"Ton sexe", label_method: lambda { |key| t(key) } %>
-              </div>
-
-             </div>
-
-
-            </div>
-
-
-          </div>
-      </div>
-      <!-- Step 1 end -->
-
-
-
-      <!-- Step 2 start -->
-      <div role="tabpanel" class="tab-pane" id="step2">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Ton départ pour l'aventure</div>
-          </div>
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <div class="test-flex2">
-                <%= f.input :dispo_from, start_year: Date.today.year, end_year: Date.today.year + 4, label: "A partir de quelles dates es-tu disponible ?", discard_day: true %>
-                <%= f.input :stay_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Pour quelle période souhaites-tu partir ?", label_method: lambda { |key| t(key) } %>
-              </div>
-
-            </div>
-
-          </div>
-
+  <div class="butrfly-wrapper div-center">
+    <div class="butrfly-container div-center">
+      <div class="hidden-xs hidden-ms">
+        <div class="filters-box frame-default frame-blue">
+          <h2>MON PROFIL</h2>
+        </div>
+        <div class="filters-box frame-default frame-blue">
+          <%= f.button :submit, "Update" %>
         </div>
       </div>
-      <!-- Step 2 end -->
-
-
-
-      <!-- Step 3 start -->
-      <div role="tabpanel" class="tab-pane" id="step3">
-        <div class="navpill-three">
-
-          <div class="right-block-title">
-            <div class="title-text-bold">Dévoile nous tes secrets</div>
+      <div class="index-container">
+        <%= edit_tabs_html("blue") %>
+        <div class="border-default width-100">
+          <%= render "shared/titles-blue-and-white", index: 0 %>
+          <div class="div-left">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        label: false,
+                        placeholder: "email",
+                        input_html: { class: "border-default"}
+            %>
+            <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
+            <% end %>
+            <%= f.input :current_password,
+                        required: true,
+                        label: false,
+                        placeholder: "nouveau mot de passe",
+                        input_html: { class: "border-default"}
+            %>
           </div>
-
-
-          <div class="flex-form-right-alt">
-
-              <div class="description-padding">
-                <%= f.input :description, label: "Décrivez-vous en quelques lignes" %>
+          <div class="div-left">
+            <%= f.input :password,
+                        autocomplete: "off",
+                        required: false,
+                        label: false,
+                        placeholder: "ancien mot de passe",
+                        input_html: { class: "border-default"}
+            %>
+            <%= f.input :password_confirmation,
+                        required: false,
+                        label: false,
+                        placeholder: "confirmation",
+                        input_html: { class: "border-default"}
+            %>
+          </div>
+          <%= render "shared/titles-blue-and-white", index: 1 %>
+          <div class="container-fluid">
+            <div class="row">
+              <%= input_boolean_html  f: f,
+                                      field: :gender,
+                                      answers: Aupair.genders.hash.to_a,
+                                      question: ""
+              %>
+              <%= render  "shared/datepicker",
+                          container_class: "col-md-6 div-left",
+                          question: "Ta date de naissance",
+                          css_id: "datetimepicker-year", field: "birth_date"
+              %>
+              <div class="col-md-6 input-string">
+                <%= f.input :first_name,
+                            label:"Ton petit nom :",
+                            placeholder: "Prénom"
+                %>
               </div>
-
-              <!-- Associations to inline -->
-              <div class="false-label">Quelles langues parles-tu ?</div>
-              <div class="fucking-inline">
-                <%= f.association :languages, as: :check_boxes, label: "Quelles langues parles-tu ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
+              <div class="col-md-6 input-string">
+                <%= f.input :last_name,
+                            label:"Ton nom de famille :",
+                            placeholder: "Nom"
+                %>
               </div>
-
-              <div class="false-label">Une petite photo ?</div>
-              <div class="fucking-inline">
+              <%= input_collection_html f: f,
+                                        field: :country_code,
+                                        question: "Nationalité ?",
+                                        priority: ["FR", "GB", "ES"],
+                                        label: false
+              %>
+              <div class="col-xs-12 div-left width-100">
                 <%= f.input :photos, as: :attachinary %>
               </div>
-
-              <div class="false-label">Dans quel pays souhaites-tu partir ?</div>
-              <div class="fucking-inline">
-                <%= f.association :countries, as: :check_boxes, label: "Dans quel pays souhaites-tu partir ?", label_method: :name_translated, wrapper_html: { class: 'inline-checkboxes' }, label: false %>
-              </div>
-
-              <div class="boo-flex">
-              <%= f.input :driving_license, as: :radio_buttons, label: "As-tu le permis de conduire ?" %>
-              <%= f.input :accepted_domestic_animal, as: :radio_buttons, label: "Acceptes-tu les animaux domestiques ?" %>
-              <%= f.input :educational_experience, as: :radio_buttons, label: "As-tu l'habitude de garder des enfants ?"  %>
-              <%= f.input :experience_aupair, as: :radio_buttons, label: "As-tu déjà eu une expérience au pair ?" %>
-              <%= f.input :sports, as: :radio_buttons, label: "Pratiques-tu un sport ?" %>
-              <%= f.input :musician, as: :radio_buttons, label: "Joues-tu d'un instrument ?" %>
-              </div>
-
+            </div>
           </div>
-
+          <%= render "shared/titles-blue-and-white", index: 2 %>
+          <div class="container-fluid">
+            <div class="row">
+              <%= input_boolean_html  f: f,
+                                      field: :driving_license,
+                                      question: "As-tu le permis de conduire ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :accepted_domestic_animal,
+                                      question: "Acceptes-tu les animaux domestiques ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :educational_experience,
+                                      question: "As-tu l'habitude de garder des enfants ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :experience_aupair,
+                                      question: "As-tu déjà eu une expérience au pair ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :sports,
+                                      question: "Pratiques-tu un sport ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :musician,
+                                      question: "Joues-tu d'un instrument ?"
+              %>
+              <div class="col-xs-12">
+                <%= f.input :description,
+                            label: false ,
+                            placeholder: "Dis nous en un peu plus sur toi",
+                            input_html: {class: "border-default text-center" }
+                %>
+              </div>
+            </div>
+          </div>
+          <%#= render "shared/titles-blue-and-white", index: 3 %>
+          <%= render "shared/titles-blue-and-white", index: 4 %>
+          <div class="container-fluid">
+            <div class="row">
+              <%= render  "shared/datepicker",
+                          container_class: "col-md-6 div-left",
+                          question: "À partir de quelle date es-tu disponible ?",
+                          css_id: "datetimepicker-standar", field: "dispo_from"
+              %>
+              <%= input_collection_html f: f,
+                                        field: :stay_duration,
+                                        question: "Pour quelle période souhaites-tu partir ?",
+                                        collection: Aupair.stay_durations.keys,
+                                        default: 0,
+                                        priority: ["FR", "GB", "ES"],
+                                        label: false,
+                                        label_method: lambda { |key| t(key) }
+              %>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Step 3 end -->
-
-
-
     </div>
-
-
   </div>
 
-
-</div>
-
 <% end %>
+
+

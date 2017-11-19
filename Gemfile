@@ -28,7 +28,7 @@ gem 'draper'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.7'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
@@ -51,3 +51,7 @@ end
 group :production, :staging do
   gem 'rails_12factor'
 end
+
+# gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
