@@ -1,8 +1,9 @@
 .filters-box {
   width: 200px;
+  min-height: 200px;
 }
 
-#datetimepicker1 {
+.filters-box {
   color: black;
   .input-group-addon {
     background: transparent;

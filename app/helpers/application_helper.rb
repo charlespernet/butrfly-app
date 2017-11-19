@@ -37,30 +37,24 @@ module ApplicationHelper
   def process_steps(color)
     [
       { title: "JE CRÉE MON COMTE",
-        picture: "process_banner/#{color}/star.png"},
+        picture: "#{color}/star.svg"},
       { title: "JE REMPLIS MON PROFIL",
-        picture: "process_banner/#{color}/computer.png"},
+        picture: "#{color}/computer.svg"},
       { title: "JE CHOISIS MON AU PAIR OU MA FAMILLE ET JE LE/A CONTACTE",
-        picture: "process_banner/#{color}/knur.png"},
+        picture: "#{color}/loup.svg"},
       { title: "JE VALIDE MA SELECTION",
-        picture: "process_banner/#{color}/validation.png"},
+        picture: "#{color}/check.svg"},
       { title: "JE REÇOIS MON CONTRAT",
-        picture: "process_banner/#{color}/send.png"},
+        picture: "#{color}/envelop.svg"},
       { title: "JE VIS L'EXPERIENCE ET JE REJOINS LA COMMUNAUTÉ",
-        picture: "process_banner/#{color}/family.png"},
+        picture: "#{color}/family.svg"},
     ]
   end
 
   def process_steps_html(color)
-    # process = process_steps(color).map do |step|
-    #   content_tag :div, class: "process-banner-step" do
-    #     image_tag step[:picture]
-    #     content_tag(:h3, step[:title])
-    #   end
-    # end
     process = process_steps(color).map do |step|
       content_tag :div, class: "process-banner-step" do
-        image_tag("papillon-noir.png") +
+        image_tag(step[:picture]) +
         content_tag(:h3, step[:title])
       end
     end
@@ -72,25 +66,25 @@ module ApplicationHelper
       blue: [
         {
           title: "TES IDENTIFIANTS",
-          path: root_path
+          path: "/#"
         },
         {
           title: "TOI",
-          path: root_path,
+          path: "/#",
           infos: "Quelques questions pour commencer !"
         },
         {
           title: "TES SUPERS POUVOIRS",
-          path: root_path,
+          path: "/#",
           infos: "Dévoile nous tes secrets..."
         },
         {
           title: "TA FAMILLE IDÉALE",
-          path: root_path
+          path: "/#"
         },
         {
           title: "TES DISPONIBILITÉS",
-          path: root_path,
+          path: "/#",
           infos: "Ton départ pour l'aventure !"
         }
       ]

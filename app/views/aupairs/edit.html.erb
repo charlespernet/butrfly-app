@@ -3,52 +3,62 @@
   <div class="butrfly-wrapper div-center">
     <div class="butrfly-container div-center">
       <div class="hidden-xs hidden-ms">
-        <div class="filters-box frame-default frame-blue">
-          <h2>MON PROFIL</h2>
+        <div class="filters-box frame-default frame-blue div-center items-center">
+          <h2>MON<br>PROFIL</h2>
         </div>
-        <div class="filters-box frame-default frame-blue">
-          <%= f.button :submit, "Update" %>
+        <div class="cursor-bg">
+          <div class="cursor-progession div-center items-center" style="width: 71%;">
+            <p>71%</p>
+          </div>
+        </div>
+        <div class="frame-default frame-white">
+          <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
+        </div>
+        <div class="frame-default frame-white">
+          <%= f.button :submit, "SUPPRIMER", class: "input-button" %>
         </div>
       </div>
       <div class="index-container">
         <%= edit_tabs_html("blue") %>
-        <div class="border-default width-100">
-          <%= render "shared/titles-blue-and-white", index: 0 %>
-          <div class="div-left">
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        label: false,
-                        placeholder: "email",
-                        input_html: { class: "border-default"}
-            %>
-            <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
-              <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
-            <% end %>
-            <%= f.input :current_password,
-                        required: true,
-                        label: false,
-                        placeholder: "nouveau mot de passe",
-                        input_html: { class: "border-default"}
-            %>
-          </div>
-          <div class="div-left">
-            <%= f.input :password,
-                        autocomplete: "off",
-                        required: false,
-                        label: false,
-                        placeholder: "ancien mot de passe",
-                        input_html: { class: "border-default"}
-            %>
-            <%= f.input :password_confirmation,
-                        required: false,
-                        label: false,
-                        placeholder: "confirmation",
-                        input_html: { class: "border-default"}
-            %>
-          </div>
-          <%= render "shared/titles-blue-and-white", index: 1 %>
+        <div class="border-default width-100 padding-20px">
           <div class="container-fluid">
+            <%= render "shared/titles-blue-and-white", index: 0 %>
+            <div class="div-left">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          label: false,
+                          placeholder: "email",
+                          input_html: { class: "border-default"}
+              %>
+              <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
+              <% end %>
+              <%= f.input :current_password,
+                          required: true,
+                          label: false,
+                          placeholder: "nouveau mot de passe",
+                          input_html: { class: "border-default"}
+              %>
+            </div>
+            <div class="div-left">
+              <%= f.input :password,
+                          autocomplete: "off",
+                          required: false,
+                          label: false,
+                          placeholder: "ancien mot de passe",
+                          input_html: { class: "border-default"}
+              %>
+              <%= f.input :password_confirmation,
+                          required: false,
+                          label: false,
+                          placeholder: "confirmation",
+                          input_html: { class: "border-default"}
+              %>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <%= render "shared/titles-blue-and-white", index: 1 %>
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :gender,
@@ -83,8 +93,8 @@
               </div>
             </div>
           </div>
-          <%= render "shared/titles-blue-and-white", index: 2 %>
           <div class="container-fluid">
+            <%= render "shared/titles-blue-and-white", index: 2 %>
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :driving_license,
@@ -120,8 +130,8 @@
             </div>
           </div>
           <%#= render "shared/titles-blue-and-white", index: 3 %>
-          <%= render "shared/titles-blue-and-white", index: 4 %>
           <div class="container-fluid">
+            <%= render "shared/titles-blue-and-white", index: 4 %>
             <div class="row">
               <%= render  "shared/datepicker",
                           container_class: "col-md-6 div-left",
