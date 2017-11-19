@@ -1,11 +1,14 @@
 .card-user {
+  text-align: center;
   width: 100%;
-  min-height: 200px;
+  min-height: 240px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   background-size: cover !important;
   background-position: center;
+  margin: 0px -12px 6px;
+  width: calc(100% + 24px);
 }
 .card-user-title {
   width: 100%;

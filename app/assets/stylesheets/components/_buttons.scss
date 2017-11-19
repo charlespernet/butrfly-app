@@ -1,0 +1,25 @@
+.btn-black {
+  font-family: "Josefin Sans", "sans-serif";
+  color: $white;
+  background-color: $black;
+  font-size: 11px;
+  padding: 7px 18px 4px 18px;
+}
+
+.btn-blue-default {
+  color: $black;
+  font-family: "Josefin Sans", "sans-serif";
+  background-color: $blue;
+  font-size: 12px;
+  padding: 7px 18px 4px 18px;
+  border: solid 1px $white;
+}
+
+.btn-white-default {
+  color: $black;
+  font-family: "Josefin Sans", "sans-serif";
+  background-color: $white;
+  font-size: 12px;
+  padding: 7px 18px 4px 18px;
+  border: solid 1px $blue;
+}
