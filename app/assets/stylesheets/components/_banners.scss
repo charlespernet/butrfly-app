@@ -69,3 +69,21 @@
   width: 50px;
  }
 }
+
+.banner-folio {
+  display: flex;
+  justify-content: space-between;
+}
+.banner-folio-photo {
+  height: 240px;
+  background-size: cover !important;
+  background-position: center;
+  &.portrait {
+    width: 240px;
+  }
+  &.landscape {
+    flex: 1 0 auto;
+  }
+}
+
+

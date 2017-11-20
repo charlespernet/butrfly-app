@@ -31,5 +31,19 @@
     <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js" %>
     <%= yield(:after_js) %>
     <%= cloudinary_js_config %>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker-standar').datetimepicker({format: "DD/MM/YYYY"});
+      });
+      $(function () {
+        $('#datetimepicker-year').datetimepicker({
+          format: "DD/MM/YYYY",
+          viewMode: 'years'
+        });
+      });
+    </script>
+
+
   </body>
 </html>
