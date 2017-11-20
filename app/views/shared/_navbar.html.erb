@@ -1,10 +1,11 @@
 <div class="navbar-main">
-  <div class="navbar-left">
-    <%= link_to root_path do %>
+
+  <%= link_to root_path do %>
+    <div class="navbar-left">
       <%= image_tag("papillon-noir.png", class: "navbar-logo") %>
-    <% end %>
-    <h2 class="navbar-title"><%=  t('meta-title') %></h2>
-  </div>
+      <h2 class="navbar-title"><%=  t('meta-title') %></h2>
+    </div>
+  <% end %>
 
   <div class="navbar-right hidden-xs">
     <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
