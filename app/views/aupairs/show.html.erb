@@ -1,0 +1,38 @@
+
+<div class="butrfly-wrapper div-center">
+  <div class="butrfly-container div-center">
+    <div class="hidden-xs hidden-ms">
+      <%= render "shared/square_box", title: @user.name, color: :blue %>
+      <div class="frame-default frame-btn fr-btn-blue">
+        <div class="input-button div-center items-center">
+          <%= link_to "MODIFIER", root_path %>
+        </div>
+      </div>
+      <%= render "shared/filters" %>
+
+    </div>
+    <div class="index-container">
+
+      <div class="banner-folio">
+        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+        </div>
+        <div class="banner-folio-photo landscape" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/paris');">
+        </div>
+        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/bordeaux');">
+        </div>
+      </div>
+
+      <%= edit_tabs_html("blue") %>
+      <div class="border-default width-100 padding-20px">
+        <div class="container-fluid">
+          <h2>DESCRIPTION</h2>
+          <p><%= @user.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

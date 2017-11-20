@@ -25,19 +25,19 @@
     background-color: $yellow;
     z-index: -1;
     position: absolute;
-    top: -20px;
-    left: -20px;
-    bottom: -20px;
-    right: -20px;
+    top: -22px;
+    left: -22px;
+    bottom: -22px;
+    right: -22px;
   }
   .input-button {
     font-family: "Josefin Sans", "sans-serif";
     position: absolute;
     background: transparent;
-    top: -20px;
-    bottom: -20px;
-    left: -20px;
-    right: 20px;
+    top: -22px;
+    bottom: -22px;
+    left: -22px;
+    right: 22px;
     width: calc(100% + 40px);
     border: none;
     &:hover {
@@ -56,9 +56,28 @@
     border:solid 20px $blue;
   }
 }
-.frame-white {
-  background-color: $white;
-  border:solid 2px $blue;
+.frame-btn {
+  &.fr-btn-white {
+    background-color: $white;
+    border:solid 2px $blue;
+    &::before {
+      background: $white;
+      border: solid 1px $black;
+    }
+  }
+  &.fr-btn-blue {
+    background-color: $blue;
+    border:solid 2px $white;
+    color: $black;
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+    &::before {
+      background: $blue;
+      border: solid 1px $white;
+    }
+  }
   h2 {
     font-size: 18px;
   }
@@ -66,10 +85,6 @@
     font-size: 12px;
     font-family: "Josefin Sans", "sans-serif";
     text-decoration: underline;
-  }
-  &::before {
-    background: $white;
-    border: solid 1px $black;
   }
 }
 
