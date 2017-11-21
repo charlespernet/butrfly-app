@@ -1,19 +1,39 @@
 
-<div class="home-banner">
+<div class="home-banner hidden-ms hidden-xs">
   <div class="home-banner-bg" style="background-image: url(<%= image_path 'hero.jpg' %>);">
   </div>
   <div class="home-banner-roles">
     <%= link_to root_path, class: "frame-default" do %>
-      <h2>JE SUIS UNE FAMILLE</h2>
+      <h2>JE SUIS<br>UNE FAMILLE</h2>
       <h3>JE CHERCHE MON AU PAIR</h3>
       <div class="border-bottom"></div>
       <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
     <% end %>
+    <div class="width-50px"></div>
     <%= link_to root_path, class: "frame-default frame-blue" do %>
-      <h2>JE SUIS AU PAIR</h2>
+      <h2>JE SUIS<br>AU PAIR</h2>
       <h3>JE CHERCHE UNE FAMILLE</h3>
       <div class="border-bottom"></div>
       <p>Je crée un profil<br>Je trouve une famille<br>On m'accueille</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="hidden-lg hidden-md">
+  <div class="frame-default frame-blue">
+    <%= link_to root_path do %>
+      <h2>JE SUIS<br>AU PAIR</h2>
+      <h3>JE CHERCHE UNE FAMILLE</h3>
+      <div class="border-bottom"></div>
+      <p>Je crée un profil<br>Je trouve une famille<br>On m'accueille</p>
+    <% end %>
+  </div>
+  <div class="frame-default">
+    <%= link_to root_path do %>
+      <h2>JE SUIS<br>UNE FAMILLE</h2>
+      <h3>JE CHERCHE MON AU PAIR</h3>
+      <div class="border-bottom"></div>
+      <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
     <% end %>
   </div>
 </div>
@@ -40,8 +60,16 @@
     <%= link_to "EN SAVOIR PLUS", root_path %>
   </div>
 </div> -->
-
-<div class="standard-banner" style="background-image: url(<%= image_path 'home-aupair.jpg' %>);">
+<div class="standard-banner banner-family" style="background-image: url(<%= image_path 'home-family.jpg' %>);">
+  <div class="frame-default frame-transparent-white">
+    <h2>LA MISSION BUTRFLY</h2>
+    <p>Faciliter le recrutement du jeune Au pair et la<br>
+        recherche de la Famille d’accueil via un service<br>
+        rassurant et personnalisé</p>
+    <%= link_to "EN SAVOIR PLUS", root_path %>
+  </div>
+</div>
+<div class="standard-banner banner-aupair" style="background-image: url(<%= image_path 'home-aupair.jpg' %>);">
   <div class="frame-default frame-transparent-white">
     <h2>LA MISSION BUTRFLY</h2>
     <p>Faciliter le recrutement du jeune Au pair et la<br>
@@ -52,39 +80,24 @@
 </div>
 <div class="wrapper-home">
   <div class="container text-center">
-    <h2>TEMOIGNAGES</h2>
+    <h2>LES TEMOIGNAGES</h2>
     <div class="row">
       <div class="col-md-4">
         <div class="card-feedback">
+          <h2>Coco</h2>
           <p>« Grâce à l’au pair j’ai du temps de qualité avec les enfants le soir car ce n’est pas la course en rentrant du boulot et je ne me stresse plus si j’ai une réunion qui déborde. »</p>
-          <div class="card-user" style="background-image: url(<%= image_path 'https://www.meetic.fr/pages/uptodate/wp-content/uploads/sites/23/2014/01/photo-profil.jpg' %>);">
-            <div class="frame-transparent-white card-user-title">
-              <h2>Coco</h2>
-              <%= link_to "VOIR PLUS", root_path %>
-            </div>
-          </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card-feedback">
+          <h2>Coco</h2>
           <p>«  Depuis 4 ans maintenant nous accueillons une jeune au pair, différente chaque année, et les enfants le réclament, ils adorent jouer avec elle. Chaque année nous nous attachons, nous avons toujours fait de belles rencontres. »</p>
-          <div class="card-user" style="background-image: url(<%= image_path 'https://www.meetic.fr/pages/uptodate/wp-content/uploads/sites/23/2014/01/photo-profil.jpg' %>);">
-            <div class="frame-transparent-white card-user-title">
-              <h2>Coco</h2>
-              <%= link_to "VOIR PLUS", root_path %>
-            </div>
-          </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card-feedback">
+          <h2>Coco</h2>
           <p>« Nous avons eu recours à l’au pair pendant les mois d’été à trois reprises et les enfants sont ravis. Chaque rentrée je suis étonnée de voir leurs progrès en langue. »</p>
-          <div class="card-user" style="background-image: url(<%= image_path 'https://www.meetic.fr/pages/uptodate/wp-content/uploads/sites/23/2014/01/photo-profil.jpg' %>);">
-            <div class="frame-transparent-white card-user-title">
-              <h2>Coco</h2>
-              <%= link_to "VOIR PLUS", root_path %>
-            </div>
-          </div>
         </div>
       </div>
     </div>
