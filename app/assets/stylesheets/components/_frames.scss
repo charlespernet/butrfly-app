@@ -7,6 +7,9 @@
   margin: 20px 20px 40px 20px;
   text-align: center;
   min-height: 30px;
+  a {
+    color: $black;
+  }
   // width: 250px;
   h2 {
     // margin-top: 0px;
@@ -49,6 +52,9 @@
   background-color: $blue;
   border:solid 2px $white;
   color: $white;
+  a {
+    color: $white;
+  }
   h3 {
     color: $black;
   }
@@ -97,6 +103,10 @@
     font-size: 12px;
     font-family: "Josefin Sans", "sans-serif";
     text-decoration: underline;
+  }
+  &::before {
+    background: $lighter-white;
+    border: solid 1px $lighter-white;
   }
 }
 

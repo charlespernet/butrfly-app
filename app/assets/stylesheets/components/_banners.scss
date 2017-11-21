@@ -6,12 +6,15 @@
   height: 70%;
   background-size: cover !important;
   background-position: center;
+  position: relative;
+  z-index: -2;
 }
 .home-banner-roles {
   position: absolute;
   bottom: 20px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   .frame-default {
     width: 250px;
@@ -21,16 +24,23 @@
 }
 
 .standard-banner {
+  position: relative;
+  z-index: -2;
   text-align: center;
   height: 70vh;
   background-size: cover !important;
-  background-position: bottom;
   display: flex;
   align-items: center;
   justify-content: center;
   .frame-default {
     width: 300px;
     min-height: 150px;
+  }
+  &.banner-aupair {
+    background-position: bottom;
+  }
+  &.banner-family {
+    background-position: center;
   }
 }
 
