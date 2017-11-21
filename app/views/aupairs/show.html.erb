@@ -3,7 +3,7 @@
   <div class="butrfly-container div-center">
     <div class="hidden-xs hidden-ms">
       <%= render "shared/square_box", title: @user.name, color: :blue %>
-      <% if current_user && @user == current_user %>
+      <% if current_user && @user == current_user.specific %>
         <div class="frame-default frame-btn fr-btn-blue">
           <div class="input-button div-center items-center">
             <%= link_to "MODIFIER", edit_aupair_path(@user) %>
