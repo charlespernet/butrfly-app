@@ -1,10 +1,10 @@
 .filters-box {
   width: 200px;
   min-height: 200px;
-}
-
-.filters-box {
   color: black;
+  p {
+    color: $white;
+  }
   .input-group-addon {
     background: transparent;
     border: 0px;
