@@ -16,7 +16,7 @@
         <%= edit_tabs_html("blue") %>
         <div class="border-default width-100 padding-20px">
           <div class="container-fluid">
-            <%= render "shared/titles-blue-and-white", index: 0 %>
+            <%= render "shared/titles", color: :blue, index: 0 %>
             <div class="div-left">
               <%= f.input :email,
                           required: true,
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="container-fluid">
-            <%= render "shared/titles-blue-and-white", index: 1 %>
+            <%= render "shared/titles", color: :blue, index: 1 %>
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :gender,
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="container-fluid">
-            <%= render "shared/titles-blue-and-white", index: 2 %>
+            <%= render "shared/titles", color: :blue, index: 2 %>
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :driving_license,
@@ -125,9 +125,9 @@
               </div>
             </div>
           </div>
-          <%#= render "shared/titles-blue-and-white", index: 3 %>
+          <%#= render "shared/titles", color: :blue, index: 3 %>
           <div class="container-fluid">
-            <%= render "shared/titles-blue-and-white", index: 4 %>
+            <%= render "shared/titles", color: :blue, index: 4 %>
             <div class="row">
               <%= render  "shared/datepicker",
                           container_class: "col-md-6 div-left",
@@ -139,7 +139,6 @@
                                         question: "Pour quelle période souhaites-tu partir ?",
                                         collection: Aupair.stay_durations.keys,
                                         default: 0,
-                                        priority: ["FR", "GB", "ES"],
                                         label: false,
                                         label_method: lambda { |key| t(key) }
               %>

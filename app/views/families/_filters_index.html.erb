@@ -1,11 +1,23 @@
-<div class="filters-box frame-default frame-blue">
+<div class="filters-box frame-default">
   <h2>FILTRES</h2>
-  <%= simple_form_for :search, url: aupairs_path, method: :get do |f| %>
+  <%= simple_form_for :search, url: families_path, method: :get do |f| %>
     <div class="container-fluid text-left">
-      <h3>VOTRE AU PAIR DOIT PARLER :</h3>
+      <h3>LA FAMILLE RECHERCHE</h3>
+      <div class="row">
+        <%= f.collection_radio_buttons(
+          :country,
+          Aupair.genders.hash.to_a,
+          :last,
+          :first,
+          item_wrapper_class: "filter-radio col-xs-6 text-left") %>
+      </div>
+      <h3>LA FAMILLE HABITE :</h3>
       <div class="row">
       <%= f.collection_radio_buttons(
-        :country, Country.all, :id, :name,
+        :country,
+        Country.all,
+        :id,
+        :name,
         item_wrapper_class: "filter-radio col-xs-6 text-left") %>
       </div>
     </div>
@@ -19,3 +31,7 @@
     <%= f.button :submit, "RECHERCHER", class: "btn btn-black" %>
   <% end %>
 </div>
+
+
+
+
