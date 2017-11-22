@@ -77,6 +77,16 @@ a {
   }
 }
 
+.photos-yellow {
+  a {
+    background-color: $yellow !important;
+    color: $yellow !important;
+  }
+  .attachinary-input:after {
+    background-color: $yellow !important;
+  }
+}
+
 .padding-20px {
   padding: 20px;
 }
@@ -220,6 +230,10 @@ a {
   }
 }
 
+.items-start {
+  align-items: start;
+}
+
 .flex-auto {
   flex: auto;
 }
@@ -263,8 +277,6 @@ a {
 }
 
 
-
-
 // // Paddings
 // .padded {
 //   padding-top: 5em;
@@ -279,11 +291,21 @@ a {
 //   background: #aeaeae;
 // }
 .bg-blue {
-  background-color: $blue;
+  background-color: $blue  !important;
 }
+
+.border-blue {
+  border:solid 2px  $blue  !important;
+}
+
 .bg-yellow {
-  background-color: $yellow;
+  background-color: $yellow  !important;
 }
+
+.border-yellow {
+  border:solid 2px $yellow  !important;
+}
+
 .bg-white {
   background-color: $white;
 }

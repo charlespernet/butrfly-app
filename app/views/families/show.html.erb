@@ -1,104 +1,62 @@
-<div class="fullpage">
 
-  <div class="left-column mq-hidden-under-680">
-
-    <div class="identity-dashboard">
-
-      <div>
-        <div class="dsb-name-title">Famille <%= @user.name %></div>
-      </div>
+<div class="butrfly-wrapper div-center">
+  <div class="butrfly-container div-center">
+    <div class="hidden-xs hidden-ms">
+      <%= render "shared/square_box", title: @user.name, color: :yellow %>
+      <% if current_user && @user == current_user.specific %>
+        <div class="frame-default frame-btn">
+          <div class="input-button div-center items-center">
+            <%= link_to "MODIFIER", edit_family_path(@user) %>
+          </div>
+        </div>
+      <% end %>
+      <%= render "filters_show" %>
 
     </div>
+    <div class="index-container">
 
-
-    <div class="item-dashboard">
-      <i class="fa fa-globe dsb-left-icon" aria-hidden="true"></i>
-      <div>Nationalité<div class="family-name4"><%= @user.country_name %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-list dsb-left-icon" aria-hidden="true"></i>
-      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number_display %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-line-chart dsb-left-icon" aria-hidden="true"></i>
-      <div>Ages des enfants<div class="family-name4"><%= @user.children_ages %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-home dsb-left-icon" aria-hidden="true"></i>
-      <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
-      <div>Permis de conduire requis<div class="family-name4"><%= boolean_display(@user.driving_license_required) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
-      <div>Participation aux tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
-    </div>
-
-    <div class="item-dashboard">
-      <i class="fa fa-paw dsb-left-icon" aria-hidden="true"></i>
-      <div>Animal domestique<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
-    </div>
-
-
-  </div>
-
-
-
-  <div class="right-column">
-
-    <div class="dashboard-top-container">
-
-      <div class="profil-banner">
-        <div class="mq-show-under-680">
-          <h1>Famille <%= @user.name %></h1>
+      <div class="banner-folio">
+        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+        </div>
+        <div class="banner-folio-photo landscape" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/paris');">
+        </div>
+        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/bordeaux');">
         </div>
       </div>
 
+      <div class="div-spacebetween">
+        <div class="btn-yellow-default flex-auto div-center">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <label>
+            <h2>DISPONIBLE À PARTIR DE</h2>
+            <p>Juillet 2017</p>
+          </label>
+        </div>
+        <div class="btn-yellow-default flex-auto div-center">
+          <i class="fa fa-history" aria-hidden="true"></i>
+          <label>
+            <h2>POUR QUELLE DURÉE</h2>
+            <p>3 mois</p>
+          </label>
+        </div>
+        <div class="btn-yellow-default flex-auto div-center">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <label>
+            <h2>PAYS RECHERCHÉS</h2>
+            <p>Français, Espagne</p>
+          </label>
+        </div>
+      </div>
+      <div class="border-default border-yellow width-100 padding-20px">
+        <div class="container-fluid">
+          <h2>DESCRIPTION</h2>
+          <p><%= @user.description %></p>
+        </div>
+      </div>
     </div>
-
-
-    <div class="your-search" >
-
-      <div class="your-search-item">
-        <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
-        <div>Début du séjour<div class="family-name4"><%= @user.starting_date_display %></div></div>
-      </div>
-
-      <div class="your-search-item">
-        <i class="fa fa-male your-search-left-icon" aria-hidden="true"></i>
-        <div>Durée du séjour<div class="family-name4"><%= @user.prefered_duration_display %></div></div>
-      </div>
-
-      <div class="your-search-item">
-        <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
-        <div>Aupair recherché<div class="family-name4"><%= @user.prefered_gender_display %></div></div>
-      </div>
-
-    </div>
-
-
-    <div class="ys-aupair-description">
-
-      <div class="ds-title-link">
-        <div class="ys-aupair-dsc-text">Description</div>
-      </div>
-
-      <div class="dsc-text">
-        <%= @user.try(:description) %>
-      </div>
-
-      <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.acting_as.id), class: 'btn btn-primary', method: :post %>
-
-    </div>
-
   </div>
-
 </div>
+
+
+
 

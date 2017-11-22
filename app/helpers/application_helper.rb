@@ -37,7 +37,7 @@ module ApplicationHelper
   def process_steps(color)
     [
       { title: "JE CRÉE MON COMTE",
-        picture: "#{color}/star.svg"},
+        picture: "#{color}/star.#{color == 'black' ? 'svg' : 'png'}"},
       { title: "JE REMPLIS MON PROFIL",
         picture: "#{color}/computer.svg"},
       { title: "JE CHOISIS MON AU PAIR OU MA FAMILLE ET JE LE/A CONTACTE",
@@ -47,7 +47,7 @@ module ApplicationHelper
       { title: "JE REÇOIS MON CONTRAT",
         picture: "#{color}/envelop.svg"},
       { title: "JE VIS L'EXPERIENCE ET JE REJOINS LA COMMUNAUTÉ",
-        picture: "#{color}/family.svg"},
+        picture: "#{color}/family.#{color == 'black' ? 'svg' : 'png'}" },
     ]
   end
 
@@ -87,6 +87,31 @@ module ApplicationHelper
           path: "/#",
           infos: "Ton départ pour l'aventure !"
         }
+      ],
+      yellow: [
+        {
+          title: "TES IDENTIFIANTS",
+          path: "/#"
+        },
+        {
+          title: "TOI",
+          path: "/#",
+          infos: "Quelques questions pour commencer !"
+        },
+        {
+          title: "TES SUPERS POUVOIRS",
+          path: "/#",
+          infos: "Dévoile nous tes secrets..."
+        },
+        {
+          title: "TA FAMILLE IDÉALE",
+          path: "/#"
+        },
+        {
+          title: "TES DISPONIBILITÉS",
+          path: "/#",
+          infos: "Ton départ pour l'aventure !"
+        }
       ]
     }
   end
@@ -96,7 +121,7 @@ module ApplicationHelper
       edit_tabs[color.to_sym].each.with_index.inject(""){ |tabs, (tab, i)|
         tabs + link_to( "#{ i + 1 }. #{ tab[:title] }",
                        tab[:path],
-                       class: "btn btn-#{color}-default flex-auto")
+                       class: "btn btn-yellow-default bg-#{color} border-#{color} flex-auto")
       }.html_safe
     end
   end
@@ -113,7 +138,7 @@ module ApplicationHelper
                                   answers,
                                   :last,
                                   :first,
-                                  item_wrapper_class: "custom-radio text-left"
+                                  item_wrapper_class: "custom-radio #{'radio-yellow' if color == :yellow} text-left"
                                 )
     end
   end

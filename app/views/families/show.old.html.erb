@@ -1,0 +1,104 @@
+<div class="fullpage">
+
+  <div class="left-column mq-hidden-under-680">
+
+    <div class="identity-dashboard">
+
+      <div>
+        <div class="dsb-name-title">Famille <%= @user.name %></div>
+      </div>
+
+    </div>
+
+
+    <div class="item-dashboard">
+      <i class="fa fa-globe dsb-left-icon" aria-hidden="true"></i>
+      <div>Nationalité<div class="family-name4"><%= @user.country_name %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-list dsb-left-icon" aria-hidden="true"></i>
+      <div>Nombre d'enfants<div class="family-name4"><%= @user.children_number_display %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-line-chart dsb-left-icon" aria-hidden="true"></i>
+      <div>Ages des enfants<div class="family-name4"><%= @user.children_ages %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-home dsb-left-icon" aria-hidden="true"></i>
+      <div>Type de famille<div class="family-name4"><%= t(@user.family_type) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-car dsb-left-icon" aria-hidden="true"></i>
+      <div>Permis de conduire requis<div class="family-name4"><%= boolean_display(@user.driving_license_required) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-genderless dsb-left-icon" aria-hidden="true"></i>
+      <div>Participation aux tâches ménagères<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
+    </div>
+
+    <div class="item-dashboard">
+      <i class="fa fa-paw dsb-left-icon" aria-hidden="true"></i>
+      <div>Animal domestique<div class="family-name4"><%= boolean_display(@user.housework) %></div></div>
+    </div>
+
+
+  </div>
+
+
+
+  <div class="right-column">
+
+    <div class="dashboard-top-container">
+
+      <div class="profil-banner">
+        <div class="mq-show-under-680">
+          <h1>Famille <%= @user.name %></h1>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="your-search" >
+
+      <div class="your-search-item">
+        <i class="fa fa-calendar your-search-left-icon" aria-hidden="true"></i>
+        <div>Début du séjour<div class="family-name4"><%= @user.starting_date_display %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-male your-search-left-icon" aria-hidden="true"></i>
+        <div>Durée du séjour<div class="family-name4"><%= @user.prefered_duration_display %></div></div>
+      </div>
+
+      <div class="your-search-item">
+        <i class="fa fa-globe your-search-left-icon" aria-hidden="true"></i>
+        <div>Aupair recherché<div class="family-name4"><%= @user.prefered_gender_display %></div></div>
+      </div>
+
+    </div>
+
+
+    <div class="ys-aupair-description">
+
+      <div class="ds-title-link">
+        <div class="ys-aupair-dsc-text">Description</div>
+      </div>
+
+      <div class="dsc-text">
+        <%= @user.try(:description) %>
+      </div>
+
+      <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.acting_as.id), class: 'btn btn-primary', method: :post %>
+
+    </div>
+
+  </div>
+
+</div>
+

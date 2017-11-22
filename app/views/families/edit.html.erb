@@ -1,112 +1,177 @@
 <%= simple_form_for @user do |f| %>
 
-<div class="edit-flex-container">
-
-  <div class="left-edit-block">
-    <div class="left-title">Mon profil</div>
-    <div class="left-percent"><%= @user.profile_completion %> %</div>
-    <%= f.button :submit, "Mettre à jour", class: "left-update-btn" %>
-  </div>
-
-  <div class="right-edit-block">
-
-
-      <div class="navbox-2">
-
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs-2" role="tablist" id="myTab">
-        <li role="presentation" class="active"><a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Votre famille</a></li>
-        <li role="presentation"><a href="#step2" aria-controls="step2" role="tab" data-toggle="tab">Votre au-pair</a></li>
-      </ul>
-
-    </div>
-
-
-
-    <div class="tab-content">
-      <!-- Step 1 start -->
-      <div role="tabpanel" class="tab-pane active" id="step1">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text">Quelques renseignements pour commencer</div>
-          </div>
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <%= f.input :name, label: "Votre nom de famille" %>
-              <%= f.input :country_code, priority: ["FR", "GB", "ES"], label: "Vous habitez en", prompt: "Votre pays" %>
-              <div class="input-inline-items">
-                Les enfants sont âgés entre&nbsp
-                <%= f.input :children_age_from, collection: 0..15, label: false %>
-                &nbspet&nbsp
-                <%= f.input :children_age_to, collection: 0..20, label: false %>
-                &nbspans
-              </div>
-              <p>Combien d'enfants seront confiés à l'au-pair ?</p>
-              <%= f.input :children_number, label: false, collection: 1..10 %>
-              <div class="description-padding">
-                <%= f.input :description, label: "Dites-nous en un peu plus sur votre famille" %>
-              </div>
-              <%= f.input :family_type, collection: Family.family_types.keys, default: 0, label: "Votre famille c'est d'abord :", label_method: lambda { |key| t(key) } %>
-
-              <%= f.input :photos, as: :attachinary %>
-
-              <div class="text-center">
-                <%= f.input :experience_with_aupair, as: :radio_buttons, label: "Avez-vous deja accueilli une/un au-pair ?" %>
-                <%= f.input :domestic_animal, as: :radio_buttons, label: "Avez-vous un animal domestique ?" %>
-              </div>
-
-            </div>
-
-
-          </div>
-
+  <div class="butrfly-wrapper div-center">
+    <div class="butrfly-container div-center">
+      <div class="hidden-xs hidden-ms">
+        <%= render "shared/square_box", title: "MON<br>PROFIL", color: :yellow %>
+        <%= render "shared/cursor", percent: 71, color: :yellow %>
+        <div class="frame-default frame-btn fr-btn-white">
+          <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
+        </div>
+        <div class="frame-default frame-btn fr-btn-white">
+          <%= f.button :submit, "SUPPRIMER", class: "input-button" %>
         </div>
       </div>
-      <!-- Step 1 end -->
-
-
-
-      <!-- Step 2 start -->
-      <div role="tabpanel" class="tab-pane" id="step2">
-        <div class="navpill-two">
-
-          <div class="right-block-title">
-            <div class="title-text">Vous recherchez...</div>
-          </div>
-
-
-          <div class="flex-form-right">
-
-            <div class="form-right-block">
-
-              <%= f.input :prefered_gender, collection: Aupair.genders.keys, default: 0, label: "Vous recherchez plutot :", label_method: lambda { |key| t("#{key}_prefered") } %>
-              <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 4, discard_day: true, label: "Début du séjour :" %>
-              <%= f.input :prefered_duration, collection: Aupair.stay_durations.keys, default: 0, label: "Durée du séjour souhaitée", label_method: lambda { |key| t(key) } %>
-              <p>l'aupair devra-t'il donner un coup de main pour les tâches ménagères ?</p>
-              <%= f.input :housework, as: :radio_buttons, label: false %>
-              <p>l'aupair doit-il disposer du permis de conduire ?</p>
-              <%= f.input :driving_license_required, as: :radio_buttons, label: false %>
-
-
+      <div class="index-container">
+        <%= edit_tabs_html("yellow") %>
+        <div class="border-default border-yellow width-100 padding-20px">
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :yellow, index: 0 %>
+            <div class="div-left">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          label: false,
+                          placeholder: "email",
+                          input_html: { class: "border-default  border-yellow"}
+              %>
+              <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
+              <% end %>
+              <%= f.input :current_password,
+                          required: true,
+                          label: false,
+                          placeholder: "nouveau mot de passe",
+                          input_html: { class: "border-default  border-yellow"}
+              %>
             </div>
+            <div class="div-left">
+              <%= f.input :password,
+                          autocomplete: "off",
+                          required: false,
+                          label: false,
+                          placeholder: "ancien mot de passe",
+                          input_html: { class: "border-default  border-yellow"}
+              %>
+              <%= f.input :password_confirmation,
+                          required: false,
+                          label: false,
+                          placeholder: "confirmation",
+                          input_html: { class: "border-default  border-yellow"}
+              %>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :yellow, index: 1 %>
+            <div class="row">
+              <div class="col-md-6 input-string">
+                <%= f.input :name,
+                            label:"Votre nom :",
+                            placeholder: "Nom"
+                %>
+              </div>
+              <%= input_collection_html f: f,
+                                        field: :children_number,
+                                        question: "Combien d'enfants y a-t-il dans votre famille ?",
+                                        collection: 1..10,
+                                        label: false
+              %>
+              <%= input_collection_html f: f,
+                                        field: :country_code,
+                                        question: "Dans quel pays ?",
+                                        priority: ["FR", "GB", "ES"],
+                                        label: false
+              %>
+              <div class="col-xs-12 div-left width-100">
+                <div class="upload-photos photos-yellow">
+                  <%= f.input :photos, label: false, as: :attachinary %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :yellow, index: 2 %>
+            <div class="row">
+              <%= input_collection_html f: f,
+                                        field: :family_type,
+                                        question: "Votre famille c'est d'abord :",
+                                        collection: Family.family_types.keys,
+                                        default: 0,
+                                        label: false
+              %>
 
+              <%= input_collection_html f: f,
+                                        field: :children_age_from,
+                                        question: "Les enfants sont âgés entre :",
+                                        collection: 0..15,
+                                        label: false
+              %>
+
+              <%= input_collection_html f: f,
+                                        field: :children_age_to,
+                                        question: "",
+                                        collection: 0..20,
+                                        label: false
+              %>
+
+              <%= input_boolean_html  f: f,
+                                      color: :yellow,
+                                      field: :domestic_animal,
+                                      question: "Avez-vous un animal domestique ?"
+              %>
+
+              <%= input_boolean_html  f: f,
+                                      color: :yellow,
+                                      field: :experience_with_aupair,
+                                      question: "Avez-vous deja accueilli une/un au-pair ?"
+              %>
+              <div class="col-xs-12">
+                <%= f.input :description,
+                            label: false ,
+                            placeholder: "Dis nous en un peu plus sur votre tribu",
+                            input_html: {class: "border-default  border-yellow text-center" }
+                %>
+              </div>
+            </div>
           </div>
 
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :yellow, index: 3 %>
+            <div class="row">
+              <%= input_boolean_html  f: f,
+                                      color: :yellow,
+                                      field: :prefered_gender,
+                                      answers: Aupair.genders.hash.to_a,
+                                      question: ""
+              %>
+
+              <%= input_boolean_html  f: f,
+                                      color: :yellow,
+                                      field: :driving_license_required,
+                                      question: "L'au pair doit-il/elle avoir permis de conduire ?"
+              %>
+              <%= input_boolean_html  f: f,
+                                      color: :yellow,
+                                      field: :housework,
+                                      question: "L'au pair doit-il/elle participer aux taches ménagères ?"
+              %>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :yellow, index: 4 %>
+            <div class="row">
+              <%= render  "shared/datepicker",
+                          container_class: "col-md-6 div-left",
+                          question: "Pour un séjour au plus tôt à partir de",
+                          css_id: "datetimepicker-standar", field: "starting_date"
+              %>
+              <%= input_collection_html f: f,
+                                        field: :prefered_duration,
+                                        question: "Pour une durée",
+                                        collection: Aupair.stay_durations.keys,
+                                        default: 0,
+                                        label: false,
+                                        label_method: lambda { |key| t(key) }
+              %>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Step 2 end -->
-
-
     </div>
-
-
   </div>
-
-
-</div>
-
 <% end %>
+
+
+
+

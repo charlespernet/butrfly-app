@@ -1,13 +1,2 @@
-  <div class="mansory-container item <%= family.prefered_gender %>">
-    <div class="mansory-picture" style="background-image: url(<%= if family.photos.empty? then "" else  cl_image_path family.photos.first.path end %>);">
+<%= render "shared/card-user", user: family %>
 
-    </div>
-    <div class="mansory-text">
-      <div class="m-real-text">
-        Famille <%= family.name %>
-      </div>
-      <div>
-        <%= link_to "Voir", family, class: "mansory-button" %>
-      </div>
-    </div>
-  </div>
