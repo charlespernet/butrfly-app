@@ -21,10 +21,6 @@
     <%= render 'shared/contact' %>
     <!-- login and sign_up modals -->
     <%#= render 'shared/congrats_modal' if @just_signed_up %>
-    <% unless user_signed_in? %>
-      <%= render 'shared/signup_modal' %>
-      <%= render 'shared/signin_modal' %>
-    <% end %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js" %>

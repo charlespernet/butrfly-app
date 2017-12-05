@@ -1,6 +1,6 @@
 <div class="div-left margin-bottom-20px">
-  <div class="btn-yellow-default <%= 'bg-blue border-blue' if color == :blue %>"><%= "#{index + 1}. #{edit_tabs[:blue][index][:title]}" %></div>
-  <% unless edit_tabs[:blue][index][:infos].nil? %>
-    <div class="btn-white-default <%= 'border-blue' if color == :blue %>"><%= edit_tabs[:blue][index][:infos] %></div>
+  <div class="btn-yellow-default <%= 'bg-blue border-blue' if color == :blue %>"><%= "#{index + 1}. #{edit_tabs[color][index][:title]}" %></div>
+  <% unless edit_tabs[color][index][:infos].nil? %>
+    <div class="btn-white-default <%= 'border-blue' if color == :blue %>"><%= edit_tabs[color][index][:infos] %></div>
   <% end %>
 </div>

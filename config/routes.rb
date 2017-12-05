@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   get 'procedure', to: 'pages#procedure'
   get 'about', to: 'pages#about'
   get 'congratulations', to: 'pages#congratulations'
+
+  get 'aupair_commitment', to: 'pages#aupair_commitment'
+  get 'family_commitment', to: 'pages#family_commitment'
+
+  get 'aupair_conditions', to: 'pages#aupair_conditions'
+
   # get 'plans', to: 'pages#plans'
 
   resources :conversations, only: [:create] do

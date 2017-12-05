@@ -39,3 +39,9 @@
     </div>
   </div>
 </div>
+
+<% unless user_signed_in? %>
+  <%= render 'shared/signup_modal', checked: "Aupair" %>
+  <%= render 'shared/signup_modal', checked: "Family" %>
+  <%= render 'shared/signin_modal' %>
+<% end %>

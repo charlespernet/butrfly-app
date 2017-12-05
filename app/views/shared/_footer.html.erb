@@ -5,21 +5,16 @@
         <div class="footer-infos">
           <h2>BUTRFLY</h2>
           <p><%= t('meta-hours') %></p>
-          <p><%= mail_to t('meta-email') %></p>
-
-          <ul class="list-inline social">
-            <li>
-              <%= link_to t('meta-url-fb'), target: "_blank" do %>
-                <i class="fa fa-facebook"></i></a>
-              <% end %>
-            </li>
-          </ul>
+          <p><i class="fa fa-envelope" aria-hidden="true"></i> <%= mail_to t('meta-email') %></p>
+          <p><i class="fa fa-phone"></i> +33 6 70 26 02 37</p>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="footer-infos">
           <h2>AU PAIR</h2>
           <%= link_to "Comment ça marche ?", procedure_path %>
+          <%= link_to "Etre Au Pair", root_path %>
+          <%= link_to "Nos engagements", aupair_commitment_path %>
           <%= link_to "Témoignages", "http://blog.butrfly.com/temoignage-carmen-espagnole-au-pair/", target: "_blank" %>
         </div>
       </div>
@@ -27,6 +22,8 @@
         <div class="footer-infos">
           <h2>FAMILLE</h2>
           <%= link_to "Comment ça marche ?", procedure_path %>
+          <%= link_to "Etre famille d’accueil", root_path %>
+          <%= link_to "Nos engagements", family_commitment_path %>
           <%= link_to "Témoignages", "http://blog.butrfly.com/temoignages-la-famille-au-pair-chipiron/", target: "_blank" %>
           </div>
         </div>
@@ -36,6 +33,13 @@
           <%= link_to "Qui sommes nous ?", about_path %>
           <%= link_to "Le blog", t('meta-url-blog'), target: "_blank" %>
           <p>CGV</p>
+          <ul class="list-inline social">
+            <li>
+              <%= link_to t('meta-url-fb'), target: "_blank" do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
