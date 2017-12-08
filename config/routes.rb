@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'family_commitment', to: 'pages#family_commitment'
 
   get 'aupair_conditions', to: 'pages#aupair_conditions'
+  get 'family_conditions', to: 'pages#family_conditions'
 
   # get 'plans', to: 'pages#plans'
 

@@ -19,16 +19,23 @@
         </p>
       </div>
 
+      <div class="about-citation" >
+        <p>
+          « <%= link_to "Devenir Au pair", "http://blog.butrfly.com/devenir-au-pair/" %> , c’est choisir une façon de voyager qui soit plus sûre et sécurisante, tout en acquérant de <%= link_to "nouvelles compétences", "http://blog.butrfly.com/au-pair-stage-etudiant/" %> qui t’aideront dans ta future famille et tes prochaines expériences professionnelles. Grâce à cette expérience, tu apprendras à te connaître davantage et tu te feras de nouveaux amis! »
+        </p>
+      </div>
+
     </div>
     <div class="col-xs-12 col-md-7 col-md-pull-5">
       <div class="about-padded">
         <div class="text-center">
-          <%= image_tag ('aupair_conditions.jpg') %>
+          <%= image_tag ('aupair_conditions.jpg'), class: "img-condition" %>
         </div>
 
         <h3>LA MISSION DE L'AU PAIR</h3>
         <p>
-          Etre Au pair c’est voyager et découvrir une nouvelle culture en vivant au sein d’une famille à l'étranger.
+          Etre <%= link_to "Au pair c’est voyager et découvrir une nouvelle culture", "http://blog.butrfly.com/au-pair-pour-les-filles-et-les-garcons/" %>
+           en vivant au sein d’une famille à l'étranger.
         </p>
         <p>
           Tu es nourri, logé et blanchi. Tu as ta propre chambre et une salle de bain privée ou partagée, tu suis des cours de langues et tu reçois de l’argent de poche.
@@ -40,14 +47,17 @@
           Tu disposes de plein de temps libre pour découvrir le pays et rencontrer de nouveaux amis.
         </p>
         <p>
-          Etre au pair c’est être un compagnon des enfants dans les tâches quotidiennes telles que le trajet à l’école, les activités extra-scolaires, l’aide aux devoirs, le baby-sitting (en soirée), la toilette et des tâches ménagères de la vie de la maison (vider le lave vaisselle, préparer les repas, la lessive des enfants).
+          Etre au pair c’est être <%= link_to "un compagnon des enfants", "http://blog.butrfly.com/petite-javais-des-jeunes-filles-au-pair-et-jen-garde-un-incroyable-souvenir/" %> dans les tâches quotidiennes telles que le trajet à l’école, les activités extra-scolaires, l’aide aux devoirs, le baby-sitting (en soirée), la toilette et des tâches ménagères de la vie de la maison (vider le lave vaisselle, préparer les repas, la lessive des enfants).
         </p>
 
-        <%= link_to "DEVENIR AU PAIR", root_path, class: "about-btn btn btn-default" %>
-
+        <% if !user_signed_in? %>
+          <%= link_to "DEVENIR AU PAIR", '#signup', class: "about-btn btn btn-default", 'data-toggle' => 'modal' %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= render 'shared/signup_modal', checked: "Aupair" %>
 
 

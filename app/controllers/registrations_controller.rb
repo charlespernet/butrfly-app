@@ -22,4 +22,14 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  protected
+
+  def after_sign_up_path_for(resource)
+    if resource.actable_type == "Aupair"
+      edit_aupair_path(resource.actable)
+    else
+      edit_family_path(resource.actable)
+    end
+  end
+
 end
