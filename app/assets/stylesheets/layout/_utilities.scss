@@ -57,7 +57,7 @@ a {
     &:before {
       // width: 140px;
       position: absolute;
-      content: "Ajoute tes photes :";
+      content: "Ajoute tes photos :";
       left: -140px;
     }
     &:after {
@@ -124,6 +124,7 @@ a {
   i.fa.fa-sort-desc {
     padding: 0 7px;
     color: $blue;
+    font-size: 20px;
   }
   input {
     width: auto;
@@ -139,6 +140,7 @@ a {
     border: none;
     box-shadow: none;
     text-align: center;
+    border-bottom: solid 1px $blue;
     border-radius: 0px;
     margin-left: -18px;
     -webkit-appearance: none;
@@ -162,6 +164,10 @@ a {
 .attachinary_container>ul {
   display: flex;
   justify-content: space-between;
+}
+
+.height-200 {
+  height: 200px !important;
 }
 
 .width-100 {
@@ -292,6 +298,10 @@ a {
 // }
 .bg-blue {
   background-color: $blue  !important;
+}
+
+.bg-black {
+  background-color: $black  !important;
 }
 
 .border-blue {

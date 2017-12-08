@@ -63,6 +63,22 @@
     border:solid 20px $blue;
   }
 }
+
+.frame-white {
+  background-color: $white;
+  border:solid 2px $black;
+  color: $black;
+  a {
+    color: $blue;
+  }
+  h3 {
+    color: $black;
+  }
+  &::before {
+    border:solid 20px $black;
+  }
+}
+
 .frame-btn {
   &.fr-btn-white {
     background-color: $white;
@@ -96,7 +112,7 @@
 }
 
 .frame-transparent-white {
-  background-color: $lighter-white;
+  background-color: transparent;
   h2 {
     font-size: 18px;
   }

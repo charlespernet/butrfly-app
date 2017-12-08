@@ -1,5 +1,5 @@
-<div class="cursor-bg border-yellow">
-  <div class="cursor-progession bg-yellow div-center items-center" style="width: <%= percent %>%;">
+<div class="cursor-bg <%= 'border-yellow' if color == :yellow %>">
+  <div class="cursor-progession <%= 'bg-yellow' if color == :yellow %> div-center items-center" style="width: <%= percent %>%;">
     <p><%= percent %>%</p>
   </div>
 </div>

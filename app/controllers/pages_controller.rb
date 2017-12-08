@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:home, :procedure, :about, :plans]
+  skip_before_action :authenticate_user!, only: [:home, :procedure, :about, :plans, :aupair_commitment, :aupair_conditions]
 
   def home
   end
@@ -17,6 +17,18 @@ class PagesController < ApplicationController
   end
 
   def congratulations
+  end
+
+  def aupair_commitment
+  end
+
+  def family_commitment
+  end
+
+  def aupair_conditions
+  end
+
+  def family_conditions
   end
 
   # def plans

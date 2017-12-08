@@ -2,21 +2,38 @@
 <div class="home-banner hidden-ms hidden-xs">
   <div class="home-banner-bg" style="background-image: url(<%= image_path 'hero.jpg' %>);">
   </div>
+
+
   <div class="home-banner-roles">
-    <%= link_to aupairs_path, class: "frame-default" do %>
+    <div class="frame-default">
       <h2>JE SUIS<br>UNE FAMILLE</h2>
       <h3>JE CHERCHE MON AU PAIR</h3>
       <div class="border-bottom"></div>
-      <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
-    <% end %>
+      <% if user_signed_in? %>
+        <p>Je crée un profil<br>Je trouve mon au pair<br>Je l'accueille</p>
+      <% else %>
+        <div class="padding-20px">
+          <%= link_to "JE CRÉE MON PROFIL", '#signup-family', class: "btn-black-lg", 'data-toggle' => 'modal' %>
+        </div>
+      <% end %>
+    </div>
     <div class="width-50px"></div>
-    <%= link_to families_path, class: "frame-default frame-blue" do %>
+    <div class="frame-default frame-blue">
       <h2>JE SUIS<br>AU PAIR</h2>
       <h3>JE CHERCHE UNE FAMILLE</h3>
       <div class="border-bottom"></div>
-      <p>Je crée un profil<br>Je trouve une famille<br>On m'accueille</p>
-    <% end %>
+      <% if user_signed_in? %>
+        <p>Je crée un profil<br>Je trouve une famille<br>On m'accueille</p>
+      <% else %>
+        <div class="padding-20px">
+          <%= link_to "JE CRÉE MON PROFIL", '#signup', class: "btn-black-lg", 'data-toggle' => 'modal' %>
+        </div>
+      <% end %>
+    </div>
   </div>
+
+
+
 </div>
 
 <div class="hidden-lg hidden-md">
@@ -41,40 +58,31 @@
 <div class="wrapper-home">
   <div class="container text-center">
     <%= image_tag "papillon-gris.png", class: "logo" %>
-    <h2>LA PHILOSOPHIE DE BUTRFLY</h2>
-    <p>L'équipe <span>BUTRFLY</span> c'est quelques personnes encore tout émues des merveilleuses expériences qu'elles ont pu vivre à travers l'au pairing, soit en tant que parents, soit en tant qu'au pair. Avec <span>BUTRFLY</span> Elles ont eu envie de faire entrer cette idée dans le monde d'aujourd'hui qui changera votre vie.</p>
+    <h2>LA MISSION DE BUTRFLY</h2>
+    <p>Vous accompagner pour trouver votre famille d’accueil française ou votre au pair via un service rassurant et personnalisé</p>
   </div>
 </div>
 
-<!-- <div class="standard-banner" style="background-image: url(<%= image_path 'hero.jpg' %>);">
-  <div class="frame-transparent-default frame-white">
-    <h2>AVANTAGES POUR LA FAMILLE</h2>
-    <p>Aide au quotidien<br>Initiation linguistique<br>Tolérance</p>
-    <%= link_to "EN SAVOIR PLUS", root_path %>
-  </div>
-</div>
-<div class="standard-banner" style="background-image: url(<%= image_path 'hero.jpg' %>);">
-  <div class="frame-transparent-default frame-white">
-    <h2>AVANTAGES POUR LA FAMILLE</h2>
-    <p>Aide au quotidien<br>Initiation linguistique<br>Tolérance</p>
-    <%= link_to "EN SAVOIR PLUS", root_path %>
-  </div>
-</div> -->
 <div class="standard-banner banner-family" style="background-image: url(<%= image_path 'home-family.jpg' %>);">
   <div class="frame-default frame-transparent-white">
-    <h2>LA MISSION BUTRFLY</h2>
-    <p>Faciliter le recrutement du jeune Au pair et la<br>
-        recherche de la Famille d’accueil via un service<br>
-        rassurant et personnalisé</p>
+    <h2>NOS ENGAGEMENTS POUR<br>LA FAMILLE</h2>
+    <p>
+      Certification des profils au pair<br>
+      Formation des au pair<br>
+      Assistance en cas de problème<br>
+    </p>
     <%= link_to "EN SAVOIR PLUS", root_path %>
   </div>
 </div>
 <div class="standard-banner banner-aupair" style="background-image: url(<%= image_path 'home-aupair.jpg' %>);">
   <div class="frame-default frame-transparent-white">
-    <h2>LA MISSION BUTRFLY</h2>
-    <p>Faciliter le recrutement du jeune Au pair et la<br>
-        recherche de la Famille d’accueil via un service<br>
-        rassurant et personnalisé</p>
+    <h2>NOS ENGAGEMENTS POUR<br>L'AU PAIR</h2>
+
+    <p>
+      Certification des profils des familles<br>
+      Rémunération garantie<br>
+      Assistance en cas de problème<br>
+    </p>
     <%= link_to "EN SAVOIR PLUS", root_path %>
   </div>
 </div>
@@ -84,23 +92,44 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card-feedback">
-          <h2>Coco</h2>
+          <h2>Helen</h2>
+          <h4>Famille au pair à Paris</h4>
           <p>« Grâce à l’au pair j’ai du temps de qualité avec les enfants le soir car ce n’est pas la course en rentrant du boulot et je ne me stresse plus si j’ai une réunion qui déborde. »</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card-feedback">
-          <h2>Coco</h2>
+          <h2>Manuela</h2>
+          <h4>Famille au pair à Biarritz</h4>
           <p>«  Depuis 4 ans maintenant nous accueillons une jeune au pair, différente chaque année, et les enfants le réclament, ils adorent jouer avec elle. Chaque année nous nous attachons, nous avons toujours fait de belles rencontres. »</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card-feedback">
-          <h2>Coco</h2>
-          <p>« Nous avons eu recours à l’au pair pendant les mois d’été à trois reprises et les enfants sont ravis. Chaque rentrée je suis étonnée de voir leurs progrès en langue. »</p>
+          <h2>Carmen</h2>
+            <h4>Fille au pair espagnole à Hossegor</h4>
+          <p>« C’est une expérience unique qui m’a fait grandir et mieux me connaître, c’est une chance incroyable de découvrir la France dans ces conditions. »</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+
+<div class="wrapper-home">
+  <div class="container text-center">
+    <h2>ILS NOUS FONT CONFIANCE</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="partner-logo">
+          <%= image_tag "logo-af.png" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="partner-logo">
+          <%= image_tag "logo_schoolab.png" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<% content_for(:title) do %>
+  A propos BUTRFLY
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-5 col-md-push-7">
+      <div class="about-padded">
+        <h3 class="text-center"><%= link_to "LES CONDITIONS PRINCIPALES", "http://blog.butrfly.com/devenir-famille-accueil/" %> POUR ACCUEILLIR UNE AU PAIR SONT : </h3>
+        <p>
+          <ul>
+            <li>Avoir un ou plusieurs enfants âgés entre 1 an et 16 ans.</li>
+            <li>Votre Au Pair sera nourri, logé et blanchi tout au long de son séjour.</li>
+            <li>Vous disposez d'une chambre privative à sa disposition (9m2 minimum avec une fenêtre donnant sur l’extérieur) chez vous ou à proximité.</li>
+            <li>Vous lui donnez accès à une salle de bain privative ou à partager. </li>
+            <li>Vous remettez un contrat à votre Au Pair définissant la durée de son séjour et les conditions. En cas de séjour supérieur à trois mois ce contrat doit être transmis aux autorités compétentes (DIRRECTE, URSSAF).
+             BUTRFLY est là pour vous accompagner dans ces démarches.</li>
+            <li>La rémunération de votre Au Pair est de 90 euros minimum par semaine pour 30h de garde. </li>
+            <li>Vous lui accorderez au minimum 1 jour de congé par semaine, fixe de préférence, dont un dimanche dans le mois.</li>
+            <li>Si la voiture est nécessaire, vous lui mettrez un véhicule à disposition dont il seraassuré.  </li>
+            <li>Si l’Au Pair vient d’un pays hors UE, un visa est obligatoire. </li>
+            <li>Un.e Au pair participe aux tâches ménagères légères mais ne peut pas être considéré comme une femme de ménage. </li>
+            <li>L’Au Pair suit des cours de langues, à proximité de chez vous. Nous vous fournirons une liste d’organismes et d’associations. </li>
+            <li>Le voyage Aller Retour depuis son pays de résidence est à la charge de l’Au Pair et vous pouvez convenir d’y participer. </li>
+            <li>Les cours de langues sont habituellement à la charge de l’Au Pair et vous pouvez y participer. </li>
+          </ul>
+        </p>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-md-7 col-md-pull-5">
+      <div class="about-padded">
+        <div class="text-center">
+          <%= image_tag ('family_conditions.jpg'), class: "img-condition" %>
+        </div>
+        <p>
+          Une Au Pair est une personne étrangère âgée entre 18 et 30 ans dont l’objectif est d’apprendre une nouvelle langue et de découvrir une nouvelle culture. Elle/Il aime forcément les enfants!
+        </p>
+
+        <% if !user_signed_in? %>
+          <%= link_to "DEVENIR UNE FAMILLE D'ACCUEIL", '#signup', class: "about-btn btn btn-default", 'data-toggle' => 'modal' %>
+        <% end %>
+
+        <div class="about-citation" >
+          <p>
+            « <%= link_to "Et avant tout", "http://blog.butrfly.com/5-cadeaux-au-pair/" %>, accueillez et considérez votre Au Pair comme un membre de votre famille! Communiquez au maximum sur ce que vous attendez d’elle ou de lui et encouragez le à partager ses ressentis.
+            L’au pair que vous accueillerez pourrait être votre enfant qui un jour quitte le cocon pour s’envoler vers d’autres horizons. Alors ouvrez-lui votre porte comme si vous ouvriez les bras à votre enfant, c’est ainsi que l’Au Pair devient le grand frère ou la grande soeur de la famille.
+ »
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/signup_modal', checked: "Family" %>
+
+

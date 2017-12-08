@@ -56,7 +56,8 @@
             <div class="row">
               <%= input_boolean_html  f: f,
                                       field: :gender,
-                                      answers: Aupair.genders.hash.to_a,
+                                      # answers: Aupair.genders.hash.to_a,
+                                      answers: [["Garçon", 1], ["Fille", 0]],
                                       question: ""
               %>
               <%= render  "shared/datepicker",
@@ -120,12 +121,23 @@
                 <%= f.input :description,
                             label: false ,
                             placeholder: "Dis nous en un peu plus sur toi",
-                            input_html: {class: "border-default text-center" }
+                            input_html: {class: "border-default text-center height-200" }
                 %>
               </div>
             </div>
           </div>
-          <%#= render "shared/titles", color: :blue, index: 3 %>
+          <div class="container-fluid">
+            <%= render "shared/titles", color: :blue, index: 3 %>
+            <div class="row">
+              <%#= input_boolean_html  f: f,
+                                      field: :housework,
+                                      question: "Acceptes-tu d'aider la famille dans les tâches ménagères ?"
+              %>
+              Mettre les taches ménagères
+              Dans quel environement souhaites tu vivre
+              Pour quelle région une préférence
+            </div>
+          </div>
           <div class="container-fluid">
             <%= render "shared/titles", color: :blue, index: 4 %>
             <div class="row">

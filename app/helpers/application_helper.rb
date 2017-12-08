@@ -65,7 +65,7 @@ module ApplicationHelper
     {
       blue: [
         {
-          title: "TES IDENTIFIANTS",
+          title: "TES COORDONNÉES",
           path: "/#"
         },
         {
@@ -90,27 +90,25 @@ module ApplicationHelper
       ],
       yellow: [
         {
-          title: "TES IDENTIFIANTS",
+          title: "VOS COORDONNÉES",
           path: "/#"
         },
         {
-          title: "TOI",
-          path: "/#",
-          infos: "Quelques questions pour commencer !"
-        },
-        {
-          title: "TES SUPERS POUVOIRS",
-          path: "/#",
-          infos: "Dévoile nous tes secrets..."
-        },
-        {
-          title: "TA FAMILLE IDÉALE",
+          title: "VOTRE TRIBU",
           path: "/#"
         },
         {
-          title: "TES DISPONIBILITÉS",
-          path: "/#",
-          infos: "Ton départ pour l'aventure !"
+          title: "VOTRE LIEU DE VIE",
+          path: "/#"
+        },
+        {
+          title: "VOTRE AU PAIR IDÉAL",
+          path: "/#"
+
+        },
+        {
+          title: "POUR QUAND ?",
+          path: "/#"
         }
       ]
     }

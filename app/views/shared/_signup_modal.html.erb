@@ -1,4 +1,4 @@
-<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade" id="signup<%= '-family' if checked == 'Family' %>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -14,7 +14,7 @@
         <div class="modal-form">
           <%= simple_form_for(:user, url: user_registration_path, html: {class: 'modal-form-inputs'}) do |f| %>
             <%= f.error_notification %>
-            <%= f.input :type, as: :radio_buttons, radio_buttons_style: :inline, collection: User::DEVISE_TYPES, checked: "Aupair", label: false %>
+            <%= f.input :type, as: :radio_buttons, radio_buttons_style: :inline, collection: User::DEVISE_TYPES, checked: checked, label: false %>
             <div class="modal-border-bottom"></div>
             <%= f.input :email, required: false, autofocus: true, placeholder: 'adresse e-mail', label: false,
             input_html: {class: 'modal-input-italic'} %>

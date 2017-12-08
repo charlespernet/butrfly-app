@@ -11,8 +11,8 @@
     <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
     <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
     <% if user_signed_in? %>
-      <%= link_to t("shared.account"), family_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Family)  %>
-      <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Aupair)  %>
+      <%#= link_to t("shared.account"), family_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Family)  %>
+      <%#= link_to t("shared.account"), aupair_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Aupair)  %>
       <%= link_to t("shared.sign_out"), destroy_user_session_path, class: "navbar-link", method: :delete %>
     <% else %>
       <%= link_to t("shared.sign_up"), '#signup', class: 'navbar-link', 'data-toggle' => 'modal' %>
@@ -39,3 +39,9 @@
     </div>
   </div>
 </div>
+
+<% unless user_signed_in? %>
+  <%= render 'shared/signup_modal', checked: "Aupair" %>
+  <%= render 'shared/signup_modal', checked: "Family" %>
+  <%= render 'shared/signin_modal' %>
+<% end %>

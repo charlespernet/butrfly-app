@@ -1,12 +1,12 @@
 <% if notice  %>
-  <% if notice == 'Bienvenue ! Vous vous êtes enregistré(e) avec succès.' %>
-    <%= render "shared/congrats_modal" %>
-  <% else %>
-    <div class="alert alert-info alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= notice %>
-    </div>
-  <% end %>
+  <%# if notice == 'Bienvenue ! Vous vous êtes enregistré(e) avec succès.' %>
+    <%#= render "shared/congrats_modal" %>
+  <%# else %>
+  <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+  <%# end %>
 <% end %>
 <% if alert %>
   <% if alert == 'Vous devez vous connecter ou vous enregistrer pour continuer.' %>
