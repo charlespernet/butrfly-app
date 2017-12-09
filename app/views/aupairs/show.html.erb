@@ -4,7 +4,7 @@
     <div class="hidden-xs hidden-ms">
       <%= render "shared/square_box", title: @user.name, color: :blue %>
       <% if current_user && @user == current_user.specific %>
-        <div class="frame-default frame-btn fr-btn-blue">
+        <div class="frame-default frame-btn fr-btn-blue margin-box">
           <div class="input-button div-center items-center">
             <%= link_to "MODIFIER", edit_aupair_path(@user) %>
           </div>
@@ -16,27 +16,25 @@
     <div class="index-container">
 
       <div class="banner-folio">
-        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-        </div>
-        <div class="banner-folio-photo landscape" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/paris');">
-        </div>
-        <div class="banner-folio-photo portrait" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/bordeaux');">
-        </div>
+        <% @user.photos.each_with_index do |photo, i| %>
+          <div class="banner-folio-photo <%= ((@user.photos.size > 1 && i == 0) || i == 2) ? 'portrait' : 'landscape' %>" style="background-image: url('<%= cl_image_path photo.path %>');">
+          </div>
+        <% end %>
       </div>
 
-      <div class="div-spacebetween">
+      <div class="div-spacebetween margin-bottom-5px">
         <div class="btn-yellow-default bg-blue border-blue flex-auto div-center">
           <i class="fa fa-calendar" aria-hidden="true"></i>
           <label>
             <h2>DISPONIBLE À PARTIR DE</h2>
-            <p>Juillet 2017</p>
+            <p><%= @user.dispo_from %></p>
           </label>
         </div>
         <div class="btn-yellow-default bg-blue border-blue border-blue flex-auto div-center">
           <i class="fa fa-history" aria-hidden="true"></i>
           <label>
             <h2>POUR QUELLE DURÉE</h2>
-            <p>3 mois</p>
+            <p><%= @user.stay_duration %></p>
           </label>
         </div>
         <div class="btn-yellow-default bg-blue border-blue border-blue flex-auto div-center">
@@ -47,7 +45,7 @@
           </label>
         </div>
       </div>
-      <div class="border-default width-100 padding-20px">
+      <div class="border-default padding-20px show-description">
         <div class="container-fluid">
           <h2>DESCRIPTION</h2>
           <p><%= @user.description %></p>

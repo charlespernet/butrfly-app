@@ -91,8 +91,16 @@ a {
   padding: 20px;
 }
 
+.margin-50px {
+  margin: 50px;
+}
+
 .margin-bottom-20px {
   margin-bottom: 20px;
+}
+
+.margin-bottom-5px {
+  margin-bottom: 5px;
 }
 
 .input-string {
@@ -281,6 +289,33 @@ a {
 .margin-top {
   margin-top: 20px;
 }
+
+.list-star {
+  list-style: none;
+
+  li {
+      position: relative;
+      margin-top: 50px;
+  }
+
+  li:before {
+    position: absolute;
+    display: block;
+    content: '\2022';
+    text-indent: -999999px;
+    left: -4.75em;
+    top: -16px;
+    width: 50px;
+    height: 3em;
+    background-repeat: no-repeat;
+    background-image: url(web.svg);
+    background-size: 50px 2.7em;
+    background-position: 0px 0.3em;
+  }
+
+
+}
+
 
 
 // // Paddings

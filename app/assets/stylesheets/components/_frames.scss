@@ -76,6 +76,7 @@
   }
   &::before {
     border:solid 20px $black;
+    background-color: $white;
   }
 }
 
@@ -125,5 +126,13 @@
     background: $lighter-white;
     border: solid 1px $lighter-white;
   }
+}
+
+.border-black-white {
+  border: solid 2px $black;
+  outline: $white solid 20px;
+  padding: 20px;
+  background-color: $white;
+  margin: 70px;
 }
 

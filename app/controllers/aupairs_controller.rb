@@ -25,7 +25,7 @@ class AupairsController < ApplicationController
   def update
     @user.update(aupair_params)
     flash[:notice] = "Profil mis à jour"
-    redirect_to dashboard_path
+    redirect_to @user
   end
 
   private

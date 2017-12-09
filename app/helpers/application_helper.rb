@@ -154,6 +154,10 @@ module ApplicationHelper
       f.input( field, attrs )
     end
   end
+
+  def yes_or_no(condition)
+    condition ? "Oui" : "Non"
+  end
 end
 
 
