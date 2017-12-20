@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621150227) do
+ActiveRecord::Schema.define(version: 20171220010603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.date    "dispo_from"
     t.integer "stay_duration_cd"
     t.string  "photo"
+    t.string  "phone"
+    t.string  "address"
+    t.string  "city"
+    t.string  "country"
+    t.integer "environment"
+    t.string  "favorite_region"
+    t.boolean "housework"
+  end
+
+  create_table "basic_languages", force: :cascade do |t|
+    t.integer  "aupair_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["aupair_id"], name: "index_basic_languages_on_aupair_id", using: :btree
+    t.index ["language_id"], name: "index_basic_languages_on_language_id", using: :btree
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -138,6 +154,8 @@ ActiveRecord::Schema.define(version: 20170621150227) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "basic_languages", "aupairs"
+  add_foreign_key "basic_languages", "languages"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "prefered_countries", "aupairs"

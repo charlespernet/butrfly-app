@@ -16,6 +16,7 @@ class Aupair < ActiveRecord::Base
   has_many :countries, through: :prefered_countries
 
   as_enum :gender, male: 1, female: 2
+  enum environment: { ville: 1, village: 2,  mer_ocean: 3,  montagne: 4, campagne: 5 }
 
   # very_short = "< de 3 mois"
   # short = "de 3 à 6 mois"

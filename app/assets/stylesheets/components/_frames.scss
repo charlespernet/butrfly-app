@@ -112,19 +112,47 @@
   }
 }
 
+// .frame-transparent-white {
+//   background-color: transparent;
+//   h2 {
+//     font-size: 18px;
+//   }
+//   a {
+//     font-size: 12px;
+//     font-family: "Josefin Sans", "sans-serif";
+//     text-decoration: underline;
+//   }
+//   &::before {
+//     background: $lighter-white;
+//     border: solid 1px $lighter-white;
+//   }
+// }
+
 .frame-transparent-white {
-  background-color: transparent;
-  h2 {
-    font-size: 18px;
-  }
+  width: 300px;
+  min-height: 150px;
+  background: $lighter-white;
+  outline: $lighter-white solid 20px;
+  border: solid 2px $white;
+  color: $black;
+  padding: 5px;
+  margin: 20px 20px 40px 20px;
+  text-align: center;
   a {
+    color: $black;
     font-size: 12px;
     font-family: "Josefin Sans", "sans-serif";
     text-decoration: underline;
   }
-  &::before {
-    background: $lighter-white;
-    border: solid 1px $lighter-white;
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 10px;
+    color: $white;
+  }
+  p, input {
+    font-size: 12px;
   }
 }
 

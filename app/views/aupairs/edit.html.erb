@@ -5,10 +5,10 @@
       <div class="hidden-xs hidden-ms">
         <%= render "shared/square_box", title: "MON<br>PROFIL", color: :blue %>
         <%= render "shared/cursor", percent: 71, color: :blue %>
-        <div class="frame-default frame-btn fr-btn-white">
+        <div class="frame-default frame-btn fr-btn-white margin-box">
           <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
         </div>
-        <div class="frame-default frame-btn fr-btn-white">
+        <div class="frame-default frame-btn fr-btn-white margin-box">
           <%= f.button :submit, "SUPPRIMER", class: "input-button" %>
         </div>
       </div>
@@ -17,37 +17,30 @@
         <div class="border-default width-100 padding-20px">
           <div class="container-fluid">
             <%= render "shared/titles", color: :blue, index: 0 %>
-            <div class="div-left">
-              <%= f.input :email,
-                          required: true,
-                          autofocus: true,
-                          label: false,
-                          placeholder: "email",
-                          input_html: { class: "border-default"}
-              %>
-              <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
-                <p>Currently waiting confirmation for: <%= @user.unconfirmed_email %></p>
-              <% end %>
-              <%= f.input :current_password,
-                          required: true,
-                          label: false,
-                          placeholder: "nouveau mot de passe",
-                          input_html: { class: "border-default"}
-              %>
-            </div>
-            <div class="div-left">
-              <%= f.input :password,
-                          autocomplete: "off",
-                          required: false,
-                          label: false,
-                          placeholder: "ancien mot de passe",
-                          input_html: { class: "border-default"}
-              %>
-              <%= f.input :password_confirmation,
-                          required: false,
-                          label: false,
-                          placeholder: "confirmation",
-                          input_html: { class: "border-default"}
+            <div class="row">
+              <div class="col-md-6 input-string">
+                <%= f.input :phone,
+                            label:"Ton numéro de téléphone :",
+                            placeholder: "+33 6 ..."
+                %>
+              </div>
+              <div class="col-md-6 input-string">
+                <%= f.input :address,
+                            label:"Ton adresse :",
+                            placeholder: "6 rue Molière"
+                %>
+              </div>
+              <div class="col-md-6 input-string">
+                <%= f.input :city,
+                            label:"Ta ville :",
+                            placeholder: "Paris"
+                %>
+              </div>
+              <%= input_collection_html f: f,
+                                        field: :country_code,
+                                        question: "Le pays où tu vis :",
+                                        priority: ["FR", "GB", "ES"],
+                                        label: false
               %>
             </div>
           </div>
@@ -93,6 +86,18 @@
           <div class="container-fluid">
             <%= render "shared/titles", color: :blue, index: 2 %>
             <div class="row">
+              <%= input_collection_html f: f,
+                                        field: :languages,
+                                        question: "langues parles-tu couramment ?",
+                                        label: false,
+                                        collection: Language.all
+              %>
+              <%= input_collection_html f: f,
+                                        field: :languages,
+                                        question: "Dans quelles langues as-tu des connaissances de base ?",
+                                        label: false,
+                                        collection: Language.all
+              %>
               <%= input_boolean_html  f: f,
                                       field: :driving_license,
                                       question: "As-tu le permis de conduire ?"
@@ -133,9 +138,22 @@
                                       field: :housework,
                                       question: "Acceptes-tu d'aider la famille dans les tâches ménagères ?"
               %>
-              Mettre les taches ménagères
-              Dans quel environement souhaites tu vivre
-              Pour quelle région une préférence
+              <%= input_collection_html f: f,
+                                        field: :environment,
+                                        question: "Dans quel environnement souhaites-tu vivre ?",
+                                        label: false,
+                                        collection:  Aupair.environments
+              %>
+              <%= input_boolean_html  f: f,
+                                      field: :housework,
+                                      question: "Acceptes-tu d’aider la famille dans les tâches ménagères ?"
+              %>
+              <div class="col-md-6 input-string">
+                <%= f.input :favorite_region,
+                            label:"Pour quelle région as-tu une préférence ?",
+                            placeholder: ""
+                %>
+              </div>
             </div>
           </div>
           <div class="container-fluid">
