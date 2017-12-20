@@ -115,7 +115,7 @@ module ApplicationHelper
   end
 
   def edit_tabs_html(color)
-    content_tag :div, class: "div-spacebetween" do
+    content_tag :div, class: "div-spacebetween margin-bottom-5px" do
       edit_tabs[color.to_sym].each.with_index.inject(""){ |tabs, (tab, i)|
         tabs + link_to( "#{ i + 1 }. #{ tab[:title] }",
                        tab[:path],
