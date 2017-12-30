@@ -52,9 +52,21 @@ class AupairsController < ApplicationController
       :educational_experience,
       :accepted_domestic_animal,
       :sports,
+      :phone,
+      :address,
+      :city,
+      :country,
+      :environment,
+      :favorite_region,
+      :housework,
       language_ids: [],
       country_ids: [],
       photos: []
     )
   end
+
+
+
+
+
 end

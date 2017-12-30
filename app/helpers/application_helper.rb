@@ -125,7 +125,7 @@ module ApplicationHelper
   end
 
   def input_boolean_html( color: :blue,
-                          css_class: "col-md-6 div-left items-center",
+                          css_class: "col-md-6 div-left items-center margin-bottom-20px",
                           answers: [['Oui', true], ['Non', false]],
                           **attrs
                         )
@@ -142,7 +142,7 @@ module ApplicationHelper
   end
 
   def input_collection_html(  color: :blue,
-                              css_class: "col-md-6 input-string div-left items-center",
+                              css_class: "col-md-6 input-string div-left items-center  margin-bottom-20px",
                               f: nil,
                               field: nil,
                               question: "",
