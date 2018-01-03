@@ -14,19 +14,20 @@
       </div>
       <div class="index-container">
         <%= edit_tabs_html("blue") %>
-        <div class="border-default width-100 padding-20px">
+        <div class="border-default width-100 padding-20px margin-bottom-50px">
           <div class="container-fluid">
             <%= render "shared/titles", color: :blue, index: 0 %>
             <div class="row">
               <div class="col-md-6 input-string">
                 <%= f.input :phone,
-                            label:"Ton numéro de téléphone :",
+                            label: "<i class='radio-icon fa fa-phone' aria-hidden='true'></i>Ton numéro de téléphone :".html_safe,
                             placeholder: "+33 6 ..."
                 %>
               </div>
+
               <div class="col-md-6 input-string">
                 <%= f.input :address,
-                            label:"Ton adresse :",
+                            label:"<i class='radio-icon fa fa-envelope-o' aria-hidden='true'></i>Ton adresse :".html_safe,
                             placeholder: "6 rue Molière"
                 %>
               </div>
@@ -38,7 +39,7 @@
               </div>
               <%= input_collection_html f: f,
                                         field: :country_code,
-                                        question: "Le pays où tu vis :",
+                                        question: "<i class='radio-icon fa fa-globe' aria-hidden='true'></i>Le pays où tu vis :",
                                         priority: ["FR", "GB", "ES"],
                                         label: false
               %>
@@ -51,11 +52,12 @@
                                       field: :gender,
                                       # answers: Aupair.genders.hash.to_a,
                                       answers: [["Garçon", 1], ["Fille", 0]],
-                                      question: ""
+                                      question: "",
+                                      icon: "fa-venus-mars"
               %>
               <%= render  "shared/datepicker",
                           container_class: "col-md-6 div-left",
-                          question: "Ta date de naissance",
+                          question: "<i class='radio-icon fa fa-birthday-cake' aria-hidden='true'></i>Ta date de naissance".html_safe,
                           css_id: "datetimepicker-year", field: "birth_date"
               %>
               <div class="col-md-6 input-string">
@@ -88,11 +90,12 @@
             <div class="row">
               <%= input_collection_html f: f,
                                         field: :languages,
-                                        question: "langues parles-tu couramment ?",
+                                        question: "Quelles langues parles-tu couramment ?",
                                         label: false,
                                         collection: Language.all
               %>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+                                        f: f,
                                         field: :languages,
                                         question: "Dans quelles langues as-tu des connaissances de base ?",
                                         label: false,
@@ -100,15 +103,18 @@
               %>
               <%= input_boolean_html  f: f,
                                       field: :driving_license,
-                                      question: "As-tu le permis de conduire ?"
+                                      question: "As-tu le permis de conduire ?",
+                                      icon: "fa-car"
               %>
               <%= input_boolean_html  f: f,
                                       field: :accepted_domestic_animal,
-                                      question: "Acceptes-tu les animaux domestiques ?"
+                                      question: "Acceptes-tu les animaux domestiques ?",
+                                      icon: "fa-paw"
               %>
               <%= input_boolean_html  f: f,
                                       field: :educational_experience,
-                                      question: "As-tu l'habitude de garder des enfants ?"
+                                      question: "As-tu l'habitude de garder des enfants ?",
+                                      icon: "fa-child"
               %>
               <%= input_boolean_html  f: f,
                                       field: :experience_aupair,
@@ -116,13 +122,15 @@
               %>
               <%= input_boolean_html  f: f,
                                       field: :sports,
-                                      question: "Pratiques-tu un sport ?"
+                                      question: "Pratiques-tu un sport ?",
+                                      icon: "fa-futbol-o"
               %>
               <%= input_boolean_html  f: f,
                                       field: :musician,
-                                      question: "Joues-tu d'un instrument ?"
+                                      question: "Joues-tu d'un instrument ?",
+                                      icon: "fa-music"
               %>
-              <div class="col-xs-12">
+              <div class="col-xs-12 margin-bottom-20px">
                 <%= f.input :description,
                             label: false ,
                             placeholder: "Dis nous en un peu plus sur toi",
@@ -138,17 +146,21 @@
                                       field: :housework,
                                       question: "Acceptes-tu d'aider la famille dans les tâches ménagères ?"
               %>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+                                        f: f,
                                         field: :environment,
-                                        question: "Dans quel environnement souhaites-tu vivre ?",
+                                        question: "<i class='radio-icon fa fa-home' aria-hidden='true'></i>Dans quel environnement souhaites-tu vivre ?".html_safe,
                                         label: false,
-                                        collection:  Aupair.environments
+                                        collection:  Aupair.environments,
+                                        selected: @user.environment
               %>
-              <%= input_boolean_html  f: f,
+              <%= input_boolean_html  css_class: "col-md-12 div-left items-center",
+                                      f: f,
                                       field: :housework,
-                                      question: "Acceptes-tu d’aider la famille dans les tâches ménagères ?"
+                                      question: "Acceptes-tu d’aider la famille dans les tâches ménagères ?",
+                                      icon: "fa-cutlery"
               %>
-              <div class="col-md-6 input-string">
+              <div class="col-md-12 input-string">
                 <%= f.input :favorite_region,
                             label:"Pour quelle région as-tu une préférence ?",
                             placeholder: ""
@@ -160,13 +172,14 @@
             <%= render "shared/titles", color: :blue, index: 4 %>
             <div class="row">
               <%= render  "shared/datepicker",
-                          container_class: "col-md-6 div-left",
-                          question: "À partir de quelle date es-tu disponible ?",
+                          container_class: "col-md-12 div-left",
+                          question: "<i class='radio-icon fa fa-calendar' aria-hidden='true'></i>À partir de quelle date es-tu disponible ?".html_safe,
                           css_id: "datetimepicker-standar", field: "dispo_from"
               %>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+                                        f: f,
                                         field: :stay_duration,
-                                        question: "Pour quelle période souhaites-tu partir ?",
+                                        question: "<i class='radio-icon fa fa-history' aria-hidden='true'></i>Pour quelle période souhaites-tu partir ?".html_safe,
                                         collection: Aupair.stay_durations.keys,
                                         default: 0,
                                         label: false,
@@ -180,5 +193,3 @@
   </div>
 
 <% end %>
-
-

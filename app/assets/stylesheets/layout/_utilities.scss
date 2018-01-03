@@ -99,6 +99,10 @@ a {
   margin-bottom: 20px;
 }
 
+.margin-bottom-50px {
+  margin-bottom: 50px;
+}
+
 .margin-bottom-5px {
   margin-bottom: 5px;
 }
@@ -161,6 +165,9 @@ a {
     &:focus {
       -webkit-appearance: none;
       box-shadow: none;
+    }
+  div {
+    background: $yellow !important;
     }
   }
   label {

@@ -125,12 +125,13 @@ module ApplicationHelper
   end
 
   def input_boolean_html( color: :blue,
-                          css_class: "col-md-6 div-left items-center",
+                          css_class: "col-md-6 div-left items-center margin-bottom-20px",
                           answers: [['Oui', true], ['Non', false]],
                           **attrs
                         )
     content_tag :div, class: css_class do
-      image_tag("papillon-noir.png", width: 30, height: 30 ) +
+      # image_tag(attrs[:icon_img].to_s, width: 30, height: 30 ) +
+      "<i class='radio-icon fa #{attrs[:icon]}' aria-hidden='true'></i>".html_safe +
       content_tag(:p, attrs[:question]) +
       attrs[:f].collection_radio_buttons( attrs[:field],
                                   answers,
@@ -142,7 +143,7 @@ module ApplicationHelper
   end
 
   def input_collection_html(  color: :blue,
-                              css_class: "col-md-6 input-string div-left items-center",
+                              css_class: "col-md-6 input-string div-left items-center  margin-bottom-20px",
                               f: nil,
                               field: nil,
                               question: "",

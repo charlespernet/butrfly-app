@@ -36,7 +36,7 @@ class AupairsController < ApplicationController
   end
 
   def aupair_params
-    params.require(:aupair).permit(
+    p = params.require(:aupair).permit(
       :first_name,
       :last_name,
       :birth_date,
@@ -52,9 +52,23 @@ class AupairsController < ApplicationController
       :educational_experience,
       :accepted_domestic_animal,
       :sports,
+      :phone,
+      :address,
+      :city,
+      :country,
+      :environment,
+      :favorite_region,
+      :housework,
       language_ids: [],
       country_ids: [],
       photos: []
     )
+  p[:environment] = p[:environment].to_i
+  p
   end
+
+
+
+
+
 end
