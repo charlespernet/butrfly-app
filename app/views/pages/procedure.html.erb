@@ -9,30 +9,26 @@
         <div class="procedure-title ">
           <h2>COMMENT ÇA MARCHE ?</h2>
         </div>
-        <div class="procedure-icons">
+        <div class="procedure-icons hidden-xs hidden-ms">
           <div class="procedure-icon">
             <%= image_tag 'web-white.png' %>
             <h4>JE CRÉE MON COMPTE</h4>
           </div>
           <div class="procedure-icon">
             <%= image_tag 'computer-white.svg' %>
-            <h4>JE REMPLIS MON PROFIL</h4>
-          </div>
-          <div class="procedure-icon">
-            <%= image_tag 'cart-white.svg' %>
-            <h4>JE SÉLECTIONNE MON ABONNEMENT</h4>
+            <h4>JE CRÉE MON PROFIL</h4>
           </div>
           <div class="procedure-icon">
             <%= image_tag 'loup-white.svg' %>
-            <h4>JE CHOISIS MON AU PAIR OU MA FAMILLE ET JE LE/A CONTACTE</h4>
+            <h4>JE MANDATE BUTRFLY POUR MA RECHERCHE</h4>
           </div>
           <div class="procedure-icon">
-            <%= image_tag 'check-white.svg' %>
-            <h4>JE VALIDE MA SÉLECTION</h4>
+            <%= image_tag 'white/bubble.png' %>
+            <h4>J'ENTRE EN CONTACT AVEC LES PROFILS SÉLECTIONNÉS PAR BUTRFLY</h4>
           </div>
           <div class="procedure-icon">
             <%= image_tag 'envelop-white.svg' %>
-            <h4>JE REÇOIS MON CONTRAT</h4>
+            <h4>JE VALIDE MA SÉLECTION ET JE REÇOIS MON CONTRAT</h4>
           </div>
           <div class="procedure-icon">
             <%= image_tag 'three-1-white.png' %>
@@ -133,89 +129,77 @@
     <div class="col-xs-12">
       <div class="procedure-details">
         <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
           <div>
             <div class="procedure-details-title">
-              <h2>1- JE M’IDENTIFIE.</h2>
+              <h2>1- JE CRÉE MON COMPTE.</h2>
             </div>
             <p>
-              Saisissez votre adresse email et votre mot de passe. Ainsi vous pouvez consulter gratuitement les profils des <%= link_to "Au Pairs", aupairs_path %> ou des <%= link_to "Familles", families_path %>.<br>
-              <em><strong>CONSEILS : Attention! Votre profil ne sera visible qu’une fois l’abonnement choisi !</strong></em>
+              Saisissez votre adresse email et votre mot de passe.
             </p>
           </div>
         </div>
         <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
           <div>
             <div class="procedure-details-title">
               <h2>2- JE CRÉE MON PROFIL.</h2>
             </div>
             <p>
-              Enregistrez vos données personnelles, sélectionnez vos critères de recherche et ajoutez vos photos. Vous pourrez les modifier à tout moment ! <br>
-              <em><strong>CONSEILS : Choisissez des photos récentes, ainsi pas de surprise !</strong></em>
+              Enregistrez vos données personnelles, sélectionnez vos critères de recherche et ajoutez vos photos. Vous pourrez les modifier à tout moment !
             </p>
           </div>
         </div>
         <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
           <div>
             <div class="procedure-details-title">
-              <h2>3- JE SÉLECTIONNE MON ABONNEMENT.</h2>
+              <h2>3- JE MANDATE BUTRFLY POUR MA RECHERCHE.</h2>
             </div>
             <p>
-              La prise d’abonnement est obligatoire pour que votre profil soit actif et profitez pleinement des fonctionnalités de notre messagerie
-            </p>
-            <p>
-              - En tant que Famille, vous avez le choix entre 2 Abonnements à souscrire:<br>
-              - Abonnement « <strong>Do It Yourself</strong> »: Envoi de messages aux Au Pairs choisis, illimité pendant 2mois; Conseils et Accompagnement tout au long de votre expérience; Contrat; Ouverture d’un compte en banque gratuit pour l’Au pair.<br>
-              - Abonnement « <strong>Take It Easy</strong> »: Pré-sélection de 3 Au Pairs; Envoi de messages aux Au Pairs choisis, illimité pendant 2mois; Conseils et Accompagnement tout au long de votre expérience; Contrat; Ouverture d’un compte en banque gratuit pour l’Au pair; Assurance santé complémentaire pour l’Au Pair.
-            </p>
-            <p>
-              - En tant qu’ Au Pair, il y a un abonnement unique à souscrire:<br>
-              - Abonnement Au Pair: Envoi d’email aux Familles, illimité pendant 6mois; Conseils et Accompagnement tout au long de ton expérience;Contrat ; Ouverture d’un compte en banque gratuit; Conseils et suivi tout au long de ton expérience.
+              Pour activer ma recherche, je prends mon abonnement. BUTRFLY me contacte dans les 48 heures pour faire connaissance et lancer ma recherche.
             </p>
           </div>
         </div>
         <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
           <div>
             <div class="procedure-details-title">
-              <h2>4- JE SÉLECTIONNE LE(S) AU PAIRS OU LE(S) FAMILLES.</h2>
+              <h2>4- J'ENTRE EN CONTACT AVEC LES PROFILS SÉLECTIONNÉS PAR BUTRFLY.</h2>
             </div>
             <p>
-              Sélectionnez le(s) profil(s) qui vous correspondent en les ajoutant à mes favoris <i class='fa fa-heart' aria-hidden='true'></i>  et/ou rentrez en contact via notre messagerie <span><%= image_tag 'interface.svg' %></span> <br>
-              Pour pouvoir envoyer un 1er message, vous devez, d’abord, souscrire à un abonnement.
+              Dans un délai de 15 jours BUTRFLY me propose 2 à 3 profils correspondant à mes critères. J’entre en contact avec les candidats et j’affine mon choix.
             </p>
             <p>
-              <em><strong>CONSEILS : Si le 1er contact écrit est positif, nous vous conseillons d’établir un contact visuel via Skype, Facetime ou autre.</strong></em>
+              <em><strong>CONSEILS : Si le premier contact écrit est positif, nous vous conseillons d’établir un contact visuel via Skype ou Facetime.</strong></em>
+            </p>
+          </div>
+        </div>
+
+
+
+        <div class="procedure-detail">
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
+          <div>
+            <div class="procedure-details-title">
+              <h2>5- JE VALIDE MA SÉLECTION ET JE REÇOIS MON CONTRAT.</h2>
+            </div>
+            <p>
+              Une fois mon choix fait, j’informe BUTRFLY par SMS ou par email dans un délai de 48h. Chacun recevra, ensuite, par email, un exemplaire du contrat pré rempli qui devra être signé conjointement avant l’arrivée de l’ Au Pair dans sa Famille.
+            </p>
+            <p>
+              La famille devra ensuite l’adresser aux autorités compétentes (DIRRECTE). BUTRFLY reste à votre disposition pour vous accompagner dans ses démarches.
             </p>
           </div>
         </div>
         <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
+          <%= image_tag 'web.svg', class: "hidden-xs hidden-ms" %>
           <div>
             <div class="procedure-details-title">
-              <h2>5- JE VALIDE MA SÉLECTION.</h2>
+              <h2>6. JE VIS L’EXPÉRIENCE ET JE REJOINS LA COMMUNAUTÉ.</h2>
             </div>
             <p>
-              Une fois votre choix fait, chacune des parties doit valider sa sélection dans un délai de 48h. Pour cela, vous devez aller dans « Mes Favoris » <i class='fa fa-heart' aria-hidden='true'></i>, cliquez sur le profil choisi puis cliquez sur « Sélectionner » dans la colonne de gauche.
-            </p>
-            <p>
-              Chacun recevra, ensuite, par email, un exemplaire du contrat pré rempli qui devra être signé conjointement dès l’arrivée de l’ Au Pair dans sa Famille.
-            </p>
-            <p>
-              La famille devra ensuite l’adresser aux autorités compétentes.
-            </p>
-          </div>
-        </div>
-        <div class="procedure-detail">
-          <%= image_tag 'web.svg' %>
-          <div>
-            <div class="procedure-details-title">
-              <h2>6. JE VIS L’EXPÉRIENCE ET JE REJOINS LA COMMUNAUTÉ BUTRFLY.</h2>
-            </div>
-            <p>
-              Butrfly vous accompagne tout au long de votre expérience, vous donnant des conseils, des outils et un soutien permanent en cas de doutes, problèmes ou autres via notre service clients ouvert du lundi au vendredi, de 9h à 18h.
+              Butrfly vous accompagne tout au long de votre expérience, vous donnant des conseils, des outils et une assistance en cas de problème via notre service client ouvert du lundi au vendredi de 9h à 18h.
             </p>
           </div>
         </div>
