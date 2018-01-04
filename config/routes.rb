@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   get 'aupair_conditions', to: 'pages#aupair_conditions'
   get 'family_conditions', to: 'pages#family_conditions'
 
-  get 'aupairs/plans', to: 'aupairs#plans'
-
+  # get 'aupairs/plans', to: 'aupairs#plans'
+ get 'plans', to: 'pages#plans'
   resources :conversations, only: [:create] do
     resources :messages, only: [:index, :create]
   end
