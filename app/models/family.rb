@@ -25,4 +25,11 @@ class Family < ActiveRecord::Base
     count * 100 / COMPLETION_ATTRIBUTES.count
   end
 
+  def self.plans
+    Stripe::Plan.all.data.select do |plan|
+      plan.metadata[:visible] == "true" &&
+      plan.metadata[:customer] == "family"
+    end
+  end
+
 end

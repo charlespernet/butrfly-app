@@ -49,4 +49,11 @@ class Aupair < ActiveRecord::Base
     end
   end
 
+  def self.plans
+    Stripe::Plan.all.data.select do |plan|
+      plan.metadata[:visible] == "true" &&
+      plan.metadata[:customer] == "aupair"
+    end
+  end
+
 end

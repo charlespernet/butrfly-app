@@ -39,7 +39,7 @@
               </div>
               <%= input_collection_html f: f,
                                         field: :country_code,
-                                        question: "<i class='radio-icon fa fa-globe' aria-hidden='true'></i>Le pays où tu vis :",
+                                        question: "<i class='radio-icon fa fa-globe' aria-hidden='true'></i>Le pays où tu vis :".html_safe,
                                         priority: ["FR", "GB", "ES"],
                                         label: false
               %>

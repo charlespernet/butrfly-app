@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :plans]
 
   def index
     search = params[:search]
@@ -26,6 +26,10 @@ class FamiliesController < ApplicationController
     @user.update(family_params)
     flash[:notice] = "Profil mis à jour"
     redirect_to dashboard_path
+  end
+
+  def plans
+    @plans = Family.plans
   end
 
   private

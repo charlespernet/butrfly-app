@@ -1,0 +1,52 @@
+<div class="wrapper bg-blue">
+  <div class="container">
+
+    <div class="row">
+      <div class="bg-white text-center plans-title">
+        <h2><%= "Abonnement au pair".upcase %></h2>
+        <p>
+          Tu as trouvé ta famille idéale?! Mais pour pouvoir rentrer en contact avec et bénéficier de notre suivi et accompagnement, tu dois d'abord prendre ton abonnement!
+        </p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="div-spacebetween">
+
+        <div class="border-black-white text-center" style="flex-grow: 1;">
+          <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+          <h2><%= "Abonnement au pair".upcase %></h2>
+          <div class="btn btn-black-lg">
+            19,99€
+          </div>
+          <div class="text- enter margin-50px">
+            <p> la recherche d’une famille </p>
+            <p> la sélection de 1 à 2 profils </p>
+            <p> la mise en relation </p>
+            <p> la rédaction du contrat </p>
+            <p> l’aide aux formaptés administratives </p>
+            <p> l’aide à l’obtention du Visa </p>
+            <p> la formation BUTRFLY   </p>
+          </div>
+          <div class="border-bottom margin-50px"></div>
+          <%= form_tag payments_path do %>
+            <%= hidden_field_tag 'amount_cents', 4900 %>
+            <%= hidden_field_tag 'duration', 2 %>
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_uIcdcZIoO8Beevb9MVkcd0mD"
+              data-amount="4900"
+              data-name="Demo Site"
+              data-description="Widget"
+              data-image="<%= image_path 'papillon-gris.png' %>"
+              data-locale="auto"
+              data-zip-code="true"
+              data-currency="eur">
+            </script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

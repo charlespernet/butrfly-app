@@ -20,7 +20,32 @@ class User < ActiveRecord::Base
 
   def active?(date = Date.today)
     # end_date > date_to_try
-    return false unless active_until
-    active_until > date
+    # return false unless active_until
+    # active_until > date
+    active_until.present? && active_until > date
   end
+
+  def customer
+    return Stripe::Customer.retrieve(stripe_id) if stripe_id.present?
+    customer = Stripe::Customer.create(email: email)
+    update(stripe_id: customer.id)
+    customer
+  end
+
+  def set_new_default_card(token)
+    card = customer.sources.create(source: token)
+    customer.default_source = card.id
+    customer.save
+  end
+
+  def create_charge(amount)
+    Stripe::Charge.create(
+      customer:    customer.id,
+      amount:      amount,
+      description: 'Butrfly customer',
+      currency:    'eur'
+    )
+    update(active_until: Date.today + 10.years)
+  end
+
 end

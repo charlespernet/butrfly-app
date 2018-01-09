@@ -1,0 +1,20 @@
+<div class="wrapper bg-yellow">
+  <div class="container">
+    <div class="row">
+      <div class="bg-white text-center plans-title">
+        <h2><%= "Abonnement famille".upcase %></h2>
+        <p>
+          Tu as trouvé ta famille idéale?! Mais pour pouvoir rentrer en contact avec et bénéficier de notre suivi et accompagnement, tu dois d'abord prendre ton abonnement!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="div-spacebetween margin-40px">
+        <% @plans.each do |plan| %>
+          <%= render "plan", plan: plan %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

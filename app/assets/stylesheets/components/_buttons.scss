@@ -5,6 +5,23 @@
   font-size: 14px;
   padding: 13px 18px 11px 18px;
 }
+.stripe-button-el {
+  position: relative;
+  border-radius: 0px !important;
+  &:after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    content: "PAIEMENT";
+    padding: 7px;
+    font-family: "Josefin Sans", "sans-serif";
+    color: $white !important;
+    background-color: $black;
+    font-size: 14px;
+  }
+}
 
 .btn-black {
   font-family: "Josefin Sans", "sans-serif";

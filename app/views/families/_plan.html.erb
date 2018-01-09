@@ -1,0 +1,32 @@
+<div class="border-black-white margin-30px text-center" style="flex-grow: 1;">
+  <%= image_tag("papillon-gris.png", class: "modal-logo") %>
+  <h4><%= plan.name %></h4>
+  <p><b><%= plan.metadata[:description] %></b></p>
+  <div class="btn btn-black-lg">
+    <%= (plan.metadata[:bring].to_f / 100).round(2) %>€
+    puis <%= (plan.amount.to_f / 100).round(2) %>€/<%= plan.interval %>
+  </div>
+  <div class="text- enter">
+    <% plan.metadata[:content].split("\n").each do |point| %>
+      <p><%= point %></p>
+    <% end %>
+  </div>
+  <div class="border-bottom"></div>
+  <%= form_tag payments_path do %>
+    <%= hidden_field_tag 'amount_cents', plan.amount %>
+    <%#= hidden_field_tag 'duration', plan.metadata[:duration] %>
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
+      data-amount="<%= plan.amount %>"
+      data-name="Demo Site"
+      data-description="Widget"
+      data-image="<%= image_path 'papillon-gris.png' %>"
+      data-locale="auto"
+      data-email="<%= current_user.email %>"
+      data-zip-code="true"
+      data-currency="eur">
+    </script>
+  <% end %>
+</div>
+
