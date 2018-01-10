@@ -29,6 +29,7 @@ class AupairsController < ApplicationController
   end
 
   def plans
+    @plans = Aupair.plans
   end
 
   private

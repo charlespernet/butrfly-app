@@ -18,11 +18,9 @@ class User < ActiveRecord::Base
     country.translations[I18n.locale.to_s] || country.name
   end
 
-  def active?(date = Date.today)
-    # end_date > date_to_try
-    # return false unless active_until
-    # active_until > date
-    active_until.present? && active_until > date
+  def active?
+    subscription = customer.subscriptions.list.first
+    subscription.present? && ["trialing", "active"].include?(subscription.status)
   end
 
   def customer
@@ -43,9 +41,17 @@ class User < ActiveRecord::Base
       customer:    customer.id,
       amount:      amount,
       description: 'Butrfly customer',
-      currency:    'eur'
+      currency:    'eur',
+      receipt_email: email
     )
-    update(active_until: Date.today + 10.years)
+    update(active_until: Date.today + 4.years)
   end
 
+  def create_subscription(plan_id)
+    Stripe::Subscription.create(
+      customer: customer.id,
+      items: [ { plan: plan_id } ],
+      trial_end: (Date.today + 4.years).to_time.to_i
+    )
+  end
 end
