@@ -67,8 +67,8 @@ class AupairsController < ApplicationController
       country_ids: [],
       photos: []
     )
-  p[:environment] = p[:environment].to_i
-  p
+    p[:environment] = p[:environment].to_i
+    p
   end
 
 

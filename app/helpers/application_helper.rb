@@ -131,7 +131,7 @@ module ApplicationHelper
                         )
     content_tag :div, class: css_class do
       # image_tag(attrs[:icon_img].to_s, width: 30, height: 30 ) +
-      "<i class='radio-icon fa #{attrs[:icon]}' aria-hidden='true'></i>".html_safe +
+      "<i class='radio-icon fa #{attrs[:icon]} #{'color-yellow' if color == :yellow}' aria-hidden='true'></i>".html_safe +
       content_tag(:p, attrs[:question]) +
       attrs[:f].collection_radio_buttons( attrs[:field],
                                   answers,

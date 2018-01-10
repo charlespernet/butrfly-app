@@ -54,4 +54,5 @@ class User < ActiveRecord::Base
       trial_end: (Date.today + 4.years).to_time.to_i
     )
   end
+
 end

@@ -1,11 +1,12 @@
 class Aupair < ActiveRecord::Base
   COMPLETION_ATTRIBUTES =  %w(first_name
-    last_name
-    birth_date
-    description
-    driving_license
-    dispo_from
-    stay_duration_cd)
+                              last_name
+                              birth_date
+                              description
+                              driving_license
+                              dispo_from
+                              stay_duration_cd
+                              phone)
 
   has_attachments :photos, maximum: 3
   acts_as :user
@@ -33,13 +34,13 @@ class Aupair < ActiveRecord::Base
     (Date.today - birth_date).to_i / 365.25.floor
   end
 
-  def profile_completion
-    count = 0
-    COMPLETION_ATTRIBUTES.each do |a|
-      count += 1 if attribute_present?(a)
-    end
-    count * 100 / COMPLETION_ATTRIBUTES.count
-  end
+  # def profile_completion
+  #   count = 0
+  #   COMPLETION_ATTRIBUTES.each do |a|
+  #     count += 1 if attribute_present?(a)
+  #   end
+  #   count * 100 / COMPLETION_ATTRIBUTES.count
+  # end
 
   def name
     if first_name && last_name
@@ -54,6 +55,14 @@ class Aupair < ActiveRecord::Base
       plan.metadata[:visible] == "true" &&
       plan.metadata[:customer] == "aupair"
     end
+  end
+
+  def profile_completion
+    present_attrs = attributes.select do |k, v|
+      COMPLETION_ATTRIBUTES.include?(k) &&
+      !v.to_s.empty?
+    end
+    present_attrs.size * 100 / COMPLETION_ATTRIBUTES.size
   end
 
 end

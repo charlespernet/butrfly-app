@@ -3,14 +3,16 @@
   <div class="butrfly-wrapper div-center">
     <div class="butrfly-container div-center">
       <div class="hidden-xs hidden-ms">
-        <%= render "shared/square_box", title: "MON<br>PROFIL", color: :blue %>
-        <%= render "shared/cursor", percent: 71, color: :blue %>
+        <%= link_to @user do %>
+          <%= render "shared/square_box", title: "MON<br>PROFIL", color: :blue %>
+        <% end %>
+        <%= render "shared/cursor", percent: @user.profile_completion, color: :blue %>
         <div class="frame-default frame-btn fr-btn-white margin-box">
           <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
         </div>
-        <div class="frame-default frame-btn fr-btn-white margin-box">
-          <%= f.button :submit, "SUPPRIMER", class: "input-button" %>
-        </div>
+<!--         <div class="frame-default frame-btn fr-btn-white margin-box">
+          <%#= f.button :submit, "SUPPRIMER", class: "input-button" %>
+        </div> -->
       </div>
       <div class="index-container">
         <%= edit_tabs_html("blue") %>
@@ -33,7 +35,7 @@
               </div>
               <div class="col-md-6 input-string">
                 <%= f.input :city,
-                            label:"Ta ville :",
+                            label:"<i class='radio-icon fa fa-map-marker' aria-hidden='true'></i>Ta ville :".html_safe,
                             placeholder: "Paris"
                 %>
               </div>
@@ -58,23 +60,24 @@
               <%= render  "shared/datepicker",
                           container_class: "col-md-6 div-left",
                           question: "<i class='radio-icon fa fa-birthday-cake' aria-hidden='true'></i>Ta date de naissance".html_safe,
-                          css_id: "datetimepicker-year", field: "birth_date"
+                          css_id: "datetimepicker-year", field: "birth_date",
+                          color: :blue
               %>
               <div class="col-md-6 input-string">
                 <%= f.input :first_name,
-                            label:"Ton petit nom :",
+                            label:"<i class='radio-icon fa fa-user' aria-hidden='true'></i>Ton petit nom :".html_safe,
                             placeholder: "Prénom"
                 %>
               </div>
               <div class="col-md-6 input-string">
                 <%= f.input :last_name,
-                            label:"Ton nom de famille :",
+                            label:"<i class='radio-icon fa fa-user' aria-hidden='true'></i>Ton nom de famille :".html_safe,
                             placeholder: "Nom"
                 %>
               </div>
               <%= input_collection_html f: f,
                                         field: :country_code,
-                                        question: "Nationalité ?",
+                                        question: "Nationalité ?".html_safe,
                                         priority: ["FR", "GB", "ES"],
                                         label: false
               %>
@@ -118,7 +121,8 @@
               %>
               <%= input_boolean_html  f: f,
                                       field: :experience_aupair,
-                                      question: "As-tu déjà eu une expérience au pair ?"
+                                      question: "As-tu déjà eu une expérience au pair ?",
+                                      icon: "fa-heart"
               %>
               <%= input_boolean_html  f: f,
                                       field: :sports,
@@ -174,7 +178,8 @@
               <%= render  "shared/datepicker",
                           container_class: "col-md-12 div-left",
                           question: "<i class='radio-icon fa fa-calendar' aria-hidden='true'></i>À partir de quelle date es-tu disponible ?".html_safe,
-                          css_id: "datetimepicker-standar", field: "dispo_from"
+                          css_id: "datetimepicker-standar", field: "dispo_from",
+                          color: :blue
               %>
               <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
                                         f: f,
@@ -185,6 +190,11 @@
                                         label: false,
                                         label_method: lambda { |key| t(key) }
               %>
+            </div>
+          </div>
+          <div class="div-center">
+            <div class="frame-default frame-btn fr-btn-white width-200px">
+              <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
             </div>
           </div>
         </div>

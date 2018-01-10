@@ -22,12 +22,13 @@ class Family < ActiveRecord::Base
   scope :searching_at_date, -> (date = Date.today) { where(starting_date: date-2.weeks..date+2.weeks) }
 
   def profile_completion
-    count = 0
-    COMPLETION_ATTRIBUTES.each do |a|
-      count += 1 if attribute_present?(a)
+    present_attrs = attributes.select do |k, v|
+      COMPLETION_ATTRIBUTES.include?(k) &&
+      !v.to_s.empty?
     end
-    count * 100 / COMPLETION_ATTRIBUTES.count
+    present_attrs.size * 100 / COMPLETION_ATTRIBUTES.size
   end
+
 
   def self.plans
     Stripe::Plan.all.data.select do |plan|
