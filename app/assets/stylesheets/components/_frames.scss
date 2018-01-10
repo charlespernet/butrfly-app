@@ -89,6 +89,14 @@
       border: solid 1px $black;
     }
   }
+  &.fr-btn-white-yellow {
+    background-color: $white;
+    border:solid 2px $yellow;
+    &::before {
+      background: $white;
+      border: solid 1px $black;
+    }
+  }
   &.fr-btn-blue {
     background-color: $blue;
     border:solid 2px $white;
