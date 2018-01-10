@@ -1,6 +1,6 @@
 class AupairsController < ApplicationController
   before_action :set_aupair, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :plans]
 
   def index
     # raise
@@ -26,6 +26,10 @@ class AupairsController < ApplicationController
     @user.update(aupair_params)
     flash[:notice] = "Profil mis à jour"
     redirect_to @user
+  end
+
+  def plans
+    @plans = Aupair.plans
   end
 
   private

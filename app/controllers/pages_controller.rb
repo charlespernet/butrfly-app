@@ -38,6 +38,4 @@ class PagesController < ApplicationController
   def family_conditions
   end
 
-  # def plans
-  # end
 end
