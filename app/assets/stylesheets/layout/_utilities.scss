@@ -213,6 +213,11 @@ a {
   box-shadow: none;
 }
 
+.border-yellow {
+  border: solid 2px $yellow;
+  box-shadow: none;
+}
+
 .butrfly-wrapper {
 }
 
@@ -376,6 +381,10 @@ a {
 
 .bg-white {
   background-color: $white;
+}
+
+.color-yellow {
+  color: $yellow !important;
 }
 // .bg-dark-blue {
 //   background: #3b5998;
