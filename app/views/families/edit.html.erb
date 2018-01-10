@@ -3,95 +3,113 @@
   <div class="butrfly-wrapper div-center">
     <div class="butrfly-container div-center">
       <div class="hidden-xs hidden-ms">
-        <%= render "shared/square_box", title: "MON<br>PROFIL", color: :yellow %>
-        <%= render "shared/cursor", percent: 71, color: :yellow %>
+        <%= link_to @user do %>
+          <%= render "shared/square_box", title: "MON<br>PROFIL", color: :yellow %>
+        <% end %>
+        <%= render "shared/cursor", percent: @user.profile_completion, color: :yellow %>
         <div class="frame-default frame-btn fr-btn-white-yellow margin-box">
           <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
         </div>
-        <div class="frame-default frame-btn fr-btn-white-yellow margin-box">
-          <%= f.button :submit, "SUPPRIMER", class: "input-button" %>
-        </div>
+<!--         <div class="frame-default frame-btn fr-btn-white-yellow margin-box">
+          <%#= f.button :submit, "SUPPRIMER", class: "input-button" %>
+        </div> -->
       </div>
       <div class="index-container">
-        <%= edit_tabs_html("yellow") %>
+        <div class="hidden-xs hidden-ms">
+          <%= edit_tabs_html("yellow") %>
+        </div>
+
         <div class="border-yellow width-100 padding-20px margin-bottom-50px">
+          <div class="frame-default frame-btn hidden-md hidden-lg">
+            <div class="input-button div-center items-center">
+              REMPLISEZ VOTRE PROFIL
+            </div>
+          </div>
           <div class="container-fluid">
             <%= render "shared/titles", color: :yellow, index: 0 %>
             <div class="row">
-              <div class="col-md-6 input-string">
+              <div class="col-md-6 input-string yellow">
                 <%= f.input :phone,
-                            label: "<i class='radio-icon fa fa-phone color-yellow' aria-hidden='true'></i>Ton numéro de téléphone :".html_safe,
+                            label: "<i class='radio-icon fa fa-phone color-yellow' aria-hidden='true'></i>Votre numéro de téléphone :".html_safe,
                             placeholder: "+33 6 ..."
                 %>
               </div>
 
-              <div class="col-md-6 input-string">
+              <div class="col-md-6 input-string yellow">
                 <%= f.input :address,
-                            label:"<i class='radio-icon fa fa-envelope-o  color-yellow' aria-hidden='true'></i>Ton adresse :".html_safe,
+                            label:"<i class='radio-icon fa fa-envelope-o color-yellow' aria-hidden='true'></i>Votre adresse :".html_safe,
                             placeholder: "6 rue Molière"
                 %>
               </div>
-              <div class="col-md-6 input-string">
+              <div class="col-md-6 input-string yellow">
                 <%= f.input :city,
-                            label:"Ta ville :",
+                            label:"<i class='radio-icon fa fa-map-marker color-yellow' aria-hidden='true'></i>Votre ville :".html_safe,
                             placeholder: "Paris"
                 %>
               </div>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-6 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :country_code,
-                                        question: "<i class='radio-icon fa fa-globe  color-yellow' aria-hidden='true'></i>Le pays où tu vis :".html_safe,
+                                        question: "<i class='radio-icon fa fa-globe  color-yellow' aria-hidden='true'></i>Le pays dans lequel vous vivez :".html_safe,
                                         priority: ["FR", "GB", "ES"],
                                         label: false
               %>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 input-string">
-                <%= f.input :name,
-                            label:"Votre nom :",
-                            placeholder: "Nom"
+              <div class="col-md-6 input-string yellow">
+                <%= f.input :first_name,
+                            label:"<i class='radio-icon fa fa-user color-yellow' aria-hidden='true'></i>Votre prénom :".html_safe,
+                            placeholder: "Prénom"
                 %>
               </div>
-              <%= input_collection_html f: f,
-                                        field: :country_code,
-                                        question: "Dans quel pays ?",
-                                        priority: ["FR", "GB", "ES"],
-                                        label: false
-              %>
+              <div class="col-md-6 input-string yellow">
+                <%= f.input :first_name,
+                            label:"<i class='radio-icon fa fa-map-marker color-yellow' aria-hidden='true'></i>Votre nom de famille :".html_safe,
+                            placeholder: "Nom de famille"
+                %>
+              </div>
             </div>
           </div>
+
+
           <div class="container-fluid">
             <%= render "shared/titles", color: :yellow, index: 1 %>
             <div class="row">
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-6 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :family_type,
                                         question: "Votre famille c'est d'abord :",
                                         collection: Family.family_types.keys,
                                         default: 0,
                                         label: false
               %>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :children_number,
                                         question: "Combien d'enfants y a-t-il dans votre famille ?",
                                         collection: 1..10,
                                         label: false
               %>
-              <%= input_collection_html f: f,
-                                        field: :children_age_from,
-                                        question: "Les enfants sont âgés entre :",
-                                        collection: 0..15,
-                                        label: false
-              %>
+              <div class="col-md-12 div-left">
+                <%= input_collection_html css_class: "input-string yellow div-left items-center",
+                                          f: f,
+                                          field: :children_age_from,
+                                          question: "Les enfants sont âgés entre :",
+                                          collection: 0..15,
+                                          label: false
+                %>
 
-              <%= input_collection_html f: f,
-                                        field: :children_age_to,
-                                        question: "et",
-                                        collection: 0..20,
-                                        label: false
-              %>
+                <%= input_collection_html css_class: "input-string yellow div-left items-center",
+                                          f: f,
+                                          field: :children_age_to,
+                                          question: "et",
+                                          collection: 0..20,
+                                          label: false
+                %>
+              </div>
 
-              <%= input_collection_html f: f,
+
+
+              <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :aupair_children_number,
                                         question: "Combien d’enfants seront confiés au jeune au pair ?",
                                         collection: 0..15,
@@ -101,7 +119,8 @@
               <%= input_boolean_html  f: f,
                                       color: :yellow,
                                       field: :domestic_animal,
-                                      question: "Avez-vous un animal domestique ?"
+                                      question: "Avez-vous un animal domestique ?",
+                                      icon: "fa-paw"
               %>
 
               <%= input_boolean_html  f: f,
@@ -127,7 +146,7 @@
             <%= render "shared/titles", color: :yellow, index: 2 %>
             <div class="row">
 
-              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+              <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
                                         f: f,
                                         field: :house_type,
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Vous vivez :".html_safe,
@@ -136,7 +155,7 @@
                                         selected: @user.house_type
               %>
 
-              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+              <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
                                         f: f,
                                         field: :environment,
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement souhaites-tu vivre ?".html_safe,
@@ -157,10 +176,12 @@
                                       color: :yellow,
                                       field: :prefered_gender,
                                       answers: [["Garçon", 1], ["Fille", 0]], #Aupair.genders.hash.to_a,
-                                      question: ""
+                                      question: "",
+                                      icon: "fa-venus-mars"
               %>
 
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-6 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :aupair_nationality,
                                         question: "Nationalité ?",
                                         collection: Country.all,
@@ -174,21 +195,27 @@
                                         collection: Language.all
               %>
 
-              <%= input_boolean_html  f: f,
+              <%= input_boolean_html  css_class: "col-md-12 div-left items-center  margin-bottom-20px",
+                                      f: f,
                                       color: :yellow,
                                       field: :driving_license_required,
-                                      question: "L'au pair doit-il/elle avoir permis de conduire ?"
+                                      question: "L'au pair doit-il/elle avoir permis de conduire ?",
+                                      icon: "fa-car"
               %>
-              <%= input_boolean_html  f: f,
+              <%= input_boolean_html  css_class: "col-md-12 div-left items-center  margin-bottom-20px",
+                                      f: f,
                                       color: :yellow,
                                       field: :housework,
-                                      question: "L'au pair doit-il/elle participer aux tâches ménagères ?"
+                                      question: "L'au pair doit-il/elle participer aux tâches ménagères ?",
+                                      icon: "fa-cutlery"
               %>
 
-              <%= input_boolean_html  f: f,
+              <%= input_boolean_html  css_class: "col-md-12 div-left items-center margin-bottom-20px",
+                                      f: f,
                                       color: :yellow,
                                       field: :aupair_experience,
-                                      question: "Vous aimeriez qu’il/elle ait de l’expérience en matière de garde d’enfants ?"
+                                      question: "Vous aimeriez qu’il/elle ait de l’expérience en matière de garde d’enfants ?",
+                                      icon: "fa-child"
               %>
 
             </div>
@@ -198,18 +225,26 @@
             <%= render "shared/titles", color: :yellow, index: 4 %>
             <div class="row">
               <%= render  "shared/datepicker",
-                          container_class: "col-md-6 div-left",
-                          question: "Pour un séjour au plus tôt à partir de",
-                          css_id: "datetimepicker-standar", field: "starting_date"
+                          container_class: "col-md-12 div-left",
+                          question: "<i class='radio-icon fa fa-calendar color-yellow' aria-hidden='true'></i>Pour un séjour au plus tôt à partir de :".html_safe,
+                          css_id: "datetimepicker-standar",
+                          field: "starting_date",
+                          color: :yellow
               %>
-              <%= input_collection_html f: f,
+              <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
+                                        f: f,
                                         field: :prefered_duration,
-                                        question: "Pour une durée",
+                                        question: "<i class='radio-icon fa fa-history color-yellow' aria-hidden='true'></i>Pour une durée :".html_safe,
                                         collection: Aupair.stay_durations.keys,
                                         default: 0,
                                         label: false,
                                         label_method: lambda { |key| t(key) }
               %>
+            </div>
+          </div>
+          <div class="div-center">
+            <div class="frame-default frame-btn fr-btn-white-yellow width-200px">
+              <%= f.button :submit, "METTRE À JOUR", class: "input-button" %>
             </div>
           </div>
         </div>

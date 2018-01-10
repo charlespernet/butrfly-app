@@ -188,6 +188,15 @@ a {
   }
 }
 
+.input-string.yellow {
+  input, select {
+    border-bottom: solid 1px $yellow !important;
+  }
+  i.fa.fa-sort-desc {
+    color: $yellow;
+  }
+}
+
 .attachinary_container>ul {
   display: flex;
   justify-content: space-between;
@@ -206,6 +215,10 @@ a {
 
 .width-50px {
   width: 50px;
+}
+
+.width-200px {
+  width: 200px;
 }
 
 .border-default {
