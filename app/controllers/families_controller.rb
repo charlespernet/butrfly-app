@@ -25,7 +25,7 @@ class FamiliesController < ApplicationController
   def update
     @user.update(family_params)
     flash[:notice] = "Profil mis à jour"
-    redirect_to dashboard_path
+    redirect_to show_path
   end
 
   def plans

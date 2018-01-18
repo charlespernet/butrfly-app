@@ -1,18 +1,22 @@
-<div class="border-black-white margin-30px text-center" style="flex-grow: 1;">
+<div class="plan border-black-white margin-30px" style="flex-grow: 1;">
   <%= image_tag("papillon-gris.png", class: "modal-logo") %>
   <h4><%= plan.name %></h4>
-  <p><b><%= plan.metadata[:description] %></b></p>
+  <div class="paragraph">
+    <p><b><%= plan.metadata[:description] %></b></p>
+  </div>
   <div class="btn btn-black-lg">
     <%= plan.metadata[:bring] %>€
     <!-- puis <%#= (plan.amount.to_f / 100).round(2) %>€/<%= plan.interval %> -->
   </div>
-  <div class="text- enter">
+  <div class="paragraph">
     <% plan.metadata[:content].split("\n").each do |point| %>
       <p><%= point %></p>
     <% end %>
   </div>
-  <% unless current_user.active? %>
-    <div class="border-bottom"></div>
+  <% unless current_user.active? && current_user.specific.class.to_s != plan.metadata[:customer].capitalize %>
+    <div class="paragraph">
+      <div class="border-bottom"></div>
+    </div>
     <%= form_tag payments_path do %>
       <%= hidden_field_tag 'amount_cents', (plan.metadata[:bring].to_i * 100) %>
       <%= hidden_field_tag 'plan_id', plan.id %>
