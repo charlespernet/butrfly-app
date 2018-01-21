@@ -10,23 +10,39 @@
         <%= link_to root_path do %>
           <%= image_tag("papillon-gris.png", class: "modal-logo") %>
         <% end %>
-        <h3>FÉLICITATIONS!</h3>
+
         <div class="modal-form">
-          <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
-          <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
+          <% if current_user.specific.profile_completion == 100 %>
 
-          <% if user_signed_in? %>
-            <div class="modal-btn-colors">
-              <%= link_to "JE SUIS UNE FAMILLE, \n JE CHERCHE UN(E) AU PAIR", aupairs_path, class: "bg-yellow modal-btn-color btn  " %>
-              <%= link_to "JE SUIS UN(E) AU PAIR, \n JE CHERCHE UNE FAMILLE", families_path, class: " bg-blue  modal-btn-color btn" %>
-            </div>
-
-            <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
-            <div class="margin-top">
-              <%= link_to t("shared.account"), family_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Family)  %>
-              <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Aupair)  %>
-            </div>
+            <h3>FÉLICITATIONS!</h3>
+            <% if current_user.specific.class.to_s == "Aupair" %>
+              <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
+              <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
+              <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
+            <% else %>
+              <p>Vous venez de rentrer dans la communauté BUTRFLY !</p>
+              <p>Nous sommes ravis et vous souhaitons de vivre de belles aventures !</p>
+              <p>Vous pouvez, à tout moment modifier votre profil en allant sur :</p>
+            <% end %>
+          <% else %>
+            <h3>AVERTISSEMENTS!</h3>
+            <% if current_user.specific.class.to_s == "Aupair" %>
+              <p>Merci d'avoir commencer ton inscription.
+              <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de ton profil ont été renseignés.</p>
+              <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il te faudra le finaliser.</p>
+              <p>Tu peux, à tout moment compléter ton profil en allant sur :</p>
+            <% else %>
+              <p>Merci d'avoir commencer votre inscription.
+              <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de votre profil ont été renseignés.</p>
+              <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il vous faudra le finaliser.</p>
+              <p>Vous pouvez, à tout moment compléter votre profil en allant sur :</p>
+            <% end %>
           <% end %>
+
+          <div class="margin-top">
+            <%= link_to t("shared.account"), family_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Family)  %>
+            <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "btn btn-default modal-btn" if current_user.specific.is_a?(Aupair)  %>
+          </div>
 
         </div>
       </div>
@@ -34,10 +50,8 @@
   </div>
 </div>
 
-<%= link_to "", "#congrats", 'data-toggle' => 'modal', id: "link_congrats" %>
-
-<%= content_for :after_js do %>
+<% content_for :after_js do %>
   <script>
-    $('#link_congrats').trigger('click');
+    $('#congrats').modal('show');
   </script>
 <% end %>

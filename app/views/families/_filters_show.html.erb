@@ -1,12 +1,13 @@
+
 <div class="filters-box frame-default">
   <h2>FILTRES</h2>
   <div class="container-fluid text-left">
-    <h3>VOTRE AU PAIR DOIT PARLER :</h3><div>Coco</div>
-    <h3>PERMIS DE CONDUIRE :</h3><div>Oui</div>
-    <h3>EXPÉRIENCE AU PAIR :</h3><div>Oui</div>
-    <h3>EXPÉRIENCE GARDE D'ENFANTS :</h3><div>Oui</div>
-    <h3>SPORTIF :</h3><div>Oui</div>
-    <h3>MUSICIEN :</h3><div>Oui</div>
-    <h3>NATIONALITÉ :</h3><div>Français</div>
+    <h3><i class="fa fa-child" aria-hidden="true"></i> NOMBRE D'ENFANTS À GARDER :</h3><p class="p-black"><%= @user.aupair_children_number %></p>
+    <h3><i class="fa fa-home" aria-hidden="true"></i> TYPE D'HABITATION :</h3><p class="p-black"><%= @user.house_type %></p>
+    <h3><i class="fa fa-home" aria-hidden="true"></i> ENVIRONEMMENT :</h3><p class="p-black"><%= @user.environment %></p>
+    <h3><i class="fa fa-car" aria-hidden="true"></i> PERMIS DE CONDUIRE :</h3><p class="p-black"><%= yes_or_no( @user.driving_license_required ) %></p>
+    <h3><i class="fa fa-cutlery" aria-hidden="true"></i> TACHES MÉNAGÈRES :</h3><p class="p-black"><%= yes_or_no( @user.housework ) %></p>
+    <h3><i class="fa fa-child" aria-hidden="true"></i> EXPÉRIENCE GARDE D'ENFANTS :</h3><p class="p-black"><%= yes_or_no( @user.aupair_experience ) %></p>
+    <h3>NATIONALITÉ :</h3><p class="p-black"><%= @user.aupair_nationality %></p>
   </div>
 </div>

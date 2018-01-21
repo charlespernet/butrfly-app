@@ -10,6 +10,8 @@
   <div class="navbar-right hidden-xs">
     <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
     <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
+    <%= link_to "ABONNEMENTS FAMILLE", families_plans_path, class: "navbar-link" %>
+    <%= link_to "ABONNEMENTS AU PAIR", aupairs_plans_path,  class: "navbar-link" %>
     <% if user_signed_in? %>
       <%= link_to t("shared.account"), family_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Family)  %>
       <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Aupair)  %>
@@ -26,6 +28,8 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <%= link_to "COMMENT ÇA MARCHE ?", procedure_path, class: "navbar-link" %>
         <%= link_to "BLOG", t('meta-url-blog'), target: "_blank", class: "navbar-link" %>
+        <%= link_to "ABONNEMENTS FAMILLE", families_plans_path, class: "navbar-link" %>
+        <%= link_to "ABONNEMENTS AU PAIR", aupairs_plans_path,  class: "navbar-link" %>
         <% if user_signed_in? %>
           <%= link_to t("shared.account"), family_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Family)  %>
           <%= link_to t("shared.account"), aupair_path(current_user.specific), class: "navbar-link" if current_user.specific.is_a?(Aupair)  %>
@@ -45,3 +49,4 @@
   <%= render 'shared/signup_modal', checked: "Family" %>
   <%= render 'shared/signin_modal' %>
 <% end %>
+

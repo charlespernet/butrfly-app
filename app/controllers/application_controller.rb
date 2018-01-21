@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :authenticate_user!
+  before_action :show_modal?, except: [:edit]
   # before_action :just_signed_up?
 
   # after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -27,4 +28,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def show_modal?
+    @show_modal == false
+    url = Rails.application.routes.recognize_path(request.referrer)
+    urls = ["families/edit" , "aupairs/edit"]
+    @show_modal = urls.include?("#{url[:controller]}/#{url[:action]}")
+  end
 end

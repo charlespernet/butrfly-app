@@ -37,4 +37,8 @@ class Family < ActiveRecord::Base
     end
   end
 
+  def normalized_name
+    "M. #{last_name.capitalize}"
+  end
+
 end

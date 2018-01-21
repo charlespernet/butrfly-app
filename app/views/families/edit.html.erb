@@ -61,8 +61,8 @@
                 %>
               </div>
               <div class="col-md-6 input-string yellow">
-                <%= f.input :first_name,
-                            label:"<i class='radio-icon fa fa-map-marker color-yellow' aria-hidden='true'></i>Votre nom de famille :".html_safe,
+                <%= f.input :last_name,
+                            label:"<i class='radio-icon fa fa-user color-yellow' aria-hidden='true'></i>Votre nom de famille :".html_safe,
                             placeholder: "Nom de famille"
                 %>
               </div>
@@ -126,7 +126,7 @@
               <%= input_boolean_html  f: f,
                                       color: :yellow,
                                       field: :experience_with_aupair,
-                                      question: "Avez-vous deja accueilli une/un au-pair ?"
+                                      question: "Avez-vous déjà accueilli une/un au-pair ?"
               %>
               <div class="col-xs-12 div-left width-100">
                 <div class="upload-photos photos-yellow">
@@ -151,16 +151,16 @@
                                         field: :house_type,
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Vous vivez :".html_safe,
                                         label: false,
-                                        collection:  Family.house_types,
+                                        collection:  Family.house_types.keys,
                                         selected: @user.house_type
               %>
 
               <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
                                         f: f,
                                         field: :environment,
-                                        question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement souhaites-tu vivre ?".html_safe,
+                                        question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement vivez-vous ?".html_safe,
                                         label: false,
-                                        collection:  Family.environments,
+                                        collection:  Family.environments.keys,
                                         selected: @user.environment
               %>
 
@@ -199,7 +199,7 @@
                                       f: f,
                                       color: :yellow,
                                       field: :driving_license_required,
-                                      question: "L'au pair doit-il/elle avoir permis de conduire ?",
+                                      question: "L'au pair doit-il/elle avoir le permis de conduire ?",
                                       icon: "fa-car"
               %>
               <%= input_boolean_html  css_class: "col-md-12 div-left items-center  margin-bottom-20px",

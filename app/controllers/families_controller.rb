@@ -25,7 +25,7 @@ class FamiliesController < ApplicationController
   def update
     @user.update(family_params)
     flash[:notice] = "Profil mis à jour"
-    redirect_to dashboard_path
+    redirect_to @user
   end
 
   def plans
@@ -40,7 +40,7 @@ class FamiliesController < ApplicationController
   end
 
   def family_params
-    params.require(:family).permit(
+    p = params.require(:family).permit(
       :name,
       :country_code,
       :domestic_animal,
@@ -55,6 +55,18 @@ class FamiliesController < ApplicationController
       :children_number,
       :housework,
       :driving_license_required,
+      :first_name,
+      :last_name,
+      :phone,
+      :address,
+      :city,
+      :country,
+      :aupair_children_number,
+      :house_type,
+      :environment,
+      :aupair_experience,
+      :aupair_nationality,
+      # :aupair_languages,
       photos: []
     )
   end
