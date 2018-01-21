@@ -15,17 +15,28 @@
           <% if current_user.specific.profile_completion == 100 %>
 
             <h3>FÉLICITATIONS!</h3>
-            <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
-            <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
-            <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
-
+            <% if current_user.specific.class.to_s == "Aupair" %>
+              <p>Tu viens de rentrer dans la communauté BUTRFLY !</p>
+              <p>Nous sommes ravis et te souhaitons de vivre de belles aventures !</p>
+              <p>Tu peux, à tout moment modifier ton profil en allant sur :</p>
+            <% else %>
+              <p>Vous venez de rentrer dans la communauté BUTRFLY !</p>
+              <p>Nous sommes ravis et vous souhaitons de vivre de belles aventures !</p>
+              <p>Vous pouvez, à tout moment modifier votre profil en allant sur :</p>
+            <% end %>
           <% else %>
             <h3>AVERTISSEMENTS!</h3>
-            <p>Merci d'avoir commencer ton inscription.
+            <% if current_user.specific.class.to_s == "Aupair" %>
+              <p>Merci d'avoir commencer ton inscription.
               <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de ton profil ont été renseignés.</p>
-            <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il te faudra le finaliser.</p>
-            <p>Tu peux, à tout moment compléter ton profil en allant sur :</p>
-
+              <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il te faudra le finaliser.</p>
+              <p>Tu peux, à tout moment compléter ton profil en allant sur :</p>
+            <% else %>
+              <p>Merci d'avoir commencer votre inscription.
+              <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de votre profil ont été renseignés.</p>
+              <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il vous faudra le finaliser.</p>
+              <p>Vous pouvez, à tout moment compléter votre profil en allant sur :</p>
+            <% end %>
           <% end %>
 
           <div class="margin-top">
