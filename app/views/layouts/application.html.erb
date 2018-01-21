@@ -13,6 +13,7 @@
     <%= favicon_link_tag %>
   </head>
   <body class="site">
+    <%= render "shared/congrats_modal" if @show_modal %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <div class="site-content">

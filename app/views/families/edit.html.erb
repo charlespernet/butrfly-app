@@ -61,7 +61,7 @@
                 %>
               </div>
               <div class="col-md-6 input-string yellow">
-                <%= f.input :first_name,
+                <%= f.input :last_name,
                             label:"<i class='radio-icon fa fa-user color-yellow' aria-hidden='true'></i>Votre nom de famille :".html_safe,
                             placeholder: "Nom de famille"
                 %>
@@ -151,7 +151,7 @@
                                         field: :house_type,
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Vous vivez :".html_safe,
                                         label: false,
-                                        collection:  Family.house_types,
+                                        collection:  Family.house_types.keys,
                                         selected: @user.house_type
               %>
 
@@ -160,7 +160,7 @@
                                         field: :environment,
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement vivez-vous ?".html_safe,
                                         label: false,
-                                        collection:  Family.environments,
+                                        collection:  Family.environments.keys,
                                         selected: @user.environment
               %>
 
