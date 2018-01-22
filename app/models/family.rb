@@ -38,7 +38,9 @@ class Family < ActiveRecord::Base
   end
 
   def normalized_name
-    "M. #{last_name.capitalize}"
+    last_name ? "M. #{last_name.capitalize}" : "M. Anomyme"
   end
+
+
 
 end
