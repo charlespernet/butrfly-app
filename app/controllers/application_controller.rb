@@ -32,6 +32,6 @@ class ApplicationController < ActionController::Base
     @show_modal == false
     url = Rails.application.routes.recognize_path(request.referrer)
     urls = ["families/edit" , "aupairs/edit"]
-    @show_modal = urls.include?("#{url[:controller]}/#{url[:action]}")
+    @show_modal = current_user.present? && urls.include?("#{url[:controller]}/#{url[:action]}")
   end
 end
