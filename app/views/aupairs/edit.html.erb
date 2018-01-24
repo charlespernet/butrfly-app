@@ -53,16 +53,18 @@
               <%= input_boolean_html  f: f,
                                       field: :gender,
                                       # answers: Aupair.genders.hash.to_a,
-                                      answers: [["Garçon", 1], ["Fille", 0]],
+                                      answers: [["Garçon", "male"], ["Fille", "female"]],
                                       question: "",
                                       icon: "fa-venus-mars"
               %>
               <%= render  "shared/datepicker",
                           container_class: "col-md-6 div-left",
                           question: "<i class='radio-icon fa fa-birthday-cake' aria-hidden='true'></i>Ta date de naissance".html_safe,
-                          css_id: "datetimepicker-year", field: "birth_date",
-                          color: :blue
+                          css_id: "datetimepicker-year", field: "aupair[birth_date]",
+                          color: :blue,
+                          value: @user.birth_date
               %>
+
               <div class="col-md-6 input-string">
                 <%= f.input :first_name,
                             label:"<i class='radio-icon fa fa-user' aria-hidden='true'></i>Ton petit nom :".html_safe,
@@ -91,13 +93,16 @@
           <div class="container-fluid">
             <%= render "shared/titles", color: :blue, index: 2 %>
             <div class="row">
-              <%= input_collection_html f: f,
+              <%#= f.simple_fields_for :spoken_languages do |l| %>
+                <%#= l.input :language, collection: Language.all %>
+              <%# end %>
+              <%#= input_collection_html f: f,
                                         field: :languages,
                                         question: "Quelles langues parles-tu couramment ?",
                                         label: false,
                                         collection: Language.all
               %>
-              <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
+              <%#= input_collection_html css_class: "col-md-12 input-string div-left items-center",
                                         f: f,
                                         field: :languages,
                                         question: "Dans quelles langues as-tu des connaissances de base ?",
@@ -156,7 +161,8 @@
                                         question: "<i class='radio-icon fa fa-home' aria-hidden='true'></i>Dans quel environnement souhaites-tu vivre ?".html_safe,
                                         label: false,
                                         collection:  Aupair.environments,
-                                        selected: @user.environment
+                                        selected: @user.read_attribute_before_type_cast(:environment),
+                                        label_method: lambda { |key| key[0].capitalize.gsub("_", " ") }
               %>
               <%= input_boolean_html  css_class: "col-md-12 div-left items-center",
                                       f: f,
@@ -179,16 +185,17 @@
                           container_class: "col-md-12 div-left",
                           question: "<i class='radio-icon fa fa-calendar' aria-hidden='true'></i>À partir de quelle date es-tu disponible ?".html_safe,
                           css_id: "datetimepicker-standar", field: "dispo_from",
-                          color: :blue
+                          color: :blue,
+                          value: @user.dispo_from
               %>
               <%= input_collection_html css_class: "col-md-12 input-string div-left items-center",
                                         f: f,
                                         field: :stay_duration,
                                         question: "<i class='radio-icon fa fa-history' aria-hidden='true'></i>Pour quelle période souhaites-tu partir ?".html_safe,
                                         collection: Aupair.stay_durations.keys,
-                                        default: 0,
                                         label: false,
-                                        label_method: lambda { |key| t(key) }
+                                        label_method: lambda { |key| t(key) },
+                                        default: @user.environment
               %>
             </div>
           </div>

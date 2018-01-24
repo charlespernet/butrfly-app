@@ -43,9 +43,9 @@ class AupairsController < ApplicationController
     p = params.require(:aupair).permit(
       :first_name,
       :last_name,
-      :birth_date,
       :country_code,
       :gender,
+      :birth_date,
       :email,
       :description,
       :driving_license,
@@ -63,11 +63,13 @@ class AupairsController < ApplicationController
       :environment,
       :favorite_region,
       :housework,
+      spoken_languages: [],
       language_ids: [],
       country_ids: [],
       photos: []
     )
-    p[:environment] = p[:environment].to_i
+    p[:environment] = p[:environment].to_i  if p[:environment].present?
+    p[:birth_date] = DateTime.parse(p[:birth_date]) if p[:birth_date].present?
     p
   end
 

@@ -6,12 +6,11 @@
         <span class="input-group-addon">
           <i class="fa fa-sort-desc <%= 'color-yellow' if color == :yellow %>" aria-hidden="true"></i>
         </span>
-        <input type='text' class="form-control datepicker-input" name="<%= field %>" />
+        <input type='text' value="<%= value.to_s.gsub("-", "/") %>" class="form-control datepicker-input" name="<%= field %>" />
+
       </div>
     </div>
   </div>
 </div>
 
-<%= content_for :after_js do %>
 
-<% end %>
