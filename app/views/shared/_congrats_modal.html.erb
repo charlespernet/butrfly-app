@@ -28,12 +28,12 @@
             <h3>AVERTISSEMENTS!</h3>
             <% if current_user.specific.class.to_s == "Aupair" %>
               <p>Merci d'avoir commencer ton inscription.
-              <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de ton profil ont été renseignés.</p>
+              <p>Cependant, seuls <b><%=  current_user.specific.profile_completion  %>%</b> de ton profil ont été renseignés.</p>
               <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il te faudra le finaliser.</p>
               <p>Tu peux, à tout moment compléter ton profil en allant sur :</p>
             <% else %>
               <p>Merci d'avoir commencer votre inscription.
-              <p>Cependant, seul <b><%=  current_user.specific.profile_completion  %>%</b> de votre profil ont été renseignés.</p>
+              <p>Cependant, seuls <b><%=  current_user.specific.profile_completion  %>%</b> de votre profil ont été renseignés.</p>
               <p>Pour pouvoir rentrer dans la communauté BUTRFLY<br>et bénéficier de nos services il vous faudra le finaliser.</p>
               <p>Vous pouvez, à tout moment compléter votre profil en allant sur :</p>
             <% end %>

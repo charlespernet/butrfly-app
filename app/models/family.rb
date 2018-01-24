@@ -1,11 +1,17 @@
 class Family < ActiveRecord::Base
-  COMPLETION_ATTRIBUTES =  %w(name
+  COMPLETION_ATTRIBUTES =  %w(last_name
+    description
+    phone
     country_code
     children_age_from
     children_age_to
     children_number
-    family_type
     experience_with_aupair)
+# last_name
+# telphone
+# description
+# nationalité de l'aupair country_code ?
+# langues parlés
 
   has_attachments :photos, maximum: 5
   acts_as :user

@@ -7,6 +7,8 @@ class Aupair < ActiveRecord::Base
                               dispo_from
                               stay_duration_cd
                               phone)
+#langue et nationalité
+
 
   has_attachments :photos, maximum: 3
   acts_as :user
