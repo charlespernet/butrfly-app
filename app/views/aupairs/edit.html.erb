@@ -184,7 +184,8 @@
               <%= render  "shared/datepicker",
                           container_class: "col-md-12 div-left",
                           question: "<i class='radio-icon fa fa-calendar' aria-hidden='true'></i>À partir de quelle date es-tu disponible ?".html_safe,
-                          css_id: "datetimepicker-standar", field: "dispo_from",
+                          css_id: "datetimepicker-standar",
+                          field: "aupair[dispo_from]",
                           color: :blue,
                           value: @user.dispo_from
               %>

@@ -70,6 +70,7 @@ class AupairsController < ApplicationController
     )
     p[:environment] = p[:environment].to_i  if p[:environment].present?
     p[:birth_date] = DateTime.parse(p[:birth_date]) if p[:birth_date].present?
+    p[:dispo_from] = DateTime.parse(p[:dispo_from]) if p[:dispo_from].present?
     p
   end
 
