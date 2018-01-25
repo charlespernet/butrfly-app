@@ -161,7 +161,8 @@
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement vivez-vous ?".html_safe,
                                         label: false,
                                         collection:  Family.environments.keys,
-                                        selected: @user.environment
+                                        selected: @user.environment,
+                                        label_method: lambda { |key| key.capitalize.gsub("_", " ") }
               %>
 
 
