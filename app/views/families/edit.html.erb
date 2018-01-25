@@ -161,7 +161,8 @@
                                         question: "<i class='radio-icon fa fa-home color-yellow' aria-hidden='true'></i>Dans quel environnement vivez-vous ?".html_safe,
                                         label: false,
                                         collection:  Family.environments.keys,
-                                        selected: @user.environment
+                                        selected: @user.environment,
+                                        label_method: lambda { |key| key.capitalize.gsub("_", " ") }
               %>
 
 
@@ -175,7 +176,7 @@
               <%= input_boolean_html  f: f,
                                       color: :yellow,
                                       field: :prefered_gender,
-                                      answers: [["Garçon", 1], ["Fille", 0]], #Aupair.genders.hash.to_a,
+                                      answers: [["Garçon", "male"], ["Fille", "female"]], #Aupair.genders.hash.to_a,
                                       question: "",
                                       icon: "fa-venus-mars"
               %>
@@ -228,8 +229,9 @@
                           container_class: "col-md-12 div-left",
                           question: "<i class='radio-icon fa fa-calendar color-yellow' aria-hidden='true'></i>Pour un séjour au plus tôt à partir de :".html_safe,
                           css_id: "datetimepicker-standar",
-                          field: "starting_date",
-                          color: :yellow
+                          field: "family[starting_date]",
+                          color: :yellow,
+                          value: @user.starting_date
               %>
               <%= input_collection_html css_class: "col-md-12 input-string yellow div-left items-center",
                                         f: f,

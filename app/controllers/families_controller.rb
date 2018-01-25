@@ -69,6 +69,8 @@ class FamiliesController < ApplicationController
       # :aupair_languages,
       photos: []
     )
+    p[:starting_date] = DateTime.parse(p[:starting_date]) if p[:starting_date].present?
+    p
   end
 
 end
